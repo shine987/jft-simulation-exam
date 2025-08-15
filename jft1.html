@@ -5,53 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>JFT-Basic Exam</title>
 <style>
+    /* Base Styles */
     body {
-      font-family: sans-serif;
-      padding: 20px;
-      background-color: #f8f8f8;
-      margin-top: 60px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 15px;
+      background-color: #f5f5f5;
+      margin: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100vh;
     }
 
     #exam-container {
-      max-width: 900px;
       width: 100%;
+      max-width: 900px;
+      margin: 20px auto;
       position: relative;
     }
 
+    /* Header Styles */
     h1 {
-      color: #333;
-      font-size: 28px;
-      margin-bottom: 20px;
+      color: #2c3e50;
+      font-size: 24px;
+      margin-bottom: 15px;
       text-align: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      width: 100%;
     }
 
+    /* Section Styles */
     .section {
-      border: 1px solid #ccc;
-      padding: 20px 20px 20px 48px; /* Adjusted left padding */
-      margin-bottom: 20px;
-      background-color: #fff;
+      background-color: white;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+      padding: 18px 18px 18px 46px;
       position: relative;
+      border: 1px solid #e0e0e0;
     }
 
     .section h2 {
-      font-size: 22px;
+      color: #3498db;
+      font-size: 20px;
       margin-top: 0;
-      color: #444;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed #eee;
     }
 
+    /* Question Block Styles */
     .question-block {
-      margin-bottom: 20px;
-      padding: 15px;
-      background-color: #f9f9f9;
+      background-color: #fafafa;
       border-radius: 6px;
-      font-size: 16px;
+      padding: 15px;
+      margin-bottom: 15px;
       display: none;
       position: relative;
+      border-left: 3px solid #3498db;
     }
 
     .question-block:first-child {
@@ -59,33 +71,34 @@
     }
 
     .question-block p {
-      margin: 0 0 10px 0;
-      font-size: 17px;
-      font-weight: bold;
+      margin: 0 0 12px 0;
+      font-size: 16px;
+      font-weight: 600;
       color: #333;
+      line-height: 1.4;
     }
 
-    /* ===== QUESTION NAVIGATION ===== */
+    /* Question Navigation - Perfectly Aligned Numbers */
     .question-nav {
       position: absolute;
-      left: -36px; /* Adjusted to bring closer */
-      top: 20px; /* Aligned with question text */
+      left: -34px;
+      top: 18px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
       z-index: 100;
-      background-color: rgba(255,255,255,0.95);
-      padding: 6px 3px;
+      background-color: white;
+      padding: 6px 4px;
       border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      border: 1px solid #ddd;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+      border: 1px solid #e0e0e0;
     }
 
     .question-btn {
       width: 28px;
       height: 28px;
-      border-radius: 4px;
-      background-color: #4CAF50;
+      border-radius: 5px;
+      background-color: #3498db;
       color: white;
       border: none;
       cursor: pointer;
@@ -93,57 +106,138 @@
       align-items: center;
       justify-content: center;
       font-size: 12px;
-      transition: all 0.2s;
+      font-weight: bold;
+      transition: all 0.2s ease;
     }
 
-    /* ===== MOBILE RESPONSIVE ===== */
+    .question-btn:hover {
+      background-color: #2980b9;
+      transform: scale(1.05);
+    }
+
+    .question-btn.active {
+      background-color: #2c3e50;
+      transform: scale(1.08);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* Options and Controls */
+    .options-container {
+      margin-top: 10px;
+    }
+
+    .option-box {
+      display: block;
+      padding: 10px 14px;
+      margin: 6px 0;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 15px;
+      background-color: white;
+    }
+
+    .option-box:hover {
+      background-color: #f0f7fc;
+      border-color: #3498db;
+    }
+
+    input[type="radio"]:checked + .option-box {
+      border-color: #3498db;
+      background-color: #e3f2fd;
+      font-weight: 500;
+    }
+
+    /* Timer and Controls */
+    .timer-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background-color: white;
+      padding: 8px 12px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .next-btn {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-top: 10px;
+      transition: background-color 0.2s;
+    }
+
+    /* Mobile Responsive Adjustments */
     @media (max-width: 768px) {
       body {
-        padding: 12px;
-        margin-top: 50px;
+        padding: 10px;
+        margin-top: 40px;
       }
-      
+
       .section {
-        padding: 15px 15px 15px 42px !important;
-        margin: 0 5px 15px 5px !important;
+        padding: 15px 15px 15px 44px !important;
+        margin-bottom: 15px;
       }
-      
+
       .question-nav {
         left: -32px !important;
-        top: 18px !important; /* Better alignment for mobile */
-        padding: 4px 2px !important;
+        top: 16px !important;
+        padding: 5px 3px !important;
       }
-      
+
       .question-btn {
         width: 26px !important;
         height: 26px !important;
       }
-      
+
       .question-block {
         padding: 12px 10px !important;
       }
-      
+
       .question-block p {
-        font-size: 16px !important;
-        margin-bottom: 8px !important;
+        font-size: 15px !important;
+      }
+
+      .option-box {
+        padding: 8px 12px !important;
+        font-size: 14px !important;
       }
     }
 
-    /* For very small phones */
-    @media (max-width: 360px) {
+    /* Small Phone Optimization */
+    @media (max-width: 480px) {
       .section {
-        padding-left: 38px !important;
+        padding-left: 42px !important;
       }
-      
+
       .question-nav {
         left: -30px !important;
-        top: 16px !important;
+        top: 15px !important;
       }
-      
+
       .question-btn {
         width: 24px !important;
         height: 24px !important;
         font-size: 11px !important;
+      }
+    }
+
+    /* Tiny Phone Optimization */
+    @media (max-width: 360px) {
+      .section {
+        padding-left: 40px !important;
+      }
+
+      .question-nav {
+        left: -28px !important;
       }
     }
 </style>
@@ -1141,5 +1235,6 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       }
     }
 </script>
+
 
 
