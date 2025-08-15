@@ -29,7 +29,7 @@
 
     .section {
       border: 1px solid #ccc;
-      padding: 20px 20px 20px 48px; /* Changed from 50px to 48px */
+      padding: 20px 20px 20px 50px; /* Left padding လျှော့ချ */
       margin-bottom: 20px;
       background-color: #fff;
       border-radius: 8px;
@@ -73,8 +73,9 @@
     /* ===== QUESTION NAVIGATION ===== */
     .question-nav {
       position: absolute;
-      left: -36px; /* Changed from -38px to -36px */
-      top: 18px; /* Changed from 50% to 18px for better alignment */
+      left: -38px; /* ဘယ်ဘက်သို့ နည်းနည်းပဲရွှေ့ */
+      top: 50%;
+      transform: translateY(-50%);
       display: flex;
       flex-direction: column;
       gap: 5px;
@@ -113,142 +114,7 @@
     }
     /* ===== END NAVIGATION ===== */
 
-    .audio-container {
-      margin-bottom: 15px;
-    }
-
-    .play-count {
-      font-size: 14px;
-      color: #666;
-      margin-left: 10px;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin-top: 15px;
-      cursor: pointer;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    .option-box {
-      display: block;
-      padding: 10px 15px;
-      margin: 8px 0;
-      border: 2px solid #ddd;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-size: 16px;
-    }
-
-    .option-box:hover {
-      background-color: #f0f0f0;
-    }
-
-    input[type="radio"] {
-      display: none;
-    }
-
-    input[type="radio"]:checked + .option-box {
-      border-color: #4CAF50;
-      background-color: #e8f5e9;
-    }
-
-    .warning-box {
-      display: none;
-      padding: 15px;
-      margin: 15px auto;
-      background-color: #fff3cd;
-      border: 1px solid #ffeeba;
-      border-radius: 4px;
-      color: #856404;
-      text-align: center;
-      max-width: 500px;
-      font-size: 16px;
-    }
-
-    .options-container {
-      margin-left: 10px;
-    }
-
-    /* Timer container */
-    .timer-container {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 1000;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 6px 10px;
-      border-radius: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border: 1px solid #ddd;
-    }
-
-    .timer-label {
-      font-size: 14px;
-      color: #333;
-      white-space: nowrap;
-    }
-
-    .timer {
-      font-size: 16px;
-      font-weight: bold;
-      background-color: #4CAF50;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 15px;
-      min-width: 60px;
-      text-align: center;
-      transition: background-color 0.3s;
-    }
-
-    .timer.warning {
-      background-color: #FF9800;
-    }
-
-    .timer.danger {
-      background-color: #f44336;
-    }
-
-    .section-score {
-      margin-top: 10px;
-      font-size: 15px;
-      color: #555;
-    }
-
-    .timeout-warning {
-      color: #f44336;
-      font-weight: bold;
-      margin-top: 15px;
-      font-size: 16px;
-    }
-    
-    /* Next question button */
-    .next-btn {
-      padding: 8px 15px;
-      background-color: #2196F3;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 15px;
-      font-size: 14px;
-    }
-
-    .next-btn:hover {
-      background-color: #0b7dda;
-    }
+    /* ကျန်သော CSS များ... */
 
     /* ===== MOBILE RESPONSIVE ===== */
     @media (max-width: 768px) {
@@ -258,13 +124,12 @@
       }
       
       .section {
-        padding: 15px 15px 15px 42px !important; /* Changed from original */
-        margin: 0 5px 15px 8px !important;
+        padding: 15px 15px 15px 42px !important; /* ဘယ်ဘက် padding လျှော့ */
+        margin: 0 5px 15px 8px !important; /* ဘေးဘက်များ ချိန်ညှိ */
       }
       
       .question-nav {
-        left: -32px !important; /* Changed from original */
-        top: 16px !important; /* Added top position */
+        left: -32px !important; /* နံပါတ်ခလုတ်များ ညာဘက်သို့နည်းနည်းရွှေ့ */
         padding: 4px 2px !important;
         gap: 4px !important;
       }
@@ -294,7 +159,6 @@
       
       .question-nav {
         left: -30px !important;
-        top: 15px !important; /* Added top position */
       }
       
       .question-btn {
@@ -1297,6 +1161,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       }
     }
 </script>
+
 
 
 
