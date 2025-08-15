@@ -13,6 +13,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding-top: 100px;
     }
 
     #exam-container {
@@ -29,7 +30,7 @@
 
     .section {
       border: 1px solid #ccc;
-      padding: 20px 20px 20px 60px; /* Left padding increased for navigation */
+      padding: 20px;
       margin-bottom: 20px;
       background-color: #fff;
       border-radius: 8px;
@@ -48,11 +49,12 @@
       background-color: #f9f9f9;
       border-radius: 6px;
       font-size: 16px;
-      display: none; /* Hide all questions by default */
+      display: none;
       position: relative;
+      width: 100%;
+      box-sizing: border-box;
     }
 
-    /* Show first question by default */
     .question-block:first-child {
       display: block;
     }
@@ -71,21 +73,21 @@
       border-radius: 4px;
     }
 
-    /* ===== QUESTION NAVIGATION STYLES ===== */
-    .question-nav {
-      position: absolute;
-      left: -45px;
-      top: 50%;
-      transform: translateY(-50%);
+    /* Top Question Navigation Styles */
+    .top-question-nav {
       display: flex;
-      flex-direction: column;
       gap: 6px;
-      z-index: 100;
+      justify-content: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
       background-color: rgba(255,255,255,0.9);
-      padding: 8px 4px;
+      padding: 8px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       border: 1px solid #ddd;
+      position: sticky;
+      top: 60px;
+      z-index: 100;
     }
 
     .question-btn {
@@ -113,7 +115,6 @@
       font-weight: bold;
       transform: scale(1.1);
     }
-    /* ===== END QUESTION NAVIGATION STYLES ===== */
 
     .audio-container {
       margin-bottom: 15px;
@@ -185,7 +186,8 @@
     .timer-container {
       position: fixed;
       top: 10px;
-      right: 10px;
+      left: 50%;
+      transform: translateX(-50%);
       display: flex;
       align-items: center;
       gap: 8px;
@@ -331,28 +333,23 @@
       body {
         padding: 15px;
         margin-top: 80px;
+        padding-top: 80px;
       }
       
       .section {
-        padding: 15px 15px 15px 50px;
+        padding: 15px;
       }
       
       .question-block {
         padding: 12px;
       }
       
-      .question-nav {
-        left: -35px;
-      }
-      
-      .question-btn {
-        width: 26px;
-        height: 26px;
+      .top-question-nav {
+        top: 50px;
       }
 
       .timer-container {
         top: 5px;
-        right: 5px;
       }
       
       .final-score-display {
@@ -1157,17 +1154,17 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
     /* ========== QUESTION NAVIGATION FUNCTIONS ========== */
     function initializeQuestionNavigation() {
       for (let i = 1; i <= 4; i++) {
-        createQuestionNav(i);
+        createTopQuestionNav(i);
       }
     }
 
-    function createQuestionNav(sectionNum) {
+    function createTopQuestionNav(sectionNum) {
       const section = document.getElementById(`section${sectionNum}`);
       const questions = section.querySelectorAll('.question-block');
       
       const nav = document.createElement('div');
-      nav.className = 'question-nav';
-      nav.id = `nav-section${sectionNum}`;
+      nav.className = 'top-question-nav';
+      nav.id = `top-nav-section${sectionNum}`;
       
       for (let i = 0; i < questions.length; i++) {
         const btn = document.createElement('button');
@@ -1180,7 +1177,8 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
         nav.appendChild(btn);
       }
       
-      section.appendChild(nav);
+      // Insert the navigation at the beginning of the section
+      section.insertBefore(nav, section.firstChild);
     }
 
     function showQuestion(questionIndex) {
@@ -1355,6 +1353,9 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       }
     }
 </script>
+</body>
+</html>
+
 
 
 
