@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
@@ -18,6 +18,7 @@
     #exam-container {
       max-width: 900px;
       width: 100%;
+      position: relative;
     }
 
     h1 {
@@ -28,7 +29,7 @@
 
     .section {
       border: 1px solid #ccc;
-      padding: 20px;
+      padding: 20px 20px 20px 60px; /* Left padding increased for navigation */
       margin-bottom: 20px;
       background-color: #fff;
       border-radius: 8px;
@@ -48,6 +49,7 @@
       border-radius: 6px;
       font-size: 16px;
       display: none; /* Hide all questions by default */
+      position: relative;
     }
 
     /* Show first question by default */
@@ -68,6 +70,50 @@
       border: 1px solid #ddd;
       border-radius: 4px;
     }
+
+    /* ===== QUESTION NAVIGATION STYLES ===== */
+    .question-nav {
+      position: absolute;
+      left: -45px;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      z-index: 100;
+      background-color: rgba(255,255,255,0.9);
+      padding: 8px 4px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+    }
+
+    .question-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      transition: all 0.2s;
+    }
+
+    .question-btn:hover {
+      background-color: #3e8e41;
+      transform: scale(1.05);
+    }
+
+    .question-btn.active {
+      background-color: #2E7D32;
+      font-weight: bold;
+      transform: scale(1.1);
+    }
+    /* ===== END QUESTION NAVIGATION STYLES ===== */
 
     .audio-container {
       margin-bottom: 15px;
@@ -138,26 +184,43 @@
     /* Timer container */
     .timer-container {
       position: fixed;
-      top: 15px;
-      right: 15px;
+      top: 10px;
+      right: 10px;
       display: flex;
       align-items: center;
       gap: 8px;
       z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 6px 10px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
     }
 
     .timer-label {
-      font-size: 16px;
+      font-size: 14px;
       color: #333;
+      white-space: nowrap;
     }
 
     .timer {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
-      background-color: #f44336;
+      background-color: #4CAF50;
       color: white;
-      padding: 5px 10px;
-      border-radius: 4px;
+      padding: 4px 10px;
+      border-radius: 15px;
+      min-width: 60px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .timer.warning {
+      background-color: #FF9800;
+    }
+
+    .timer.danger {
+      background-color: #f44336;
     }
 
     .section-score {
@@ -173,48 +236,6 @@
       font-size: 16px;
     }
     
-    /* Remove the old timer from sections */
-    .section .timer {
-      display: none;
-    }
-
-    /* ========== QUESTION NAVIGATION STYLES ========== */
-    /* Vertical question navigation */
-    .question-nav {
-      position: fixed;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      z-index: 100;
-    }
-
-    .question-btn {
-      width: 30px;
-      height: 30px;
-      border-radius: 4px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 12px;
-      transition: all 0.2s;
-    }
-
-    .question-btn:hover {
-      background-color: #3e8e41;
-    }
-
-    .question-btn.active {
-      background-color: #2E7D32;
-      font-weight: bold;
-    }
-
     /* Next question button */
     .next-btn {
       padding: 8px 15px;
@@ -230,7 +251,6 @@
     .next-btn:hover {
       background-color: #0b7dda;
     }
-    /* ========== END QUESTION NAVIGATION STYLES ========== */
 
     /* ========== RESULTS UI STYLES ========== */
     #final-score {
@@ -314,51 +334,32 @@
       }
       
       .section {
-        padding: 15px;
+        padding: 15px 15px 15px 50px;
       }
       
       .question-block {
         padding: 12px;
       }
       
-      .timer-container {
-        top: 10px;
-        right: 10px;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-      
-      .timer-label {
-        font-size: 14px;
-      }
-
-      /* Adjust navigation for mobile */
       .question-nav {
-        left: 10px;
-        gap: 3px;
+        left: -35px;
       }
       
       .question-btn {
-        width: 25px;
-        height: 25px;
-        font-size: 10px;
+        width: 26px;
+        height: 26px;
       }
 
-      /* Results responsive adjustments */
+      .timer-container {
+        top: 5px;
+        right: 5px;
+      }
+      
       .final-score-display {
         font-size: 36px;
         padding: 15px;
       }
-      
-      .result-label {
-        font-size: 18px;
-      }
-      
-      .progress-bar {
-        height: 16px;
-      }
     }
-    /* ========== END RESULTS UI STYLES ========== */
 </style>
 </head>
 <body>
@@ -378,7 +379,7 @@
         <p><strong>Look at the illustration and choose the correct word.</strong></p>
  <p><strong>1.</strong></p>
        
-        <img src="q1.jpg" alt="Question image" width="200">
+        <img src="jft1-q1.jpg" alt="Question image" width="200">
         <div class="options-container">
           <label><input type="radio" name="s1q1" value="1"><span class="option-box">やくそくします</span></label>
           <label><input type="radio" name="s1q1" value="0"><span class="option-box">よていをします</span></label>
@@ -391,7 +392,7 @@
 <p><strong>Look at the illustration and choose the correct word.</strong></p>
         <p><strong>2.</strong></p>
      
-      <img src="q2.jpg" alt="Question image" width="200">
+      <img src="jft1-q2.jpg" alt="Question image" width="200">
         <div class="options-container">
           <label><input type="radio" name="s1q2" value="1"><span class="option-box">しゅくだいをします</span></label>
           <label><input type="radio" name="s1q2" value="0"><span class="option-box">けんがくをします</span></label>
@@ -403,7 +404,7 @@
 <p><strong>Look at the illustration and choose the correct word.</strong></p>
         <p><strong>3.</strong></p>
         
-       <img src="q3.jpg" alt="Question image" width="200">
+       <img src="jft1-q3.jpg" alt="Question image" width="200">
         <div class="options-container">
           <label><input type="radio" name="s1q3" value="1"><span class="option-box">サンドイッチ</span></label>
           <label><input type="radio" name="s1q3" value="0"><span class="option-box">サラダ</span></label>
@@ -731,7 +732,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount1">2</span></span>
         </div>
-       <img src="jft1 photos\q4.jpg" alt="Question image" width="850">
+       <img src="jft1-q4.jpg" alt="Question image" width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q1" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q1" value="0"><span class="option-box">B</span></label>
@@ -751,7 +752,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount2">2</span></span>
         </div>
-     <img src="jft1 photos\q5.jpg" alt="Question image" width="850">
+     <img src="jft1-q5.jpg" alt="Question image" width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q2" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q2" value="0"><span class="option-box">B</span></label>
@@ -770,7 +771,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount2">2</span></span>
         </div>
-        <img src="jft1 photos\q6.jpg" alt="Question image"  width="850">
+        <img src="jft1-q6.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q3" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q3" value="0"><span class="option-box">B</span></label>
@@ -790,7 +791,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount2">2</span></span>
         </div>
-     <img src="jft1 photos\q7.jpg" alt="Question image"  width="850">
+     <img src="jft1-q7.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q4" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q4" value="0"><span class="option-box">B</span></label>
@@ -809,7 +810,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount2">2</span></span>
         </div>
-       <img src="jft1 photos\q8.jpg" alt="Question image" width="850">
+       <img src="jft1-q8.jpg" alt="Question image" width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q5" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q5" value="0"><span class="option-box">B</span></label>
@@ -828,7 +829,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount2">2</span></span>
         </div>
-    <img src="jft1 photos\q9.jpg" alt="Question image" width="850">
+    <img src="jft1-q9.jpg" alt="Question image" width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q6" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q6" value="0"><span class="option-box">B</span></label>
@@ -847,7 +848,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount2">2</span></span>
         </div>
-      <img src="jft1 photos\q10.jpg" alt="Question image"  width="850">
+      <img src="jft1-q10.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q7" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q7" value="0"><span class="option-box">B</span></label>
@@ -866,7 +867,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount2">2</span></span>
         </div>
-     <img src="jft1 photos\q11.jpg" alt="Question image" width="850">
+     <img src="jft1-q11.jpg" alt="Question image" width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q8" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q8" value="0"><span class="option-box">B</span></label>
@@ -885,7 +886,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount2">2</span></span>
         </div>
-    <img src="jft1 photos\q12.jpg" alt="Question image"  width="850">
+    <img src="jft1-q12.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q9" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q9" value="0"><span class="option-box">B</span></label>
@@ -904,7 +905,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
           </audio>
           <span class="play-count">Plays left: <span id="playCount2">2</span></span>
         </div>
-     <img src="jft1 photos\q13.jpg" alt="Question image"  width="850">
+     <img src="jft1-q13.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s3q10" value="1"><span class="option-box">A</span></label>
           <label><input type="radio" name="s3q10" value="0"><span class="option-box">B</span></label>
@@ -927,7 +928,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
         <p><strong>Look at the illustration and choose the correct word.</strong></p>
  <p><strong>1.カーラさんはどのときまで自分で日本語をならいましたか。</strong></p>
        
-      <img src="jft1 photos\q14.jpg" alt="Question image"  width="850">
+      <img src="jft1-q14.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s4q1" value="1"><span class="option-box"> 大学を卒業するまで</span></label>
           <label><input type="radio" name="s4q1" value="0"><span class="option-box">専門学校を卒業するまで</span></label>
@@ -940,7 +941,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
 <p><strong>Look at the illustration and choose the correct word.</strong></p>
         <p><strong>2.正しいものはどれか。</strong></p>
      
-      <img src="jft1 photos\q15.jpg" alt="Question image"  width="850">
+      <img src="jft1-q15.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s4q2" value="1"><span class="option-box">なかむらさんは10回以上京都へ来ました。</span></label>
           <label><input type="radio" name="s4q2" value="0"><span class="option-box">ルさんはしょかい京都へきました。</span></label>
@@ -952,7 +953,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
 <p><strong>Look at the illustration and choose the correct word.</strong></p>
         <p><strong>3.説明にあうのはどれか。</strong></p>
        
-       <img src="jft1 photos\q16.jpg" alt="Question image"  width="850">
+       <img src="jft1-q16.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s4q3" value="1"><span class="option-box">私は去年父に青いネクタイをあげました。</span></label>
           <label><input type="radio" name="s4q3" value="0"><span class="option-box">私は今年父の日に青いシャツをあげます。</span></label>
@@ -975,7 +976,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       </div>
  <div class="question-block">
         <p><strong>5.メロスはどうして町に来ましたか。</strong></p>
-        <img src="jft1 photos\q18.jpg" alt="Question image"  width="850">
+        <img src="jft1-q18.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s4q5" value="1"><span class="option-box">おうさまを会うために</span></label>
           <label><input type="radio" name="s4q5" value="0"><span class="option-box">妹の結婚式の買い物のために</span></label>
@@ -987,7 +988,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
  <div class="question-block">
         <p><strong>6.どうしてこの男の人は30分おくれますか。</strong></p>
        
-       <img src="jft1 photos\q19.jpg" alt="Question image"  width="850">
+       <img src="jft1-q19.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s4q6" value="1"><span class="option-box">病気ですから</span></label>
           <label><input type="radio" name="s4q6" value="0"><span class="option-box">バスがこなかったから</span></label>
@@ -999,7 +1000,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
  <div class="question-block">
         <p><strong>7.レストラン 「ハンナ」 はどんなレストランですか。</strong></p>
       
-      <img src="jft1 photos\q20.jpg" alt="Question image"  width="850">
+      <img src="jft1-q20.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s4q7" value="1"><span class="option-box">ファミリーレストランです.</span></label>
           <label><input type="radio" name="s4q7" value="0"><span class="option-box">ようしょくのレストランです。</span></label>
@@ -1011,7 +1012,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
  <div class="question-block">
         <p><strong>8.一番目の男の子と言うのは何の意味ですか。</strong></p>
      
-      <img src="jft1 photos\q21.jpg" alt="Question image" width="850">
+      <img src="jft1-q21.jpg" alt="Question image" width="850">
         <div class="options-container">
           <label><input type="radio" name="s4q8" value="1"><span class="option-box">家族ではじめにうまれた女の子</span></label>
           <label><input type="radio" name="s4q8" value="0"><span class="option-box">家族ではじめにうまれた男の子</span></label>
@@ -1023,7 +1024,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
  <div class="question-block">
         <p><strong>9.女の人はどうやってほっかいどうへ行きますか。</strong></p>
         
-        <img src="jft1 photos\q22.jpg" alt="Question image"  width="850">
+        <img src="jft1-q22.jpg" alt="Question image"  width="850">
         <div class="options-container">
           <label><input type="radio" name="s4q9" value="1"><span class="option-box">ふね</span></label>
           <label><input type="radio" name="s4q9" value="0"><span class="option-box">バスで</span></label>
@@ -1035,7 +1036,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
  <div class="question-block">
         <p><strong>10.日本語を学びたいです。 どこへ行きますか。</strong></p>
         
-        <img src="jft1 photos\q23.jpg" alt="Question image"  width="850">
+        <img src="jft1-q23.jpg" alt="Question image"  width="850">
         <div class="options-cont3ainer">
           <label><input type="radio" name="s4q10" value="1"><span class="option-box">7のストール</span></label>
           <label><input type="radio" name="s4q10" value="0"><span class="option-box">2.2時にステージの前</span></label>
@@ -1094,6 +1095,17 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
 
     function updateTimer() {
       timeLeft--;
+      
+      // Update timer color based on remaining time
+      const timerElement = document.getElementById('timer');
+      timerElement.classList.remove('warning', 'danger');
+      
+      if (timeLeft <= 5 * 60) { // 5 minutes or less
+        timerElement.classList.add('danger');
+      } else if (timeLeft <= 10 * 60) { // 10 minutes or less
+        timerElement.classList.add('warning');
+      }
+      
       if (timeLeft <= 0) {
         clearInterval(timerInterval);
         timeLeft = 0;
@@ -1121,7 +1133,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
     }
 
     function setupAudioLimits() {
-      for (let i = 1; i <= 7; i++) {
+      for (let i = 1; i <= 10; i++) {
         const audio = document.getElementById(`audio${i}`);
         if (audio) {
           audio.addEventListener('play', function() {
@@ -1292,55 +1304,54 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       }
     }
 
-   function showFinalScore() {
-  clearInterval(timerInterval);
-  document.getElementById('timerContainer').style.display = 'none';
-  
-  // Define section names
-  const sectionNames = {
-    1: "Script and Vocabulary",
-    2: "Conversation and Expression", 
-    3: "Listening and Comprehension",
-    4: "Reading Comprehension"
-  };
+    function showFinalScore() {
+      clearInterval(timerInterval);
+      document.getElementById('timerContainer').style.display = 'none';
+      
+      // Define section names
+      const sectionNames = {
+        1: "Script and Vocabulary",
+        2: "Conversation and Expression", 
+        3: "Listening and Comprehension",
+        4: "Reading Comprehension"
+      };
 
-  const totalAvg = sectionScores.reduce((sum, section) => sum + section.score, 0) / 4;
-  const totalScore = Math.round(totalAvg * 2.5);
-  const pass = totalScore >= 200;
+      const totalAvg = sectionScores.reduce((sum, section) => sum + section.score, 0) / 4;
+      const totalScore = Math.round(totalAvg * 2.5);
+      const pass = totalScore >= 200;
 
-  document.getElementById('final-score').style.display = 'block';
-  document.getElementById('total-score').innerHTML = `
-    <div class="total-score-container">
-      <h2>Your Exam Results</h2>
-      <div class="final-score-display ${pass ? 'pass' : 'fail'}">
-        ${totalScore} / 250
-        <div class="result-label">${pass ? '🎉 PASSED' : '❌ FAILED'}</div>
-      </div>
-    </div>
-  `;
-  
-  const sectionScoresDiv = document.getElementById('section-scores');
-  sectionScoresDiv.innerHTML = `
-    <h3>Section Breakdown</h3>
-    <div class="section-scores-container">
-      ${sectionScores.map(section => `
-        <div class="section-score">
-          <div class="section-header">
-            <span>${sectionNames[section.section]}</span>
-            <span>${section.score.toFixed(1)}%</span>
-          </div>
-          <div class="progress-bar">
-            <div class="progress-fill" style="width: ${section.score}%"></div>
+      document.getElementById('final-score').style.display = 'block';
+      document.getElementById('total-score').innerHTML = `
+        <div class="total-score-container">
+          <h2>Your Exam Results</h2>
+          <div class="final-score-display ${pass ? 'pass' : 'fail'}">
+            ${totalScore} / 250
+            <div class="result-label">${pass ? '🎉 PASSED' : '❌ FAILED'}</div>
           </div>
         </div>
-      `).join('')}
-    </div>
-  `;
-  
-  if (isTimeout) {
-    document.getElementById('timeout-warning').textContent = 
-      "မှတ်ချက်-စာမေးပွဲတွင် အချိန်မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
-  }
-}
-
+      `;
+      
+      const sectionScoresDiv = document.getElementById('section-scores');
+      sectionScoresDiv.innerHTML = `
+        <h3>Section Breakdown</h3>
+        <div class="section-scores-container">
+          ${sectionScores.map(section => `
+            <div class="section-score">
+              <div class="section-header">
+                <span>${sectionNames[section.section]}</span>
+                <span>${section.score.toFixed(1)}%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: ${section.score}%"></div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      
+      if (isTimeout) {
+        document.getElementById('timeout-warning').textContent = 
+          "မှတ်ချက်-စာမေးပွဲတွင် အချိန်မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
+      }
+    }
 </script>
