@@ -25,11 +25,12 @@
       color: #333;
       font-size: 28px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     .section {
       border: 1px solid #ccc;
-      padding: 20px 20px 20px 50px; /* Left padding လျှော့ချ */
+      padding: 20px 20px 20px 48px; /* Adjusted left padding */
       margin-bottom: 20px;
       background-color: #fff;
       border-radius: 8px;
@@ -40,6 +41,7 @@
     .section h2 {
       font-size: 22px;
       margin-top: 0;
+      color: #444;
     }
 
     .question-block {
@@ -60,22 +62,14 @@
       margin: 0 0 10px 0;
       font-size: 17px;
       font-weight: bold;
-    }
-
-    .question-block img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+      color: #333;
     }
 
     /* ===== QUESTION NAVIGATION ===== */
     .question-nav {
       position: absolute;
-      left: -38px; /* ဘယ်ဘက်သို့ နည်းနည်းပဲရွှေ့ */
-      top: 50%;
-      transform: translateY(-50%);
+      left: -36px; /* Adjusted to bring closer */
+      top: 20px; /* Aligned with question text */
       display: flex;
       flex-direction: column;
       gap: 5px;
@@ -102,56 +96,40 @@
       transition: all 0.2s;
     }
 
-    .question-btn:hover {
-      background-color: #3e8e41;
-      transform: scale(1.05);
-    }
-
-    .question-btn.active {
-      background-color: #2E7D32;
-      font-weight: bold;
-      transform: scale(1.08);
-    }
-    /* ===== END NAVIGATION ===== */
-
-    /* ကျန်သော CSS များ... */
-
     /* ===== MOBILE RESPONSIVE ===== */
     @media (max-width: 768px) {
       body {
-        padding: 15px;
+        padding: 12px;
         margin-top: 50px;
       }
       
       .section {
-        padding: 15px 15px 15px 42px !important; /* ဘယ်ဘက် padding လျှော့ */
-        margin: 0 5px 15px 8px !important; /* ဘေးဘက်များ ချိန်ညှိ */
+        padding: 15px 15px 15px 42px !important;
+        margin: 0 5px 15px 5px !important;
       }
       
       .question-nav {
-        left: -32px !important; /* နံပါတ်ခလုတ်များ ညာဘက်သို့နည်းနည်းရွှေ့ */
+        left: -32px !important;
+        top: 18px !important; /* Better alignment for mobile */
         padding: 4px 2px !important;
-        gap: 4px !important;
       }
       
       .question-btn {
         width: 26px !important;
         height: 26px !important;
-        font-size: 11px !important;
       }
       
       .question-block {
         padding: 12px 10px !important;
-        margin-right: 0 !important;
       }
       
-      .option-box {
-        padding: 8px 12px !important;
-        font-size: 14px !important;
+      .question-block p {
+        font-size: 16px !important;
+        margin-bottom: 8px !important;
       }
     }
 
-    /* အလွန်သေးငယ်သော ဖုန်းများအတွက် */
+    /* For very small phones */
     @media (max-width: 360px) {
       .section {
         padding-left: 38px !important;
@@ -159,11 +137,13 @@
       
       .question-nav {
         left: -30px !important;
+        top: 16px !important;
       }
       
       .question-btn {
         width: 24px !important;
         height: 24px !important;
+        font-size: 11px !important;
       }
     }
 </style>
@@ -1161,4 +1141,5 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       }
     }
 </script>
+
 
