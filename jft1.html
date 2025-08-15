@@ -29,7 +29,7 @@
 
     .section {
       border: 1px solid #ccc;
-      padding: 20px 20px 20px 60px; /* Left padding increased for navigation */
+      padding: 20px 20px 20px 50px; /* Left padding လျှော့ချ */
       margin-bottom: 20px;
       background-color: #fff;
       border-radius: 8px;
@@ -48,11 +48,10 @@
       background-color: #f9f9f9;
       border-radius: 6px;
       font-size: 16px;
-      display: none; /* Hide all questions by default */
+      display: none;
       position: relative;
     }
 
-    /* Show first question by default */
     .question-block:first-child {
       display: block;
     }
@@ -71,26 +70,26 @@
       border-radius: 4px;
     }
 
-    /* ===== QUESTION NAVIGATION STYLES ===== */
+    /* ===== QUESTION NAVIGATION ===== */
     .question-nav {
       position: absolute;
-      left: -45px;
+      left: -38px; /* ဘယ်ဘက်သို့ နည်းနည်းပဲရွှေ့ */
       top: 50%;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 5px;
       z-index: 100;
-      background-color: rgba(255,255,255,0.9);
-      padding: 8px 4px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      background-color: rgba(255,255,255,0.95);
+      padding: 6px 3px;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
       border: 1px solid #ddd;
     }
 
     .question-btn {
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       border-radius: 4px;
       background-color: #4CAF50;
       color: white;
@@ -111,253 +110,60 @@
     .question-btn.active {
       background-color: #2E7D32;
       font-weight: bold;
-      transform: scale(1.1);
+      transform: scale(1.08);
     }
-    /* ===== END QUESTION NAVIGATION STYLES ===== */
+    /* ===== END NAVIGATION ===== */
 
-    .audio-container {
-      margin-bottom: 15px;
-    }
+    /* ကျန်သော CSS များ... */
 
-    .play-count {
-      font-size: 14px;
-      color: #666;
-      margin-left: 10px;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin-top: 15px;
-      cursor: pointer;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    .option-box {
-      display: block;
-      padding: 10px 15px;
-      margin: 8px 0;
-      border: 2px solid #ddd;
-      border-radius: 4px;
-      cursor: pointer;
-      transition: all 0.3s;
-      font-size: 16px;
-    }
-
-    .option-box:hover {
-      background-color: #f0f0f0;
-    }
-
-    input[type="radio"] {
-      display: none;
-    }
-
-    input[type="radio"]:checked + .option-box {
-      border-color: #4CAF50;
-      background-color: #e8f5e9;
-    }
-
-    .warning-box {
-      display: none;
-      padding: 15px;
-      margin: 15px auto;
-      background-color: #fff3cd;
-      border: 1px solid #ffeeba;
-      border-radius: 4px;
-      color: #856404;
-      text-align: center;
-      max-width: 500px;
-      font-size: 16px;
-    }
-
-    .options-container {
-      margin-left: 10px;
-    }
-
-    /* Timer container */
-    .timer-container {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      z-index: 1000;
-      background-color: rgba(255, 255, 255, 0.9);
-      padding: 6px 10px;
-      border-radius: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      border: 1px solid #ddd;
-    }
-
-    .timer-label {
-      font-size: 14px;
-      color: #333;
-      white-space: nowrap;
-    }
-
-    .timer {
-      font-size: 16px;
-      font-weight: bold;
-      background-color: #4CAF50;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 15px;
-      min-width: 60px;
-      text-align: center;
-      transition: background-color 0.3s;
-    }
-
-    .timer.warning {
-      background-color: #FF9800;
-    }
-
-    .timer.danger {
-      background-color: #f44336;
-    }
-
-    .section-score {
-      margin-top: 10px;
-      font-size: 15px;
-      color: #555;
-    }
-
-    .timeout-warning {
-      color: #f44336;
-      font-weight: bold;
-      margin-top: 15px;
-      font-size: 16px;
-    }
-    
-    /* Next question button */
-    .next-btn {
-      padding: 8px 15px;
-      background-color: #2196F3;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      margin-top: 15px;
-      font-size: 14px;
-    }
-
-    .next-btn:hover {
-      background-color: #0b7dda;
-    }
-
-    /* ========== RESULTS UI STYLES ========== */
-    #final-score {
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 700px;
-      margin: 20px auto;
-    }
-
-    .total-score-container {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .final-score-display {
-      font-size: 48px;
-      font-weight: bold;
-      margin: 15px 0;
-      padding: 20px;
-      border-radius: 10px;
-      position: relative;
-    }
-
-    .final-score-display.pass {
-      background: #e8f5e9;
-      color: #2e7d32;
-    }
-
-    .final-score-display.fail {
-      background: #ffebee;
-      color: #c62828;
-    }
-
-    .result-label {
-      font-size: 20px;
-      margin-top: 10px;
-    }
-
-    .section-scores-container {
-      margin-top: 20px;
-    }
-
-    .section-score {
-      margin-bottom: 20px;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      font-weight: 500;
-    }
-
-    .progress-bar {
-      height: 20px;
-      background: #f0f0f0;
-      border-radius: 10px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      border-radius: 10px;
-      transition: width 0.5s ease;
-    }
-
-    /* Section-specific colors for progress bars */
-    .section-score:nth-child(1) .progress-fill { background: #4CAF50; }
-    .section-score:nth-child(2) .progress-fill { background: #2196F3; }
-    .section-score:nth-child(3) .progress-fill { background: #9C27B0; }
-    .section-score:nth-child(4) .progress-fill { background: #FF9800; }
-
-    /* Responsive adjustments */
+    /* ===== MOBILE RESPONSIVE ===== */
     @media (max-width: 768px) {
       body {
         padding: 15px;
-        margin-top: 80px;
+        margin-top: 50px;
       }
       
       .section {
-        padding: 15px 15px 15px 50px;
-      }
-      
-      .question-block {
-        padding: 12px;
+        padding: 15px 15px 15px 42px !important; /* ဘယ်ဘက် padding လျှော့ */
+        margin: 0 5px 15px 8px !important; /* ဘေးဘက်များ ချိန်ညှိ */
       }
       
       .question-nav {
-        left: -35px;
+        left: -32px !important; /* နံပါတ်ခလုတ်များ ညာဘက်သို့နည်းနည်းရွှေ့ */
+        padding: 4px 2px !important;
+        gap: 4px !important;
       }
       
       .question-btn {
-        width: 26px;
-        height: 26px;
-      }
-
-      .timer-container {
-        top: 5px;
-        right: 5px;
+        width: 26px !important;
+        height: 26px !important;
+        font-size: 11px !important;
       }
       
-      .final-score-display {
-        font-size: 36px;
-        padding: 15px;
+      .question-block {
+        padding: 12px 10px !important;
+        margin-right: 0 !important;
+      }
+      
+      .option-box {
+        padding: 8px 12px !important;
+        font-size: 14px !important;
+      }
+    }
+
+    /* အလွန်သေးငယ်သော ဖုန်းများအတွက် */
+    @media (max-width: 360px) {
+      .section {
+        padding-left: 38px !important;
+      }
+      
+      .question-nav {
+        left: -30px !important;
+      }
+      
+      .question-btn {
+        width: 24px !important;
+        height: 24px !important;
       }
     }
 </style>
@@ -1355,3 +1161,4 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       }
     }
 </script>
+
