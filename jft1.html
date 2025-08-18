@@ -65,25 +65,21 @@
       font-weight: bold;
     }
 
-    /* Updated image styles to take full width */
     .question-block img {
-      width: 100%;
       max-width: 100%;
       height: auto;
       margin-bottom: 10px;
       border: 1px solid #ddd;
       border-radius: 4px;
-      display: block;
     }
 
-    /* Updated Top Question Navigation Styles */
+    /* Top Question Navigation Styles */
     .top-question-nav {
       display: flex;
-      gap: 4px;
+      gap: 6px;
       justify-content: center;
       margin-bottom: 15px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
+      flex-wrap: wrap;
       background-color: rgba(255,255,255,0.9);
       padding: 8px;
       border-radius: 8px;
@@ -92,14 +88,11 @@
       position: sticky;
       top: 60px;
       z-index: 100;
-      white-space: nowrap;
     }
 
-    /* Smaller question navigation buttons */
     .question-btn {
-      width: 26px;
-      height: 26px;
-      min-width: 26px;
+      width: 30px;
+      height: 30px;
       border-radius: 4px;
       background-color: #4CAF50;
       color: white;
@@ -108,7 +101,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 11px;
+      font-size: 12px;
       transition: all 0.2s;
     }
 
@@ -353,14 +346,6 @@
       
       .top-question-nav {
         top: 50px;
-        gap: 3px;
-      }
-
-      .question-btn {
-        width: 22px;
-        height: 22px;
-        min-width: 22px;
-        font-size: 10px;
       }
 
       .timer-container {
@@ -1380,6 +1365,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
 </script>
 </body>
 </html>
+
 
 
 
