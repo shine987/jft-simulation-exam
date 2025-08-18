@@ -73,41 +73,50 @@
       border-radius: 4px;
     }
 
-    /* Top Question Navigation Styles */
-   .top-question-nav {
-  display: flex;
-  gap: 1px; /* gap ကိုနည်းနည်းလျှော့ */
-  justify-content: center;
-  margin-bottom: 15px;
-  flex-wrap: nowrap; /* wrap မလုပ်တော့ပါ */
-  overflow-x: auto; /* လိုအပ်ရင် scroll ဖြစ်အောင် */
-  padding: 8px;
-  background-color: rgba(255,255,255,0.9);
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  border: 1px solid #ddd;
-  position: sticky;
-  top: 60px;
-  z-index: 100;
-  white-space: nowrap; /* text တွေမကျွတ်အောင် */
-}
+    /* Improved Top Question Navigation */
+    .top-question-nav {
+      display: flex;
+      gap: 2px;
+      justify-content: flex-start;
+      margin-bottom: 15px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 6px 8px;
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      position: sticky;
+      top: 60px;
+      z-index: 100;
+      white-space: nowrap;
+    }
 
-.question-btn {
-  width: 10px; /* width ကိုနည်းနည်းလျှော့ */
-  height: 24px; /* height ကိုနည်းနည်းလျှော့ */
-  min-width: 10px; /* minimum width သတ်မှတ် */
-  border-radius: 2px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px; /* font size နည်းနည်းလျှော့ */
-  transition: all 0.2s;
-  flex-shrink: 0; /* button တွေမကျုံ့အောင် */
-}
+    .top-question-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .question-btn {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border-radius: 3px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
     .question-btn:hover {
       background-color: #3e8e41;
       transform: scale(1.05);
@@ -115,7 +124,6 @@
 
     .question-btn.active {
       background-color: #2E7D32;
-      font-weight: bold;
       transform: scale(1.1);
     }
 
@@ -358,6 +366,40 @@
       .final-score-display {
         font-size: 36px;
         padding: 15px;
+      }
+      
+      .question-btn {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .question-btn {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        font-size: 10px;
+      }
+      
+      .top-question-nav {
+        padding: 4px 6px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .question-btn {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+        font-size: 9px;
+      }
+      
+      .timer-container {
+        font-size: 14px;
+        padding: 4px 8px;
       }
     }
 </style>
@@ -1368,6 +1410,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
 </script>
 </body>
 </html>
+
 
 
 
