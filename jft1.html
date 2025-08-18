@@ -1097,7 +1097,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       startTimer();
       setupAudioLimits();
       initializeQuestionNavigation();
-      showQuestion(0); // Show first question in first section
+      showQuestion(0, 1); // Show first question in first section
     });
 
     function startTimer() {
@@ -1177,17 +1177,24 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       const section = document.getElementById(`section${sectionNum}`);
       const questions = section.querySelectorAll('.question-block');
       
+      // Remove existing navigation if any
+      const existingNav = section.querySelector('.top-question-nav');
+      if (existingNav) {
+        existingNav.remove();
+      }
+      
       const nav = document.createElement('div');
       nav.className = 'top-question-nav';
       nav.id = `top-nav-section${sectionNum}`;
       
+      // Create buttons for all questions (1-10)
       for (let i = 0; i < questions.length; i++) {
         const btn = document.createElement('button');
         btn.className = 'question-btn';
-        btn.textContent = i + 1;
+        btn.textContent = i + 1; // Display question numbers starting from 1
         btn.onclick = () => {
           currentSection = sectionNum;
-          showQuestion(i);
+          showQuestion(i, sectionNum);
         };
         nav.appendChild(btn);
       }
@@ -1196,8 +1203,8 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       section.insertBefore(nav, section.firstChild);
     }
 
-    function showQuestion(questionIndex) {
-      const section = document.getElementById(`section${currentSection}`);
+    function showQuestion(questionIndex, sectionNum = currentSection) {
+      const section = document.getElementById(`section${sectionNum}`);
       const questions = section.querySelectorAll('.question-block');
       const navButtons = section.querySelectorAll('.question-btn');
       
@@ -1209,10 +1216,13 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       
       // Update navigation buttons
       navButtons.forEach(btn => btn.classList.remove('active'));
-      navButtons[questionIndex].classList.add('active');
+      if (navButtons[questionIndex]) {
+        navButtons[questionIndex].classList.add('active');
+      }
       
-      // Update current question index
+      // Update current question index and section
       currentQuestion = questionIndex;
+      currentSection = sectionNum;
       
       // Scroll to the question
       questions[questionIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1370,6 +1380,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
 </script>
 </body>
 </html>
+
 
 
 
