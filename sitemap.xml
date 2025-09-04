@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://shine987.github.io/jft-simulation-exam/">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://shine987.github.io/jft-simulation-exam/ </loc>
-      <priority>1.0</priority>
+      <loc>https://shine987.github.io/jft-simulation-exam/</loc>
    </url>
    <url>
-      <loc> https://shine987.github.io/jft-simulation-exam/jft1.html</loc>
-      <priority>0.8</priority>
+      <loc>https://shine987.github.io/jft-simulation-exam/jft1.html</loc>
    </url>
    <url>
-      <loc> https://shine987.github.io/jft-simulation-exam/jft2.html</loc>
-      <priority>0.8</priority>
+      <loc>https://shine987.github.io/jft-simulation-exam/jft2.html</loc>
    </url>
    <url>
-      <loc> https://shine987.github.io/jft-simulation-exam/jft3.html</loc>
-      <priority>0.8</priority>
+      <loc>https://shine987.github.io/jft-simulation-exam/jft3.html</loc>
    </url>
    <url>
-      <loc> https://shine987.github.io/jft-Simulation-exam/jft4.html</loc>
-      <priority>0.8</priority>
+      <loc>https://shine987.github.io/jft-simulation-exam/jft4.html</loc>
    </url>
    <url>
-      <loc> https://shine987.github.io/jft-simulation-exam/jft5.html</loc>
-      <priority>0.8</priority>
+      <loc>https://shine987.github.io/jft-simulation-exam/jft5.html</loc>
    </url>
    <url>
-      <loc> https://shine987.github.io/jft-simulation-exam/jft6.html</loc>
-      <priority>0.8</priority>
+      <loc>https://shine987.github.io/jft-simulation-exam/jft6.html</loc>
    </url>
-
 </urlset>
