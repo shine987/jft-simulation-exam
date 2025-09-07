@@ -676,7 +676,7 @@
   </div>
 
   <div id="exam-container">
-  <!-- Section 1 -->
+   <!-- Section 1 -->
     <div class="section" id="section1">
       <h2>"Script and Vocabulary"</h2>
 
@@ -1419,7 +1419,65 @@
       
       // Start the 60-second countdown for the start button
       startStartButtonTimer();
+      
+      // Block pop-up ads from the beginning
+      blockPopUpAds();
     });
+
+    // Pop-up ad blocker function
+    function blockPopUpAds() {
+      // Prevent window.open from being hijacked
+      const originalWindowOpen = window.open;
+      window.open = function() {
+        console.log('Blocked pop-up ad');
+        return null;
+      };
+      
+      // Override alert and confirm dialogs that might be used by ads
+      const originalAlert = window.alert;
+      const originalConfirm = window.confirm;
+      
+      window.alert = function() { 
+        console.log('Blocked alert dialog');
+        return;
+      };
+      
+      window.confirm = function() { 
+        console.log('Blocked confirm dialog');
+        return false;
+      };
+      
+      // Monitor for dynamically created elements that might be ads
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          mutation.addedNodes.forEach(function(node) {
+            if (node.nodeType === 1) { // Element node
+              if (node.innerHTML && 
+                 (node.innerHTML.includes('download') || 
+                  node.innerHTML.includes('proceed') ||
+                  node.innerHTML.includes('install') ||
+                  node.innerHTML.match(/free|win|prize|reward|click|offer|deal/i))) {
+                console.log('Removing suspicious element:', node);
+                node.remove();
+              }
+            }
+          });
+        });
+      });
+      
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      
+      // Also check for iframes that might contain ads
+      document.querySelectorAll('iframe').forEach(iframe => {
+        if (iframe.src.includes('revenuecpmgate') || 
+            iframe.src.includes('highperformanceformat')) {
+          iframe.remove();
+        }
+      });
+    }
 
     // Start button countdown timer
     function startStartButtonTimer() {
@@ -1441,12 +1499,35 @@
       }, 1000);
     }
 
+    // Ad management functions
+    function hideAllAdsExceptBanner() {
+      // Hide ad overlay
+      document.getElementById('ad-overlay').style.display = 'none';
+      
+      // Hide adsterra native
+      document.getElementById('adsterra-native').style.display = 'none';
+      
+      // Hide social bar
+      document.getElementById('social-bar').style.display = 'none';
+      
+      // Remove ad scripts to prevent future loading (except banner)
+      const adScripts = document.querySelectorAll('script[src*="revenuecpmgate"]');
+      adScripts.forEach(script => script.remove());
+    }
+
     // Start exam when button is clicked
     document.getElementById('start-exam-btn').addEventListener('click', function() {
       if (startTimerValue > 0) return; // Prevent clicking before timer ends
       
       this.style.display = 'none';
       document.getElementById('start-timer').style.display = 'none';
+      
+      // Re-apply ad blocking when starting exam
+      blockPopUpAds();
+      
+      // Hide all ads except banner when exam starts
+      hideAllAdsExceptBanner();
+      
       startTimer();
       setupAudioLimits();
       initializeQuestionNavigation();
@@ -1492,6 +1573,10 @@
           forceFinishSection(i);
         }
       }
+      
+      // Hide ads when exam auto-submits
+      hideAllAdsExceptBanner();
+      
       showFinalScore();
       document.getElementById('timeout-warning').textContent = 
         "မှတ်ချက်-စာမေးပွဲတွင် အချိန်မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
@@ -1727,7 +1812,7 @@
       
       if (isTimeout) {
         document.getElementById('timeout-warning').textContent = 
-          "မှတ်ချက်-စာမေးပွဲတွင် အချိန်မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
+          "မှတ်ချက်-စာမေးပွဲတွင် အချိန်�မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
       }
     }
   </script>
