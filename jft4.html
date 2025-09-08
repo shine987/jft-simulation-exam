@@ -1,18 +1,154 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- <script async src="https://www.googletagmanager.com/gtag/js?id=G-798CJCLWDZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-798CJCLWDZ');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-798CJCLWDZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-798CJCLWDZ');
+  </script>
+  
   <title>JFT-Basic Exam</title>
-<style>
+  <style>
+    /* Ad overlay styles */
+    #ad-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      color: white;
+      display: none; /* Hide by default */
+    }
+    
+    #ad-content {
+      width: 728px;
+      height: 90px;
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+    }
+    
+    #ad-timer {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #ff5722;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    #start-exam-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      padding: 15px 25px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      z-index: 10000;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: all 0.3s;
+    }
+    
+    #start-exam-btn:hover {
+      background: #3e8e41;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+    
+    #start-exam-btn:disabled {
+      background: #cccccc;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+    
+    #start-timer {
+      position: fixed;
+      top: 70px;
+      left: 20px;
+      background: #ff5722;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-size: 14px;
+      z-index: 10000;
+    }
+    
+    /* Adsterra ads container */
+    #adsterra-banner {
+      margin: 20px auto;
+      text-align: center;
+      width: 728px;
+      height: 90px;
+    }
+    
+    #adsterra-native {
+      margin: 15px auto;
+      text-align: center;
+      display: none; /* Hide native banner */
+    }
+    
+    /* Social Bar Ads Styles */
+    #social-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #f5f5f5;
+      padding: 3px;
+      text-align: center;
+      z-index: 1000;
+      border-top: 1px solid #ddd;
+      font-size: 10px;
+      height: 22px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    #social-bar a {
+      margin: 0 3px;
+      text-decoration: none;
+      color: #333;
+      font-size: 9px;
+      padding: 1px 3px;
+    }
+    
+    #social-bar span {
+      margin-right: 5px;
+      font-size: 9px;
+    }
+    
+    /* Rest of the existing styles */
     body {
       font-family: sans-serif;
       padding: 20px;
@@ -348,6 +484,18 @@
     .section-score:nth-child(4) .progress-fill { background: #FF9800; }
 
     /* Responsive adjustments */
+    @media (max-width: 900px) {
+      #ad-content {
+        width: 468px;
+        height: 60px;
+      }
+      
+      #adsterra-banner {
+        width: 468px;
+        height: 60px;
+      }
+    }
+
     @media (max-width: 768px) {
       body {
         padding: 15px;
@@ -382,6 +530,27 @@
         min-width: 22px;
         font-size: 11px;
       }
+      
+      #ad-content {
+        width: 320px;
+        height: 50px;
+      }
+      
+      #adsterra-banner {
+        width: 320px;
+        height: 50px;
+      }
+      
+      #social-bar {
+        height: 20px;
+        font-size: 9px;
+      }
+      
+      #social-bar a {
+        margin: 0 2px;
+        font-size: 8px;
+        padding: 1px 2px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -394,6 +563,40 @@
       
       .top-question-nav {
         padding: 4px 6px;
+      }
+      
+      #ad-content {
+        width: 300px;
+        height: 100px;
+      }
+      
+      #start-exam-btn {
+        top: 10px;
+        left: 10px;
+        padding: 12px 20px;
+        font-size: 16px;
+      }
+      
+      #adsterra-banner {
+        width: 300px;
+        height: 100px;
+      }
+      
+      #social-bar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 2px;
+        font-size: 8px;
+      }
+      
+      #social-bar span {
+        display: none;
+      }
+      
+      #social-bar a {
+        margin: 0 1px;
+        font-size: 7px;
+        padding: 1px 2px;
       }
     }
 
@@ -409,16 +612,68 @@
         font-size: 14px;
         padding: 4px 8px;
       }
+      
+      #ad-content {
+        width: 280px;
+        height: 100px;
+      }
+      
+      #adsterra-banner {
+        width: 280px;
+        height: 100px;
+      }
+      
+      #social-bar {
+        font-size: 7px;
+      }
+      
+      #social-bar a {
+        font-size: 6px;
+      }
     }
-</style>
+  </style>
 </head>
 <body>
+  <!-- Ad overlay for initial page load -->
+  <div id="ad-overlay">
+    <div id="ad-content">
+      <div id="ad-timer">30</div>
+      <h3>Adsterra Ad</h3>
+      <p>This is a mock advertisement. In production, real Adsterra ads would be displayed here.</p>
+    </div>
+  </div>
+  
+  <!-- Start Exam Button with Timer -->
+  <button id="start-exam-btn" disabled>Start Exam (60s)</button>
+  <div id="start-timer">60 seconds remaining</div>
+  
+  <!-- Exam Timer -->
   <div class="timer-container" id="timerContainer">
     <span class="timer-label">Exam Time Remaining:</span>
     <div class="timer" id="timer">60:00</div>
   </div>
   
   <h1>JFT-A2 Simulation Exam</h1>
+
+  <!-- Adsterra Banner Ad -->
+  <div id="adsterra-banner">
+    <script type="text/javascript">
+      atOptions = {
+        'key' : '701f751a3fac00386f707a5f799a362d',
+        'format' : 'iframe',
+        'height' : 90,
+        'width' : 728,
+        'params' : {}
+      };
+    </script>
+    <script type="text/javascript" src="//www.highperformanceformat.com/701f751a3fac00386f707a5f799a362d/invoke.js"></script>
+  </div>
+
+  <!-- Adsterra Native Banner Ad (hidden) -->
+  <div id="adsterra-native">
+    <script async="async" data-cfasync="false" src="//pl27589243.revenuecpmgate.com/a48199d3e06ecc015868ea3885c51e0c/invoke.js"></script>
+    <div id="container-a48199d3e06ecc015868ea3885c51e0c"></div>
+  </div>
 
   <div id="exam-container">
     <!-- Section 1 -->
@@ -1173,15 +1428,31 @@
       <button onclick="finishSection(4)">Finished Section 4</button>
     </div>
 
-  <div id="final-score" style="display: none;">
-    <h2>Result</h2>
-    <p id="total-score"></p>
-    <div id="section-scores"></div>
-    <p id="pass-fail"></p>
-    <p class="timeout-warning" id="timeout-warning"></p>
+    <div id="final-score" style="display: none;">
+      <h2>Result</h2>
+      <p id="total-score"></p>
+      <div id="section-scores"></div>
+      <p id="pass-fail"></p>
+      <p class="timeout-warning" id="timeout-warning"></p>
+    </div>
   </div>
 
-<script>
+  <!-- Social Bar Ads -->
+  <div id="social-bar">
+    <span>Follow us:</span>
+    <a href="#">Facebook</a>
+    <a href="#">Twitter</a>
+    <a href="#">Instagram</a>
+  </div>
+  
+  <!-- Adsterra Social Bar Ad Script -->
+  <script type='text/javascript' src='//pl27590357.revenuecpmgate.com/e0/2b/6f/e02b6fa05bc3ae8155b0ff5f7ce574ab.js'></script>
+
+  <!-- Adsterra Popunder Ad -->
+  <script type='text/javascript' src='//pl27589013.revenuecpmgate.com/bf/24/14/bf241417ba1b5f9fbd852dd0e7fe018f.js'></script>
+
+  <script>
+    // Exam variables
     let sectionScores = [];
     const playCounts = {
       audio1: 2,
@@ -1200,9 +1471,128 @@
     let isTimeout = false;
     let currentSection = 1; // Track current visible section
     let currentQuestion = 0; // Track current question index in current section
+    
+    // Start button timer variables
+    let startTimerValue = 60;
+    let startTimerInterval;
 
     // Initialize when page loads
     document.addEventListener('DOMContentLoaded', function() {
+      // Show start button immediately but disabled
+      document.getElementById('start-exam-btn').style.display = 'block';
+      document.getElementById('start-timer').style.display = 'block';
+      
+      // Start the 60-second countdown for the start button
+      startStartButtonTimer();
+      
+      // Block pop-up ads from the beginning
+      blockPopUpAds();
+    });
+
+    // Pop-up ad blocker function
+    function blockPopUpAds() {
+      // Prevent window.open from being hijacked
+      const originalWindowOpen = window.open;
+      window.open = function() {
+        console.log('Blocked pop-up ad');
+        return null;
+      };
+      
+      // Override alert and confirm dialogs that might be used by ads
+      const originalAlert = window.alert;
+      const originalConfirm = window.confirm;
+      
+      window.alert = function() { 
+        console.log('Blocked alert dialog');
+        return;
+      };
+      
+      window.confirm = function() { 
+        console.log('Blocked confirm dialog');
+        return false;
+      };
+      
+      // Monitor for dynamically created elements that might be ads
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          mutation.addedNodes.forEach(function(node) {
+            if (node.nodeType === 1) { // Element node
+              if (node.innerHTML && 
+                 (node.innerHTML.includes('download') || 
+                  node.innerHTML.includes('proceed') ||
+                  node.innerHTML.includes('install') ||
+                  node.innerHTML.match(/free|win|prize|reward|click|offer|deal/i))) {
+                console.log('Removing suspicious element:', node);
+                node.remove();
+              }
+            }
+          });
+        });
+      });
+      
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true
+      });
+      
+      // Also check for iframes that might contain ads
+      document.querySelectorAll('iframe').forEach(iframe => {
+        if (iframe.src.includes('revenuecpmgate') || 
+            iframe.src.includes('highperformanceformat')) {
+          iframe.remove();
+        }
+      });
+    }
+
+    // Start button countdown timer
+    function startStartButtonTimer() {
+      startTimerValue = 60;
+      document.getElementById('start-timer').textContent = startTimerValue + ' seconds remaining';
+      document.getElementById('start-exam-btn').textContent = 'Start Exam (' + startTimerValue + 's)';
+      
+      startTimerInterval = setInterval(function() {
+        startTimerValue--;
+        document.getElementById('start-timer').textContent = startTimerValue + ' seconds remaining';
+        document.getElementById('start-exam-btn').textContent = 'Start Exam (' + startTimerValue + 's)';
+        
+        if (startTimerValue <= 0) {
+          clearInterval(startTimerInterval);
+          document.getElementById('start-exam-btn').disabled = false;
+          document.getElementById('start-exam-btn').textContent = 'Start Exam Now';
+          document.getElementById('start-timer').style.display = 'none';
+        }
+      }, 1000);
+    }
+
+    // Ad management functions
+    function hideAllAdsExceptBanner() {
+      // Hide ad overlay
+      document.getElementById('ad-overlay').style.display = 'none';
+      
+      // Hide adsterra native
+      document.getElementById('adsterra-native').style.display = 'none';
+      
+      // Hide social bar
+      document.getElementById('social-bar').style.display = 'none';
+      
+      // Remove ad scripts to prevent future loading (except banner)
+      const adScripts = document.querySelectorAll('script[src*="revenuecpmgate"]');
+      adScripts.forEach(script => script.remove());
+    }
+
+    // Start exam when button is clicked
+    document.getElementById('start-exam-btn').addEventListener('click', function() {
+      if (startTimerValue > 0) return; // Prevent clicking before timer ends
+      
+      this.style.display = 'none';
+      document.getElementById('start-timer').style.display = 'none';
+      
+      // Re-apply ad blocking when starting exam
+      blockPopUpAds();
+      
+      // Hide all ads except banner when exam starts
+      hideAllAdsExceptBanner();
+      
       startTimer();
       setupAudioLimits();
       initializeQuestionNavigation();
@@ -1248,6 +1638,10 @@
           forceFinishSection(i);
         }
       }
+      
+      // Hide ads when exam auto-submits
+      hideAllAdsExceptBanner();
+      
       showFinalScore();
       document.getElementById('timeout-warning').textContent = 
         "မှတ်ချက်-စာမေးပွဲတွင် အချိန်မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
@@ -1483,12 +1877,9 @@
       
       if (isTimeout) {
         document.getElementById('timeout-warning').textContent = 
-          "မှတ်ချက်-စာမေးပွဲတွင် အချိန်မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
+          "မှတ်ချက်-စာမေးပွဲတွင် အချိန်�မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
       }
     }
-</script>
+  </script>
 </body>
-
 </html>
-
-
