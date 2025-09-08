@@ -3,14 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-798CJCLWDZ"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-798CJCLWDZ');
-  </script>
-  
   <title>JFT-Basic Exam</title>
   <style>
     /* Ad overlay styles */
@@ -27,7 +19,6 @@
       align-items: center;
       z-index: 9999;
       color: white;
-      display: none; /* Hide by default */
     }
     
     #ad-content {
@@ -634,14 +625,7 @@
   </style>
 </head>
 <body>
-  <!-- Ad overlay for initial page load -->
-  <div id="ad-overlay">
-    <div id="ad-content">
-      <div id="ad-timer">30</div>
-      <h3>Adsterra Ad</h3>
-      <p>This is a mock advertisement. In production, real Adsterra ads would be displayed here.</p>
-    </div>
-  </div>
+
   
   <!-- Start Exam Button with Timer -->
   <button id="start-exam-btn" disabled>Start Exam (60s)</button>
@@ -675,7 +659,8 @@
     <div id="container-a48199d3e06ecc015868ea3885c51e0c"></div>
   </div>
 
-  <div id="exam-container"><!-- Section 1 -->
+  <div id="exam-container">
+   <!-- Section 1 -->
     <div class="section" id="section1">
       <h2>Script and Vocabulary</h2>
 
@@ -1403,6 +1388,8 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
     // Start button timer variables
     let startTimerValue = 60;
     let startTimerInterval;
+    let adTimerValue = 5;
+    let adTimerInterval;
 
     // Initialize when page loads
     document.addEventListener('DOMContentLoaded', function() {
@@ -1410,66 +1397,26 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       document.getElementById('start-exam-btn').style.display = 'block';
       document.getElementById('start-timer').style.display = 'block';
       
-      // Start the 60-second countdown for the start button
-      startStartButtonTimer();
-      
-      // Block pop-up ads from the beginning
-      blockPopUpAds();
+      // Start the 5-second ad timer
+      startAdTimer();
     });
 
-    // Pop-up ad blocker function
-    function blockPopUpAds() {
-      // Prevent window.open from being hijacked
-      const originalWindowOpen = window.open;
-      window.open = function() {
-        console.log('Blocked pop-up ad');
-        return null;
-      };
+    // Start ad timer
+    function startAdTimer() {
+      adTimerValue = 5;
+      document.getElementById('ad-timer').textContent = adTimerValue;
       
-      // Override alert and confirm dialogs that might be used by ads
-      const originalAlert = window.alert;
-      const originalConfirm = window.confirm;
-      
-      window.alert = function() { 
-        console.log('Blocked alert dialog');
-        return;
-      };
-      
-      window.confirm = function() { 
-        console.log('Blocked confirm dialog');
-        return false;
-      };
-      
-      // Monitor for dynamically created elements that might be ads
-      const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-          mutation.addedNodes.forEach(function(node) {
-            if (node.nodeType === 1) { // Element node
-              if (node.innerHTML && 
-                 (node.innerHTML.includes('download') || 
-                  node.innerHTML.includes('proceed') ||
-                  node.innerHTML.includes('install') ||
-                  node.innerHTML.match(/free|win|prize|reward|click|offer|deal/i))) {
-                console.log('Removing suspicious element:', node);
-                node.remove();
-              }
-            }
-          });
-        });
-      });
-      
-      observer.observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-      
-      // Also check for iframes that might contain ads
-      document.querySelectorAll('iframe').forEach(iframe => {
-        if (iframe.src.includes('revenuecpmgate') || 
-            iframe.src.includes('highperformanceformat')) {
-          iframe.remove();
+      adTimerInterval = setInterval(function() {
+        adTimerValue--;
+        document.getElementById('ad-timer').textContent = adTimerValue;
+        
+        if (adTimerValue <= 0) {
+          clearInterval(adTimerInterval);
+          document.getElementById('ad-overlay').style.display = 'none';
+          // Start the 60-second countdown for the start button
+          startStartButtonTimer();
         }
-      });
+      }, 1000);
     }
 
     // Start button countdown timer
@@ -1502,21 +1449,14 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       
       // Hide social bar
       document.getElementById('social-bar').style.display = 'none';
-      
-      // Remove ad scripts to prevent future loading (except banner)
-      const adScripts = document.querySelectorAll('script[src*="revenuecpmgate"]');
-      adScripts.forEach(script => script.remove());
     }
 
     // Start exam when button is clicked
     document.getElementById('start-exam-btn').addEventListener('click', function() {
-      if (startTimerValue > 0) return; // Prevent clicking before timer ends
+      if (this.disabled) return; // Prevent clicking if still disabled
       
       this.style.display = 'none';
       document.getElementById('start-timer').style.display = 'none';
-      
-      // Re-apply ad blocking when starting exam
-      blockPopUpAds();
       
       // Hide all ads except banner when exam starts
       hideAllAdsExceptBanner();
@@ -1618,7 +1558,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       nav.className = 'top-question-nav';
       nav.id = `top-nav-section${sectionNum}`;
       
-      // Create buttons for all questions (1-10)
+      // Create buttons for all questions
       for (let i = 0; i < questions.length; i++) {
         const btn = document.createElement('button');
         btn.className = 'question-btn';
@@ -1805,9 +1745,10 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
       
       if (isTimeout) {
         document.getElementById('timeout-warning').textContent = 
-          "မှတ်ချက်-စာမေးပွဲတွင် အချိန်�မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
+          "မှတ်ချက်-စာမေးပွဲတွင် အချိန်မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
       }
     }
   </script>
 </body>
 </html>
+
