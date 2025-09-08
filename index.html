@@ -3,29 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Google Search Console Verification -->
-    <meta name="google-site-verification" content="V3WMA7iKv-EQdM21VmcqKbD9r3zCJmuQ534eSqfiyrA" />
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-798CJCLWDZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-798CJCLWDZ');
-</script>
-    <!-- SEO Meta Tags -->
-    <title>JFT Simulation Exam - Free Online Practice Test for Japanese Language Proficiency</title>
-    <meta name="description" content="Prepare for your JFT exam with our free online simulation test. Practice with real exam-like questions and improve your Japanese language proficiency." />
-    <meta name="keywords" content="jft, jft simulation, jft exam, japanese test, jft practice test, free jft exam, jft simulation exam, japanese language test" />
-    <link rel="canonical" href="https://shine987.github.io/jft-simulation-exam/" />
-    
-    <!-- Open Graph Meta Tags for Social Media -->
-    <meta property="og:title" content="JFT Simulation Exam - Free Online Practice Test" />
-    <meta property="og:description" content="Prepare for your JFT exam with our free online simulation test. Practice with real exam-like questions." />
-    <meta property="og:url" content="https://shine987.github.io/jft-simulation-exam/" />
-    <meta property="og:type" content="website" />
-    
+    <title>JFT Simulation Exam - Free Online Practice Test</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
@@ -41,12 +19,12 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f5f7fa;
-            color: var(--dark);
+            color: #212529;
             line-height: 1.6;
         }
         
@@ -58,7 +36,7 @@
         
         /* Header Styles */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            background: linear-gradient(135deg, #3a86ff, #2667cc);
             color: white;
             padding: 1rem 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -79,7 +57,7 @@
         
         .logo i {
             margin-right: 10px;
-            color: var(--accent);
+            color: #8338ec;
         }
         
         .nav-links {
@@ -101,8 +79,47 @@
         }
         
         .nav-links a:hover {
-            color: var(--accent);
-            border-bottom: 2px solid var(--accent);
+            color: #8338ec;
+            border-bottom: 2px solid #8338ec;
+        }
+        
+        /* Service Banner */
+        .service-banner {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-banner h3 {
+            color: #d44141;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-banner p {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #8338ec, #3a86ff);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         
         /* Main Content */
@@ -118,7 +135,7 @@
         .intro h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--secondary);
+            color: #2667cc;
         }
         
         .intro p {
@@ -126,21 +143,6 @@
             color: #666;
             max-width: 700px;
             margin: 0 auto;
-        }
-        
-        /* Ad Banner */
-        .ad-banner {
-            background-color: #e9ecef;
-            padding: 1.5rem;
-            text-align: center;
-            border-radius: 8px;
-            margin: 2rem 0;
-            border: 1px dashed #adb5bd;
-        }
-        
-        .ad-banner p {
-            color: #6c757d;
-            margin-bottom: 0.5rem;
         }
         
         /* Button Grid */
@@ -154,7 +156,7 @@
         .exam-btn {
             padding: 1.5rem;
             font-size: 1.2rem;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, #3a86ff, #8338ec);
             color: white;
             border: none;
             border-radius: 10px;
@@ -176,47 +178,94 @@
         .exam-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(135deg, var(--accent), var(--primary));
+            background: linear-gradient(135deg, #8338ec, #3a86ff);
         }
         
-        /* Contact Info Styles */
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
+        /* Notice Modal Styles */
+        .notice-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
             justify-content: center;
-            gap: 10px;
-            padding: 10px;
+            align-items: center;
+        }
+        
+        .notice-modal-content {
+            background-color: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 600px;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .notice-header {
+            background: linear-gradient(135deg, #3a86ff, #2667cc);
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        
+        .notice-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+        
+        .notice-body {
+            padding: 20px;
+        }
+        
+        .notice-message {
             background-color: #f8f9fa;
+            padding: 15px;
             border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #8338ec;
+        }
+        
+        .notice-message p {
+            margin: 10px 0;
+            text-align: left;
+            line-height: 1.6;
+        }
+        
+        .notice-myanmar {
+            font-weight: bold;
+            color: #2667cc;
+            font-size: 1.1rem;
+        }
+        
+        .notice-actions {
+            display: flex;
+            justify-content: center;
+            padding: 15px;
+        }
+        
+        .notice-ok-btn {
+            background: linear-gradient(135deg, #06d6a0, #05a87e);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
-        .contact-item:hover {
-            background-color: #e9ecef;
-            transform: translateX(5px);
-        }
-        
-        .contact-item a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .contact-item a:hover {
-            color: var(--accent);
-            text-decoration: underline;
+        .notice-ok-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
         
         /* Footer */
         footer {
-            background-color: var(--dark);
+            background-color: #212529;
             color: white;
             text-align: center;
             padding: 2rem 0;
@@ -246,7 +295,7 @@
         }
         
         .footer-links a:hover {
-            color: var(--accent);
+            color: #8338ec;
         }
         
         .creator {
@@ -268,10 +317,32 @@
                 flex-direction: column;
                 gap: 10px;
             }
+            
+            .notice-modal-content {
+                width: 95%;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Notice Modal -->
+    <div class="notice-modal" id="noticeModal">
+        <div class="notice-modal-content">
+            <div class="notice-header">
+                <h3><i class="fas fa-info-circle"></i> သတိပြုရန်</h3>
+            </div>
+            <div class="notice-body">
+                <div class="notice-message">
+                    <p class="notice-myanmar">ကြော်ငြာများထည့်သွင်းထားသည် ဖြစ်သောကြောင့်  စာမေးပွဲ ဖြေဆိုချိန် အနှောက်အယှက်မဖြစ်စေရန် Start Exam ခလုတ်နှိပ်နိုင်ရန် ကြာချိန် 60s သတ်မှတ်ထားပါသည် 60s ပြည့်လျှင် စတင်ဖြေဆိုနိုင်ပါပြီ။တခြားကြော်ငြာလင့်များသို forward  ဖြစ်သွားလျှင် chrome ရဲ့ အောက်ခြေနားမှာ [:)] ပုံစံခလုတ်ကို နိပ်ပြီး JFT-Basic Exam ဆိုတဲ့ စာမေးပွဲ စာမျက်နှာကိုပြန်ရှာ ဝင်ရောက်နိုင်သည်။</p>
+                    <p>Since advertisements are included, a 60-second waiting time is set before you can press the Start Exam button to avoid interruptions during the test. After 60 seconds, you will be able to begin the exam.If you are forwarded to other advertisement links, you can tap the :) button at the bottom of Chrome to return and find the JFT-Basic Exam page again.</p>
+                </div>
+            </div>
+            <div class="notice-actions">
+                <button id="noticeOkBtn" class="notice-ok-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <nav>
@@ -294,35 +365,38 @@
             <p>Prepare for your Japanese Language Proficiency Test with these practice exams. Select any exam below to begin your preparation.</p>
         </section>
         
-        <!-- Ad Space -->
-        <div class="ad-banner">
-            <p><i class="fas fa-ad"></i> Advertisement Space</p>
-            <small>For Japanese language learning resources sponsorship opportunities</small>
+        <!-- Service Banner -->
+        <div class="service-banner">
+            <h3><i class="fas fa-bullhorn"></i> JFT, Tokutei, Nat Test Formများ တင်ရန် Service</h3>
+            <p>JFT, Tokutei, Nat Test Formများ တင်ရန် service အပ်လိုပါက လာရောက်အပ်နှံနိုင်ပါပြီ</p>
+            <a href="https://t.me/shinegyi123" target="_blank" class="contact-btn">
+                <i class="fab fa-telegram"></i> Telegram - shinegyi123
+            </a>
         </div>
         
         <!-- Exam Buttons -->
         <div class="button-container">
-            <button class="exam-btn" onclick="window.location.href='jft1.html'">
+            <button class="exam-btn" data-exam="jft1.html">
                 <i class="fas fa-file-alt"></i>
                 JFT-1 Practice Exam
             </button>
-            <button class="exam-btn" onclick="window.location.href='jft2.html'">
+            <button class="exam-btn" data-exam="jft2.html">
                 <i class="fas fa-file-alt"></i>
                 JFT-2 Practice Exam
             </button>
-            <button class="exam-btn" onclick="window.location.href='jft3.html'">
+            <button class="exam-btn" data-exam="jft3.html">
                 <i class="fas fa-file-alt"></i>
                 JFT-3 Practice Exam
             </button>
-            <button class="exam-btn" onclick="window.location.href='jft4.html'">
+            <button class="exam-btn" data-exam="jft4.html">
                 <i class="fas fa-file-alt"></i>
                 JFT-4 Practice Exam
             </button>
-            <button class="exam-btn" onclick="window.location.href='jft5.html'">
+            <button class="exam-btn" data-exam="jft5.html">
                 <i class="fas fa-file-alt"></i>
                 JFT-5 Practice Exam
             </button>
-            <button class="exam-btn" onclick="window.location.href='jft6.html'">
+            <button class="exam-btn" data-exam="jft6.html">
                 <i class="fas fa-file-alt"></i>
                 JFT-6 Practice Exam
             </button>
@@ -330,7 +404,7 @@
         
         <!-- About Section -->
         <section id="about" class="about-section" style="margin: 4rem 0; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-            <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--secondary);">About JFT Exam</h2>
+            <h2 style="text-align: center; margin-bottom: 1.5rem; color: #2667cc;">About JFT Exam</h2>
             <p style="text-align: center; max-width: 800px; margin: 0 auto;">
 The JFT (Japanese Language Test) is designed to measure the Japanese language proficiency of non-native speakers. 
                 These practice exams will help you prepare for the actual test by simulating the exam environment and question types.
@@ -339,25 +413,25 @@ The JFT (Japanese Language Test) is designed to measure the Japanese language pr
         
         <!-- Contact Section -->
         <section id="contact" class="contact-section" style="margin: 4rem 0; padding: 2rem; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
-            <h2 style="text-align: center; margin-bottom: 1.5rem; color: var(--secondary);">Contact For Support</h2>
+            <h2 style="text-align: center; margin-bottom: 1.5rem; color: #2667cc;">Contact For Support</h2>
             <div style="text-align: center; max-width: 600px; margin: 0 auto;">
                 <p>For questions about the JFT exam or technical support with these practice tests:</p>
                 
-                <div class="contact-info">
-                    <div class="contact-item">
+                <div class="contact-info" style="display: flex; flex-direction: column; gap: 15px; margin-top: 20px;">
+                    <div class="contact-item" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 8px; transition: all 0.3s ease;">
                         <i class="fas fa-envelope"></i>
                         <span>Email: </span>
-                        <a href="mailto:oooshine1@gmail.com">oooshine1@gmail.com</a>
+                        <a href="mailto:oooshine1@gmail.com" style="color: #3a86ff; text-decoration: none; transition: color 0.3s ease;">oooshine1@gmail.com</a>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 8px; transition: all 0.3s ease;">
                         <i class="fas fa-phone"></i>
                         <span>Phone: </span>
-                        <a href="tel:+959773883159">+959773883159</a>
+                        <a href="tel:+959773883159" style="color: #3a86ff; text-decoration: none; transition: color 0.3s ease;">+959773883159</a>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 8px; transition: all 0.3s ease;">
                         <i class="fab fa-telegram"></i>
                         <span>Telegram: </span>
-                        <a href="https://t.me/shinegyi123" target="_blank">@shinegyi123</a>
+                        <a href="https://t.me/shinegyi123" target="_blank" style="color: #3a86ff; text-decoration: none; transition: color 0.3s ease;">@shinegyi123</a>
                     </div>
                 </div>
             </div>
@@ -380,5 +454,42 @@ The JFT (Japanese Language Test) is designed to measure the Japanese language pr
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const noticeModal = document.getElementById('noticeModal');
+            const noticeOkBtn = document.getElementById('noticeOkBtn');
+            const examButtons = document.querySelectorAll('.exam-btn');
+            
+            let targetUrl = '';
+            
+            // Add click event to all exam buttons
+            examButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    targetUrl = this.getAttribute('data-exam');
+                    showNoticeModal();
+                });
+            });
+            
+            function showNoticeModal() {
+                noticeModal.style.display = 'flex';
+            }
+            
+            // OK button functionality
+            noticeOkBtn.addEventListener('click', function() {
+                noticeModal.style.display = 'none';
+                if (targetUrl) {
+                    window.location.href = targetUrl;
+                }
+            });
+            
+            // Close modal if clicked outside content
+            noticeModal.addEventListener('click', function(e) {
+                if (e.target === noticeModal) {
+                    noticeModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
