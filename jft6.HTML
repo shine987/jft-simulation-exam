@@ -1,0 +1,1418 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JFT-Basic Exam</title>
+<style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #f8f8f8;
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 100px;
+    }
+
+    #exam-container {
+      max-width: 900px;
+      width: 100%;
+      position: relative;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      border: 1px solid #ccc;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      margin-top: 0;
+    }
+
+    .question-block {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #f9f9f9;
+      border-radius: 6px;
+      font-size: 16px;
+      display: none;
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .question-block:first-child {
+      display: block;
+    }
+
+    .question-block p {
+      margin: 0 0 10px 0;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    .question-block img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    /* Improved Top Question Navigation */
+    .top-question-nav {
+      display: flex;
+      gap: 2px;
+      justify-content: flex-start;
+      margin-bottom: 15px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      padding: 6px 8px;
+      background-color: rgba(255,255,255,0.9);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+      position: sticky;
+      top: 60px;
+      z-index: 100;
+      white-space: nowrap;
+    }
+
+    .top-question-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .question-btn {
+      width: 24px;
+      height: 24px;
+      min-width: 24px;
+      border-radius: 3px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .question-btn:hover {
+      background-color: #3e8e41;
+      transform: scale(1.05);
+    }
+
+    .question-btn.active {
+      background-color: #2E7D32;
+      transform: scale(1.1);
+    }
+
+    .audio-container {
+      margin-bottom: 15px;
+    }
+
+    .play-count {
+      font-size: 14px;
+      color: #666;
+      margin-left: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .option-box {
+      display: block;
+      padding: 10px 15px;
+      margin: 8px 0;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 16px;
+    }
+
+    .option-box:hover {
+      background-color: #f0f0f0;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input[type="radio"]:checked + .option-box {
+      border-color: #4CAF50;
+      background-color: #e8f5e9;
+    }
+
+    .warning-box {
+      display: none;
+      padding: 15px;
+      margin: 15px auto;
+      background-color: #fff3cd;
+      border: 1px solid #ffeeba;
+      border-radius: 4px;
+      color: #856404;
+      text-align: center;
+      max-width: 500px;
+      font-size: 16px;
+    }
+
+    .options-container {
+      margin-left: 10px;
+    }
+
+    /* Timer container */
+    .timer-container {
+      position: fixed;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 1000;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 6px 10px;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #ddd;
+    }
+
+    .timer-label {
+      font-size: 14px;
+      color: #333;
+      white-space: nowrap;
+    }
+
+    .timer {
+      font-size: 16px;
+      font-weight: bold;
+      background-color: #4CAF50;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 15px;
+      min-width: 60px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .timer.warning {
+      background-color: #FF9800;
+    }
+
+    .timer.danger {
+      background-color: #f44336;
+    }
+
+    .section-score {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #555;
+    }
+
+    .timeout-warning {
+      color: #f44336;
+      font-weight: bold;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+    
+    /* Next question button */
+    .next-btn {
+      padding: 8px 15px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    .next-btn:hover {
+      background-color: #0b7dda;
+    }
+
+    /* ========== RESULTS UI STYLES ========== */
+    #final-score {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 700px;
+      margin: 20px auto;
+    }
+
+    .total-score-container {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .final-score-display {
+      font-size: 48px;
+      font-weight: bold;
+      margin: 15px 0;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .final-score-display.pass {
+      background: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .final-score-display.fail {
+      background: #ffebee;
+      color: #c62828;
+    }
+
+    .result-label {
+      font-size: 20px;
+      margin-top: 10px;
+    }
+
+    .section-scores-container {
+      margin-top: 20px;
+    }
+
+    .section-score {
+      margin-bottom: 20px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    .progress-bar {
+      height: 20px;
+      background: #f0f0f0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      border-radius: 10px;
+      transition: width 0.5s ease;
+    }
+
+    /* Section-specific colors for progress bars */
+    .section-score:nth-child(1) .progress-fill { background: #4CAF50; }
+    .section-score:nth-child(2) .progress-fill { background: #2196F3; }
+    .section-score:nth-child(3) .progress-fill { background: #9C27B0; }
+    .section-score:nth-child(4) .progress-fill { background: #FF9800; }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+        margin-top: 80px;
+        padding-top: 80px;
+      }
+      
+      .section {
+        padding: 15px;
+      }
+      
+      .question-block {
+        padding: 12px;
+      }
+      
+      .top-question-nav {
+        top: 50px;
+      }
+
+      .timer-container {
+        top: 5px;
+      }
+      
+      .final-score-display {
+        font-size: 36px;
+        padding: 15px;
+      }
+      
+      .question-btn {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .question-btn {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        font-size: 10px;
+      }
+      
+      .top-question-nav {
+        padding: 4px 6px;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .question-btn {
+        width: 18px;
+        height: 18px;
+        min-width: 18px;
+        font-size: 9px;
+      }
+      
+      .timer-container {
+        font-size: 14px;
+        padding: 4px 8px;
+      }
+    }
+</style>
+</head>
+<body>
+  <div class="timer-container" id="timerContainer">
+    <span class="timer-label">Exam Time Remaining:</span>
+    <div class="timer" id="timer">60:00</div>
+  </div>
+  
+  <h1>JFT-A2 Stimulation Exam</h1>
+
+  <div id="exam-container">
+    <!-- Section 1 -->
+    <div class="section" id="section1">
+      <h2>"Script and Vocabulary"</h2>
+
+      <div class="question-block">
+        <p><strong>Look at the illustration and choose the correct word.</strong></p>
+ <p><strong>1.</strong></p>
+       
+        <img src="jft6-q1.jpg" alt="Question image" width="200">
+        <div class="options-container">
+          <label><input type="radio" name="s1q1" value="1"><span class="option-box">りょうしん</span></label>
+          <label><input type="radio" name="s1q1" value="0"><span class="option-box">りょしん</span></label>
+          <label><input type="radio" name="s1q1" value="0"><span class="option-box">りょうじん</span></label>
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+
+      <div class="question-block">
+<p><strong>Look at the illustration and choose the correct word.</strong></p>
+        <p><strong>2.</strong></p>
+     
+      <img src="jft6-q2.jpg" alt="Question image" width="200">
+        <div class="options-container">
+          <label><input type="radio" name="s1q2" value="0"><span class="option-box">ジャム</span></label>
+          <label><input type="radio" name="s1q2" value="1"><span class="option-box">ミルク</span></label>
+          <label><input type="radio" name="s1q2" value="0"><span class="option-box">ライス</span></label>
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+<p><strong>Look at the illustration and choose the correct word.</strong></p>
+        <p><strong>3.</strong></p>
+        
+       <img src="jft6-q3.jpg" alt="Question image" width="200">
+        <div class="options-container">
+          <label><input type="radio" name="s1q3" value="1"><span class="option-box">おけしょおをします</span></label>
+          <label><input type="radio" name="s1q3" value="0"><span class="option-box">ひげそります</span></label>
+          <label><input type="radio" name="s1q3" value="0"><span class="option-box"> ふくをぬぎます</span></label>
+          
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>Read the sentence and choose the word that fits in () most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>4.田中さんはまだ(_____)します。 待ちましょう。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+ 
+ <div class="options-container">
+          <label><input type="radio" name="s1q4" value="1"><span class="option-box">きがえて</span></label>
+          <label><input type="radio" name="s1q4" value="0"><span class="option-box"> きがえます</span></label>
+          <label><input type="radio" name="s1q4" value="0"><span class="option-box">きがえる</span></label>
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>Read the sentence and choose the word that fits in () most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+  <p><strong>5.雨がやんだら、母と(_______) と思っています。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+       <div class="options-container">
+          <label><input type="radio" name="s1q5" value="1"><span class="option-box">出かけた</span></label>
+          <label><input type="radio" name="s1q5" value="0"><span class="option-box">出かけない</span></label>
+          <label><input type="radio" name="s1q5" value="0"><span class="option-box">出かけてる</span></label>
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+  <p><strong>Read the sentence and choose the word that fits in () most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <p><strong>6.手にけがを(________)しまいました。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        
+      <div class="options-container">
+          <label><input type="radio" name="s1q6" value="0"><span class="option-box">しに</span></label>
+          <label><input type="radio" name="s1q6" value="1"><span class="option-box">して</span></label>
+          <label><input type="radio" name="s1q6" value="0"><span class="option-box">した</span></label>
+        
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+<p><strong>How do you write the underlined kanji word in hiragana. choose the correct one.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <p><strong>7.このしまには電気も   (水道)    もなくて、生活はとても便利です。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+      
+        <div class="options-container">
+          <label><input type="radio" name="s1q7" value="0"><span class="option-box">みずみち</span></label>
+          <label><input type="radio" name="s1q7" value="1"><span class="option-box">すいどう</span></label>
+          <label><input type="radio" name="s1q7" value="0"><span class="option-box">すいみち</span></label>
+       
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+<p><strong>How do you write the underlined kanji word in hiragana. choose the correct one.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <p><strong>8.(病院)  はどこですか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+      
+         <div class="options-container">
+          <label><input type="radio" name="s1q8" value="1"><span class="option-box">びょういん</span></label>
+          <label><input type="radio" name="s1q8" value="0"><span class="option-box">びよういん</span></label>
+          <label><input type="radio" name="s1q8" value="0"><span class="option-box"> びよいん</span></label>
+          
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>Read the sentence and choose the kanji word that fits in ( ) most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>9.田中さんは今日とても(________) そうですね。 何かいいことがあったんです。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+       
+       <div class="options-container">
+          <label><input type="radio" name="s1q9" value="0"><span class="option-box">たのしく</span></label>
+          <label><input type="radio" name="s1q9" value="0"><span class="option-box">たのしがる</span></label>
+          <label><input type="radio" name="s1q9" value="1"><span class="option-box">たのし</span></label>
+        
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+  <p><strong>Read the sentence and choose the kanji word that fits in ( ) most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <p><strong>10.私の国は(________) 暑いです。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+      
+        <div class="options-container">
+          <label><input type="radio" name="s1q10" value="1"><span class="option-box">一年中</span></label>
+           <label><input type="radio" name="s1q10" value="0"><span class="option-box">一年間</span></label>
+          <label><input type="radio" name="s1q10" value="0"><span class="option-box">一年</span></label>
+          
+        </div>
+ <button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+
+      <div class="warning-box" id="warning1">
+        Please complete all questions before ending this section.
+      </div>
+
+      <button onclick="finishSection(1)">Finished Section 1</button>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section" id="section2" style="display: none;">
+      <h2>"Conversation and Expression"</h2>
+
+     <div class="question-block">
+        <p><strong>1.Read the dialog and choose the phrase that fits the most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+ <p><strong>みちこ : </strong>&nbsp;             リンさんはどこへ行きたいです。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>リン : </strong>&nbsp;          (___________)</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>みちこ : </strong>&nbsp;         あ、京都ですか。きれいな町ですね。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>リン : </strong>&nbsp;          ええ、古いお寺やじんじゃを見たいです。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+
+        <div class="options-container">
+          <label><input type="radio" name="s2q1" value="0"><span class="option-box"> 京都へ行きます。</span></label>
+          <label><input type="radio" name="s2q1" value="0"><span class="option-box">京都へ行けなければなりません。</span></label>
+          <label><input type="radio" name="s2q1" value="1"><span class="option-box"> 京都へ行きたいんです。</span></label>
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+
+      <div class="question-block">
+<p><strong>2.Read the dialog and choose the phrase that fits the most..</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <p><strong>A :  </strong>&nbsp;    くつうりばは(________)ですか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+       <p><strong>B:  </strong>&nbsp;      にかいです。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+     
+        <div class="options-container">
+          <label><input type="radio" name="s2q2" value="0"><span class="option-box">なんかい</span></label>
+          <label><input type="radio" name="s2q2" value="1"><span class="option-box">なにがい</span></label>
+          <label><input type="radio" name="s2q2" value="0"><span class="option-box"> なにかい</span></label>
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+<p><strong>3.Two friends are talking about weather. Read the dialog and choose the phrase that fits the most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <p><strong>A:   </strong>&nbsp;     土曜日、10時(________)どうですか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <p><strong>B:   </strong>&nbsp;   すみません。 10じはちょっと。。。 10時半(________)いいですか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <p><strong>A:    </strong>&nbsp;      ええ、いいですよ。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        
+
+        <div class="options-container">
+          <label><input type="radio" name="s2q3" value="0"><span class="option-box">が、では</span></label>
+          <label><input type="radio" name="s2q3" value="1"><span class="option-box">は、でも</span></label>
+          <label><input type="radio" name="s2q3" value="0"><span class="option-box">も、でわ</span></label>
+          
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>4.Two friends are talking in a restaurant. Read the dialog and choose the phrase that fits the most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+          <p><strong>田中:   </strong>&nbsp;       リンさん、 ちょっといいですか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+ <p><strong>リン:    </strong>&nbsp;     はい。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <p><strong>田中:   </strong>&nbsp;   今週の日曜日に映画を見に行きませんか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>リン:    </strong>&nbsp;     はいいいですね。 行きましょう。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>田中:   </strong>&nbsp;   では、 映画館で(__________)</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>リン:    </strong>&nbsp;    10時ですね。 分かりました。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+
+        <div class="options-container">
+          <label><input type="radio" name="s2q4" value="0"><span class="option-box">午前10時に会いたいです</span></label>
+          <label><input type="radio" name="s2q4" value="0"><span class="option-box">午前10時に会わなければなりません</span></label>
+          <label><input type="radio" name="s2q4" value="1"><span class="option-box"> 午前10時に会いましょう</span></label>
+         
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>5.Read the dialog and choose the phrase that fits the most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+          <p><strong>A: </strong>&nbsp;  山川さんの誕生日にこのさいふをあげる(____________)</strong></p>
+ <p><strong>&nbsp;</strong></p>
+   <p><strong>B :  </strong>&nbsp;  そうですか。 きっとよろこんで使って(_________)でしょう。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+
+        <div class="options-container">
+          <label><input type="radio" name="s2q5" value="0"><span class="option-box">ほしいです、 あげる</span></label>
+          <label><input type="radio" name="s2q5" value="0"><span class="option-box">たいです、 つくる</span></label>
+          <label><input type="radio" name="s2q5" value="1"><span class="option-box">つもりです、 くれる</span></label>
+          
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>6.Two friends are talking in a restaurant. Read the dialog and choose the expression that fits the most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+           <p><strong>A:   </strong>&nbsp;  (________)。具合が悪いそうですね。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+  <p><strong>B:   </strong>&nbsp;  ええ、ちょっとあたまがいたくて。 </strong></p>
+ <p><strong>&nbsp;</strong></p>
+  <p><strong>A:   </strong>&nbsp; 大丈夫ですか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+  <p><strong>B:    </strong>&nbsp;  すみませんが、休んでもいいですか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        
+        <div class="options-container">
+          <label><input type="radio" name="s2q6" value="0"><span class="option-box">どうもうありがとう</span></label>
+          <label><input type="radio" name="s2q6" value="0"><span class="option-box">はじめまして</span></label>
+          <label><input type="radio" name="s2q6" value="1"><span class="option-box">どうしたんですか</span></label>
+          
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ 
+ <div class="question-block">
+        <p><strong>7.Read the dialog and choose the expression that fits the most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>A:  </strong>&nbsp;  この時計すてきですね。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>B:   </strong>&nbsp; ありがとうございます。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>A:   </strong>&nbsp;どこで買ったんですか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+<p><strong>B:    </strong>&nbsp;   父が誕生日に(___________)</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        
+      
+        <div class="options-container">
+          <label><input type="radio" name="s2q7" value="0"><span class="option-box">あげました</span></label>
+          <label><input type="radio" name="s2q7" value="1"><span class="option-box">くれました</span></label>
+          <label><input type="radio" name="s2q7" value="0"><span class="option-box"> もらいました</span></label>
+       
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>8.Read the dialog and choose the expression that fits the most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+          <p><strong>A:   </strong>&nbsp;  昨日シャツを買いました。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+   <p><strong>B:   </strong>&nbsp;   何まい買いましたか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+   <p><strong>A:   </strong>&nbsp;  2まい買いました。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+   <p><strong>B:   </strong>&nbsp;  (____________)</strong></p>
+ <p><strong>&nbsp;</strong></p>
+    <p><strong>A:   </strong>&nbsp; 2まいで5000円でした。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+        <div class="options-container">
+          <label><input type="radio" name="s2q8" value="0"><span class="option-box"> いつでしたか</span></label>
+          <label><input type="radio" name="s2q8" value="1"><span class="option-box">いくらになりましたか</span></label>
+          <label><input type="radio" name="s2q8" value="0"><span class="option-box">  なんまいでしたか</span></label>
+       
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+     <p><strong>9.Read the dialog and choose the expression that fits the most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+ <p><strong>A:  </strong>&nbsp;    毎日朝ごはんを食べますか。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+ <p><strong>B:  </strong>&nbsp;   ええ、どんなに(_________), きちんと食べます。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+    
+        <div class="options-container">
+          <label><input type="radio" name="s2q9" value="1"><span class="option-box">  いそがしなくても</span></label>
+          <label><input type="radio" name="s2q9" value="0"><span class="option-box">いそがしいのに</span></label>
+          <label><input type="radio" name="s2q9" value="0"><span class="option-box">いそがしいと</span></label>
+         
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+<div class="question-block">
+        <p><strong>10.Read the dialog and choose the expression that fits the most.</strong></p>
+ <p><strong>&nbsp;</strong></p>
+ <p><strong>A:    </strong>&nbsp; あたらしいかばんね。たかったでしょう。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+ <p><strong>B:   </strong>&nbsp;  いいえ、(_______)よ。</strong></p>
+ <p><strong>&nbsp;</strong></p>
+       
+        <div class="options-container">
+          <label><input type="radio" name="s2q10" value="0"><span class="option-box">とてもたかかったです。</span></label>
+          <label><input type="radio" name="s2q10" value="0"><span class="option-box">たいへんたかいです。</span></label>
+          <label><input type="radio" name="s2q10" value="1"><span class="option-box">あまりたかくありませんでした</span></label>
+       
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+      <div class="warning-box" id="warning2">
+        Please complete all questions before ending this section.
+      </div> 
+
+      <button onclick="finishSection(2)">Finished Section 2</button>
+    </div>
+
+
+
+    <!-- Section 3 -->
+    <div class="section" id="section3" style="display: none;">
+      <h2> "Listening and Comprehension"</h2>
+
+            <div class="question-block">
+        <p><strong>2 men are talking. where will they enter?</strong></p>
+ <p><strong>1.</strong></p>
+         <div class="audio-container">
+          <audio id="audio1" controls>
+            <source src="jft6-q1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount1">2</span></span>
+        </div>
+       <img src="jft6-q4.jpg" alt="Question image" width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q1" value="1"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q1" value="0"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q1" value="0"><span class="option-box">C</span></label>
+        
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+
+      <div class="question-block">
+<p><strong>A man and a women are talking. What does women do first?</strong></p>
+        <p><strong>2.</strong></p>
+        <div class="audio-container">
+          <audio id="audio2" controls>
+            <source src="jft6-q2.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount2">2</span></span>
+        </div>
+     <img src="jft6-q5.jpg" alt="Question image" width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q2" value="1"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q2" value="0"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q2" value="0"><span class="option-box">C</span></label>
+       
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+<p><strong>Students are talking. What are they talking about?</strong></p>
+        <p><strong>3.</strong></p>
+        <div class="audio-container">
+          <audio id="audio3" controls>
+            <source src="jft6-q3.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount3">2</span></span>
+        </div>
+        <img src="jft6-q6.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q3" value="1"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q3" value="0"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q3" value="0"><span class="option-box">C</span></label>
+         <label><input type="radio" name="s3q3" value="0"><span class="option-box">D</span></label>
+          
+
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+      <p><strong>A man and a women are talking. What man do?</strong></p>
+        <p><strong>4.</strong></p>
+        <div class="audio-container">
+          <audio id="audio4" controls>
+            <source src="jft6-q4.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount4">2</span></span>
+        </div>
+     <img src="jft6-q7.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q4" value="0"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q4" value="0"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q4" value="1"><span class="option-box">C</span></label>
+          <label><input type="radio" name="s3q4" value="0"><span class="option-box">D</span></label>
+         
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+         <p><strong>A man and a women are talking. What is she like to do?</strong></p>
+        <p><strong>5.</strong></p>
+        <div class="audio-container">
+          <audio id="audio5" controls>
+            <source src="jft6-q5.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount5">2</span></span>
+        </div>
+       <img src="jft6-q8.jpg" alt="Question image" width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q5" value="1"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q5" value="0"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q5" value="0"><span class="option-box">C</span></label>
+          <label><input type="radio" name="s3q5" value="0"><span class="option-box">D</span></label>
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+          <p><strong>A man and a women are talking. What has happened?</strong></p>
+        <p><strong>6.</strong></p>
+        <div class="audio-container">
+          <audio id="audio6" controls>
+            <source src="jft6-q6.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount6">2</span></span>
+        </div>
+    <img src="jft6-q9.jpg" alt="Question image" width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q6" value="0"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q6" value="0"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q6" value="1"><span class="option-box">C</span></label>
+          <label><input type="radio" name="s3q6" value="0"><span class="option-box">D</span></label>
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+       <p><strong>A man and a women are talking. What women is doing?</strong></p>
+        <p><strong>7.</strong></p>
+        <div class="audio-container">
+          <audio id="audio7" controls>
+            <source src="jft6-q7.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount7">2</span></span>
+        </div>
+      <img src="jft6-q10.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q7" value="0"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q7" value="1"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q7" value="0"><span class="option-box">C</span></label>
+          <label><input type="radio" name="s3q7" value="0"><span class="option-box">D</span></label>
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>Doctor is talking. What does sick person do first.?</strong></p>
+        <p><strong>8.</strong></p>
+        <div class="audio-container">
+          <audio id="audio8" controls>
+            <source src="jft6-q8.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount8">2</span></span>
+        </div>
+     <img src="jft6-q11.jpg" alt="Question image" width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q8" value="0"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q8" value="0"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q8" value="1"><span class="option-box">C</span></label>
+         <label><input type="radio" name="s3q8" value="0"><span class="option-box">D</span></label>
+
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+         <p><strong>A man and a women are talking. What will man do?</strong></p>
+        <p><strong>9.</strong></p>
+        <div class="audio-container">
+          <audio id="audio9" controls>
+            <source src="jft6-q9.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount9">2</span></span>
+        </div>
+    <img src="jft6-q12.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q9" value="0"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q9" value="1"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q9" value="0"><span class="option-box">C</span></label>
+          <label><input type="radio" name="s3q9" value="0"><span class="option-box">D</span></label>
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+       <p><strong>A man and a women are talking. What will student do?</strong></p>
+        <p><strong>10.</strong></p>
+        <div class="audio-container">
+          <audio id="audio10" controls>
+            <source src="jft6-q10.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+          <span class="play-count">Plays left: <span id="playCount10">2</span></span>
+        </div>
+     <img src="jft6-q13.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s3q10" value="0"><span class="option-box">A</span></label>
+          <label><input type="radio" name="s3q10" value="0"><span class="option-box">B</span></label>
+          <label><input type="radio" name="s3q10" value="1"><span class="option-box">C</span></label>
+          <label><input type="radio" name="s3q10" value="0"><span class="option-box">D</span></label>
+
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+      <div class="warning-box" id="warning3">
+        Please complete all questions before ending this section.
+      </div>
+
+      <button onclick="finishSection(3)">Finished Section 3</button>
+    </div>
+    <!-- Section 4 -->
+    <div class="section" id="section4" style="display: none;">
+      <h2>"Reading Comprehension"</h2>
+
+       <div class="question-block">
+    
+ <p><strong>1.ここにあっているものはどれか。</strong></p>
+       
+      <img src="jft6-q14.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s4q1" value="0"><span class="option-box"> 私は英語がじょうずで、 みんなとじょうずに英語を話しています</span></label>
+          <label><input type="radio" name="s4q1" value="0"><span class="option-box"> このクラスでは先生がおしえています。</span></label>
+           <label><input type="radio" name="s4q1" value="1"><span class="option-box"> 人が10人このクラスにいます。</span></label>
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+
+      <div class="question-block">
+
+        <p><strong>2.どうして明日父と母の家に行きますか。</strong></p>
+     
+      <img src="jft6-q15.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s4q2" value="1"><span class="option-box">子供は父と母に会いたいからです。</span></label>
+          <label><input type="radio" name="s4q2" value="0"><span class="option-box">つまが仕事に行くからです。</span></label>
+           <label><input type="radio" name="s4q2" value="0"><span class="option-box">父と母は「明日来てください」 と言ったからです。</span></label>
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+
+        <p><strong>3.私は何がおもしろいですか。</strong></p>
+       
+       <img src="jft6-q16.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s4q3" value="0"><span class="option-box">自分がきょうだいがいないが、 母にはきょうだいがいること</span></label>
+          <label><input type="radio" name="s4q3" value="1"><span class="option-box"> 母とおばはにていないが、 私といとこはにていること</span></label>
+          <label><input type="radio" name="s4q3" value="0"><span class="option-box">いとこはおばにはにていないが、 自分ににていること</span></label>
+        
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>4.ここにあっているものはどれか。</strong></p>
+      
+       <img src="jft6-q17.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s4q4" value="0"><span class="option-box">この人は小さいとき、 町に住んでいました。</span></label>
+          <label><input type="radio" name="s4q4" value="0"><span class="option-box">今、この人は小さな田舎の会社で働いています。</span></label>
+          <label><input type="radio" name="s4q4" value="1"><span class="option-box">小さいとき、 学校から家まで帰るとおそくなるので母はおこりました。</span></label>
+          
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>5.メロスはどこですんでいましたか。</strong></p>
+        <img src="jft6-q18.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s4q5" value="1"><span class="option-box">むら</span></label>
+          <label><input type="radio" name="s4q5" value="0"><span class="option-box">町</span></label>
+          <label><input type="radio" name="s4q5" value="0"><span class="option-box">シクラス</span></label>
+        
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>6.みちこさんはさいふをおとす前にどこへ行きましたか。</strong></p>
+       
+       <img src="jft6-q19.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s4q6" value="0"><span class="option-box">6かい</span></label>
+          <label><input type="radio" name="s4q6" value="0"><span class="option-box">7かい</span></label>
+          <label><input type="radio" name="s4q6" value="1"><span class="option-box">8かい</span></label>
+          
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>7.この人はどうして和室がすきですか。</strong></p>
+      
+      <img src="jft6-q20.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s4q7" value="0"><span class="option-box">日本家が好きだから</span></label>
+          <label><input type="radio" name="s4q7" value="0"><span class="option-box">ふとんをしいたりたたんだりするのがめんどうから</span></label>
+          <label><input type="radio" name="s4q7" value="1"><span class="option-box">寝ないとき部屋が広く使うことができるから</span></label>
+          
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>8.この人は先生になりたい一番主な理由は何ですか。</strong></p>
+     
+      <img src="jft6-q21.jpg" alt="Question image" width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s4q8" value="0"><span class="option-box">先生になるのは自分の夢だからです。</span></label>
+          <label><input type="radio" name="s4q8" value="1"><span class="option-box">山田先生と同じ先生になりたいからです。</span></label>
+          <label><input type="radio" name="s4q8" value="0"><span class="option-box">子供が好きで、教えることも好きだからです</span></label>
+          
+
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>9.二人はどこであいますか。</strong></p>
+        
+        <img src="jft6-q22.jpg" alt="Question image"  width="850">
+        <div class="options-container">
+          <label><input type="radio" name="s4q9" value="0"><span class="option-box">みどり駅の北口で</span></label>
+          <label><input type="radio" name="s4q9" value="1"><span class="option-box">さくら駅の北口で</span></label>
+          <label><input type="radio" name="s4q9" value="0"><span class="option-box">レストランで</span></label>
+         
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+ <div class="question-block">
+        <p><strong>10.ここにあっているものはどれか。。</strong></p>
+        
+        <img src="jft6-q23.jpg" alt="Question image"  width="850">
+        <div class="options-cont3ainer">
+          <label><input type="radio" name="s4q10" value="1"><span class="option-box">おじいさんの誕生日のために家族といっしょにパーティーをしました。</span></label>
+          <label><input type="radio" name="s4q10" value="0"><span class="option-box">まごの誕生日パーティーはおじいさんのうちにしました。</span></label>
+          <label><input type="radio" name="s4q10" value="0"><span class="option-box">家族といっしょにりょこうをしました。</span></label>
+       
+
+        </div>
+<button class="next-btn" onclick="goToNextQuestion(1)">Next Question →</button>
+      </div>
+      <div class="warning-box" id="warning4">
+        Please complete all questions before ending this section.
+      </div>
+
+      <button onclick="finishSection(4)">Finished Section 4</button>
+    </div>
+
+  <div id="final-score" style="display: none;">
+    <h2>Result</h2>
+    <p id="total-score"></p>
+    <div id="section-scores"></div>
+    <p id="pass-fail"></p>
+    <p class="timeout-warning" id="timeout-warning"></p>
+  </div>
+
+<script>
+    let sectionScores = [];
+    const playCounts = {
+      audio1: 2,
+      audio2: 2,
+      audio3: 2,
+      audio4: 2,
+      audio5: 2,
+      audio6: 2,
+      audio7: 2,
+      audio8: 2,
+      audio9: 2,
+      audio10: 2,
+    };
+    let timeLeft = 60 * 60; // 60 minutes in seconds
+    let timerInterval;
+    let isTimeout = false;
+    let currentSection = 1; // Track current visible section
+    let currentQuestion = 0; // Track current question index in current section
+
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      startTimer();
+      setupAudioLimits();
+      initializeQuestionNavigation();
+      showQuestion(0, 1); // Show first question in first section
+    });
+
+    function startTimer() {
+      clearInterval(timerInterval);
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    function updateTimer() {
+      timeLeft--;
+      
+      // Update timer color based on remaining time
+      const timerElement = document.getElementById('timer');
+      timerElement.classList.remove('warning', 'danger');
+      
+      if (timeLeft <= 5 * 60) { // 5 minutes or less
+        timerElement.classList.add('danger');
+      } else if (timeLeft <= 10 * 60) { // 10 minutes or less
+        timerElement.classList.add('warning');
+      }
+      
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        timeLeft = 0;
+        isTimeout = true;
+        autoSubmitExam();
+      }
+      
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      const timerText = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+      
+      document.getElementById('timer').textContent = timerText;
+    }
+
+    function autoSubmitExam() {
+      for (let i = 1; i <= 4; i++) {
+        const section = document.getElementById(`section${i}`);
+        if (section.style.display !== 'none') {
+          forceFinishSection(i);
+        }
+      }
+      showFinalScore();
+      document.getElementById('timeout-warning').textContent = 
+        "မှတ်ချက်-စာမေးပွဲတွင် အချိန်မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
+    }
+
+    function setupAudioLimits() {
+      for (let i = 1; i <= 10; i++) {
+        const audio = document.getElementById(`audio${i}`);
+        if (audio) {
+          audio.addEventListener('play', function() {
+            if (playCounts[`audio${i}`] > 0) {
+              playCounts[`audio${i}`]--;
+              document.getElementById(`playCount${i}`).textContent = playCounts[`audio${i}`];
+              if (playCounts[`audio${i}`] === 0) {
+                audio.onended = function() {
+                  audio.controls = false;
+                };
+              }
+            } else {
+              audio.pause();
+              alert("You've used all your plays for this audio.");
+            }
+          });
+        }
+      }
+    }
+
+    /* ========== QUESTION NAVIGATION FUNCTIONS ========== */
+    function initializeQuestionNavigation() {
+      for (let i = 1; i <= 4; i++) {
+        createTopQuestionNav(i);
+      }
+    }
+
+    function createTopQuestionNav(sectionNum) {
+      const section = document.getElementById(`section${sectionNum}`);
+      const questions = section.querySelectorAll('.question-block');
+      
+      // Remove existing navigation if any
+      const existingNav = section.querySelector('.top-question-nav');
+      if (existingNav) {
+        existingNav.remove();
+      }
+      
+      const nav = document.createElement('div');
+      nav.className = 'top-question-nav';
+      nav.id = `top-nav-section${sectionNum}`;
+      
+      // Create buttons for all questions (1-10)
+      for (let i = 0; i < questions.length; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'question-btn';
+        btn.textContent = i + 1; // Display question numbers starting from 1
+        btn.onclick = () => {
+          currentSection = sectionNum;
+          showQuestion(i, sectionNum);
+        };
+        nav.appendChild(btn);
+      }
+      
+      // Insert the navigation at the beginning of the section
+      section.insertBefore(nav, section.firstChild);
+    }
+
+    function showQuestion(questionIndex, sectionNum = currentSection) {
+      const section = document.getElementById(`section${sectionNum}`);
+      const questions = section.querySelectorAll('.question-block');
+      const navButtons = section.querySelectorAll('.question-btn');
+      
+      // Hide all questions in current section
+      questions.forEach(q => q.style.display = 'none');
+      
+      // Show the selected question
+      questions[questionIndex].style.display = 'block';
+      
+      // Update navigation buttons
+      navButtons.forEach(btn => btn.classList.remove('active'));
+      if (navButtons[questionIndex]) {
+        navButtons[questionIndex].classList.add('active');
+      }
+      
+      // Update current question index and section
+      currentQuestion = questionIndex;
+      currentSection = sectionNum;
+      
+      // Scroll to the question
+      questions[questionIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function goToNextQuestion() {
+      const section = document.getElementById(`section${currentSection}`);
+      const questions = section.querySelectorAll('.question-block');
+      const nextIndex = currentQuestion + 1;
+      
+      if (nextIndex < questions.length) {
+        showQuestion(nextIndex);
+      }
+    }
+    /* ========== END QUESTION NAVIGATION FUNCTIONS ========== */
+
+    function finishSection(sectionNum) {
+      const section = document.getElementById(`section${sectionNum}`);
+      const questions = section.querySelectorAll('.question-block');
+      const warningBox = document.getElementById(`warning${sectionNum}`);
+
+      let allAnswered = true;
+
+      for (let i = 0; i < questions.length; i++) {
+        const radios = questions[i].querySelectorAll('input[type=radio]');
+        let answered = false;
+
+        for (const radio of radios) {
+          if (radio.checked) {
+            answered = true;
+            break;
+          }
+        }
+
+        if (!answered) {
+          allAnswered = false;
+          break;
+        }
+      }
+
+      if (!allAnswered) {
+        warningBox.style.display = 'block';
+        return;
+      }
+
+      warningBox.style.display = 'none';
+      calculateSectionScore(sectionNum, questions);
+    }
+
+    function forceFinishSection(sectionNum) {
+      const section = document.getElementById(`section${sectionNum}`);
+      const questions = section.querySelectorAll('.question-block');
+      
+      questions.forEach(question => {
+        const radios = question.querySelectorAll('input[type=radio]');
+        let answered = false;
+        
+        for (const radio of radios) {
+          if (radio.checked) {
+            answered = true;
+            break;
+          }
+        }
+        
+        if (!answered && radios.length > 0) {
+          radios[0].checked = true;
+        }
+      });
+      
+      calculateSectionScore(sectionNum, questions);
+    }
+
+    function calculateSectionScore(sectionNum, questions) {
+      let correct = 0;
+      let total = questions.length;
+
+      for (let i = 0; i < total; i++) {
+        const radios = questions[i].querySelectorAll('input[type=radio]');
+        for (const radio of radios) {
+          if (radio.checked && radio.value === "1") {
+            correct++;
+            break;
+          }
+        }
+      }
+
+      const percent = (correct / total) * 100;
+      sectionScores.push({
+        section: sectionNum,
+        score: percent
+      });
+
+      document.getElementById(`section${sectionNum}`).style.display = 'none';
+
+      if (sectionNum < 4) {
+        currentSection = sectionNum + 1;
+        document.getElementById(`section${currentSection}`).style.display = 'block';
+        showQuestion(0); // Show first question in next section
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        showFinalScore();
+      }
+    }
+
+    function showFinalScore() {
+      clearInterval(timerInterval);
+      document.getElementById('timerContainer').style.display = 'none';
+      
+      // Define section names
+      const sectionNames = {
+        1: "Script and Vocabulary",
+        2: "Conversation and Expression", 
+        3: "Listening and Comprehension",
+        4: "Reading Comprehension"
+      };
+
+      const totalAvg = sectionScores.reduce((sum, section) => sum + section.score, 0) / 4;
+      const totalScore = Math.round(totalAvg * 2.5);
+      const pass = totalScore >= 200;
+
+      document.getElementById('final-score').style.display = 'block';
+      document.getElementById('total-score').innerHTML = `
+        <div class="total-score-container">
+          <h2>Your Exam Results</h2>
+          <div class="final-score-display ${pass ? 'pass' : 'fail'}">
+            ${totalScore} / 250
+            <div class="result-label">${pass ? '🎉 PASSED' : '❌ FAILED'}</div>
+          </div>
+        </div>
+      `;
+      
+      const sectionScoresDiv = document.getElementById('section-scores');
+      sectionScoresDiv.innerHTML = `
+        <h3>Section Breakdown</h3>
+        <div class="section-scores-container">
+          ${sectionScores.map(section => `
+            <div class="section-score">
+              <div class="section-header">
+                <span>${sectionNames[section.section]}</span>
+                <span>${section.score.toFixed(1)}%</span>
+              </div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width: ${section.score}%"></div>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      
+      if (isTimeout) {
+        document.getElementById('timeout-warning').textContent = 
+          "မှတ်ချက်-စာမေးပွဲတွင် အချိန်မှီ section မEnd ပါက Auto failed ဖြစ်နိုင်ပါသည်";
+      }
+    }
+</script>
+</body>
+</html>
