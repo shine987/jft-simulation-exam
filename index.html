@@ -181,98 +181,6 @@
             background: linear-gradient(135deg, #8338ec, #3a86ff);
         }
         
-        /* Notice Modal Styles - UPDATED */
-        .notice-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-        
-        .notice-modal-content {
-            background-color: white;
-            border-radius: 12px;
-            width: 90%;
-            max-width: 600px;
-            max-height: 90vh; /* Added max-height */
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
-        }
-        
-        .notice-header {
-            background: linear-gradient(135deg, #3a86ff, #2667cc);
-            color: white;
-            padding: 15px 20px;
-            text-align: center;
-            flex-shrink: 0; /* Prevent header from shrinking */
-        }
-        
-        .notice-header h3 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-        
-        .notice-body {
-            padding: 20px;
-            overflow-y: auto; /* Enable scrolling for content */
-            flex-grow: 1; /* Allow body to grow and take available space */
-        }
-        
-        .notice-message {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #8338ec;
-        }
-        
-        .notice-message p {
-            margin: 10px 0;
-            text-align: left;
-            line-height: 1.6;
-        }
-        
-        .notice-myanmar {
-            font-weight: bold;
-            color: #2667cc;
-            font-size: 1.1rem;
-        }
-        
-        .notice-actions {
-            display: flex;
-            justify-content: center;
-            padding: 15px;
-            flex-shrink: 0; /* Prevent actions from shrinking */
-            background: white;
-            border-top: 1px solid #eee;
-        }
-        
-        .notice-ok-btn {
-            background: linear-gradient(135deg, #06d6a0, #05a87e);
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        
-        .notice-ok-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        
         /* Footer */
         footer {
             background-color: #212529;
@@ -327,36 +235,10 @@
                 flex-direction: column;
                 gap: 10px;
             }
-            
-            .notice-modal-content {
-                width: 95%;
-            }
-            
-            .notice-message p {
-                font-size: 0.95rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Notice Modal -->
-    <div class="notice-modal" id="noticeModal">
-        <div class="notice-modal-content">
-            <div class="notice-header">
-                <h3><i class="fas fa-info-circle"></i> သတိပြုရန်</h3>
-            </div>
-            <div class="notice-body">
-                <div class="notice-message">
-                    <p class="notice-myanmar">ကြော်ငြာများထည့်သွင်းထားသည် ဖြစ်သောကြောင့်  စာမေးပွဲ ဖြေဆိုချိန် အနှောက်အယှက်မဖြစ်စေရန် Start Exam ခလုတ်နှိပ်နိုင်ရန် ကြာချိန် 60s သတ်မှတ်ထားပါသည် 60s ပြည့်လျှင် စတင်ဖြေဆိုနိုင်ပါပြီ။တခြားကြော်ငြာလင့်များသို forward  ဖြစ်သွားလျှင် chrome ရဲ့ အောက်ခြေနားမှာ [:)] ပုံစံခလုတ်ကို နိပ်ပြီး JFT-Basic Exam ဆိုတဲ့ စာမေးပွဲ စာမျက်နှာကိုပြန်ရှာ ဝင်ရောက်နိုင်သည်။</p>
-                    <p>Since advertisements are included, a 60-second waiting time is set before you can press the Start Exam button to avoid interruptions during the test. After 60 seconds, you will be able to begin the exam.If you are forwarded to other advertisement links, you can tap the :) button at the bottom of Chrome to return and find the JFT-Basic Exam page again.</p>
-                </div>
-            </div>
-            <div class="notice-actions">
-                <button id="noticeOkBtn" class="notice-ok-btn">OK</button>
-            </div>
-        </div>
-    </div>
-
     <header>
         <div class="container">
             <nav>
@@ -471,37 +353,14 @@ The JFT (Japanese Language Test) is designed to measure the Japanese language pr
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const noticeModal = document.getElementById('noticeModal');
-            const noticeOkBtn = document.getElementById('noticeOkBtn');
             const examButtons = document.querySelectorAll('.exam-btn');
-            
-            let targetUrl = '';
             
             // Add click event to all exam buttons
             examButtons.forEach(button => {
                 button.addEventListener('click', function() {
-                    targetUrl = this.getAttribute('data-exam');
-                    showNoticeModal();
+                    const targetUrl = this.getAttribute('data-exam');
+                    window.location.href = targetUrl; // တိုက်ရိုက် redirect လုပ်ပါ
                 });
-            });
-            
-            function showNoticeModal() {
-                noticeModal.style.display = 'flex';
-            }
-            
-            // OK button functionality
-            noticeOkBtn.addEventListener('click', function() {
-                noticeModal.style.display = 'none';
-                if (targetUrl) {
-                    window.location.href = targetUrl;
-                }
-            });
-            
-            // Close modal if clicked outside content
-            noticeModal.addEventListener('click', function(e) {
-                if (e.target === noticeModal) {
-                    noticeModal.style.display = 'none';
-                }
             });
         });
     </script>
