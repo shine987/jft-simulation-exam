@@ -214,6 +214,53 @@
             box-shadow: 0 6px 12px rgba(0,0,0,0.25);
         }
         
+        /* Toggle Button Styles */
+        .toggle-container {
+            grid-column: 1 / -1;
+            text-align: center;
+            margin-top: 10px;
+        }
+        
+        .toggle-btn {
+            background: linear-gradient(135deg, #3a86ff, #8338ec);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 0 auto;
+            transition: all 0.3s ease;
+        }
+        
+        .toggle-btn:hover {
+            background: linear-gradient(135deg, #8338ec, #3a86ff);
+        }
+        
+        .toggle-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .toggle-btn.expanded i {
+            transform: rotate(180deg);
+        }
+        
+        .hidden-services {
+            display: none;
+            grid-column: 1 / -1;
+        }
+        
+        .hidden-services.visible {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
         /* Main Content */
         main {
             padding: 3rem 0;
@@ -321,6 +368,10 @@
                 grid-template-columns: 1fr;
             }
             
+            .hidden-services.visible {
+                grid-template-columns: 1fr;
+            }
+            
             .button-container {
                 grid-template-columns: 1fr;
             }
@@ -365,6 +416,7 @@
             <h3><i class="fas fa-bullhorn"></i> Form Services</h3>
             
             <div class="service-list">
+                <!-- Visible services -->
                 <div class="service-item">
                     <span class="service-name">JFT</span>
                     <span class="service-price">36$</span>
@@ -381,17 +433,29 @@
                     <span class="service-name">Hotel</span>
                     <span class="service-price">55$</span>
                 </div>
-                <div class="service-item">
-                    <span class="service-name">စိုက်ပျိုးရေး</span>
-                    <span class="service-price">33$</span>
+                
+                <!-- Hidden services -->
+                <div class="hidden-services" id="hiddenServices">
+                    <div class="service-item">
+                        <span class="service-name">စိုက်ပျိုးရေး</span>
+                        <span class="service-price">33$</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-name">မွေးမြူရေး</span>
+                        <span class="service-price">33$</span>
+                    </div>
+                    <div class="service-item">
+                        <span class="service-name">ကုန်ထုတ်</span>
+                        <span class="service-price">35$</span>
+                    </div>
                 </div>
-                <div class="service-item">
-                    <span class="service-name">မွေးမြူရေး</span>
-                    <span class="service-price">33$</span>
-                </div>
-                <div class="service-item">
-                    <span class="service-name">ကုန်ထုတ်</span>
-                    <span class="service-price">35$</span>
+                
+                <!-- Toggle button -->
+                <div class="toggle-container">
+                    <button class="toggle-btn" id="toggleServices">
+                        <span>More Services</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
                 </div>
 
                 <div class="plus-sign">+</div>
@@ -495,13 +559,27 @@ The JFT (Japanese Language Test) is designed to measure the Japanese language pr
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const examButtons = document.querySelectorAll('.exam-btn');
+            const toggleBtn = document.getElementById('toggleServices');
+            const hiddenServices = document.getElementById('hiddenServices');
             
             // Add click event to all exam buttons
             examButtons.forEach(button => {
                 button.addEventListener('click', function() {
                     const targetUrl = this.getAttribute('data-exam');
-                    window.location.href = targetUrl; // တိုက်ရိုက် redirect လုပ်ပါ
+                    window.location.href = targetUrl;
                 });
+            });
+            
+            // Toggle hidden services
+            toggleBtn.addEventListener('click', function() {
+                hiddenServices.classList.toggle('visible');
+                this.classList.toggle('expanded');
+                
+                if (hiddenServices.classList.contains('visible')) {
+                    this.querySelector('span').textContent = 'Less Services';
+                } else {
+                    this.querySelector('span').textContent = 'More Services';
+                }
             });
         });
     </script>
