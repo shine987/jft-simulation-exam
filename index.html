@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="V3WMA7iKv-EQdM21VmcqKbD9r3zCJmuQ534eSqfiyrA" />
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-798CJCLWDZ"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-798CJCLWDZ');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-798CJCLWDZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-798CJCLWDZ');
+    </script>
     <!-- SEO Meta Tags -->
     <title>JFT Simulation Exam - Free Online Practice Test for Japanese Language Proficiency</title>
     <meta name="description" content="Prepare for your JFT exam with our free online simulation test. Practice with real exam-like questions and improve your Japanese language proficiency." />
@@ -105,7 +104,7 @@
             border-bottom: 2px solid #8338ec;
         }
         
-        /* Service Banner */
+        /* Service Banner - UPDATED */
         .service-banner {
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             padding: 1.5rem;
@@ -123,63 +122,97 @@
         
         .service-banner p {
             color: #333;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             font-size: 1.1rem;
         }
         
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        
+        .service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .service-name {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .service-price {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        
+        .plus-sign {
+            grid-column: 1 / -1;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 5px 0;
+            color: #d44141;
+        }
+        
+        .service-fee-box {
+            grid-column: 1 / -1;
+            background: #ff6b6b;
+            color: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .contact-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .form-text {
+            font-weight: bold;
+            color: #333;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
         .contact-btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             background: linear-gradient(135deg, #8338ec, #3a86ff);
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 10px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         
         .contact-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.25);
         }
-        .plus-sign {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin: 5px 0;
-    color: #d44141;
-}
-
-.service-fee-box {
-    background: #ff6b6b;
-    color: white;
-    padding: 12px;
-    border-radius: 8px;
-    font-weight: bold;
-    margin-top: 10px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    text-align: center;
-    font-size: 1.1rem;
-}
-
-.contact-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.form-text {
-    font-weight: bold;
-    color: #333;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
         
         /* Main Content */
         main {
@@ -253,16 +286,15 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            gap: 1rem;
         }
         
         .footer-links {
             display: flex;
             list-style: none;
-            margin: 1rem 0;
-        }
-        
-        .footer-links li {
-            margin: 0 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
         }
         
         .footer-links a {
@@ -276,7 +308,6 @@
         }
         
         .creator {
-            margin-top: 1rem;
             font-size: 0.9rem;
             color: #adb5bd;
         }
@@ -286,13 +317,22 @@
                 display: none;
             }
             
+            .service-list {
+                grid-template-columns: 1fr;
+            }
+            
             .button-container {
                 grid-template-columns: 1fr;
             }
             
             .footer-links {
                 flex-direction: column;
-                gap: 10px;
+                gap: 0.8rem;
+            }
+            
+            .contact-section {
+                flex-direction: column;
+                text-align: center;
             }
         }
     </style>
@@ -320,60 +360,57 @@
             <p>Prepare for your Japanese Language Proficiency Test with these practice exams. Select any exam below to begin your preparation.</p>
         </section>
         
-    <!-- Service Banner - UPDATED -->
-<div class="service-banner">
-    <h3><i class="fas fa-bullhorn"></i> Form Services</h3>
-    
-    <div class="service-list">
-        <div class="service-item">
-            <span class="service-name">JFT</span>
-            <span class="service-price">36$</span>
-        </div>
-        <div class="service-item">
-            <span class="service-name">Kaigo(1part)</span>
-            <span class="service-price">7$</span>
-        </div>
-        <div class="service-item">
-            <span class="service-name">Gaishoku</span>
-            <span class="service-price">33$</span>
-        </div>
+        <!-- Service Banner - UPDATED -->
+        <div class="service-banner">
+            <h3><i class="fas fa-bullhorn"></i> Form Services</h3>
+            
+            <div class="service-list">
+                <div class="service-item">
+                    <span class="service-name">JFT</span>
+                    <span class="service-price">36$</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Kaigo(1part)</span>
+                    <span class="service-price">7$</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Gaishoku</span>
+                    <span class="service-price">33$</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">Hotel</span>
+                    <span class="service-price">55$</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">စိုက်ပျိုးရေး</span>
+                    <span class="service-price">33$</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">မွေးမြူရေး</span>
+                    <span class="service-price">33$</span>
+                </div>
+                <div class="service-item">
+                    <span class="service-name">ကုန်ထုတ်</span>
+                    <span class="service-price">35$</span>
+                </div>
 
-<div class="service-item">
-            <span class="service-name">Hotel</span>
-            <span class="service-price">55$</span>
+                <div class="plus-sign">+</div>
+                
+                <div class="service-fee-box">
+                    Service Fee - 10000 Kyats
+                </div>
+            </div>
+            
+            <div class="contact-section">
+                <div class="form-text">
+                    Form အပ်ရန်
+                </div>
+                <a href="https://t.me/shinegyi123" target="_blank" class="contact-btn">
+                    <i class="fab fa-telegram"></i> Telegram - shinegyi123
+                </a>
+            </div>
         </div>
-
-<div class="service-item">
-            <span class="service-name">စိုက်ပျိုးရေး</span>
-            <span class="service-price">33$</span>
-        </div>
-
-        <div class="service-item">
-            <span class="service-name">မွေးမြူရေး</span>
-            <span class="service-price">33$</span>
-        </div>
-
-<div class="service-item">
-            <span class="service-name">ကုန်ထုတ်</span>
-            <span class="service-price">35$</span>
-        </div>
-
-        <div class="plus-sign">+</div>
         
-        <div class="service-fee-box">
-            Service Fee - 10000 Kyats
-        </div>
-    </div>
-    
-    <div class="contact-section">
-        <div class="form-text">
-            Form အပ်ရန်
-        </div>
-        <a href="https://t.me/shinegyi123" target="_blank" class="contact-btn">
-            <i class="fab fa-telegram"></i> Telegram - shinegyi123
-        </a>
-    </div>
-</div>
         <!-- Exam Buttons -->
         <div class="button-container">
             <button class="exam-btn" data-exam="jft1.html">
