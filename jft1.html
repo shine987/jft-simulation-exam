@@ -411,13 +411,13 @@
         font-size: 14px;
         padding: 4px 8px;
       }
-  /* CSS ထဲကို ဒီတစ်ခုပဲထည့်ပါ */
-button.back-btn {
+  /* ========== SIMPLE BACK BUTTON ========== */
+button {
   position: fixed;
   top: 70px;
   left: 20px;
   padding: 10px 20px;
-  background-color: #6c757d;
+  background: #6c757d;
   color: white;
   border: none;
   border-radius: 5px;
@@ -427,9 +427,19 @@ button.back-btn {
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
 
-button.back-btn:hover {
-  background-color: #5a6268;
+button:hover {
+  background: #5a6268;
 }
+
+/* Mobile */
+@media (max-width: 768px) {
+  button {
+    top: 60px;
+    left: 15px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+      }
     }
 </style>
 </head>
@@ -1440,6 +1450,7 @@ Read the dialog and choose the phrase that fits the most.</strong></p>
 </script>
 </body>
 </html>
+
 
 
 
