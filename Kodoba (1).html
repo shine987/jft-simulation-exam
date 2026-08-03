@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFT Unit-1 မှ 11 ဝေါဟာရစာရင်း</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #e6e6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', 'Myanmar Text', 'Pyidaungsu', 'Noto Sans Myanmar', 'Arial Unicode MS', sans-serif;
+            padding: 30px 20px;
+        }
+
+        .page {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 1200px;
+            padding: 50px 55px 60px 55px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+        }
+
+        .unit-section {
+            margin-bottom: 45px;
+        }
+
+        .unit-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .unit-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1a1a1a;
+            border-bottom: 3px solid #1a1a1a;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .unit-title small {
+            font-size: 16px;
+            font-weight: 400;
+            color: #555;
+            margin-left: 12px;
+        }
+
+        .vocab-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .grid-header {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            background-color: #f2f2f2;
+            border: 1px solid #222;
+            border-radius: 2px;
+            padding: 12px 22px;
+            font-weight: 700;
+            font-size: 17px;
+            color: #111;
+            letter-spacing: 0.5px;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+
+        .grid-row {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            border: 1px solid #ccc;
+            border-radius: 2px;
+            padding: 10px 22px;
+            background-color: #fcfcfc;
+            align-items: center;
+            font-size: 16.5px;
+            line-height: 1.8;
+            color: #1c1c1c;
+            transition: background 0.1s;
+        }
+
+        .grid-row:hover {
+            background-color: #f8f8f8;
+        }
+
+        .jp {
+            font-family: 'Yu Gothic', 'Meiryo', 'Arial Unicode MS', sans-serif;
+            font-weight: 500;
+            color: #0b2a4a;
+            letter-spacing: 0.5px;
+        }
+
+        .my {
+            font-family: 'Myanmar Text', 'Pyidaungsu', 'Noto Sans Myanmar', 'Arial Unicode MS', sans-serif;
+            font-weight: 400;
+            color: #1f3b2a;
+            font-size: 16.5px;
+            letter-spacing: 0.3px;
+            padding-left: 12px;
+        }
+
+        .footer-note {
+            margin-top: 30px;
+            border-top: 1px solid #aaa;
+            padding-top: 18px;
+            font-size: 15px;
+            color: #444;
+            text-align: right;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+
+        .sub-header {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1a3a5a;
+            margin: 18px 0 12px 0;
+            border-left: 4px solid #1a3a5a;
+            padding-left: 12px;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                padding: 30px 20px 40px 20px;
+            }
+            .grid-header, .grid-row {
+                grid-template-columns: 1fr 1fr;
+                font-size: 14px;
+                padding: 10px 14px;
+            }
+            .unit-title {
+                font-size: 20px;
+            }
+            .my {
+                font-size: 14px;
+                padding-left: 6px;
+            }
+            .sub-header {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .grid-header, .grid-row {
+                grid-template-columns: 1fr 1fr;
+                font-size: 13px;
+                padding: 8px 10px;
+            }
+            .page {
+                padding: 20px 12px 30px 12px;
+            }
+            .my {
+                font-size: 13px;
+                padding-left: 4px;
+            }
+            .unit-title {
+                font-size: 17px;
+            }
+        }
+
+        @media print {
+            body {
+                background-color: white;
+                padding: 0.2in;
+            }
+            .page {
+                box-shadow: none;
+                padding: 20px 30px;
+                border: 1px solid #ccc;
+            }
+            .grid-row:hover {
+                background-color: #fcfcfc;
+            }
+            .unit-section {
+                page-break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <!-- ======================== UNIT 1 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 1 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">せんぱい</span><span class="my">စီနီယာ</span></div>
+            <div class="grid-row"><span class="jp">こうはい</span><span class="my">ဂျူနီယာ</span></div>
+            <div class="grid-row"><span class="jp">しりあい</span><span class="my">အသိမိတ်ဆွေ</span></div>
+            <div class="grid-row"><span class="jp">ひさしぶり</span><span class="my">မတွေ့တာကြာသော</span></div>
+            <div class="grid-row"><span class="jp">げんき（な）</span><span class="my">ကျန်းမာသော</span></div>
+            <div class="grid-row"><span class="jp">おかげさまで</span><span class="my">ကျေးဇူးကြောင့်</span></div>
+            <div class="grid-row"><span class="jp">はんとし</span><span class="my">နှစ်ဝက်</span></div>
+            <div class="grid-row"><span class="jp">いちねん</span><span class="my">တစ်နှစ်</span></div>
+            <div class="grid-row"><span class="jp">せんげつ</span><span class="my">ပြီးခဲ့တဲ့လ</span></div>
+            <div class="grid-row"><span class="jp">きょねん</span><span class="my">မနှစ်က</span></div>
+            <div class="grid-row"><span class="jp">せいかつ</span><span class="my">နေထိုင်မှုဘဝ</span></div>
+            <div class="grid-row"><span class="jp">なれる</span><span class="my">ကျင့်သားရသည်</span></div>
+            <div class="grid-row"><span class="jp">ちょうど</span><span class="my">တိတိ</span></div>
+            <div class="grid-row"><span class="jp">なんとか</span><span class="my">မဖြစ်ဖြစ်အောင် / တစ်နည်းနည်းနဲ့</span></div>
+            <div class="grid-row"><span class="jp">まだ</span><span class="my">-မ၊ သေး</span></div>
+            <div class="grid-row"><span class="jp">もう</span><span class="my">ပြီးပြီ</span></div>
+            <div class="grid-row"><span class="jp">なります</span><span class="my">ဖြစ်လာသည်</span></div>
+            <div class="grid-row"><span class="jp">～かげつ</span><span class="my">... လကြာ</span></div>
+            <div class="grid-row"><span class="jp">いっかげつ</span><span class="my">၁ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">にかげつ</span><span class="my">၂ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">さんかげつ</span><span class="my">၃ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">よんかげつ</span><span class="my">၄ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">ごかげつ</span><span class="my">၅ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">ろっかげつ</span><span class="my">၆ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">ななかげつ</span><span class="my">၇ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">はちかげつ</span><span class="my">၈ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">きゅうかげつ</span><span class="my">၉ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">じゅっかげつ</span><span class="my">၁၀ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">じゅういっかげつ</span><span class="my">၁၁ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">じゅうにかげつ</span><span class="my">၁၂ လကြာ</span></div>
+            <div class="grid-row"><span class="jp">～ねん</span><span class="my">... နှစ်</span></div>
+            <div class="grid-row"><span class="jp">いちねん</span><span class="my">၁ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">にねん</span><span class="my">၂ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">さんねん</span><span class="my">၃ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">よねん</span><span class="my">၄ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">ごねん</span><span class="my">၅ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">ろくねん</span><span class="my">၆ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">ななねん / しちねん</span><span class="my">၇ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">はちねん</span><span class="my">၈ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">きゅうねん</span><span class="my">၉ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">じゅうねん</span><span class="my">၁၀ နှစ်</span></div>
+            <div class="grid-row"><span class="jp">せんしゅう</span><span class="my">ပြီးခဲ့တဲ့အပတ်</span></div>
+            <div class="grid-row"><span class="jp">しごと</span><span class="my">အလုပ်</span></div>
+            <div class="grid-row"><span class="jp">レストラン</span><span class="my">စားသောက်ဆိုင်</span></div>
+            <div class="grid-row"><span class="jp">はたらく</span><span class="my">အလုပ်လုပ်သည်</span></div>
+            <div class="grid-row"><span class="jp">ホテル</span><span class="my">ဟိုတယ်</span></div>
+            <div class="grid-row"><span class="jp">こうじょう</span><span class="my">စက်ရုံ</span></div>
+            <div class="grid-row"><span class="jp">かいご</span><span class="my">ဘိုးဘွားစောင့်ရှောက်ရေးအလုပ်</span></div>
+            <div class="grid-row"><span class="jp">しごとをする</span><span class="my">အလုပ်လုပ်သည်</span></div>
+            <div class="grid-row"><span class="jp">けんせつ</span><span class="my">ဆောက်လုပ်ရေး</span></div>
+            <div class="grid-row"><span class="jp">やさい</span><span class="my">ဟင်းသီးဟင်းရွက်</span></div>
+            <div class="grid-row"><span class="jp">つくる</span><span class="my">ပြုလုပ်သည်</span></div>
+            <div class="grid-row"><span class="jp">にほんごがっこう</span><span class="my">ဂျပန်စာသင်ကျောင်း</span></div>
+            <div class="grid-row"><span class="jp">べんきょうする</span><span class="my">လေ့လာသည်</span></div>
+            <div class="grid-row"><span class="jp">せんもんがっこう</span><span class="my">အဓိကဘာသာရပ်ကျောင်း</span></div>
+            <div class="grid-row"><span class="jp">かよう</span><span class="my">သွားလာသည်</span></div>
+            <div class="grid-row"><span class="jp">しゅふ</span><span class="my">အိမ်ရှင်မ</span></div>
+            <div class="grid-row"><span class="jp">いそがしい</span><span class="my">အလုပ်များသော</span></div>
+            <div class="grid-row"><span class="jp">たいへん（な）</span><span class="my">ပင်ပန်းသော</span></div>
+            <div class="grid-row"><span class="jp">つかれる</span><span class="my">ပင်ပန်းခြင်း / မောပန်းခြင်း</span></div>
+            <div class="grid-row"><span class="jp">まあまあ（な）</span><span class="my">မဆိုးသော</span></div>
+            <div class="grid-row"><span class="jp">たのしい</span><span class="my">ပျော်ရွှင်သော</span></div>
+            <div class="grid-row"><span class="jp">みんな</span><span class="my">အားလုံး</span></div>
+            <div class="grid-row"><span class="jp">しんせつ（な）</span><span class="my">ကျင်နာသော / ဖော်ရွေသော</span></div>
+            <div class="grid-row"><span class="jp">べんきょうになる</span><span class="my">လေ့လာဖို့ဖြစ်လာသည်</span></div>
+            <div class="grid-row"><span class="jp">まいにち</span><span class="my">နေ့တိုင်း</span></div>
+            <div class="grid-row"><span class="jp">がくせい</span><span class="my">ကျောင်းသား</span></div>
+            <div class="grid-row"><span class="jp">プログラミング</span><span class="my">ပရိုဂရမ်ရေးသားခြင်း</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">学生 (がくせい)</span><span class="my">ကျောင်းသား</span></div>
+            <div class="grid-row"><span class="jp">学校 (がっこう)</span><span class="my">ကျောင်း</span></div>
+            <div class="grid-row"><span class="jp">生活 (せいかつ)</span><span class="my">နေထိုင်မှုဘဝ</span></div>
+            <div class="grid-row"><span class="jp">去年 (きょねん)</span><span class="my">မနှစ်က</span></div>
+            <div class="grid-row"><span class="jp">先週 (せんしゅう)</span><span class="my">ပြီးခဲ့တဲ့အပတ်</span></div>
+            <div class="grid-row"><span class="jp">仕事 (しごと)</span><span class="my">အလုပ်</span></div>
+            <div class="grid-row"><span class="jp">元気 (げんき)</span><span class="my">ကျန်းမာသော</span></div>
+            <div class="grid-row"><span class="jp">忙しい (いそがしい)</span><span class="my">အလုပ်များသော</span></div>
+            <div class="grid-row"><span class="jp">働く (はたらく)</span><span class="my">အလုပ်လုပ်သည်</span></div>
+            <div class="grid-row"><span class="jp">作る (つくる)</span><span class="my">ပြုလုပ်သည်</span></div>
+            <div class="grid-row"><span class="jp">先輩 (せんぱい)</span><span class="my">စီနီယာ</span></div>
+            <div class="grid-row"><span class="jp">後輩 (こうはい)</span><span class="my">ဂျူနီယာ</span></div>
+            <div class="grid-row"><span class="jp">知り合い (しりあい)</span><span class="my">အသိမိတ်ဆွေ</span></div>
+            <div class="grid-row"><span class="jp">久しぶり (ひさしぶり)</span><span class="my">မတွေ့တာကြာသော</span></div>
+            <div class="grid-row"><span class="jp">お陰様で (おかげさまで)</span><span class="my">ကျေးဇူးကြောင့်</span></div>
+            <div class="grid-row"><span class="jp">半年 (はんとし)</span><span class="my">နှစ်ဝက်</span></div>
+            <div class="grid-row"><span class="jp">先月 (せんげつ)</span><span class="my">ပြီးခဲ့တဲ့လ</span></div>
+            <div class="grid-row"><span class="jp">慣れる (なれる)</span><span class="my">ကျင့်သားရသည်</span></div>
+            <div class="grid-row"><span class="jp">丁度 (ちょうど)</span><span class="my">တိတိ</span></div>
+            <div class="grid-row"><span class="jp">何とか (なんとか)</span><span class="my">မဖြစ်ဖြစ်အောင် / တစ်နည်းနည်းနဲ့</span></div>
+            <div class="grid-row"><span class="jp">未だ (まだ)</span><span class="my">-မ၊ သေး</span></div>
+            <div class="grid-row"><span class="jp">工場 (こうじょう)</span><span class="my">စက်ရုံ</span></div>
+            <div class="grid-row"><span class="jp">介護 (かいご)</span><span class="my">ဘိုးဘွားစောင့်ရှောက်ရေးအလုပ်</span></div>
+            <div class="grid-row"><span class="jp">建設 (けんせつ)</span><span class="my">ဆောက်လုပ်ရေး</span></div>
+            <div class="grid-row"><span class="jp">野菜 (やさい)</span><span class="my">ဟင်းသီးဟင်းရွက်</span></div>
+            <div class="grid-row"><span class="jp">日本語学校 (にほんごがっこう)</span><span class="my">ဂျပန်စာသင်ကျောင်း</span></div>
+            <div class="grid-row"><span class="jp">勉強する (べんきょうする)</span><span class="my">လေ့လာသည်</span></div>
+            <div class="grid-row"><span class="jp">専門学校 (せんもんがっこう)</span><span class="my">အဓိကဘာသာရပ်ကျောင်း</span></div>
+            <div class="grid-row"><span class="jp">通う (かよう)</span><span class="my">သွားလာသည်</span></div>
+            <div class="grid-row"><span class="jp">主婦 (しゅふ)</span><span class="my">အိမ်ရှင်မ</span></div>
+            <div class="grid-row"><span class="jp">大変（な） (たいへん)</span><span class="my">ပင်ပန်းသော</span></div>
+            <div class="grid-row"><span class="jp">疲れる (つかれる)</span><span class="my">ပင်ပန်းခြင်း / မောပန်းခြင်း</span></div>
+            <div class="grid-row"><span class="jp">楽しい (たのしい)</span><span class="my">ပျော်ရွှင်သော</span></div>
+            <div class="grid-row"><span class="jp">親切（な） (しんせつ)</span><span class="my">ကျင်နာသော / ဖော်ရွေသော</span></div>
+            <div class="grid-row"><span class="jp">勉強になる (べんきょうになる)</span><span class="my">လေ့လာဖို့ဖြစ်လာသည်</span></div>
+            <div class="grid-row"><span class="jp">毎日 (まいにち)</span><span class="my">နေ့တိုင်း</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 2 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 2 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">バドミントン</span><span class="my">ကြက်တောင်ရိုက်ခြင်း</span></div>
+            <div class="grid-row"><span class="jp">アニメ</span><span class="my">အန်နီမေးရှင်း</span></div>
+            <div class="grid-row"><span class="jp">し</span><span class="my">...လည်း (စာကြောင်းဆက်စကား)</span></div>
+            <div class="grid-row"><span class="jp">たいいくかん</span><span class="my">အားကစားခန်းမ</span></div>
+            <div class="grid-row"><span class="jp">まいしゅう</span><span class="my">အပတ်တိုင်း</span></div>
+            <div class="grid-row"><span class="jp">ゆうがた</span><span class="my">ညနေခင်း</span></div>
+            <div class="grid-row"><span class="jp">そのあと</span><span class="my">အဲဒီနောက်မှာ</span></div>
+            <div class="grid-row"><span class="jp">ほんとうに</span><span class="my">တကယ်ကို</span></div>
+            <div class="grid-row"><span class="jp">～の？</span><span class="my">...လား? (အမေးစကား)</span></div>
+            <div class="grid-row"><span class="jp">ぼく</span><span class="my">ကျွန်တော် (ယောက်ျားလေးသုံး)</span></div>
+            <div class="grid-row"><span class="jp">でかける</span><span class="my">အပြင်ထွက်သည်</span></div>
+            <div class="grid-row"><span class="jp">とくに</span><span class="my">အထူးသဖြင့်</span></div>
+            <div class="grid-row"><span class="jp">キャッチボール</span><span class="my">ဘောလုံးပစ်ဖမ်းကစားခြင်း</span></div>
+            <div class="grid-row"><span class="jp">おこさん</span><span class="my">ကလေး (တစ်ပါးသူ၏ကလေး)</span></div>
+            <div class="grid-row"><span class="jp">むすめ</span><span class="my">သမီး</span></div>
+            <div class="grid-row"><span class="jp">いぬ</span><span class="my">ခွေး</span></div>
+            <div class="grid-row"><span class="jp">キャンプ</span><span class="my">စခန်းချခြင်း</span></div>
+            <div class="grid-row"><span class="jp">つり</span><span class="my">ငါးဖမ်းခြင်း</span></div>
+            <div class="grid-row"><span class="jp">うみ</span><span class="my">ပင်လယ်</span></div>
+            <div class="grid-row"><span class="jp">やま</span><span class="my">တောင်</span></div>
+            <div class="grid-row"><span class="jp">～ご（ちゅうごくご）</span><span class="my">ဘာသာစကား (တရုတ်ဘာသာ)</span></div>
+            <div class="grid-row"><span class="jp">ことば</span><span class="my">စကားလုံး / ဘာသာစကား</span></div>
+            <div class="grid-row"><span class="jp">～じん</span><span class="my">လူမျိုး</span></div>
+            <div class="grid-row"><span class="jp">ならう</span><span class="my">သင်ယူသည်</span></div>
+            <div class="grid-row"><span class="jp">えいご</span><span class="my">အင်္ဂလိပ်စာ</span></div>
+            <div class="grid-row"><span class="jp">できる</span><span class="my">တတ်သည် / လုပ်နိုင်သည်</span></div>
+            <div class="grid-row"><span class="jp">いけばな</span><span class="my">ပန်းအလှပြင်ခြင်း</span></div>
+            <div class="grid-row"><span class="jp">フィリピノご</span><span class="my">ဖိလစ်ပိုင်ဘာသာစကား</span></div>
+            <div class="grid-row"><span class="jp">スペインご</span><span class="my">စပိန်ဘာသာစကား</span></div>
+            <div class="grid-row"><span class="jp">～にん</span><span class="my">...ယောက် (လူဦးရေတွက်ခြင်း)</span></div>
+            <div class="grid-row"><span class="jp">ひとり / ふたり</span><span class="my">၁ ယောက် / ၂ ယောက်</span></div>
+            <div class="grid-row"><span class="jp">さんにん ～ じゅうにん</span><span class="my">၃ ယောက် မှ ၁၀ ယောက်အထိ</span></div>
+            <div class="grid-row"><span class="jp">しゅみ</span><span class="my">ဝါသနာ</span></div>
+            <div class="grid-row"><span class="jp">おんがく</span><span class="my">ဂီတ</span></div>
+            <div class="grid-row"><span class="jp">きく</span><span class="my">နားထောင်သည်</span></div>
+            <div class="grid-row"><span class="jp">ほん</span><span class="my">စာအုပ်</span></div>
+            <div class="grid-row"><span class="jp">よむ</span><span class="my">ဖတ်သည်</span></div>
+            <div class="grid-row"><span class="jp">もの（おいしいもの）</span><span class="my">အရာဝတ္ထု (အရသာရှိသောအရာ)</span></div>
+            <div class="grid-row"><span class="jp">しゃしん</span><span class="my">ဓာတ်ပုံ</span></div>
+            <div class="grid-row"><span class="jp">とる</span><span class="my">ရိုက်သည် (ဓာတ်ပုံ)</span></div>
+            <div class="grid-row"><span class="jp">ピアノ</span><span class="my">ပီယာနို</span></div>
+            <div class="grid-row"><span class="jp">ギター</span><span class="my">ဂစ်တာ</span></div>
+            <div class="grid-row"><span class="jp">ひく</span><span class="my">တီးသည် (တူရိယာ)</span></div>
+            <div class="grid-row"><span class="jp">おしゃべり</span><span class="my">စကားပြောခြင်း / စကားဖောင်ဖွဲ့ခြင်း</span></div>
+            <div class="grid-row"><span class="jp">りょうり</span><span class="my">ဟင်းချက်ခြင်း / အစားအစာ</span></div>
+            <div class="grid-row"><span class="jp">りょこう</span><span class="my">ခရီးသွားခြင်း</span></div>
+            <div class="grid-row"><span class="jp">テニス</span><span class="my">တင်းနစ်</span></div>
+            <div class="grid-row"><span class="jp">いろいろ（な）</span><span class="my">အမျိုးမျိုးသော</span></div>
+            <div class="grid-row"><span class="jp">こと</span><span class="my">အကြောင်းအရာ</span></div>
+            <div class="grid-row"><span class="jp">ひと</span><span class="my">လူ</span></div>
+            <div class="grid-row"><span class="jp">はなす</span><span class="my">စကားပြောသည်</span></div>
+            <div class="grid-row"><span class="jp">とくにない</span><span class="my">အထူးသဖြင့်မရှိပါ</span></div>
+            <div class="grid-row"><span class="jp">やきゅう</span><span class="my">ဘေ့စ်ဘော</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">人 (ひと)</span><span class="my">လူ</span></div>
+            <div class="grid-row"><span class="jp">人 (～にん)</span><span class="my">...ယောက် (လူဦးရေတွက်ယူနစ်)</span></div>
+            <div class="grid-row"><span class="jp">人 (～じん)</span><span class="my">လူမျိုး</span></div>
+            <div class="grid-row"><span class="jp">犬 (いぬ)</span><span class="my">ခွေး</span></div>
+            <div class="grid-row"><span class="jp">家族 (かぞく)</span><span class="my">မိသားစု</span></div>
+            <div class="grid-row"><span class="jp">夕方 (ゆうがた)</span><span class="my">ညနေခင်း</span></div>
+            <div class="grid-row"><span class="jp">英語 (えいご)</span><span class="my">အင်္ဂလိပ်စာ</span></div>
+            <div class="grid-row"><span class="jp">音楽 (おんがく)</span><span class="my">ဂီတ</span></div>
+            <div class="grid-row"><span class="jp">習う (ならう)</span><span class="my">သင်ယူသည်</span></div>
+            <div class="grid-row"><span class="jp">話す (はなす)</span><span class="my">စကားပြောသည်</span></div>
+            <div class="grid-row"><span class="jp">出かける (でかける)</span><span class="my">အပြင်ထွက်သည်</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 3 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 3 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">きせつ</span><span class="my">ရာသီဥတု</span></div>
+            <div class="grid-row"><span class="jp">ことば</span><span class="my">စကားလုံး / ဘာသာစကား</span></div>
+            <div class="grid-row"><span class="jp">あつい</span><span class="my">ပူသော</span></div>
+            <div class="grid-row"><span class="jp">すずしい</span><span class="my">အေးမြသော</span></div>
+            <div class="grid-row"><span class="jp">さむい</span><span class="my">ချမ်းသော</span></div>
+            <div class="grid-row"><span class="jp">あたたかい</span><span class="my">နွေးထွေးသော</span></div>
+            <div class="grid-row"><span class="jp">じめじめする / むしあつい</span><span class="my">စိုစွတ်ထိုင်းမှိုင်းသော / အိုက်စပ်သော</span></div>
+            <div class="grid-row"><span class="jp">あめ</span><span class="my">မိုး</span></div>
+            <div class="grid-row"><span class="jp">ふる</span><span class="my">(မိုး/နှင်း) ရွာသည်</span></div>
+            <div class="grid-row"><span class="jp">ゆき</span><span class="my">နှင်း</span></div>
+            <div class="grid-row"><span class="jp">さくら</span><span class="my">ချယ်ရီပန်း</span></div>
+            <div class="grid-row"><span class="jp">はな</span><span class="my">ပန်း</span></div>
+            <div class="grid-row"><span class="jp">さく</span><span class="my">(ပန်း) ပွင့်သည်</span></div>
+            <div class="grid-row"><span class="jp">もみじ</span><span class="my">မေပယ်ရွက် (ဆောင်းဦးပေါက်သစ်ရွက်နီ)</span></div>
+            <div class="grid-row"><span class="jp">きれい（な）</span><span class="my">လှပသော / သန့်ရှင်းသော</span></div>
+            <div class="grid-row"><span class="jp">セミ</span><span class="my">ပုစဉ်းရင်ကွဲ</span></div>
+            <div class="grid-row"><span class="jp">なく</span><span class="my">(အကောင်) အော်သည် / မြည်သည်</span></div>
+            <div class="grid-row"><span class="jp">はる</span><span class="my">နွေဦးရာသီ</span></div>
+            <div class="grid-row"><span class="jp">つゆ</span><span class="my">မိုးရာသီ (ဂျပန်)</span></div>
+            <div class="grid-row"><span class="jp">なつ</span><span class="my">နွေရာသီ</span></div>
+            <div class="grid-row"><span class="jp">あき</span><span class="my">ဆောင်းဦးရာသီ</span></div>
+            <div class="grid-row"><span class="jp">ふゆ</span><span class="my">ဆောင်းရာသီ</span></div>
+            <div class="grid-row"><span class="jp">たくさん</span><span class="my">အများကြီး</span></div>
+            <div class="grid-row"><span class="jp">いちねんじゅう</span><span class="my">တစ်နှစ်ပတ်လုံး</span></div>
+            <div class="grid-row"><span class="jp">ながい</span><span class="my">ရှည်သော</span></div>
+            <div class="grid-row"><span class="jp">ずっと</span><span class="my">တောက်လျှောက် / အမြဲ</span></div>
+            <div class="grid-row"><span class="jp">うき</span><span class="my">မိုးရာသီ</span></div>
+            <div class="grid-row"><span class="jp">かんき</span><span class="my">နွေရာသီ / ခြောက်သွေ့သောရာသီ</span></div>
+            <div class="grid-row"><span class="jp">しき</span><span class="my">ရာသီလေးပါး</span></div>
+            <div class="grid-row"><span class="jp">おなじ</span><span class="my">တူညီသော</span></div>
+            <div class="grid-row"><span class="jp">～ど（よんじゅうど）</span><span class="my">ဒီဂရီ (ဥပမာ-၄၀ ဒီဂရီ)</span></div>
+            <div class="grid-row"><span class="jp">マイナス</span><span class="my">အနှုတ် (အပူချိန်)</span></div>
+            <div class="grid-row"><span class="jp">みじかい</span><span class="my">တိုသော</span></div>
+            <div class="grid-row"><span class="jp">そうなんですか</span><span class="my">အဲလိုလား / ဟုတ်လား</span></div>
+            <div class="grid-row"><span class="jp">くだもの</span><span class="my">သစ်သီး</span></div>
+            <div class="grid-row"><span class="jp">おいしい</span><span class="my">အရသာရှိသော</span></div>
+            <div class="grid-row"><span class="jp">けしき</span><span class="my">ရှုခင်း</span></div>
+            <div class="grid-row"><span class="jp">やま</span><span class="my">တောင်</span></div>
+            <div class="grid-row"><span class="jp">あそぶ</span><span class="my">ကစားသည် / အလည်သွားသည်</span></div>
+            <div class="grid-row"><span class="jp">すき（な）</span><span class="my">ကြိုက်နှစ်သက်သော</span></div>
+            <div class="grid-row"><span class="jp">にがて（な）</span><span class="my">အားနည်းသော / မကျွမ်းကျင်သော</span></div>
+            <div class="grid-row"><span class="jp">いちばん</span><span class="my">အကောင်းဆုံး / အများဆုံး (နံပါတ်တစ်)</span></div>
+            <div class="grid-row"><span class="jp">どうして</span><span class="my">ဘာကြောင့်လဲ</span></div>
+            <div class="grid-row"><span class="jp">どの</span><span class="my">ဘယ် (တစ်ခု / အရာ)</span></div>
+            <div class="grid-row"><span class="jp">～よね</span><span class="my">...နော် (ထောက်ခံချက်တောင်းခြင်း)</span></div>
+            <div class="grid-row"><span class="jp">ぶどう</span><span class="my">စပျစ်သီး</span></div>
+            <div class="grid-row"><span class="jp">なし</span><span class="my">သစ်တော်သီး</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">季節 (きせつ)</span><span class="my">ရာသီဥတု</span></div>
+            <div class="grid-row"><span class="jp">春 (はる)</span><span class="my">နွေဦးရာသီ</span></div>
+            <div class="grid-row"><span class="jp">夏 (なつ)</span><span class="my">နွေရာသီ</span></div>
+            <div class="grid-row"><span class="jp">秋 (あき)</span><span class="my">ဆောင်းဦးရာသီ</span></div>
+            <div class="grid-row"><span class="jp">冬 (ふゆ)</span><span class="my">ဆောင်းရာသီ</span></div>
+            <div class="grid-row"><span class="jp">花 (はな)</span><span class="my">ပန်း</span></div>
+            <div class="grid-row"><span class="jp">同じ (おなじ)</span><span class="my">တူညီသော</span></div>
+            <div class="grid-row"><span class="jp">暑い (あつい)</span><span class="my">(ရာသီဥတု) ပူသော</span></div>
+            <div class="grid-row"><span class="jp">寒い (さむい)</span><span class="my">ချမ်းသော</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 4 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 4 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">てんき</span><span class="my">ရာသီဥတု</span></div>
+            <div class="grid-row"><span class="jp">はれ</span><span class="my">နေသာခြင်း</span></div>
+            <div class="grid-row"><span class="jp">はれる</span><span class="my">နေသာသည်</span></div>
+            <div class="grid-row"><span class="jp">いいてんき</span><span class="my">ရာသီဥတုကောင်းသော</span></div>
+            <div class="grid-row"><span class="jp">くもり</span><span class="my">တိမ်</span></div>
+            <div class="grid-row"><span class="jp">くもる</span><span class="my">တိမ်ထူသော</span></div>
+            <div class="grid-row"><span class="jp">かぜ</span><span class="my">လေ</span></div>
+            <div class="grid-row"><span class="jp">ふく</span><span class="my">တိုက်သည်</span></div>
+            <div class="grid-row"><span class="jp">かみなり</span><span class="my">မိုးကြိုး</span></div>
+            <div class="grid-row"><span class="jp">なる / かみなりがなる</span><span class="my">မိုးကြိုးပစ်သည်</span></div>
+            <div class="grid-row"><span class="jp">いま</span><span class="my">ယခု</span></div>
+            <div class="grid-row"><span class="jp">きのう</span><span class="my">မနေ့က</span></div>
+            <div class="grid-row"><span class="jp">だいぶ</span><span class="my">တော်တော်လေး</span></div>
+            <div class="grid-row"><span class="jp">いやになる</span><span class="my">စိတ်အနှောင့်အယှက်ဖြစ်သည်</span></div>
+            <div class="grid-row"><span class="jp">ゆうべ</span><span class="my">မနေ့ည</span></div>
+            <div class="grid-row"><span class="jp">すごい</span><span class="my">အံ့ဩစရာကောင်းသော</span></div>
+            <div class="grid-row"><span class="jp">ほんとうですね</span><span class="my">အမှန်ပဲ / ဟုတ်တယ်နော်</span></div>
+            <div class="grid-row"><span class="jp">よなか</span><span class="my">ညလယ်</span></div>
+            <div class="grid-row"><span class="jp">あした</span><span class="my">မနက်ဖြန်</span></div>
+            <div class="grid-row"><span class="jp">いちにち</span><span class="my">တစ်နေ့လုံး</span></div>
+            <div class="grid-row"><span class="jp">やむ</span><span class="my">တိတ်သည်</span></div>
+            <div class="grid-row"><span class="jp">ただ</span><span class="my">သို့သော်</span></div>
+            <div class="grid-row"><span class="jp">つよい</span><span class="my">အားကောင်းသော</span></div>
+            <div class="grid-row"><span class="jp">ふくそう</span><span class="my">အဝတ်အစား</span></div>
+            <div class="grid-row"><span class="jp">おでかけください</span><span class="my">အပြင်ထွက်ပေးပါ</span></div>
+            <div class="grid-row"><span class="jp">たいふう</span><span class="my">တိုင်ဖုန်းမုန်တိုင်း</span></div>
+            <div class="grid-row"><span class="jp">そと</span><span class="my">အပြင်</span></div>
+            <div class="grid-row"><span class="jp">しぬ</span><span class="my">သေသည်</span></div>
+            <div class="grid-row"><span class="jp">きおん</span><span class="my">အပူချိန်</span></div>
+            <div class="grid-row"><span class="jp">アイス</span><span class="my">ရေခဲမုန့်</span></div>
+            <div class="grid-row"><span class="jp">まち</span><span class="my">မြို့</span></div>
+            <div class="grid-row"><span class="jp">さわる</span><span class="my">ထိသည် / တို့သည်</span></div>
+            <div class="grid-row"><span class="jp">つめたい</span><span class="my">အေးသော</span></div>
+            <div class="grid-row"><span class="jp">まっしろ（な）</span><span class="my">ဖြူဖွေးသော</span></div>
+            <div class="grid-row"><span class="jp">とっても</span><span class="my">အရမ်း</span></div>
+            <div class="grid-row"><span class="jp">おくれる</span><span class="my">နောက်ကျသည်</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">天気 (てんき)</span><span class="my">ရာသီဥတု</span></div>
+            <div class="grid-row"><span class="jp">晴れ (はれ)</span><span class="my">နေသာခြင်း</span></div>
+            <div class="grid-row"><span class="jp">雨 (あめ)</span><span class="my">မိုး</span></div>
+            <div class="grid-row"><span class="jp">雪 (ゆき)</span><span class="my">နှင်း</span></div>
+            <div class="grid-row"><span class="jp">風 (かぜ)</span><span class="my">လေ</span></div>
+            <div class="grid-row"><span class="jp">今 (いま)</span><span class="my">ယခု</span></div>
+            <div class="grid-row"><span class="jp">昨日 (きのう)</span><span class="my">မနေ့က</span></div>
+            <div class="grid-row"><span class="jp">明日 (あした)</span><span class="my">မနက်ဖြန်</span></div>
+            <div class="grid-row"><span class="jp">毎日 (まいにち)</span><span class="my">နေ့တိုင်း</span></div>
+            <div class="grid-row"><span class="jp">強い (つよい)</span><span class="my">အားကောင်းသော</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 5 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 5 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">どんな</span><span class="my">ဘယ်လိုမျိုး</span></div>
+            <div class="grid-row"><span class="jp">べんり（な）</span><span class="my">အဆင်ပြေသော</span></div>
+            <div class="grid-row"><span class="jp">ふべん（な）</span><span class="my">အဆင်မပြေသော</span></div>
+            <div class="grid-row"><span class="jp">にぎやか（な）</span><span class="my">စည်ကားသော</span></div>
+            <div class="grid-row"><span class="jp">みどり</span><span class="my">အစိမ်း</span></div>
+            <div class="grid-row"><span class="jp">おおい</span><span class="my">များသော</span></div>
+            <div class="grid-row"><span class="jp">すくない</span><span class="my">နည်းသော</span></div>
+            <div class="grid-row"><span class="jp">やさしい</span><span class="my">ကြင်နာသော</span></div>
+            <div class="grid-row"><span class="jp">いなか</span><span class="my">တောရွာ</span></div>
+            <div class="grid-row"><span class="jp">とかい</span><span class="my">မြို့ကြီး</span></div>
+            <div class="grid-row"><span class="jp">たしかに</span><span class="my">သေချာပေါက်</span></div>
+            <div class="grid-row"><span class="jp">すみやすい</span><span class="my">နေထိုင်ရလွယ်ကူသည်</span></div>
+            <div class="grid-row"><span class="jp">みせ</span><span class="my">ဆိုင်</span></div>
+            <div class="grid-row"><span class="jp">やすい</span><span class="my">ဈေးပေါ်သော</span></div>
+            <div class="grid-row"><span class="jp">おもしろい</span><span class="my">စိတ်ဝင်စားစရာကောင်းသော</span></div>
+            <div class="grid-row"><span class="jp">とおい</span><span class="my">ဝေးသော</span></div>
+            <div class="grid-row"><span class="jp">どこか</span><span class="my">တစ်နေရာရာ</span></div>
+            <div class="grid-row"><span class="jp">ところ</span><span class="my">နေရာ</span></div>
+            <div class="grid-row"><span class="jp">スポーツセンター</span><span class="my">အားကစားစင်တာ</span></div>
+            <div class="grid-row"><span class="jp">たてもの</span><span class="my">အဆောက်အဦး</span></div>
+            <div class="grid-row"><span class="jp">ショッピングモール</span><span class="my">ရှော့ပင်မော</span></div>
+            <div class="grid-row"><span class="jp">いちど</span><span class="my">တစ်ကြိမ်</span></div>
+            <div class="grid-row"><span class="jp">いってみる</span><span class="my">သွားကြည့်သည်</span></div>
+            <div class="grid-row"><span class="jp">ばしょ</span><span class="my">နေရာ</span></div>
+            <div class="grid-row"><span class="jp">ぜひ</span><span class="my">ဆက်ဆက်</span></div>
+            <div class="grid-row"><span class="jp">おすすめ</span><span class="my">အကြံပြုချက်</span></div>
+            <div class="grid-row"><span class="jp">しっている</span><span class="my">သိနေသည်</span></div>
+            <div class="grid-row"><span class="jp">しる</span><span class="my">သိသည်</span></div>
+            <div class="grid-row"><span class="jp">きゅうけいじょ</span><span class="my">ခေတ္တအနားယူသည့်နေရာ</span></div>
+            <div class="grid-row"><span class="jp">そうね…</span><span class="my">ဟုတ်တယ်နော်</span></div>
+            <div class="grid-row"><span class="jp">うつくしい</span><span class="my">လှပသော</span></div>
+            <div class="grid-row"><span class="jp">すなはま</span><span class="my">သဲသောင်ပြင်</span></div>
+            <div class="grid-row"><span class="jp">ゆうめい（な）</span><span class="my">ထင်ရှားသော</span></div>
+            <div class="grid-row"><span class="jp">およぐ</span><span class="my">ရေကူးသည်</span></div>
+            <div class="grid-row"><span class="jp">おか</span><span class="my">တောင်ကုန်း</span></div>
+            <div class="grid-row"><span class="jp">みわたす</span><span class="my">ငေးမောကြည့်သည်</span></div>
+            <div class="grid-row"><span class="jp">ゆうひ</span><span class="my">နေဝင်ဆည်းဆာ</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">町 (まち)</span><span class="my">မြို့</span></div>
+            <div class="grid-row"><span class="jp">店 (みせ)</span><span class="my">ဆိုင်</span></div>
+            <div class="grid-row"><span class="jp">食堂 (しょくどう)</span><span class="my">ထမင်းစားခန်း</span></div>
+            <div class="grid-row"><span class="jp">便利 (べんりな)</span><span class="my">အဆင်ပြေသော</span></div>
+            <div class="grid-row"><span class="jp">不便 (ふべんな)</span><span class="my">အဆင်မပြေသော</span></div>
+            <div class="grid-row"><span class="jp">静か (しずかな)</span><span class="my">တိတ်ဆိတ်သော</span></div>
+            <div class="grid-row"><span class="jp">有名 (ゆうめいな)</span><span class="my">ထင်ရှားသော</span></div>
+            <div class="grid-row"><span class="jp">多い (おおい)</span><span class="my">များသော</span></div>
+            <div class="grid-row"><span class="jp">少ない (すくない)</span><span class="my">နည်းသော</span></div>
+            <div class="grid-row"><span class="jp">遠い (とおい)</span><span class="my">ဝေးသော</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 6 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 6 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">しんごう</span><span class="my">မီးပွိုင့်</span></div>
+            <div class="grid-row"><span class="jp">おうだんほどう</span><span class="my">လူကူးမျဉ်းကျား</span></div>
+            <div class="grid-row"><span class="jp">かど</span><span class="my">ထောင့်</span></div>
+            <div class="grid-row"><span class="jp">こうさてん</span><span class="my">လမ်းဆုံ</span></div>
+            <div class="grid-row"><span class="jp">みち</span><span class="my">လမ်း</span></div>
+            <div class="grid-row"><span class="jp">はし</span><span class="my">တံတား</span></div>
+            <div class="grid-row"><span class="jp">みちあんない</span><span class="my">လမ်းညွှန်</span></div>
+            <div class="grid-row"><span class="jp">まっすぐ</span><span class="my">တည့်တည့်</span></div>
+            <div class="grid-row"><span class="jp">ひだり</span><span class="my">ဘယ်</span></div>
+            <div class="grid-row"><span class="jp">まがる</span><span class="my">ကွေ့သည်</span></div>
+            <div class="grid-row"><span class="jp">みぎ</span><span class="my">ညာ</span></div>
+            <div class="grid-row"><span class="jp">わたる</span><span class="my">ဖြတ်ကျော်သည်</span></div>
+            <div class="grid-row"><span class="jp">～つめ</span><span class="my">မြောက်</span></div>
+            <div class="grid-row"><span class="jp">ひとつめ</span><span class="my">တစ်ခုမြောက်</span></div>
+            <div class="grid-row"><span class="jp">ふたつめ</span><span class="my">နှစ်ခုမြောက်</span></div>
+            <div class="grid-row"><span class="jp">バスてい</span><span class="my">ဘတ်စ်ကားမှတ်တိုင်</span></div>
+            <div class="grid-row"><span class="jp">ゆうびんきょく</span><span class="my">စာတိုက်</span></div>
+            <div class="grid-row"><span class="jp">デパート</span><span class="my">ကုန်တိုက်</span></div>
+            <div class="grid-row"><span class="jp">かがく</span><span class="my">သိပ္ပံ</span></div>
+            <div class="grid-row"><span class="jp">はくぶつかん</span><span class="my">ပြတိုက်</span></div>
+            <div class="grid-row"><span class="jp">ずっと</span><span class="my">အဆက်မပြတ်</span></div>
+            <div class="grid-row"><span class="jp">しりつ</span><span class="my">မြို့နယ်ဒေသဆိုင်ရာမှတည်ထောင်ထားသော</span></div>
+            <div class="grid-row"><span class="jp">すぐ</span><span class="my">ချက်ချင်း</span></div>
+            <div class="grid-row"><span class="jp">まがったところ</span><span class="my">ကွေ့ပြီးနောက်</span></div>
+            <div class="grid-row"><span class="jp">ぎんこう</span><span class="my">ဘဏ်</span></div>
+            <div class="grid-row"><span class="jp">じんじゃ</span><span class="my">နတ်ကွန်း</span></div>
+            <div class="grid-row"><span class="jp">ちゅうしゃじょう</span><span class="my">ကားပါကင်</span></div>
+            <div class="grid-row"><span class="jp">こうばん</span><span class="my">ရဲကင်း/ရဲစခန်း</span></div>
+            <div class="grid-row"><span class="jp">びょういん</span><span class="my">ဆေးရုံ</span></div>
+            <div class="grid-row"><span class="jp">くろい</span><span class="my">နက်သော</span></div>
+            <div class="grid-row"><span class="jp">しろい</span><span class="my">ဖြူသော</span></div>
+            <div class="grid-row"><span class="jp">あおい</span><span class="my">ပြာသော</span></div>
+            <div class="grid-row"><span class="jp">ビル</span><span class="my">အဆောက်အဦး</span></div>
+            <div class="grid-row"><span class="jp">アジアしょくざい</span><span class="my">အာရှစားသောက်ကုန်</span></div>
+            <div class="grid-row"><span class="jp">そちら</span><span class="my">ဟိုဘက်</span></div>
+            <div class="grid-row"><span class="jp">きたぐち</span><span class="my">မြောက်ဘက်ဝင်ပေါက်</span></div>
+            <div class="grid-row"><span class="jp">あいだ</span><span class="my">ကြား</span></div>
+            <div class="grid-row"><span class="jp">そうすると</span><span class="my">ထို့နောက်တွင်</span></div>
+            <div class="grid-row"><span class="jp">みえる</span><span class="my">မြင်ရသည်</span></div>
+            <div class="grid-row"><span class="jp">おまちしております</span><span class="my">ကြွရောက်လာမှုကိုစောင့်နေပါမယ်</span></div>
+            <div class="grid-row"><span class="jp">かえる</span><span class="my">ပြန်သည်</span></div>
+            <div class="grid-row"><span class="jp">～ちょう（こじまちょう）</span><span class="my">မြို့</span></div>
+            <div class="grid-row"><span class="jp">こうこう</span><span class="my">အထက်တန်းကျောင်း</span></div>
+            <div class="grid-row"><span class="jp">おくる</span><span class="my">ပို့သည်</span></div>
+            <div class="grid-row"><span class="jp">おおきな</span><span class="my">ကြီးသော</span></div>
+            <div class="grid-row"><span class="jp">はいる</span><span class="my">ဝင်သည်</span></div>
+            <div class="grid-row"><span class="jp">どのへん</span><span class="my">ဘယ်အနားတစ်ဝိုက်လဲ</span></div>
+            <div class="grid-row"><span class="jp">ここがいいです</span><span class="my">ဒီနေရာဆိုရပြီ</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">道 (みち)</span><span class="my">လမ်း</span></div>
+            <div class="grid-row"><span class="jp">公園 (こうえん)</span><span class="my">ပန်းခြံ</span></div>
+            <div class="grid-row"><span class="jp">銀行 (ぎんこう)</span><span class="my">ဘဏ်</span></div>
+            <div class="grid-row"><span class="jp">お寺 (おてら)</span><span class="my">ဘုန်းကြီးကျောင်း</span></div>
+            <div class="grid-row"><span class="jp">神社 (じんじゃ)</span><span class="my">နတ်ကွန်း</span></div>
+            <div class="grid-row"><span class="jp">右 (みぎ)</span><span class="my">ညာ</span></div>
+            <div class="grid-row"><span class="jp">左 (ひだり)</span><span class="my">ဘယ်</span></div>
+            <div class="grid-row"><span class="jp">近く (ちかく)</span><span class="my">အနီးအနား</span></div>
+            <div class="grid-row"><span class="jp">車 (くるま)</span><span class="my">ကား</span></div>
+            <div class="grid-row"><span class="jp">送る (おくる)</span><span class="my">ပို့သည်</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 7 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 7 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">えき</span><span class="my">ဘူတာ</span></div>
+            <div class="grid-row"><span class="jp">うけつけ</span><span class="my">ဧည့်ကြိုကောင်တာ</span></div>
+            <div class="grid-row"><span class="jp">ホール</span><span class="my">ခန်းမ</span></div>
+            <div class="grid-row"><span class="jp">かいしゃ</span><span class="my">ကုမ္ပဏီ</span></div>
+            <div class="grid-row"><span class="jp">もん</span><span class="my">တံခါး</span></div>
+            <div class="grid-row"><span class="jp">しゅうごう（する）</span><span class="my">စုဝေးသည်</span></div>
+            <div class="grid-row"><span class="jp">では</span><span class="my">ဒီလိုဆိုရင်</span></div>
+            <div class="grid-row"><span class="jp">あんないする</span><span class="my">လမ်းညွှန်သည်</span></div>
+            <div class="grid-row"><span class="jp">まちあわせ</span><span class="my">ချိန်းဆိုခြင်း</span></div>
+            <div class="grid-row"><span class="jp">イベント</span><span class="my">အခမ်းအနား</span></div>
+            <div class="grid-row"><span class="jp">はじまる</span><span class="my">စတင်သည်</span></div>
+            <div class="grid-row"><span class="jp">スタッフ</span><span class="my">ဝန်ထမ်း</span></div>
+            <div class="grid-row"><span class="jp">～まえ（さんじゅっぷんまえ）</span><span class="my">မတိုင်မီ / အလို</span></div>
+            <div class="grid-row"><span class="jp">へいわ</span><span class="my">ငြိမ်းချမ်းရေး</span></div>
+            <div class="grid-row"><span class="jp">とり</span><span class="my">ငှက်</span></div>
+            <div class="grid-row"><span class="jp">ぞう</span><span class="my">ရုပ်ထု</span></div>
+            <div class="grid-row"><span class="jp">それ、なんですか？</span><span class="my">အဲ့တာ ဘာလဲ</span></div>
+            <div class="grid-row"><span class="jp">じこ</span><span class="my">မတော်တဆထိခိုက်မှု</span></div>
+            <div class="grid-row"><span class="jp">とまる</span><span class="my">ရပ်တန့်သည်</span></div>
+            <div class="grid-row"><span class="jp">れんらくする</span><span class="my">ဆက်သွယ်သည်</span></div>
+            <div class="grid-row"><span class="jp">ねぼうする</span><span class="my">အိပ်ယာထနောက်ကျသည်</span></div>
+            <div class="grid-row"><span class="jp">いまから</span><span class="my">အခုကစပြီး</span></div>
+            <div class="grid-row"><span class="jp">いそぐ</span><span class="my">အလျင်လိုသည်</span></div>
+            <div class="grid-row"><span class="jp">さきに</span><span class="my">အရင်</span></div>
+            <div class="grid-row"><span class="jp">はじめる</span><span class="my">စတင်သည်</span></div>
+            <div class="grid-row"><span class="jp">みちにまよう</span><span class="my">လမ်းမှားသည်</span></div>
+            <div class="grid-row"><span class="jp">おくれる</span><span class="my">နောက်ကျသည်</span></div>
+            <div class="grid-row"><span class="jp">つく</span><span class="my">ဆိုက်ရောက်သည်</span></div>
+            <div class="grid-row"><span class="jp">だいじょうぶ（な）</span><span class="my">အဆင်ပြေသော</span></div>
+            <div class="grid-row"><span class="jp">じかん</span><span class="my">အချိန်</span></div>
+            <div class="grid-row"><span class="jp">まちがえる</span><span class="my">မှားယွင်းသည်</span></div>
+            <div class="grid-row"><span class="jp">カフェ</span><span class="my">ကဖေး</span></div>
+            <div class="grid-row"><span class="jp">まつ</span><span class="my">စောင့်သည်</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">時間 (じかん)</span><span class="my">အချိန်</span></div>
+            <div class="grid-row"><span class="jp">場所 (ばしょ)</span><span class="my">နေရာ</span></div>
+            <div class="grid-row"><span class="jp">駅 (えき)</span><span class="my">ဘူတာ</span></div>
+            <div class="grid-row"><span class="jp">受付 (うけつけ)</span><span class="my">ဧည့်ကြိုကောင်တာ</span></div>
+            <div class="grid-row"><span class="jp">門 (もん)</span><span class="my">တံခါး</span></div>
+            <div class="grid-row"><span class="jp">電車 (でんしゃ)</span><span class="my">လျှပ်စစ်ရထား</span></div>
+            <div class="grid-row"><span class="jp">待つ (まつ)</span><span class="my">စောင့်သည်</span></div>
+            <div class="grid-row"><span class="jp">止まる (とまる)</span><span class="my">ရပ်တန့်သည်</span></div>
+            <div class="grid-row"><span class="jp">着く (つく)</span><span class="my">ဆိုက်ရောက်သည်</span></div>
+            <div class="grid-row"><span class="jp">急ぐ (いそぐ)</span><span class="my">အလျင်လိုသည်</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 8 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 8 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">どうぶつえん</span><span class="my">တိရစ္ဆာန်ရုံ</span></div>
+            <div class="grid-row"><span class="jp">おしろ</span><span class="my">ရဲတိုက်</span></div>
+            <div class="grid-row"><span class="jp">レストラン</span><span class="my">စားသောက်ဆိုင်</span></div>
+            <div class="grid-row"><span class="jp">アウトレットモール</span><span class="my">Outlet Mall</span></div>
+            <div class="grid-row"><span class="jp">プロレス</span><span class="my">ကြေးစားနပန်းပွဲ</span></div>
+            <div class="grid-row"><span class="jp">タワー</span><span class="my">တာဝါ</span></div>
+            <div class="grid-row"><span class="jp">アジア</span><span class="my">အာရှ</span></div>
+            <div class="grid-row"><span class="jp">すごく</span><span class="my">အလွန်အမင်း</span></div>
+            <div class="grid-row"><span class="jp">しみんたいいくかん</span><span class="my">မြို့သူမြို့သားအားကစားရုံ</span></div>
+            <div class="grid-row"><span class="jp">しあい</span><span class="my">ပြိုင်ပွဲ</span></div>
+            <div class="grid-row"><span class="jp">やる</span><span class="my">ပြုလုပ်သည်</span></div>
+            <div class="grid-row"><span class="jp">メンバー</span><span class="my">အဖွဲ့ဝင်</span></div>
+            <div class="grid-row"><span class="jp">たりない</span><span class="my">မလုံလောက်ပါ</span></div>
+            <div class="grid-row"><span class="jp">むり（な）</span><span class="my">မဖြစ်နိုင်သော</span></div>
+            <div class="grid-row"><span class="jp">わかる</span><span class="my">နားလည်သည်</span></div>
+            <div class="grid-row"><span class="jp">おかね</span><span class="my">ပိုက်ဆံ</span></div>
+            <div class="grid-row"><span class="jp">おろす</span><span class="my">ထုတ်သည်</span></div>
+            <div class="grid-row"><span class="jp">しょくじ</span><span class="my">စားသောက်သည်</span></div>
+            <div class="grid-row"><span class="jp">やすむ</span><span class="my">အနားယူသည်</span></div>
+            <div class="grid-row"><span class="jp">ジョギングシューズ</span><span class="my">အားကစားဖိနပ်</span></div>
+            <div class="grid-row"><span class="jp">エーティーエム</span><span class="my">ATM</span></div>
+            <div class="grid-row"><span class="jp">ゲームコーナー</span><span class="my">game arcade</span></div>
+            <div class="grid-row"><span class="jp">フードコート</span><span class="my">စားသောက်ခုံတန်း</span></div>
+            <div class="grid-row"><span class="jp">えいがかん</span><span class="my">ရုပ်ရှင်ရုံ</span></div>
+            <div class="grid-row"><span class="jp">スポーツてん</span><span class="my">အားကစား ပစ္စည်းရောင်းဆိုင်</span></div>
+            <div class="grid-row"><span class="jp">このあと</span><span class="my">အဲ့ဒီနောက်</span></div>
+            <div class="grid-row"><span class="jp">おながかすく</span><span class="my">ဗိုက်ဆာသည်</span></div>
+            <div class="grid-row"><span class="jp">なにか</span><span class="my">တစ်ခုခု</span></div>
+            <div class="grid-row"><span class="jp">そのまえに</span><span class="my">အဲ့ဒီမတိုင်ခင်</span></div>
+            <div class="grid-row"><span class="jp">すばらしい</span><span class="my">ပြောင်မြောက်သော</span></div>
+            <div class="grid-row"><span class="jp">むずかしい</span><span class="my">ခက်ခဲသော</span></div>
+            <div class="grid-row"><span class="jp">かんどうする</span><span class="my">စိတ်လှုပ်ရှားသည်</span></div>
+            <div class="grid-row"><span class="jp">かわいい</span><span class="my">ချစ်စရာကောင်းသည်</span></div>
+            <div class="grid-row"><span class="jp">てんらんかい</span><span class="my">ပြပွဲ</span></div>
+            <div class="grid-row"><span class="jp">パンダ</span><span class="my">ပန်ဒါ</span></div>
+            <div class="grid-row"><span class="jp">サル</span><span class="my">မျောက်</span></div>
+            <div class="grid-row"><span class="jp">げんだい</span><span class="my">မျက်မှောက်ခေတ်</span></div>
+            <div class="grid-row"><span class="jp">さくひん</span><span class="my">ထုတ်ကုန်</span></div>
+            <div class="grid-row"><span class="jp">ホラーえいが</span><span class="my">horror movie</span></div>
+            <div class="grid-row"><span class="jp">つまらない</span><span class="my">ငြီးငွေ့စရာကောင်းသော</span></div>
+            <div class="grid-row"><span class="jp">たいくつ（な）</span><span class="my">ပျင်းစရာကောင်းသော</span></div>
+            <div class="grid-row"><span class="jp">いまいち（な）</span><span class="my">သိပ်မကောင်းသော</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">お金 (おかね)</span><span class="my">ပိုက်ဆံ</span></div>
+            <div class="grid-row"><span class="jp">食事 (しょくじ)</span><span class="my">စားသောက်သည်</span></div>
+            <div class="grid-row"><span class="jp">店 (みせ)</span><span class="my">ဆိုင်</span></div>
+            <div class="grid-row"><span class="jp">博物館 (はくぶつかん)</span><span class="my">ပြတိုက်</span></div>
+            <div class="grid-row"><span class="jp">動物園 (どうぶつえん)</span><span class="my">တိရစ္ဆာန်ရုံ</span></div>
+            <div class="grid-row"><span class="jp">試合 (しあい)</span><span class="my">ပြိုင်ပွဲ</span></div>
+            <div class="grid-row"><span class="jp">楽しい (たのしい)</span><span class="my">ပျော်စရာကောင်းသော</span></div>
+            <div class="grid-row"><span class="jp">難しい (むずかしい)</span><span class="my">ခက်ခဲသော</span></div>
+            <div class="grid-row"><span class="jp">登る (のぼる)</span><span class="my">တက်သည်</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 9 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 9 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">どれぐらい</span><span class="my">ဘယ်လောက်ကြာကြာ</span></div>
+            <div class="grid-row"><span class="jp">じょうず（な）</span><span class="my">တော်သော</span></div>
+            <div class="grid-row"><span class="jp">～かん（にねんかん）</span><span class="my">နှစ်ကြာ</span></div>
+            <div class="grid-row"><span class="jp">じぶんで</span><span class="my">မိမိကိုယ်တိုင်</span></div>
+            <div class="grid-row"><span class="jp">まだまだです</span><span class="my">မရသေးပါဘူး</span></div>
+            <div class="grid-row"><span class="jp">そんなことないです</span><span class="my">အဲ့လောက်လည်းမဟုတ်ပါဘူး</span></div>
+            <div class="grid-row"><span class="jp">だいがく</span><span class="my">တက္ကသိုလ်</span></div>
+            <div class="grid-row"><span class="jp">ラジオ</span><span class="my">radio</span></div>
+            <div class="grid-row"><span class="jp">ネット</span><span class="my">Internet</span></div>
+            <div class="grid-row"><span class="jp">アプリ</span><span class="my">app / application</span></div>
+            <div class="grid-row"><span class="jp">かんたん（な）</span><span class="my">လွယ်ကူသော</span></div>
+            <div class="grid-row"><span class="jp">にている</span><span class="my">တူသည်</span></div>
+            <div class="grid-row"><span class="jp">ちがう</span><span class="my">မတူသော</span></div>
+            <div class="grid-row"><span class="jp">とくいな</span><span class="my">ကျွမ်းကျင်သော</span></div>
+            <div class="grid-row"><span class="jp">にがて（な）</span><span class="my">မကျွမ်းကျင်သော</span></div>
+            <div class="grid-row"><span class="jp">ぶんぽう</span><span class="my">grammar</span></div>
+            <div class="grid-row"><span class="jp">はつおん</span><span class="my">အသံထွက်</span></div>
+            <div class="grid-row"><span class="jp">もじ</span><span class="my">စာလုံး</span></div>
+            <div class="grid-row"><span class="jp">ひらがな</span><span class="my">ဟိရဂန</span></div>
+            <div class="grid-row"><span class="jp">カタカナ</span><span class="my">ခတခန</span></div>
+            <div class="grid-row"><span class="jp">かんじ</span><span class="my">ခန်းဂျိ</span></div>
+            <div class="grid-row"><span class="jp">かいわ</span><span class="my">စကားပြော</span></div>
+            <div class="grid-row"><span class="jp">モンゴルご</span><span class="my">မွန်ဂိုဘာသာစကား</span></div>
+            <div class="grid-row"><span class="jp">ベトナムご</span><span class="my">ဗီယက်နမ်ဘာသာစကား</span></div>
+            <div class="grid-row"><span class="jp">おぼえる</span><span class="my">မှတ်မိသည်</span></div>
+            <div class="grid-row"><span class="jp">おしえる</span><span class="my">သင်ကြားသည်</span></div>
+            <div class="grid-row"><span class="jp">じしょ</span><span class="my">အဘိဓာန်</span></div>
+            <div class="grid-row"><span class="jp">かす</span><span class="my">ချေးငှားသည်</span></div>
+            <div class="grid-row"><span class="jp">みせる</span><span class="my">ပြသည်</span></div>
+            <div class="grid-row"><span class="jp">チェックする</span><span class="my">စစ်ဆေးသည်</span></div>
+            <div class="grid-row"><span class="jp">せつめいする</span><span class="my">ရှင်းပြသည်</span></div>
+            <div class="grid-row"><span class="jp">かみ</span><span class="my">စာရွက်</span></div>
+            <div class="grid-row"><span class="jp">かく</span><span class="my">ရေးသည်</span></div>
+            <div class="grid-row"><span class="jp">いう</span><span class="my">ပြောသည်</span></div>
+            <div class="grid-row"><span class="jp">ゆっくり</span><span class="my">ဖြေးဖြေး</span></div>
+            <div class="grid-row"><span class="jp">～かた（よみかた）</span><span class="my">နည်းလမ်း</span></div>
+            <div class="grid-row"><span class="jp">メール</span><span class="my">email</span></div>
+            <div class="grid-row"><span class="jp">しょるい</span><span class="my">စာရွက်စာတမ်း</span></div>
+            <div class="grid-row"><span class="jp">きょうかしょ</span><span class="my">ဖတ်စာအုပ်</span></div>
+            <div class="grid-row"><span class="jp">じしんがありません</span><span class="my">ကိုယ့်ကိုယ်ကိုယုံကြည်မှုမရှိဘူး</span></div>
+            <div class="grid-row"><span class="jp">れんしゅう</span><span class="my">လေ့ကျင့်ခန်း</span></div>
+            <div class="grid-row"><span class="jp">さがす</span><span class="my">စုံစမ်းသည်</span></div>
+            <div class="grid-row"><span class="jp">なんかいも</span><span class="my">အကြိမ်ကြိမ်</span></div>
+            <div class="grid-row"><span class="jp">きょうしつ</span><span class="my">စာသင်ခန်း</span></div>
+            <div class="grid-row"><span class="jp">むりょう</span><span class="my">အမဲ့</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">高校 (こうこう)</span><span class="my">အထက်တန်းကျောင်း</span></div>
+            <div class="grid-row"><span class="jp">大学 (だいがく)</span><span class="my">တက္ကသိုလ်</span></div>
+            <div class="grid-row"><span class="jp">練習 (れんしゅう)</span><span class="my">လေ့ကျင့်ခန်း</span></div>
+            <div class="grid-row"><span class="jp">漢字 (かんじ)</span><span class="my">ခန်းဂျိ</span></div>
+            <div class="grid-row"><span class="jp">無料 (むりょう)</span><span class="my">အမဲ့</span></div>
+            <div class="grid-row"><span class="jp">言う (いう)</span><span class="my">ပြောသည်</span></div>
+            <div class="grid-row"><span class="jp">貸す (かす)</span><span class="my">ချေးငှားသည်</span></div>
+            <div class="grid-row"><span class="jp">教える (おしえる)</span><span class="my">သင်ကြားသည်</span></div>
+            <div class="grid-row"><span class="jp">説明する (せつめいする)</span><span class="my">ရှင်းပြသည်</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 10 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 10 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">ようび</span><span class="my">နေ့ရက်</span></div>
+            <div class="grid-row"><span class="jp">ひよう</span><span class="my">ကုန်ကျစရိတ်</span></div>
+            <div class="grid-row"><span class="jp">まいつき</span><span class="my">လတိုင်း</span></div>
+            <div class="grid-row"><span class="jp">だい～（だいさんもくようび）</span><span class="my">ပထမ/ဒုတိယ</span></div>
+            <div class="grid-row"><span class="jp">こうみんかん</span><span class="my">လူမှုအသင်းအဖွဲ့စင်တာ</span></div>
+            <div class="grid-row"><span class="jp">といあわせ</span><span class="my">စုံစမ်းမေးမြန်းခြင်း</span></div>
+            <div class="grid-row"><span class="jp">しょどう</span><span class="my">စုတ်တံဖြင့်စာလုံးအလှရေးခြင်း</span></div>
+            <div class="grid-row"><span class="jp">にちじ</span><span class="my">ရက်စွဲအချိန်</span></div>
+            <div class="grid-row"><span class="jp">～だい（テキストだい）</span><span class="my">အဖိုးအခ</span></div>
+            <div class="grid-row"><span class="jp">がいこくじんむけ</span><span class="my">နိုင်ငံခြားသားများအတွက်</span></div>
+            <div class="grid-row"><span class="jp">たいけんきょうしつ</span><span class="my">လက်တွေ့လုပ်ဆောင်သည့်အတန်း</span></div>
+            <div class="grid-row"><span class="jp">テキスト</span><span class="my">ဖတ်စာအုပ်</span></div>
+            <div class="grid-row"><span class="jp">あいきどう</span><span class="my">အိုင်ကီဒို/ကိုသိုင်းပညာ</span></div>
+            <div class="grid-row"><span class="jp">どうぐ</span><span class="my">ကိရိယာ</span></div>
+            <div class="grid-row"><span class="jp">さんかする</span><span class="my">ပါဝင်ဆောင်ရွက်သည်</span></div>
+            <div class="grid-row"><span class="jp">クラス</span><span class="my">အတန်း</span></div>
+            <div class="grid-row"><span class="jp">ひつよう（な）</span><span class="my">လိုအပ်သော</span></div>
+            <div class="grid-row"><span class="jp">さいしょ</span><span class="my">ပထမဦးဆုံး</span></div>
+            <div class="grid-row"><span class="jp">あとは</span><span class="my">နောက်ထပ်/ပြီးနောက်</span></div>
+            <div class="grid-row"><span class="jp">きく</span><span class="my">နားထောင်သည်</span></div>
+            <div class="grid-row"><span class="jp">まだ あいていますか？</span><span class="my">အတန်းလွတ်သေးလား</span></div>
+            <div class="grid-row"><span class="jp">はらう</span><span class="my">ပေးချေသည်</span></div>
+            <div class="grid-row"><span class="jp">もういっぱいです</span><span class="my">လူပြည့်နေ ပါပြီ</span></div>
+            <div class="grid-row"><span class="jp">きょうみが ある</span><span class="my">စိတ်ပါဝင်စားသည်</span></div>
+            <div class="grid-row"><span class="jp">それとも</span><span class="my">ဒါမှမဟုတ်</span></div>
+            <div class="grid-row"><span class="jp">コース</span><span class="my">သင်တန်း</span></div>
+            <div class="grid-row"><span class="jp">ぜんぶ</span><span class="my">အားလုံး</span></div>
+            <div class="grid-row"><span class="jp">よういする</span><span class="my">ပြင်ဆင်သည်</span></div>
+            <div class="grid-row"><span class="jp">もっと</span><span class="my">ပို၍</span></div>
+            <div class="grid-row"><span class="jp">しゅう</span><span class="my">အပတ်</span></div>
+            <div class="grid-row"><span class="jp">なんかい</span><span class="my">ဘယ်နှစ်ကြိမ်</span></div>
+            <div class="grid-row"><span class="jp">～かい（いっかい）</span><span class="my">ကြိမ်</span></div>
+            <div class="grid-row"><span class="jp">ただ</span><span class="my">အလကား</span></div>
+            <div class="grid-row"><span class="jp">チラシ</span><span class="my">လက်ကမ်းကြော်ငြာ</span></div>
+            <div class="grid-row"><span class="jp">もってくる</span><span class="my">ယူလာသည်</span></div>
+            <div class="grid-row"><span class="jp">ちょっといいですか？</span><span class="my">ခဏလောက်အချိန်ရမလား</span></div>
+            <div class="grid-row"><span class="jp">きびしい</span><span class="my">စည်းကမ်းကြီးသော</span></div>
+            <div class="grid-row"><span class="jp">ぼご</span><span class="my">မိခင်ဘာသာစကား</span></div>
+            <div class="grid-row"><span class="jp">どういう</span><span class="my">ဘယ်လိုဆိုလိုတာလဲ</span></div>
+            <div class="grid-row"><span class="jp">いみ</span><span class="my">အဓိပ္ပာယ်</span></div>
+            <div class="grid-row"><span class="jp">つかう</span><span class="my">အသုံးပြုသည်</span></div>
+            <div class="grid-row"><span class="jp">どんなこと</span><span class="my">ဘယ်အရာ</span></div>
+            <div class="grid-row"><span class="jp">まえに</span><span class="my">မတိုင်မီ</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">午前 (ごぜん)</span><span class="my">မနက်ပိုင်း</span></div>
+            <div class="grid-row"><span class="jp">午後 (ごご)</span><span class="my">ညနေပိုင်း</span></div>
+            <div class="grid-row"><span class="jp">教室 (きょうしつ)</span><span class="my">စာသင်ခန်း</span></div>
+            <div class="grid-row"><span class="jp">教科書 (きょうかしょ)</span><span class="my">ဖတ်စာအုပ်</span></div>
+            <div class="grid-row"><span class="jp">先生 (せんせい)</span><span class="my">ဆရာ/ဆရာမ</span></div>
+            <div class="grid-row"><span class="jp">全部 (ぜんぶ)</span><span class="my">အားလုံး</span></div>
+            <div class="grid-row"><span class="jp">参加する (さんかする)</span><span class="my">ပါဝင်ဆောင်ရွက်သည်</span></div>
+            <div class="grid-row"><span class="jp">回 (かい)</span><span class="my">ကြိမ်</span></div>
+            <div class="grid-row"><span class="jp">用意する (よういする)</span><span class="my">ပြင်ဆင်သည်</span></div>
+        </div>
+    </div>
+
+    <!-- ======================== UNIT 11 ======================== -->
+    <div class="unit-section">
+        <div class="unit-title">📘 Unit 11 <small>ဝေါဟာရစာရင်း</small></div>
+
+        <div class="vocab-grid">
+            <div class="grid-header">
+                <span>🇯🇵 ဂျပန်</span>
+                <span>🇲🇲 မြန်မာ</span>
+            </div>
+
+            <div class="grid-row"><span class="jp">バーベキュー</span><span class="my">အကင်</span></div>
+            <div class="grid-row"><span class="jp">にく</span><span class="my">အသား</span></div>
+            <div class="grid-row"><span class="jp">ぎゅうにく</span><span class="my">အမဲသား</span></div>
+            <div class="grid-row"><span class="jp">ぶたにく</span><span class="my">ဝက်သား</span></div>
+            <div class="grid-row"><span class="jp">とりにく</span><span class="my">ကြက်သား</span></div>
+            <div class="grid-row"><span class="jp">ソーセージ</span><span class="my">ဝက်အူချောင်း</span></div>
+            <div class="grid-row"><span class="jp">シーフード</span><span class="my">seafood</span></div>
+            <div class="grid-row"><span class="jp">さかな</span><span class="my">ငါး</span></div>
+            <div class="grid-row"><span class="jp">エビ</span><span class="my">ပုစွန်</span></div>
+            <div class="grid-row"><span class="jp">イカ</span><span class="my">ကင်းမွန်</span></div>
+            <div class="grid-row"><span class="jp">ホタテ</span><span class="my">ဥယျာဉ်ခေါ်</span></div>
+            <div class="grid-row"><span class="jp">りんご</span><span class="my">ပန်းသီး</span></div>
+            <div class="grid-row"><span class="jp">バナナ</span><span class="my">ငှက်ပျောသီး</span></div>
+            <div class="grid-row"><span class="jp">やきそば</span><span class="my">ခေါက်ဆွဲကြော်</span></div>
+            <div class="grid-row"><span class="jp">おにぎり</span><span class="my">ထမင်းဆုပ်</span></div>
+            <div class="grid-row"><span class="jp">やきにく</span><span class="my">အသားကင်</span></div>
+            <div class="grid-row"><span class="jp">たれ</span><span class="my">ငံပြာရည်</span></div>
+            <div class="grid-row"><span class="jp">ソース</span><span class="my">ဆော့စ်</span></div>
+            <div class="grid-row"><span class="jp">おかし</span><span class="my">သရေစာမုန့်</span></div>
+            <div class="grid-row"><span class="jp">ソフトドリンク</span><span class="my">အအေးရည်</span></div>
+            <div class="grid-row"><span class="jp">おちゃ</span><span class="my">လက်ဖက်ရည်</span></div>
+            <div class="grid-row"><span class="jp">ジュース</span><span class="my">ဖျော်ရည်</span></div>
+            <div class="grid-row"><span class="jp">おさけ</span><span class="my">အရက်</span></div>
+            <div class="grid-row"><span class="jp">ビール</span><span class="my">ဘီယာ</span></div>
+            <div class="grid-row"><span class="jp">ワイン</span><span class="my">ဝိုင်</span></div>
+            <div class="grid-row"><span class="jp">にほんしゅ</span><span class="my">ဂျပန်အရက်</span></div>
+            <div class="grid-row"><span class="jp">しょうちゅう</span><span class="my">ချက်အရက်</span></div>
+            <div class="grid-row"><span class="jp">コップ</span><span class="my">ခွက်</span></div>
+            <div class="grid-row"><span class="jp">おさら</span><span class="my">ပန်းကန်ပြား</span></div>
+            <div class="grid-row"><span class="jp">わりばし</span><span class="my">တစ်ခါသုံးတုတ်</span></div>
+            <div class="grid-row"><span class="jp">ごみぶくろ</span><span class="my">အမှိုက်အိတ်</span></div>
+
+            <div class="grid-row"><span class="jp">じゅんび</span><span class="my">ပြင်ဆင်သည်</span></div>
+            <div class="grid-row"><span class="jp">もっていく</span><span class="my">ယူသွားသည်</span></div>
+            <div class="grid-row"><span class="jp">てつだう</span><span class="my">ကူညီသည်</span></div>
+            <div class="grid-row"><span class="jp">バーベキューじょう</span><span class="my">သောက်စရာ</span></div>
+            <div class="grid-row"><span class="jp">バーベキューじょう</span><span class="my">အကင်နေရာ</span></div>
+            <div class="grid-row"><span class="jp">デザート</span><span class="my">အချိုပွဲ</span></div>
+            <div class="grid-row"><span class="jp">やく</span><span class="my">ကင်သည်</span></div>
+            <div class="grid-row"><span class="jp">からあげ</span><span class="my">ကြက်ကြော်</span></div>
+            <div class="grid-row"><span class="jp">やきとり</span><span class="my">ကြက်ကင်</span></div>
+            <div class="grid-row"><span class="jp">しお</span><span class="my">ဆား</span></div>
+            <div class="grid-row"><span class="jp">こうちゃ</span><span class="my">လက်ဖက်ရည်</span></div>
+            <div class="grid-row"><span class="jp">ウーロンちゃ</span><span class="my">oolong tea</span></div>
+            <div class="grid-row"><span class="jp">チョコレートケーキ</span><span class="my">ချောကလက်ကိတ်</span></div>
+            <div class="grid-row"><span class="jp">チーズケーキ</span><span class="my">ချိစ်ကိတ်</span></div>
+            <div class="grid-row"><span class="jp">どっち</span><span class="my">ဘယ်ဟာလည်း</span></div>
+            <div class="grid-row"><span class="jp">どれ</span><span class="my">ဘယ်ဟာ</span></div>
+            <div class="grid-row"><span class="jp">うる</span><span class="my">ရောင်းသည်</span></div>
+            <div class="grid-row"><span class="jp">りょうほう</span><span class="my">နှစ်မျိုးလုံး</span></div>
+            <div class="grid-row"><span class="jp">アレルギー</span><span class="my">ဓာတ်မတည့်ခြင်း</span></div>
+            <div class="grid-row"><span class="jp">カニ</span><span class="my">ဂဏန်း</span></div>
+            <div class="grid-row"><span class="jp">たまご</span><span class="my">ကြက်ဥ</span></div>
+            <div class="grid-row"><span class="jp">ピーナッツ/らっかせい</span><span class="my">မြေပဲ</span></div>
+            <div class="grid-row"><span class="jp">そばこ</span><span class="my">buckwheat ဂျုံမှုန့်</span></div>
+            <div class="grid-row"><span class="jp">こむぎ</span><span class="my">ဂျုံ</span></div>
+            <div class="grid-row"><span class="jp">こむぎこ</span><span class="my">ဂျုံမှုန့်</span></div>
+            <div class="grid-row"><span class="jp">にゅうせいひん</span><span class="my">နို့ထွက်ကုန်</span></div>
+            <div class="grid-row"><span class="jp">ぎゅうにゅう</span><span class="my">နို့</span></div>
+            <div class="grid-row"><span class="jp">バター</span><span class="my">ထောပတ်</span></div>
+            <div class="grid-row"><span class="jp">チーズ</span><span class="my">ချိစ်</span></div>
+            <div class="grid-row"><span class="jp">ヨーグルト</span><span class="my">ဒိန်ချဉ်</span></div>
+            <div class="grid-row"><span class="jp">ざいりょう</span><span class="my">ကုန်ကြမ်း</span></div>
+            <div class="grid-row"><span class="jp">ハラル</span><span class="my">အစ္စလာမ်များစားသုံးနိုင်သော ဟာလာလ်</span></div>
+            <div class="grid-row"><span class="jp">しょうひきげん</span><span class="my">expiration date</span></div>
+            <div class="grid-row"><span class="jp">ピザ</span><span class="my">ပီဇာ</span></div>
+            <div class="grid-row"><span class="jp">はいっている</span><span class="my">ပါဝင်သည်</span></div>
+            <div class="grid-row"><span class="jp">よかったら</span><span class="my">အဆင်ပြေမယ်ဆိုလျှင်</span></div>
+            <div class="grid-row"><span class="jp">もつ</span><span class="my">ယူလာသည်</span></div>
+            <div class="grid-row"><span class="jp">きょうじゅうに</span><span class="my">ဒီနေ့အတွင်း</span></div>
+            <div class="grid-row"><span class="jp">コーナー</span><span class="my">အရောင်းကောင်တာ</span></div>
+            <div class="grid-row"><span class="jp">しょうひん</span><span class="my">ကုန်ပစ္စည်း</span></div>
+            <div class="grid-row"><span class="jp">すべて</span><span class="my">အားလုံး</span></div>
+            <div class="grid-row"><span class="jp">にゅうせいぶん</span><span class="my">နို့ပါဝင်မှု</span></div>
+            <div class="grid-row"><span class="jp">だいず</span><span class="my">ပဲပိစပ်</span></div>
+
+            <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+            <div class="grid-row"><span class="jp">飲み物 (のみもの)</span><span class="my">သောက်စရာ</span></div>
+            <div class="grid-row"><span class="jp">お茶 (おちゃ)</span><span class="my">လက်ဖက်ရည်</span></div>
+            <div class="grid-row"><span class="jp">お酒 (おさけ)</span><span class="my">အရက်</span></div>
+            <div class="grid-row"><span class="jp">材料 (ざいりょう)</span><span class="my">ကုန်ကြမ်း</span></div>
+            <div class="grid-row"><span class="jp">野菜 (やさい)</span><span class="my">ဟင်းသီးဟင်းရွက်</span></div>
+            <div class="grid-row"><span class="jp">牛肉 (ぎゅうにく)</span><span class="my">အမဲသား</span></div>
+            <div class="grid-row"><span class="jp">豚肉 (ぶたにく)</span><span class="my">ဝက်သား</span></div>
+            <div class="grid-row"><span class="jp">皿 (さら)</span><span class="my">ပန်းကန်ပြား</span></div>
+            <div class="grid-row"><span class="jp">売る (うる)</span><span class="my">ရောင်းသည်</span></div>
+            <div class="grid-row"><span class="jp">持って行く (もっていく)</span><span class="my">ယူသွားသည်</span></div>
+        </div>
+    </div>
+<!-- ======================== UNIT 12 ======================== -->
+<div class="unit-section">
+    <div class="unit-title">📘 Unit 12 <small>ဝေါဟာရစာရင်း</small></div>
+
+    <div class="vocab-grid">
+        <div class="grid-header">
+            <span>🇯🇵 ဂျပန်</span>
+            <span>🇲🇲 မြန်မာ</span>
+        </div>
+
+        <div class="grid-row"><span class="jp">あじ</span><span class="my">အရသာ</span></div>
+        <div class="grid-row"><span class="jp">あまい</span><span class="my">ချိုသော</span></div>
+        <div class="grid-row"><span class="jp">からい</span><span class="my">စပ်သော</span></div>
+        <div class="grid-row"><span class="jp">すっぱい</span><span class="my">ချဉ်သော</span></div>
+        <div class="grid-row"><span class="jp">しょっぱい</span><span class="my">ငံသော</span></div>
+        <div class="grid-row"><span class="jp">にがい</span><span class="my">ခါးသော</span></div>
+        <div class="grid-row"><span class="jp">こい（あじがこい）</span><span class="my">အရသာလေးသော</span></div>
+        <div class="grid-row"><span class="jp">うすい（あじがうすい）</span><span class="my">အရသာပေါ့သော</span></div>
+        <div class="grid-row"><span class="jp">まずい</span><span class="my">အရသာမရှိသော</span></div>
+        <div class="grid-row"><span class="jp">おべんとう</span><span class="my">ထမင်းဗူး</span></div>
+        <div class="grid-row"><span class="jp">チョコレートバニラクリームラテ</span><span class="my">ရေခဲမုန့်</span></div>
+        <div class="grid-row"><span class="jp">みかん</span><span class="my">လိမ္မော်သီး</span></div>
+        <div class="grid-row"><span class="jp">とれる</span><span class="my">ခူးယူသည်</span></div>
+        <div class="grid-row"><span class="jp">そんなことない</span><span class="my">အဲ့လိုမျိုးမဟုတ်ပါဘူး</span></div>
+        <div class="grid-row"><span class="jp">たまごやき</span><span class="my">ကြက်ဥလိပ်</span></div>
+        <div class="grid-row"><span class="jp">おこのみやき</span><span class="my">အိုကိုနိုမိယာကီ</span></div>
+        <div class="grid-row"><span class="jp">うめぼし</span><span class="my">ဇီးသီးဆားရည်စိမ်</span></div>
+        <div class="grid-row"><span class="jp">すきやき</span><span class="my">အမဲသားဟော့ပေါ့</span></div>
+        <div class="grid-row"><span class="jp">なま</span><span class="my">အစိမ်း</span></div>
+        <div class="grid-row"><span class="jp">もうひとつ</span><span class="my">နောက်တစ်ခု</span></div>
+        <div class="grid-row"><span class="jp">おなかがいっぱい（な）</span><span class="my">ဗိုက်ပြည့်သော</span></div>
+        <div class="grid-row"><span class="jp">にがて（な）</span><span class="my">မကြိုက်သော</span></div>
+        <div class="grid-row"><span class="jp">どんどん</span><span class="my">ပို၍များများ</span></div>
+        <div class="grid-row"><span class="jp">ちゃわんむし</span><span class="my">ချဝမ်မုရှိ</span></div>
+        <div class="grid-row"><span class="jp">プリン</span><span class="my">ပူတင်း</span></div>
+        <div class="grid-row"><span class="jp">だし</span><span class="my">ဟင်းရည်</span></div>
+        <div class="grid-row"><span class="jp">スープ</span><span class="my">ဟင်းရည်</span></div>
+        <div class="grid-row"><span class="jp">きのこ</span><span class="my">မှို</span></div>
+        <div class="grid-row"><span class="jp">ぎんなん</span><span class="my">ဂင်နန်သီး</span></div>
+        <div class="grid-row"><span class="jp">いれる</span><span class="my">ထည့်သည်</span></div>
+        <div class="grid-row"><span class="jp">いいにおい</span><span class="my">အနံ့မွှေးမွှေး</span></div>
+        <div class="grid-row"><span class="jp">ちょうりほうほう</span><span class="my">ချက်ပြုတ်နည်း</span></div>
+        <div class="grid-row"><span class="jp">フタ</span><span class="my">အဖုံး</span></div>
+        <div class="grid-row"><span class="jp">とりだす</span><span class="my">ထုတ်ယူသည်</span></div>
+        <div class="grid-row"><span class="jp">めん</span><span class="my">ခေါက်ဆွဲမျှင်</span></div>
+        <div class="grid-row"><span class="jp">ねっとう</span><span class="my">ရေနွေးဆူဆူ</span></div>
+        <div class="grid-row"><span class="jp">そそぐ</span><span class="my">လောင်းထည့်သည်</span></div>
+        <div class="grid-row"><span class="jp">おゆ</span><span class="my">ရေနွေး</span></div>
+        <div class="grid-row"><span class="jp">すてる</span><span class="my">စွန့်ပစ်သည်</span></div>
+        <div class="grid-row"><span class="jp">かける</span><span class="my">ဆမ်းသည်</span></div>
+        <div class="grid-row"><span class="jp">まぜる</span><span class="my">ရောနှောသည်</span></div>
+
+        <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+        <div class="grid-row"><span class="jp">卵 (たまご)</span><span class="my">ကြက်ဥ</span></div>
+        <div class="grid-row"><span class="jp">料理 (りょうり)</span><span class="my">ဟင်းလျာ</span></div>
+        <div class="grid-row"><span class="jp">お湯 (おゆ)</span><span class="my">ရေနွေး</span></div>
+        <div class="grid-row"><span class="jp">調理方法 (ちょうりほうほう)</span><span class="my">ချက်ပြုတ်နည်း</span></div>
+        <div class="grid-row"><span class="jp">少し (すこし)</span><span class="my">အနည်းငယ်</span></div>
+        <div class="grid-row"><span class="jp">味 (あじ)</span><span class="my">အရသာ</span></div>
+        <div class="grid-row"><span class="jp">甘い (あまい)</span><span class="my">ချိုသော</span></div>
+        <div class="grid-row"><span class="jp">辛い (からい)</span><span class="my">စပ်သော</span></div>
+        <div class="grid-row"><span class="jp">苦手 (にがて)</span><span class="my">မနှစ်သက်သော</span></div>
+
+    </div>
+</div>
+<!-- ======================== UNIT 13 ======================== -->
+<div class="unit-section">
+    <div class="unit-title">📘 Unit 13 <small>ဝေါဟာရစာရင်း</small></div>
+
+    <div class="vocab-grid">
+        <div class="grid-header">
+            <span>🇯🇵 ဂျပန်</span>
+            <span>🇲🇲 မြန်မာ</span>
+        </div>
+
+        <div class="grid-row"><span class="jp">でんき</span><span class="my">လျှပ်စစ်</span></div>
+        <div class="grid-row"><span class="jp">つく（でんきがつく）</span><span class="my">လျှပ်စစ်မီးပွင့်သည်</span></div>
+        <div class="grid-row"><span class="jp">へん（な）</span><span class="my">ထူးဆန်းသော</span></div>
+        <div class="grid-row"><span class="jp">おと</span><span class="my">အသံ</span></div>
+        <div class="grid-row"><span class="jp">おとがする</span><span class="my">အသံကြားရသည်</span></div>
+        <div class="grid-row"><span class="jp">うごく</span><span class="my">ရွေ့လျားသည်</span></div>
+        <div class="grid-row"><span class="jp">トイレットペーパー</span><span class="my">အိမ်သာသုံးစာရွက်</span></div>
+        <div class="grid-row"><span class="jp">なくなる</span><span class="my">ကုန်ဆုံးသည်</span></div>
+        <div class="grid-row"><span class="jp">さいきどうする</span><span class="my">ပြန်လည်စတင်သည်</span></div>
+        <div class="grid-row"><span class="jp">かんりしつ</span><span class="my">ကြီးကြပ်ခန်း</span></div>
+        <div class="grid-row"><span class="jp">れんらくする</span><span class="my">ဆက်သွယ်သည်</span></div>
+        <div class="grid-row"><span class="jp">そうこ</span><span class="my">ဂိုဒေါင်</span></div>
+        <div class="grid-row"><span class="jp">とってくる</span><span class="my">ယူလာသည်</span></div>
+        <div class="grid-row"><span class="jp">コーヒーマシーン</span><span class="my">ကော်ဖီဖျော်စက်</span></div>
+        <div class="grid-row"><span class="jp">パソコン</span><span class="my">ကွန်ပျူတာ</span></div>
+        <div class="grid-row"><span class="jp">とりあえず</span><span class="my">လောလောဆယ်တော့</span></div>
+        <div class="grid-row"><span class="jp">やりかた</span><span class="my">လုပ်ပုံလုပ်နည်း</span></div>
+        <div class="grid-row"><span class="jp">おわる</span><span class="my">ပြီးဆုံးသည်</span></div>
+        <div class="grid-row"><span class="jp">もうすぐ</span><span class="my">မကြာမီ</span></div>
+        <div class="grid-row"><span class="jp">できる</span><span class="my">လုပ်နိုင်သည်</span></div>
+        <div class="grid-row"><span class="jp">コピーき</span><span class="my">မိတ္တူစက်</span></div>
+        <div class="grid-row"><span class="jp">げんこう</span><span class="my">မူရင်းစာရွက်</span></div>
+        <div class="grid-row"><span class="jp">セットする</span><span class="my">စုံလိုက်ပြုလုပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">まいすう</span><span class="my">စာရွက်အရေအတွက်</span></div>
+        <div class="grid-row"><span class="jp">すうじ</span><span class="my">ကိန်းဂဏန်း</span></div>
+        <div class="grid-row"><span class="jp">いれる</span><span class="my">ထည့်သွင်းသည်</span></div>
+        <div class="grid-row"><span class="jp">スタート</span><span class="my">စတင်သည်</span></div>
+        <div class="grid-row"><span class="jp">ボタン</span><span class="my">ခလုတ်</span></div>
+        <div class="grid-row"><span class="jp">おす</span><span class="my">နှိပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">りょうめん</span><span class="my">မျက်နှာနှစ်ဖက်</span></div>
+        <div class="grid-row"><span class="jp">かためん</span><span class="my">တစ်ဖက်တည်း</span></div>
+        <div class="grid-row"><span class="jp">カラー</span><span class="my">အရောင်</span></div>
+        <div class="grid-row"><span class="jp">できるだけ</span><span class="my">တတ်နိုင်သလောက်</span></div>
+        <div class="grid-row"><span class="jp">しろくろ</span><span class="my">အဖြူအမဲ</span></div>
+        <div class="grid-row"><span class="jp">しりょう</span><span class="my">စာရွက်စာတမ်း</span></div>
+        <div class="grid-row"><span class="jp">キャビネット</span><span class="my">ဘီဒို</span></div>
+        <div class="grid-row"><span class="jp">もどす</span><span class="my">ပြန်ထားသည်</span></div>
+        <div class="grid-row"><span class="jp">とびら</span><span class="my">တံခါး</span></div>
+        <div class="grid-row"><span class="jp">あける</span><span class="my">ဖွင့်သည်</span></div>
+        <div class="grid-row"><span class="jp">たな</span><span class="my">စင်</span></div>
+        <div class="grid-row"><span class="jp">ならべる</span><span class="my">စီတန်းသည်</span></div>
+        <div class="grid-row"><span class="jp">まるい</span><span class="my">ဝိုင်းသော</span></div>
+        <div class="grid-row"><span class="jp">だす</span><span class="my">ထုတ်သည်</span></div>
+        <div class="grid-row"><span class="jp">～れつ（さんれつ）</span><span class="my">လိုင်း / အတန်း</span></div>
+        <div class="grid-row"><span class="jp">うしろ</span><span class="my">အနောက်</span></div>
+        <div class="grid-row"><span class="jp">スペース</span><span class="my">နေရာလွတ်</span></div>
+        <div class="grid-row"><span class="jp">あける</span><span class="my">ချန်သည်</span></div>
+        <div class="grid-row"><span class="jp">いりぐち</span><span class="my">ဝင်ပေါက်</span></div>
+        <div class="grid-row"><span class="jp">しかくい</span><span class="my">လေးထောင့်ကျသော</span></div>
+        <div class="grid-row"><span class="jp">おく</span><span class="my">ထားသည်</span></div>
+        <div class="grid-row"><span class="jp">かいぎ</span><span class="my">အစည်းအဝေး</span></div>
+        <div class="grid-row"><span class="jp">セッティング</span><span class="my">ပြင်ဆင်သည်</span></div>
+        <div class="grid-row"><span class="jp">コのじ</span><span class="my">U ပုံစံ</span></div>
+        <div class="grid-row"><span class="jp">じゅんびする</span><span class="my">ပြင်ဆင်သည်</span></div>
+        <div class="grid-row"><span class="jp">にんずうぶん</span><span class="my">လူအရေအတွက်အတိုင်း</span></div>
+        <div class="grid-row"><span class="jp">～ぶ（いちぶ）</span><span class="my">စုံ</span></div>
+        <div class="grid-row"><span class="jp">たのむ</span><span class="my">တောင်းဆိုသည်</span></div>
+        <div class="grid-row"><span class="jp">けんめい</span><span class="my">အကြောင်းအရာ</span></div>
+        <div class="grid-row"><span class="jp">へんこう</span><span class="my">ပြောင်းလဲခြင်း</span></div>
+        <div class="grid-row"><span class="jp">おしらせ</span><span class="my">အသိပေးခြင်း</span></div>
+        <div class="grid-row"><span class="jp">つごうがわるい</span><span class="my">အဆင်မပြေပါ</span></div>
+        <div class="grid-row"><span class="jp">ちゅうい（する）</span><span class="my">သတိပြုသည်</span></div>
+
+        <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+        <div class="grid-row"><span class="jp">コピー機（コピーき）</span><span class="my">မိတ္တူစက်</span></div>
+        <div class="grid-row"><span class="jp">数字（すうじ）</span><span class="my">ကိန်းဂဏန်း</span></div>
+        <div class="grid-row"><span class="jp">電気（でんき）</span><span class="my">လျှပ်စစ်</span></div>
+        <div class="grid-row"><span class="jp">音（おと）</span><span class="my">အသံ</span></div>
+        <div class="grid-row"><span class="jp">机（つくえ）</span><span class="my">စားပွဲ</span></div>
+        <div class="grid-row"><span class="jp">都合（つごう）</span><span class="my">အခြေအနေ</span></div>
+        <div class="grid-row"><span class="jp">悪い（わるい）</span><span class="my">ဆိုးသော</span></div>
+        <div class="grid-row"><span class="jp">動く（うごく）</span><span class="my">ရွေ့လျားသည်</span></div>
+        <div class="grid-row"><span class="jp">使う（つかう）</span><span class="my">အသုံးပြုသည်</span></div>
+        <div class="grid-row"><span class="jp">終わる（おわる）</span><span class="my">ပြီးဆုံးသည်</span></div>
+
+    </div>
+</div>
+
+<!-- ======================== UNIT 14 ======================== -->
+<div class="unit-section">
+    <div class="unit-title">📘 Unit 14 <small>ဝေါဟာရစာရင်း</small></div>
+
+    <div class="vocab-grid">
+        <div class="grid-header">
+            <span>🇯🇵 ဂျပန်</span>
+            <span>🇲🇲 မြန်မာ</span>
+        </div>
+
+        <div class="grid-row"><span class="jp">こんでいる</span><span class="my">ပြည့်ကျပ်နေသည်</span></div>
+        <div class="grid-row"><span class="jp">せき</span><span class="my">ချောင်းဆိုးခြင်း</span></div>
+        <div class="grid-row"><span class="jp">ひどい</span><span class="my">ပြင်းထန်သော</span></div>
+        <div class="grid-row"><span class="jp">ねつ</span><span class="my">အဖျား</span></div>
+        <div class="grid-row"><span class="jp">ねつがある</span><span class="my">အဖျားရှိသည်</span></div>
+        <div class="grid-row"><span class="jp">さいふ</span><span class="my">ပိုက်ဆံအိတ်</span></div>
+        <div class="grid-row"><span class="jp">わすれる</span><span class="my">မေ့သည်</span></div>
+        <div class="grid-row"><span class="jp">びょういん</span><span class="my">ဆေးရုံ</span></div>
+        <div class="grid-row"><span class="jp">いえ</span><span class="my">အိမ်</span></div>
+        <div class="grid-row"><span class="jp">かえる</span><span class="my">ပြန်သည်</span></div>
+        <div class="grid-row"><span class="jp">これから</span><span class="my">အခုကစပြီး</span></div>
+        <div class="grid-row"><span class="jp">とる</span><span class="my">ယူသည်</span></div>
+        <div class="grid-row"><span class="jp">それで</span><span class="my">အဲ့ဒါကြောင့်</span></div>
+        <div class="grid-row"><span class="jp">おそくなる</span><span class="my">နောက်ကျသည်</span></div>
+        <div class="grid-row"><span class="jp">みなさん</span><span class="my">အားလုံး</span></div>
+        <div class="grid-row"><span class="jp">つたえる</span><span class="my">တစ်ဆင့်ပြောကြားသည်</span></div>
+        <div class="grid-row"><span class="jp">ちこくする</span><span class="my">နောက်ကျသည်</span></div>
+        <div class="grid-row"><span class="jp">あとで</span><span class="my">နောက်မှ</span></div>
+        <div class="grid-row"><span class="jp">やすむ</span><span class="my">အနားယူသည်</span></div>
+        <div class="grid-row"><span class="jp">もうしわけありません</span><span class="my">စိတ်မရှိပါနဲ့</span></div>
+        <div class="grid-row"><span class="jp">おいのり</span><span class="my">ဆုတောင်းသည်</span></div>
+        <div class="grid-row"><span class="jp">たばこ</span><span class="my">ဆေးလိပ်</span></div>
+        <div class="grid-row"><span class="jp">すう（たばこをすう）</span><span class="my">စုပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">きゅうけい（する）</span><span class="my">အနားယူသည်</span></div>
+        <div class="grid-row"><span class="jp">もどる</span><span class="my">မူလနေရာသို့ပြန်ရောက်သည်</span></div>
+        <div class="grid-row"><span class="jp">そうたいする</span><span class="my">စောစောပြန်သည်</span></div>
+        <div class="grid-row"><span class="jp">やすみをとる</span><span class="my">အနားယူသည်</span></div>
+        <div class="grid-row"><span class="jp">しゃちょう</span><span class="my">ဥက္ကဋ္ဌ</span></div>
+        <div class="grid-row"><span class="jp">やくしょ</span><span class="my">အစိုးရရုံး</span></div>
+        <div class="grid-row"><span class="jp">はやく</span><span class="my">စောစော</span></div>
+        <div class="grid-row"><span class="jp">ようじ</span><span class="my">ကိစ္စ</span></div>
+        <div class="grid-row"><span class="jp">すむ</span><span class="my">ပြီးမြောက်သည်</span></div>
+        <div class="grid-row"><span class="jp">しゅにん</span><span class="my">အကြီးအကဲ</span></div>
+        <div class="grid-row"><span class="jp">らいげつ</span><span class="my">နောက်လ</span></div>
+        <div class="grid-row"><span class="jp">できたら</span><span class="my">ပြုလုပ်နိုင်လျှင်</span></div>
+        <div class="grid-row"><span class="jp">ちょっと、いいでしょうか？</span><span class="my">တစ်ဆိတ်လောက် မေးလို့ရမလား</span></div>
+        <div class="grid-row"><span class="jp">べつにかまいません</span><span class="my">ကိစ္စမရှိပါဘူး</span></div>
+        <div class="grid-row"><span class="jp">きゅうかとどけ</span><span class="my">အားလပ်ရက်ခွင့်တောင်းလွှာ</span></div>
+        <div class="grid-row"><span class="jp">だす</span><span class="my">တင်သည်</span></div>
+        <div class="grid-row"><span class="jp">フォーム</span><span class="my">ဖောင်</span></div>
+        <div class="grid-row"><span class="jp">しょぞく</span><span class="my">မိမိလုပ်ကိုင်နေသောဌာန</span></div>
+        <div class="grid-row"><span class="jp">チーム</span><span class="my">အသင်း</span></div>
+        <div class="grid-row"><span class="jp">そうむ</span><span class="my">အထွေထွေ</span></div>
+        <div class="grid-row"><span class="jp">しめい</span><span class="my">အမည်</span></div>
+        <div class="grid-row"><span class="jp">ハンコ</span><span class="my">တံဆိပ်တုံး</span></div>
+        <div class="grid-row"><span class="jp">もっている</span><span class="my">ပါရှိသည်</span></div>
+        <div class="grid-row"><span class="jp">もつ</span><span class="my">ယူသည်</span></div>
+        <div class="grid-row"><span class="jp">きかん</span><span class="my">အချိန်ကာလ</span></div>
+        <div class="grid-row"><span class="jp">りゆう</span><span class="my">အကြောင်းအရင်း</span></div>
+        <div class="grid-row"><span class="jp">ふつう</span><span class="my">သာမန်</span></div>
+        <div class="grid-row"><span class="jp">しよう</span><span class="my">ကိုယ်ရေးကိစ္စ</span></div>
+        <div class="grid-row"><span class="jp">～ちゅう（やすみちゅう）</span><span class="my">နေစဉ်</span></div>
+        <div class="grid-row"><span class="jp">れんらくさき</span><span class="my">ဆက်သွယ်ရန်လိပ်စာ</span></div>
+        <div class="grid-row"><span class="jp">びこう</span><span class="my">သဘောထားမှတ်ချက်</span></div>
+        <div class="grid-row"><span class="jp">いる</span><span class="my">လိုအပ်သည်</span></div>
+
+        <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+        <div class="grid-row"><span class="jp">用事（ようじ）</span><span class="my">ကိစ္စ</span></div>
+        <div class="grid-row"><span class="jp">氏名（しめい）</span><span class="my">အမည်</span></div>
+        <div class="grid-row"><span class="jp">理由（りゆう）</span><span class="my">အကြောင်းအရင်း</span></div>
+        <div class="grid-row"><span class="jp">連絡先（れんらくさき）</span><span class="my">ဆက်သွယ်ရန်လိပ်စာ</span></div>
+        <div class="grid-row"><span class="jp">別に（べつに）</span><span class="my">တစ်သီးတစ်ခြား</span></div>
+        <div class="grid-row"><span class="jp">早く（はやく）</span><span class="my">စောစော</span></div>
+        <div class="grid-row"><span class="jp">吸う（すう）</span><span class="my">စုပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">取る（とる）</span><span class="my">ယူသည်</span></div>
+        <div class="grid-row"><span class="jp">帰る（かえる）</span><span class="my">ပြန်သည်</span></div>
+        <div class="grid-row"><span class="jp">伝える（つたえる）</span><span class="my">တစ်ဆင့်ပြောကြားသည်</span></div>
+
+    </div>
+</div>
+<!-- ======================== UNIT 15 ======================== -->
+<div class="unit-section">
+    <div class="unit-title">📘 Unit 15 <small>ဝေါဟာရစာရင်း</small></div>
+
+    <div class="vocab-grid">
+        <div class="grid-header">
+            <span>🇯🇵 ဂျပန်</span>
+            <span>🇲🇲 မြန်မာ</span>
+        </div>
+
+        <div class="grid-row"><span class="jp">しょうじょう</span><span class="my">ရောဂါအခြေအနေ</span></div>
+        <div class="grid-row"><span class="jp">のど</span><span class="my">လည်ချောင်း</span></div>
+        <div class="grid-row"><span class="jp">いたい</span><span class="my">နာသော</span></div>
+        <div class="grid-row"><span class="jp">おなか</span><span class="my">ဝမ်းဗိုက်</span></div>
+        <div class="grid-row"><span class="jp">でる</span><span class="my">ထွက်သည်</span></div>
+        <div class="grid-row"><span class="jp">（せき／はなみずがでる）</span><span class="my">ချောင်းဆိုး / နှာရည်ယိုသည်</span></div>
+        <div class="grid-row"><span class="jp">はなみず</span><span class="my">နှာရည်</span></div>
+        <div class="grid-row"><span class="jp">はきけ（はきけがする）</span><span class="my">အော့အန်ချင်စိတ်</span></div>
+        <div class="grid-row"><span class="jp">しょくよく</span><span class="my">စားသောက်ချင်စိတ်</span></div>
+        <div class="grid-row"><span class="jp">かゆい</span><span class="my">ယားယံသော</span></div>
+        <div class="grid-row"><span class="jp">め</span><span class="my">မျက်လုံး</span></div>
+        <div class="grid-row"><span class="jp">あし</span><span class="my">ခြေထောက်</span></div>
+        <div class="grid-row"><span class="jp">くじく</span><span class="my">ခေါက်သည်</span></div>
+        <div class="grid-row"><span class="jp">あたま</span><span class="my">ဦးခေါင်း</span></div>
+        <div class="grid-row"><span class="jp">ぶつける</span><span class="my">တိုက်မိသည်</span></div>
+        <div class="grid-row"><span class="jp">おととい</span><span class="my">တနေ့က</span></div>
+        <div class="grid-row"><span class="jp">ころぶ</span><span class="my">လဲကျသည်</span></div>
+        <div class="grid-row"><span class="jp">こう</span><span class="my">ဒီလို</span></div>
+        <div class="grid-row"><span class="jp">レントゲン</span><span class="my">ဓာတ်မှန်</span></div>
+        <div class="grid-row"><span class="jp">～しゅうかん</span><span class="my">အပတ်ကြာ</span></div>
+        <div class="grid-row"><span class="jp">かふんしょう</span><span class="my">ပန်းဝတ်မှုန်ဓာတ်မတည့်ခြင်း</span></div>
+        <div class="grid-row"><span class="jp">どうしましたか？</span><span class="my">ဘာဖြစ်လို့တာလဲ</span></div>
+        <div class="grid-row"><span class="jp">もんしんひょう</span><span class="my">ကျန်းမာရေးအမေးအဖြေလွှာ</span></div>
+        <div class="grid-row"><span class="jp">くすり</span><span class="my">ဆေး</span></div>
+        <div class="grid-row"><span class="jp">のむ（くすりをのむ）</span><span class="my">သောက်သည်</span></div>
+        <div class="grid-row"><span class="jp">あう</span><span class="my">ကိုက်ညီသည်</span></div>
+        <div class="grid-row"><span class="jp">やわらかい</span><span class="my">ပျော့ပြောင်းသော</span></div>
+        <div class="grid-row"><span class="jp">からい</span><span class="my">စပ်သော</span></div>
+        <div class="grid-row"><span class="jp">しんさつけん</span><span class="my">လူနာမှတ်ပုံတင်ကတ်</span></div>
+        <div class="grid-row"><span class="jp">しょほうせん</span><span class="my">ဆေးစာ</span></div>
+        <div class="grid-row"><span class="jp">きにゅうする</span><span class="my">ရေးသွင်းသည်</span></div>
+        <div class="grid-row"><span class="jp">いしゃ</span><span class="my">ဆရာဝန်</span></div>
+        <div class="grid-row"><span class="jp">～ど・ぶ（さんじゅうはちどごぶ）</span><span class="my">ဒီဂရီ ဒသမ</span></div>
+        <div class="grid-row"><span class="jp">くち</span><span class="my">ပါးစပ်</span></div>
+        <div class="grid-row"><span class="jp">インフルエンザ</span><span class="my">တုပ်ကွေး</span></div>
+        <div class="grid-row"><span class="jp">けんさする</span><span class="my">စစ်ဆေးသည်</span></div>
+        <div class="grid-row"><span class="jp">エーがた</span><span class="my">A အမျိုးအစား</span></div>
+        <div class="grid-row"><span class="jp">さがる（ねつがさがる）</span><span class="my">အဖျားကျသည်</span></div>
+        <div class="grid-row"><span class="jp">おかゆ</span><span class="my">ဆန်ပြုတ်</span></div>
+        <div class="grid-row"><span class="jp">やっきょく</span><span class="my">ဆေးဆိုင်</span></div>
+        <div class="grid-row"><span class="jp">もらう</span><span class="my">လက်ခံရရှိသည်</span></div>
+        <div class="grid-row"><span class="jp">おだいじに</span><span class="my">ဂရုစိုက်ပါ</span></div>
+        <div class="grid-row"><span class="jp">フリガナ</span><span class="my">အသံထွက်</span></div>
+        <div class="grid-row"><span class="jp">せいべつ</span><span class="my">ကျား / မ</span></div>
+        <div class="grid-row"><span class="jp">びょうきにかかる</span><span class="my">ရောဂါဖြစ်သည်</span></div>
+        <div class="grid-row"><span class="jp">げんざい</span><span class="my">လက်ရှိ</span></div>
+        <div class="grid-row"><span class="jp">じょせい</span><span class="my">အမျိုးသမီး</span></div>
+        <div class="grid-row"><span class="jp">にんしんする</span><span class="my">ကိုယ်ဝန်ရှိသည်</span></div>
+        <div class="grid-row"><span class="jp">おさえる</span><span class="my">ထိန်းချုပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">いたみどめ</span><span class="my">ကိုက်ခဲပျောက်ဆေး</span></div>
+        <div class="grid-row"><span class="jp">くしゃみ</span><span class="my">နှာချေခြင်း</span></div>
+        <div class="grid-row"><span class="jp">つらい</span><span class="my">ပင်ပန်းနွမ်းနယ်သည်</span></div>
+        <div class="grid-row"><span class="jp">がまんする</span><span class="my">သည်းခံသည်</span></div>
+        <div class="grid-row"><span class="jp">がまんできない</span><span class="my">သည်းမခံနိုင်</span></div>
+        <div class="grid-row"><span class="jp">あいだをあける</span><span class="my">ကြားကာလချန်သည်</span></div>
+        <div class="grid-row"><span class="jp">～いじょう（さんじゅうはちどごぶいじょう）</span><span class="my">အထက်</span></div>
+        <div class="grid-row"><span class="jp">い</span><span class="my">အစာအိမ်</span></div>
+        <div class="grid-row"><span class="jp">まもる</span><span class="my">ကာကွယ်သည်</span></div>
+        <div class="grid-row"><span class="jp">うんてんする</span><span class="my">မောင်းနှင်သည်</span></div>
+        <div class="grid-row"><span class="jp">しょくご</span><span class="my">စားပြီးနောက်</span></div>
+        <div class="grid-row"><span class="jp">ねむい</span><span class="my">အိပ်ချင်သော</span></div>
+        <div class="grid-row"><span class="jp">げねつざい</span><span class="my">အဖျားကျဆေး</span></div>
+        <div class="grid-row"><span class="jp">ねつがたかい</span><span class="my">အဖျားတက်သည်</span></div>
+        <div class="grid-row"><span class="jp">それと</span><span class="my">သို့ပါ၍</span></div>
+        <div class="grid-row"><span class="jp">こっち</span><span class="my">ဒီဘက်</span></div>
+        <div class="grid-row"><span class="jp">ゆうがた</span><span class="my">ညနေ</span></div>
+        <div class="grid-row"><span class="jp">ねるまえ</span><span class="my">မအိပ်ခင်</span></div>
+        <div class="grid-row"><span class="jp">ようほう</span><span class="my">သုံးစွဲနည်း</span></div>
+        <div class="grid-row"><span class="jp">ようりょう</span><span class="my">သုံးစွဲရမည့်ပမာဏ</span></div>
+
+        <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+        <div class="grid-row"><span class="jp">熱（ねつ）</span><span class="my">အဖျား</span></div>
+        <div class="grid-row"><span class="jp">薬（くすり）</span><span class="my">ဆေး</span></div>
+        <div class="grid-row"><span class="jp">病気（びょうき）</span><span class="my">ရောဂါ</span></div>
+        <div class="grid-row"><span class="jp">病院（びょういん）</span><span class="my">ဆေးရုံ</span></div>
+        <div class="grid-row"><span class="jp">医者（いしゃ）</span><span class="my">ဆရာဝန်</span></div>
+        <div class="grid-row"><span class="jp">住所（じゅうしょ）</span><span class="my">လိပ်စာ</span></div>
+        <div class="grid-row"><span class="jp">才（さい）</span><span class="my">အသက်</span></div>
+        <div class="grid-row"><span class="jp">痛い（いたい）</span><span class="my">နာသော</span></div>
+        <div class="grid-row"><span class="jp">眠い（ねむい）</span><span class="my">အိပ်ချင်သော</span></div>
+        <div class="grid-row"><span class="jp">寝る（ねる）</span><span class="my">အိပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">記入する（きにゅうする）</span><span class="my">ရေးသွင်းသည်</span></div>
+
+    </div>
+</div>
+<!-- ======================== UNIT 16 ======================== -->
+<div class="unit-section">
+    <div class="unit-title">📘 Unit 16 <small>ဝေါဟာရစာရင်း</small></div>
+
+    <div class="vocab-grid">
+        <div class="grid-header">
+            <span>🇯🇵 ဂျပန်</span>
+            <span>🇲🇲 မြန်မာ</span>
+        </div>
+
+        <div class="grid-row"><span class="jp">かお</span><span class="my">မျက်နှာ</span></div>
+        <div class="grid-row"><span class="jp">からだ</span><span class="my">ခန္ဓာကိုယ်</span></div>
+        <div class="grid-row"><span class="jp">はな</span><span class="my">နှာခေါင်း</span></div>
+        <div class="grid-row"><span class="jp">くび</span><span class="my">လည်ပင်း</span></div>
+        <div class="grid-row"><span class="jp">は</span><span class="my">သွား</span></div>
+        <div class="grid-row"><span class="jp">みみ</span><span class="my">နား</span></div>
+        <div class="grid-row"><span class="jp">かた</span><span class="my">ပုခုံး</span></div>
+        <div class="grid-row"><span class="jp">むね</span><span class="my">ရင်ဘတ်</span></div>
+        <div class="grid-row"><span class="jp">せなか</span><span class="my">ကျောပြင်</span></div>
+        <div class="grid-row"><span class="jp">こし</span><span class="my">ခါး</span></div>
+        <div class="grid-row"><span class="jp">うで</span><span class="my">လက်မောင်း</span></div>
+        <div class="grid-row"><span class="jp">て</span><span class="my">လက်</span></div>
+        <div class="grid-row"><span class="jp">ゆび</span><span class="my">လက်ချောင်း</span></div>
+        <div class="grid-row"><span class="jp">かたがこる</span><span class="my">ဇာတ်ကြောတက်သည်</span></div>
+        <div class="grid-row"><span class="jp">だるい</span><span class="my">ပင်ပန်းနွမ်းနယ်သည်</span></div>
+        <div class="grid-row"><span class="jp">ちょうしがわるい</span><span class="my">အခြေအနေမကောင်းသော</span></div>
+        <div class="grid-row"><span class="jp">ふつかよい</span><span class="my">အရက်နာကျသည်</span></div>
+        <div class="grid-row"><span class="jp">ねむれない</span><span class="my">မအိပ်နိုင်</span></div>
+        <div class="grid-row"><span class="jp">おふろにはいる</span><span class="my">ရေချိုးကန်ဝင်သည်</span></div>
+        <div class="grid-row"><span class="jp">あたためる</span><span class="my">နွေးထွေးအောင်လုပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">あたたかい</span><span class="my">ပူနွေးသော</span></div>
+        <div class="grid-row"><span class="jp">マッサージする</span><span class="my">နှိပ်နယ်သည်</span></div>
+        <div class="grid-row"><span class="jp">さいきん</span><span class="my">လတ်တလော</span></div>
+        <div class="grid-row"><span class="jp">ぬるい</span><span class="my">နွေးသော</span></div>
+        <div class="grid-row"><span class="jp">ためす</span><span class="my">စမ်းသပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">のみすぎる</span><span class="my">အသောက်များသည်</span></div>
+        <div class="grid-row"><span class="jp">けっこう</span><span class="my">အတော်အတန်</span></div>
+        <div class="grid-row"><span class="jp">それはいけませんね</span><span class="my">အဲ့ဒါမကောင်းဘူးနော်</span></div>
+        <div class="grid-row"><span class="jp">どうしていますか</span><span class="my">ဘယ်လိုဖြေရှင်းနေလဲ</span></div>
+        <div class="grid-row"><span class="jp">けんこう</span><span class="my">ကျန်းမာရေး</span></div>
+        <div class="grid-row"><span class="jp">うんどう</span><span class="my">လေ့ကျင့်ခန်း</span></div>
+        <div class="grid-row"><span class="jp">ジョギングする</span><span class="my">ပြေးလေ့ကျင့်ခန်းလုပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">はしる</span><span class="my">ပြေးသည်</span></div>
+        <div class="grid-row"><span class="jp">ウォーキングする</span><span class="my">လမ်းလျှောက်သည်</span></div>
+        <div class="grid-row"><span class="jp">あるく</span><span class="my">လမ်းလျှောက်သည်</span></div>
+        <div class="grid-row"><span class="jp">プール</span><span class="my">ရေကူးကန်</span></div>
+        <div class="grid-row"><span class="jp">およぐ</span><span class="my">ရေကူးသည်</span></div>
+        <div class="grid-row"><span class="jp">ヨガ</span><span class="my">ယောဂ</span></div>
+        <div class="grid-row"><span class="jp">しょくせいかつ</span><span class="my">စားသောက်နေထိုင်မှု</span></div>
+        <div class="grid-row"><span class="jp">たべすぎる</span><span class="my">အစားများသည်</span></div>
+        <div class="grid-row"><span class="jp">すいみん</span><span class="my">အိပ်ခြင်း</span></div>
+        <div class="grid-row"><span class="jp">おきる</span><span class="my">အိပ်ယာထသည်</span></div>
+        <div class="grid-row"><span class="jp">だいたい</span><span class="my">များသောအားဖြင့်</span></div>
+        <div class="grid-row"><span class="jp">チキンサラダ</span><span class="my">ကြက်သားသုပ်</span></div>
+        <div class="grid-row"><span class="jp">トマトジュース</span><span class="my">ခရမ်းချဉ်သီးဖျော်ရည်</span></div>
+        <div class="grid-row"><span class="jp">ダイエットする</span><span class="my">အစားလျှော့စားသည်</span></div>
+        <div class="grid-row"><span class="jp">きをつける</span><span class="my">သတိထားသည်</span></div>
+        <div class="grid-row"><span class="jp">なるほど</span><span class="my">သဘောပေါက်ပြီ</span></div>
+        <div class="grid-row"><span class="jp">ノロウイルス</span><span class="my">နိုရိုဗိုင်းရပ်စ်</span></div>
+        <div class="grid-row"><span class="jp">しょくちゅうどく</span><span class="my">အစာအဆိပ်သင့်ခြင်း</span></div>
+        <div class="grid-row"><span class="jp">げんいん</span><span class="my">အကြောင်းအရင်း</span></div>
+        <div class="grid-row"><span class="jp">しょうじょう</span><span class="my">ရောဂါအခြေအနေ</span></div>
+        <div class="grid-row"><span class="jp">よぼうほう</span><span class="my">ကာကွယ်နည်းလမ်း</span></div>
+        <div class="grid-row"><span class="jp">ふくつう</span><span class="my">ဗိုက်အောင့်</span></div>
+        <div class="grid-row"><span class="jp">おうと</span><span class="my">ပျို့အန်ခြင်း</span></div>
+        <div class="grid-row"><span class="jp">げり</span><span class="my">ဝမ်းလျှောခြင်း</span></div>
+        <div class="grid-row"><span class="jp">てあらい</span><span class="my">လက်ဆေးခြင်း</span></div>
+        <div class="grid-row"><span class="jp">かねつ（する）</span><span class="my">အပူပေးချက်ပြုတ်သည်</span></div>
+        <div class="grid-row"><span class="jp">ふえる</span><span class="my">တိုးပွားသည်</span></div>
+        <div class="grid-row"><span class="jp">はっせいする</span><span class="my">ဖြစ်ပွားသည်</span></div>
+        <div class="grid-row"><span class="jp">かい</span><span class="my">စီး</span></div>
+        <div class="grid-row"><span class="jp">かんせんする</span><span class="my">ကူးစက်သည်</span></div>
+        <div class="grid-row"><span class="jp">ちょうり（する）</span><span class="my">ချက်ပြုတ်သည်</span></div>
+        <div class="grid-row"><span class="jp">よぼうする</span><span class="my">ကာကွယ်သည်</span></div>
+        <div class="grid-row"><span class="jp">うつす</span><span class="my">ကူးစက်စေသည်</span></div>
+        <div class="grid-row"><span class="jp">マスク</span><span class="my">နှာခေါင်းစည်း</span></div>
+        <div class="grid-row"><span class="jp">よぼうせっしゅ</span><span class="my">ကာကွယ်ဆေး</span></div>
+
+        <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+        <div class="grid-row"><span class="jp">体（からだ）</span><span class="my">ခန္ဓာကိုယ်</span></div>
+        <div class="grid-row"><span class="jp">顔（かお）</span><span class="my">မျက်နှာ</span></div>
+        <div class="grid-row"><span class="jp">目（め）</span><span class="my">မျက်လုံး</span></div>
+        <div class="grid-row"><span class="jp">耳（みみ）</span><span class="my">နား</span></div>
+        <div class="grid-row"><span class="jp">口（くち）</span><span class="my">ပါးစပ်</span></div>
+        <div class="grid-row"><span class="jp">頭（あたま）</span><span class="my">ခေါင်း</span></div>
+        <div class="grid-row"><span class="jp">足（あし）</span><span class="my">ခြေထောက်</span></div>
+        <div class="grid-row"><span class="jp">手（て）</span><span class="my">လက်</span></div>
+        <div class="grid-row"><span class="jp">起きる（おきる）</span><span class="my">အိပ်ယာထသည်</span></div>
+        <div class="grid-row"><span class="jp">歩く（あるく）</span><span class="my">လမ်းလျှောက်သည်</span></div>
+        <div class="grid-row"><span class="jp">走る（はしる）</span><span class="my">ပြေးသည်</span></div>
+        <div class="grid-row"><span class="jp">運動する（うんどうする）</span><span class="my">လေ့ကျင့်ခန်းလုပ်သည်</span></div>
+
+    </div>
+</div>
+
+<!-- ======================== UNIT 17 ======================== -->
+<div class="unit-section">
+    <div class="unit-title">📘 Unit 17 <small>ဝေါဟာရစာရင်း</small></div>
+
+    <div class="vocab-grid">
+        <div class="grid-header">
+            <span>🇯🇵 ဂျပန်</span>
+            <span>🇲🇲 မြန်မာ</span>
+        </div>
+
+        <div class="grid-row"><span class="jp">あがる</span><span class="my">တက်သည်</span></div>
+        <div class="grid-row"><span class="jp">うちの</span><span class="my">ကျွန်တော်/ကျွန်မတို့ရဲ့</span></div>
+        <div class="grid-row"><span class="jp">おくさん</span><span class="my">သူတစ်ပါး၏အမျိုးသမီး</span></div>
+        <div class="grid-row"><span class="jp">むすこ</span><span class="my">သား</span></div>
+        <div class="grid-row"><span class="jp">むすめ</span><span class="my">သမီး</span></div>
+        <div class="grid-row"><span class="jp">あしをくずす</span><span class="my">သက်သောင့်သက်သာထိုင်သည်</span></div>
+        <div class="grid-row"><span class="jp">らくにする</span><span class="my">သက်သောင့်သက်သာနေသည်</span></div>
+        <div class="grid-row"><span class="jp">あそびにくる</span><span class="my">အလည်လာသည်</span></div>
+        <div class="grid-row"><span class="jp">ごめんください</span><span class="my">ခွင့်ပြုပါ</span></div>
+        <div class="grid-row"><span class="jp">いらっしゃい</span><span class="my">ကြိုဆိုပါတယ်</span></div>
+        <div class="grid-row"><span class="jp">ようこそ</span><span class="my">ကြိုဆိုပါတယ်</span></div>
+        <div class="grid-row"><span class="jp">おじゃまします</span><span class="my">အနှောင့်အယှက်ပေးပါတယ်</span></div>
+        <div class="grid-row"><span class="jp">お世話になっています</span><span class="my">ကူညီစောင့်ရှောက်ပေးလို့ ကျေးဇူးတင်ပါတယ်</span></div>
+        <div class="grid-row"><span class="jp">こちらこそ</span><span class="my">ကျွန်တော်တို့ကလည်း အတူတူပါပဲ</span></div>
+        <div class="grid-row"><span class="jp">ごちそうさまでした</span><span class="my">ကျွေးမွေးဧည့်ခံတဲ့အတွက် ကျေးဇူးတင်ပါတယ်</span></div>
+        <div class="grid-row"><span class="jp">おじゃましました</span><span class="my">လည်ခဲ့ပါတယ်</span></div>
+        <div class="grid-row"><span class="jp">おみやげ</span><span class="my">လက်ဆောင်</span></div>
+        <div class="grid-row"><span class="jp">ちょうみりょう</span><span class="my">ဟင်းခတ်အမွှေးအကြိုင်</span></div>
+        <div class="grid-row"><span class="jp">カップ</span><span class="my">ခွက်</span></div>
+        <div class="grid-row"><span class="jp">キーホルダー</span><span class="my">သော့ချိတ်</span></div>
+        <div class="grid-row"><span class="jp">ペン</span><span class="my">ဖောင်တိန်</span></div>
+        <div class="grid-row"><span class="jp">おまもり</span><span class="my">အဆောင်</span></div>
+        <div class="grid-row"><span class="jp">えはがき</span><span class="my">ပို့စကတ်</span></div>
+        <div class="grid-row"><span class="jp">しゃしんしゅう</span><span class="my">ဓာတ်ပုံအယ်လ်ဘမ်</span></div>
+        <div class="grid-row"><span class="jp">かざり</span><span class="my">အလှဆင်ပစ္စည်း</span></div>
+        <div class="grid-row"><span class="jp">にんぎょう</span><span class="my">အရုပ်</span></div>
+        <div class="grid-row"><span class="jp">かばん</span><span class="my">အိတ်</span></div>
+        <div class="grid-row"><span class="jp">バッグ</span><span class="my">အိတ်</span></div>
+        <div class="grid-row"><span class="jp">魔除け</span><span class="my">အဆောင်လက်ဖွဲ့</span></div>
+        <div class="grid-row"><span class="jp">ネパール</span><span class="my">နီပေါ</span></div>
+        <div class="grid-row"><span class="jp">ナンプラー</span><span class="my">ငါးငံပြာရည်</span></div>
+        <div class="grid-row"><span class="jp">タイ</span><span class="my">ထိုင်း</span></div>
+        <div class="grid-row"><span class="jp">かべ</span><span class="my">နံရံ</span></div>
+        <div class="grid-row"><span class="jp">かける（かべにかける）</span><span class="my">ချိတ်သည်</span></div>
+        <div class="grid-row"><span class="jp">はいってくる</span><span class="my">ဝင်လာသည်</span></div>
+        <div class="grid-row"><span class="jp">わるい</span><span class="my">မကောင်းသော</span></div>
+        <div class="grid-row"><span class="jp">～といいます</span><span class="my">လို့ခေါ်ပါတယ်</span></div>
+        <div class="grid-row"><span class="jp">プレゼント</span><span class="my">လက်ဆောင်</span></div>
+        <div class="grid-row"><span class="jp">こめ／おこめ</span><span class="my">ဆန်</span></div>
+        <div class="grid-row"><span class="jp">つよい</span><span class="my">အားကောင်းသော</span></div>
+        <div class="grid-row"><span class="jp">ピアス</span><span class="my">နားကပ်</span></div>
+        <div class="grid-row"><span class="jp">マグカップ</span><span class="my">မတ်ခွက်</span></div>
+        <div class="grid-row"><span class="jp">ぼうし</span><span class="my">ဦးထုပ်</span></div>
+        <div class="grid-row"><span class="jp">おかあさん</span><span class="my">အမေ (တစ်ဖက်လူ၏)</span></div>
+        <div class="grid-row"><span class="jp">おにいさん</span><span class="my">အကို</span></div>
+        <div class="grid-row"><span class="jp">たんじょうび</span><span class="my">မွေးနေ့</span></div>
+        <div class="grid-row"><span class="jp">もらう</span><span class="my">လက်ခံရရှိသည်</span></div>
+        <div class="grid-row"><span class="jp">おしゃれ（な）</span><span class="my">ဖက်ရှင်ကျသော</span></div>
+        <div class="grid-row"><span class="jp">すてき（な）</span><span class="my">ကြည့်ကောင်းသော</span></div>
+                <div class="grid-row"><span class="jp">くれる</span><span class="my">ပေးသည် (တစ်ဖက်လူက)</span></div>
+        <div class="grid-row"><span class="jp">りょうしん</span><span class="my">မိဘနှစ်ပါး</span></div>
+        <div class="grid-row"><span class="jp">いいでしょう？</span><span class="my">ကောင်းတယ်မဟုတ်လား</span></div>
+        <div class="grid-row"><span class="jp">おとうさん</span><span class="my">အဖေ</span></div>
+        <div class="grid-row"><span class="jp">おねえさん</span><span class="my">အမ</span></div>
+        <div class="grid-row"><span class="jp">おとうとさん</span><span class="my">ညီ</span></div>
+        <div class="grid-row"><span class="jp">いもうとさん</span><span class="my">ညီမ</span></div>
+        <div class="grid-row"><span class="jp">おこさん</span><span class="my">ကလေး</span></div>
+        <div class="grid-row"><span class="jp">むすこさん</span><span class="my">သား</span></div>
+        <div class="grid-row"><span class="jp">むすめさん</span><span class="my">သမီး</span></div>
+        <div class="grid-row"><span class="jp">おたく</span><span class="my">အိမ်</span></div>
+        <div class="grid-row"><span class="jp">おじゃまする</span><span class="my">အလည်သွားသည်</span></div>
+        <div class="grid-row"><span class="jp">けいけん</span><span class="my">အတွေ့အကြုံ</span></div>
+        <div class="grid-row"><span class="jp">よろしくおつたえください</span><span class="my">ကျေးဇူးပြု၍ တစ်ဆင့်ပြောပေးပါ</span></div>
+
+        <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+        <div class="grid-row"><span class="jp">お父さん（おとうさん）</span><span class="my">အဖေ</span></div>
+        <div class="grid-row"><span class="jp">お母さん（おかあさん）</span><span class="my">အမေ</span></div>
+        <div class="grid-row"><span class="jp">兄（あに）</span><span class="my">အကို</span></div>
+        <div class="grid-row"><span class="jp">お兄さん（おにいさん）</span><span class="my">အကို</span></div>
+        <div class="grid-row"><span class="jp">姉（あね）</span><span class="my">အမ</span></div>
+        <div class="grid-row"><span class="jp">お姉さん（おねえさん）</span><span class="my">အမ</span></div>
+        <div class="grid-row"><span class="jp">弟（おとうと）</span><span class="my">ညီ</span></div>
+        <div class="grid-row"><span class="jp">妹（いもうと）</span><span class="my">ညီမ</span></div>
+        <div class="grid-row"><span class="jp">夫（おっと）</span><span class="my">ယောက်ျား (မိမိ၏)</span></div>
+        <div class="grid-row"><span class="jp">妻（つま）</span><span class="my">မယား (မိမိ၏)</span></div>
+        <div class="grid-row"><span class="jp">両親（りょうしん）</span><span class="my">မိဘနှစ်ပါး</span></div>
+
+    </div>
+</div>
+<!-- ======================== UNIT 18 ======================== -->
+<div class="unit-section">
+    <div class="unit-title">📘 Unit 18 <small>ဝေါဟာရစာရင်း</small></div>
+
+    <div class="vocab-grid">
+        <div class="grid-header">
+            <span>🇯🇵 ဂျပန်</span>
+            <span>🇲🇲 မြန်မာ</span>
+        </div>
+
+        <div class="grid-row"><span class="jp">けっこん（する）</span><span class="my">လက်ထပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">しゅっさん</span><span class="my">ကလေးမွေးသည်</span></div>
+        <div class="grid-row"><span class="jp">うまれる</span><span class="my">မွေးဖွားသည်</span></div>
+        <div class="grid-row"><span class="jp">こうかく（する）</span><span class="my">စာမေးပွဲအောင်သည်</span></div>
+        <div class="grid-row"><span class="jp">おとこのこ</span><span class="my">ယောက်ျားလေး</span></div>
+        <div class="grid-row"><span class="jp">おんなのこ</span><span class="my">မိန်းကလေး</span></div>
+        <div class="grid-row"><span class="jp">きめる</span><span class="my">ဆုံးဖြတ်သည်</span></div>
+        <div class="grid-row"><span class="jp">かんがえる</span><span class="my">စဉ်းစားသည်</span></div>
+        <div class="grid-row"><span class="jp">ごけっこん</span><span class="my">လက်ထပ်ပွဲ</span></div>
+        <div class="grid-row"><span class="jp">わたしたち</span><span class="my">ကျွန်တော်တို့ / ကျွန်မတို့</span></div>
+        <div class="grid-row"><span class="jp">うれしい</span><span class="my">ပျော်ရွှင်သော</span></div>
+        <div class="grid-row"><span class="jp">あいて</span><span class="my">တစ်ဖက်လူ</span></div>
+        <div class="grid-row"><span class="jp">おいわい</span><span class="my">ဂုဏ်ပြုခြင်း</span></div>
+        <div class="grid-row"><span class="jp">ごちそうする</span><span class="my">ကျွေးမွေးသည်</span></div>
+        <div class="grid-row"><span class="jp">きっと</span><span class="my">သေချာပေါက်</span></div>
+        <div class="grid-row"><span class="jp">あげる</span><span class="my">ပေးသည်</span></div>
+        <div class="grid-row"><span class="jp">たのしみですね</span><span class="my">ပျော်စရာပဲနော်</span></div>
+        <div class="grid-row"><span class="jp">おめでとう（ございます）</span><span class="my">ဂုဏ်ယူပါတယ်</span></div>
+        <div class="grid-row"><span class="jp">おしあわせに</span><span class="my">ပျော်ရွှင်ပါစေ</span></div>
+        <div class="grid-row"><span class="jp">ジェーエルピーティー</span><span class="my">JLPT</span></div>
+        <div class="grid-row"><span class="jp">フォトフレーム</span><span class="my">Photo Frame</span></div>
+        <div class="grid-row"><span class="jp">とけい</span><span class="my">နာရီ</span></div>
+        <div class="grid-row"><span class="jp">アクセサリー</span><span class="my">ဆက်စပ်ပစ္စည်းများ</span></div>
+        <div class="grid-row"><span class="jp">ハンカチ</span><span class="my">လက်ကိုင်ပဝါ</span></div>
+        <div class="grid-row"><span class="jp">ケーキ</span><span class="my">ကိတ်</span></div>
+        <div class="grid-row"><span class="jp">ギフトカード</span><span class="my">လက်ဆောင်ကတ်</span></div>
+        <div class="grid-row"><span class="jp">きこく（する）</span><span class="my">တိုင်းပြည်သို့ပြန်သည်</span></div>
+        <div class="grid-row"><span class="jp">さびしい</span><span class="my">လွမ်းဆွတ်သော / အထီးကျန်သော</span></div>
+        <div class="grid-row"><span class="jp">そうべつかい</span><span class="my">နှုတ်ဆက်ပွဲ</span></div>
+        <div class="grid-row"><span class="jp">よぶ</span><span class="my">ခေါ်သည်</span></div>
+        <div class="grid-row"><span class="jp">よやくする</span><span class="my">ကြိုတင် Booking လုပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">おもいで</span><span class="my">အမှတ်တရ</span></div>
+        <div class="grid-row"><span class="jp">のこる</span><span class="my">ကျန်သည်</span></div>
+        <div class="grid-row"><span class="jp">おもう</span><span class="my">တွေးထင်သည်</span></div>
+        <div class="grid-row"><span class="jp">よさん</span><span class="my">Budget</span></div>
+        <div class="grid-row"><span class="jp">さんかしゃ</span><span class="my">ပါဝင်သူ</span></div>
+        <div class="grid-row"><span class="jp">それなら</span><span class="my">ဒါဆိုရင်</span></div>
+        <div class="grid-row"><span class="jp">デジタルフォトフレーム</span><span class="my">Digital Photo Frame</span></div>
+        <div class="grid-row"><span class="jp">えらぶ</span><span class="my">ရွေးချယ်သည်</span></div>
+        <div class="grid-row"><span class="jp">それでは</span><span class="my">ဒါဆိုရင်</span></div>
+        <div class="grid-row"><span class="jp">あいさつ</span><span class="my">နှုတ်ဆက်ခြင်း</span></div>
+        <div class="grid-row"><span class="jp">はじめ</span><span class="my">ပထမဆုံး</span></div>
+        <div class="grid-row"><span class="jp">ともだちができる</span><span class="my">သူငယ်ချင်းရရှိသည်</span></div>
+        <div class="grid-row"><span class="jp">たいせつにする</span><span class="my">တန်ဖိုးထားသည်</span></div>
+        <div class="grid-row"><span class="jp">かざる</span><span class="my">အလှဆင်ထားသည်</span></div>
+        <div class="grid-row"><span class="jp">～のこと（わたしのこと）</span><span class="my">အကြောင်း</span></div>
+        <div class="grid-row"><span class="jp">わすれる</span><span class="my">မေ့သည်</span></div>
+        <div class="grid-row"><span class="jp">おげんきで</span><span class="my">ကျန်းမာရေးဂရုစိုက်ပါ</span></div>
+        <div class="grid-row"><span class="jp">かんぱい</span><span class="my">Cheers</span></div>
+        <div class="grid-row"><span class="jp">げんきでいてください</span><span class="my">ကျန်းမာရေးဂရုစိုက်ပါ</span></div>
+        <div class="grid-row"><span class="jp">メッセージ</span><span class="my">Message</span></div>
+        <div class="grid-row"><span class="jp">とうとう</span><span class="my">နောက်ဆုံးတော့</span></div>
+        <div class="grid-row"><span class="jp">～だい（さんじゅうだい）</span><span class="my">အသက် ၃၀ တန်း</span></div>
+        <div class="grid-row"><span class="jp">うたう</span><span class="my">သီချင်းဆိုသည်</span></div>
+        <div class="grid-row"><span class="jp">おどる</span><span class="my">ကသည်</span></div>
+        <div class="grid-row"><span class="jp">サービス</span><span class="my">Service</span></div>
+        <div class="grid-row"><span class="jp">かてい</span><span class="my">မိသားစု</span></div>
+        <div class="grid-row"><span class="jp">いつまでも</span><span class="my">အမြဲတမ်း</span></div>
+        <div class="grid-row"><span class="jp">いなくなる</span><span class="my">ထွက်ခွာသွားသည်</span></div>
+        <div class="grid-row"><span class="jp">がんばってください</span><span class="my">ကြိုးစားပါ</span></div>
+
+        <div class="sub-header">Kanji ပါသော စာလုံးများ</div>
+
+        <div class="grid-row"><span class="jp">男の子（おとこのこ）</span><span class="my">ယောက်ျားလေး</span></div>
+        <div class="grid-row"><span class="jp">女の子（おんなのこ）</span><span class="my">မိန်းကလေး</span></div>
+        <div class="grid-row"><span class="jp">お祝い（おいわい）</span><span class="my">ဂုဏ်ပြုခြင်း</span></div>
+        <div class="grid-row"><span class="jp">誕生日（たんじょうび）</span><span class="my">မွေးနေ့</span></div>
+        <div class="grid-row"><span class="jp">結婚（けっこん）</span><span class="my">လက်ထပ်သည်</span></div>
+        <div class="grid-row"><span class="jp">時計（とけい）</span><span class="my">နာရီ</span></div>
+        <div class="grid-row"><span class="jp">幸せな（しあわせな）</span><span class="my">စိတ်ချမ်းသာသော</span></div>
+        <div class="grid-row"><span class="jp">生まれる（うまれる）</span><span class="my">မွေးဖွားသည်</span></div>
+        <div class="grid-row"><span class="jp">思う（おもう）</span><span class="my">တွေးထင်သည်</span></div>
+        <div class="grid-row"><span class="jp">選ぶ（えらぶ）</span><span class="my">ရွေးချယ်သည်</span></div>
+        <div class="grid-row"><span class="jp">合格する（こうかくする）</span><span class="my">စာမေးပွဲအောင်သည်</span></div>
+
+    </div>
+</div>
+
+    <div class="footer-note">
+        <span>📝 JFT အတွက် Unit-1 မှ 11 အထိ &nbsp;·&nbsp; စုစုပေါင်း ဝေါဟာရ (၆၅၀+)</span>
+    </div>
+</div>
+
+</body>
+</html>
