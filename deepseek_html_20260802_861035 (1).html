@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>A2 Kanji · Lesson 1–18</title>
+    <meta name="description" content="ဂျပန်စာ A2 အဆင့် ကန်ဂျိသင်ခန်းစာ ၁ မှ ၁၈ အထိ။ JLPT N4 အဆင့် ကန်ဂျိများ၏ အဓိပ္ပါယ်၊ ဟိရဂနအသံထွက်နှင့် လက်ရေးလေ့ကျင့်နိုင်သော အင်တာဖေ့စ် ပါဝင်သည်။">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #ece8e0;
+            font-family: 'Noto Sans JP', 'Noto Sans Myanmar', 'Pyidaungsu', 'Segoe UI', sans-serif;
+            padding: 24px 20px;
+            background-image: radial-gradient(circle at 10% 20%, rgba(130, 150, 140, 0.05) 0%, transparent 30%),
+                              radial-gradient(circle at 90% 80%, rgba(120, 100, 90, 0.05) 0%, transparent 40%);
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 250, 240, 0.88);
+            backdrop-filter: blur(8px);
+            border-radius: 56px;
+            padding: 36px 32px;
+            border: 2px solid #c9b28b;
+            box-shadow: 0 20px 30px -12px rgba(70, 55, 40, 0.15);
+        }
+        
+        /* ===== HEADER - A2 ===== */
+        .level-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 4px solid #9f9a7a;
+            padding-bottom: 20px;
+            flex-wrap: wrap;
+            background: linear-gradient(to right, #f9f2e5, #fffcf5);
+            border-radius: 100px 100px 30px 30px;
+            padding: 22px 32px;
+        }
+        
+        .title-section {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .level-badge {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #3d6655;
+            letter-spacing: 4px;
+            display: flex;
+            align-items: baseline;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .level-badge .jp {
+            background: #547a6b;
+            color: white;
+            padding: 6px 24px;
+            border-radius: 60px;
+            font-size: 1.6rem;
+            border: 2px solid #e9dac4;
+            box-shadow: 0 4px 0 #2e4a40;
+        }
+        
+        .level-badge .my {
+            background: #8f7b60;
+            color: white;
+            padding: 6px 24px;
+            border-radius: 60px;
+            font-size: 1.5rem;
+            border: 2px solid #f0e0ca;
+            box-shadow: 0 4px 0 #5b4d3b;
+        }
+        
+        .sub-title {
+            font-size: 1.2rem;
+            color: #6b5846;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .sub-title span {
+            background: #e2d6c5;
+            padding: 5px 20px;
+            border-radius: 50px;
+            border: 1px solid #a3886b;
+        }
+        
+        .chapter-guide {
+            font-size: 1.4rem;
+            background: #baab94;
+            color: #2d3a35;
+            padding: 12px 32px;
+            border-radius: 60px;
+            border: 2px solid #75624f;
+            font-weight: 600;
+            box-shadow: 0 4px 0 #5a4f40;
+        }
+
+        /* ----- introductory paragraph ----- */
+        .intro-section {
+            margin: 20px 0 30px 0;
+            padding: 18px 28px;
+            background: #f9f3ea;
+            border-radius: 60px 20px 60px 20px;
+            border-left: 12px solid #8f7b60;
+            border-right: 2px solid #c9b28b;
+            box-shadow: inset 0 0 0 1px rgba(255, 245, 230, 0.8), 0 6px 14px rgba(90, 70, 50, 0.08);
+            color: #3f3a30;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            transition: 0.2s;
+        }
+        .intro-section p {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .intro-section .intro-icon {
+            font-size: 2rem;
+            background: #dccbb6;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #4f3f30;
+            border: 2px solid #8f7b60;
+        }
+        .intro-section .intro-text {
+            font-weight: 450;
+        }
+        .intro-section .intro-text strong {
+            color: #5f6b4b;
+            background: #e5decb;
+            padding: 1px 12px;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+        @media (max-width: 550px) {
+            .intro-section {
+                padding: 14px 16px;
+                font-size: 1rem;
+                border-radius: 30px 10px 30px 10px;
+            }
+            .intro-section .intro-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 1.6rem;
+            }
+        }
+
+        /* ===== LESSON TITLE ===== */
+        .chapter-block {
+            margin-top: 48px;
+            margin-bottom: 40px;
+        }
+        
+        .chapter-title {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 2rem;
+            font-weight: 650;
+            color: #3b4a40;
+            margin-bottom: 28px;
+            border-left: 18px solid #7a8b7a;
+            padding-left: 24px;
+            background: linear-gradient(to right, #fbf5ec, transparent);
+        }
+        
+        .chapter-title h2 {
+            margin: 0;
+            padding: 0;
+            background: #4f6557;
+            color: white;
+            padding: 8px 30px;
+            border-radius: 50px;
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            border: 2px solid #ddc7aa;
+            box-shadow: 0 3px 0 #2f4036;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* ===== KANJI GRID ===== */
+        .kanji-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+        }
+        
+        /* ----- Card Base ----- */
+        .kanji-card {
+            background: white;
+            border-radius: 28px;
+            padding: 20px 10px 16px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 2px solid #d6bc9c;
+            box-shadow: 0 6px 0 #8f816b;
+            transition: 0.15s;
+            cursor: pointer;
+            height: 100%;
+        }
+        .kanji-card:hover {
+            background: #fffbf4;
+            border-color: #b38d68;
+            box-shadow: 0 9px 0 #75644f;
+            transform: translateY(-5px);
+        }
+        
+        /* Single Kanji */
+        .kanji-char {
+            font-size: 2.6rem;
+            font-weight: 600;
+            color: #2b4b4f;
+            line-height: 1.2;
+            text-shadow: 2px 2px 0 #ede8de;
+            letter-spacing: 3px;
+            margin-bottom: 5px;
+        }
+        
+        /* Double/Triple Kanji */
+        .kanji-double {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+        .kanji-double .char {
+            font-size: 2.1rem;
+            font-weight: 600;
+            color: #2b4b4f;
+            text-shadow: 2px 2px 0 #ede8de;
+            background: #faf5ed;
+            padding: 5px 10px;
+            border-radius: 18px;
+            border: 1px solid #cfb396;
+        }
+        
+        .hiragana-tag {
+            font-size: 0.85rem;
+            background: #e6e9dc;
+            color: #2d615b;
+            padding: 5px 14px;
+            border-radius: 50px;
+            margin: 10px 0 6px;
+            border: 1px solid #ad9f81;
+            font-weight: 500;
+            word-break: break-word;
+            max-width: 100%;
+        }
+        .myanmar-mean {
+            font-size: 0.75rem;
+            background: #f1e1d3;
+            color: #4d382b;
+            padding: 6px 12px;
+            border-radius: 50px;
+            width: 100%;
+            font-weight: 600;
+            border: 1px solid #b68f70;
+            line-height: 1.4;
+            word-break: break-word;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 60px;
+            background: #d1bea8;
+            padding: 14px 38px;
+            border-radius: 60px;
+            color: #3a3028;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border: 2px solid #947b62;
+            transition: 0.1s;
+        }
+        .back-link:hover {
+            background: #bea78c;
+            border-color: #6b5541;
+            color: black;
+        }
+
+        /* ===== MODAL - TRACING PRACTICE ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: #fffaf2;
+            padding: 32px 28px;
+            border-radius: 56px;
+            max-width: 650px;
+            width: 95%;
+            text-align: center;
+            border: 5px solid #d0b094;
+            box-shadow: 0 25px 35px rgba(60, 45, 30, 0.25);
+            position: relative;
+        }
+        .close-btn {
+            position: absolute;
+            top: 18px;
+            right: 22px;
+            font-size: 2.2rem;
+            cursor: pointer;
+            color: #7a604c;
+            background: #f0e0d0;
+            width: 45px;
+            height: 45px;
+            line-height: 40px;
+            border-radius: 50%;
+            border: 2px solid #aa8366;
+            z-index: 10;
+        }
+        .close-btn:hover {
+            background: #cb9f82;
+            color: white;
+        }
+        
+        /* Practice Kanji (Single) */
+        .practice-kanji {
+            font-size: 3.8rem;
+            color: #2a4a50;
+            margin-bottom: 8px;
+            text-shadow: 5px 5px 0 #e8ddd2;
+        }
+        
+        /* Practice Double/Triple */
+        .practice-double {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        .practice-double .char {
+            font-size: 3.2rem;
+            color: #2a4a50;
+            text-shadow: 4px 4px 0 #e8ddd2;
+            background: #f9f3ea;
+            padding: 10px 18px;
+            border-radius: 24px;
+            border: 2px solid #c0a082;
+        }
+        
+        .tracing-container {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 15px auto;
+            border-radius: 28px;
+            overflow: hidden;
+            border: 4px solid #bf9b7a;
+            background: white;
+        }
+        
+        .tracing-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            opacity: 0.28;
+            pointer-events: none;
+            z-index: 1;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .tracing-background svg {
+            width: 120px;
+            height: 120px;
+        }
+        
+        #traceCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            cursor: crosshair;
+        }
+        
+        .canvas-controls {
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            margin: 25px 0 12px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 24px;
+            border-radius: 50px;
+            border: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: #e6d9cb;
+            border: 1px solid #ad8d72;
+            color: #473a30;
+            transition: 0.1s;
+        }
+        .btn:hover {
+            background: #d0b69c;
+            color: white;
+            border-color: #6b5442;
+        }
+        .btn-clear {
+            background: #efd3c5;
+            color: #623c31;
+        }
+        .btn-clear:hover {
+            background: #d6937a;
+        }
+        .btn-exit {
+            background: #ccb6a0;
+            color: #2d3a40;
+        }
+        
+        .practice-hiragana {
+            font-size: 1.3rem;
+            color: #32635c;
+            background: #e2ede5;
+            display: inline-block;
+            padding: 8px 28px;
+            border-radius: 60px;
+            margin: 18px 0 6px;
+            border: 1px solid #7ea296;
+            font-weight: 500;
+        }
+        .practice-meaning {
+            font-size: 1.2rem;
+            background: #eedbcc;
+            color: #4e392c;
+            padding: 10px 24px;
+            border-radius: 60px;
+            border: 1px solid #b38262;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 24px 20px; }
+            .level-header { flex-direction: column; align-items: flex-start; gap: 18px; }
+            .level-badge { font-size: 1.9rem; }
+            .level-badge .jp, .level-badge .my { font-size: 1.2rem; padding: 5px 18px; }
+            .chapter-guide { font-size: 1.1rem; padding: 10px 22px; }
+            .kanji-grid { grid-template-columns: repeat(auto-fill, minmax(125px, 1fr)); gap: 16px; }
+            .kanji-char { font-size: 2.2rem; }
+            .kanji-double .char { font-size: 1.9rem; }
+            .hiragana-tag { font-size: 0.75rem; }
+            .myanmar-mean { font-size: 0.65rem; }
+            .chapter-title { font-size: 1.7rem; }
+            .chapter-title h2 { font-size: 1.1rem; padding: 6px 20px; }
+            .tracing-container { width: 250px; height: 250px; }
+            .practice-double .char { font-size: 2.6rem; }
+        }
+        @media (max-width: 380px) {
+            .kanji-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ===== HEADER - A2 ===== -->
+        <div class="level-header">
+            <div class="title-section">
+                <div class="level-badge">
+                    <span class="jp">中級</span>
+                    <span class="my">အလယ်အဆင့်</span>
+                </div>
+                <div class="sub-title">
+                    <span>📙 A2 Kanji</span>
+                    <span>🇯🇵 JLPT N4</span>
+                </div>
+            </div>
+            <div class="chapter-guide">
+                ✦ Lessons 1 ~ 18 ✦
+            </div>
+        </div>
+
+        <!-- ===== INTRODUCTORY PARAGRAPH ===== -->
+        <div class="intro-section">
+            <p>
+                <span class="intro-icon">📖</span>
+                <span class="intro-text">
+                    <strong>မင်္ဂလာပါ</strong> ဤသင်ခန်းစာသည် ဂျပန်စာ <strong>A2 အဆင့် (JLPT N4)</strong> ကန်ဂျိများကို စနစ်တကျ လေ့လာလိုသူများအတွက် ရည်ရွယ်ပါသည်။ 
+                    သင်ခန်းစာ ၁ မှ ၁၈ အထိ ကန်ဂျိ ၁၅၀ ကျော်ကို အဓိပ္ပါယ်၊ ဟိရဂနအသံထွက်နှင့်အတူ တင်ပြထားပါသည်။ 
+                    ကတ်တစ်ခုကို နှိပ်လိုက်ရုံဖြင့် ထိုကန်ဂျိ၏ လက်ရေးပုံစံကို <strong>အကဲချက်ဆွဲ (Tracing)</strong> လေ့ကျင့်နိုင်ပြီး 
+                    မှတ်မိလွယ်စေရန် ရည်ရွယ်ပါသည်။ ဂျပန်စာကို အလယ်အဆင့်အထိ တိုးတက်လေ့လာနေသူတိုင်း အကျိုးရှိစေမည် ဖြစ်ပါသည်။
+                </span>
+            </p>
+        </div>
+
+        <!-- ============ LESSON 1 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 1</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('山', 'やま', 'တောင်')">
+                    <div class="kanji-char">山</div>
+                    <div class="hiragana-tag">やま</div>
+                    <div class="myanmar-mean">တောင်/အထွတ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('川', 'かわ', 'မြစ်')">
+                    <div class="kanji-char">川</div>
+                    <div class="hiragana-tag">かわ</div>
+                    <div class="myanmar-mean">မြစ်/ချောင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('海', 'うみ', 'ပင်လယ်')">
+                    <div class="kanji-char">海</div>
+                    <div class="hiragana-tag">うみ</div>
+                    <div class="myanmar-mean">ပင်လယ်/သမုဒ္ဒရာ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('島', 'しま', 'ကျွန်း')">
+                    <div class="kanji-char">島</div>
+                    <div class="hiragana-tag">しま</div>
+                    <div class="myanmar-mean">ကျွန်း/ဒေသ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('森', 'もり', 'သစ်တော')">
+                    <div class="kanji-char">森</div>
+                    <div class="hiragana-tag">もり</div>
+                    <div class="myanmar-mean">သစ်တော/တော</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('客', 'きゃく', 'ဧည့်သည်')">
+                    <div class="kanji-char">客</div>
+                    <div class="hiragana-tag">きゃく</div>
+                    <div class="myanmar-mean">ဧည့်သည်/ဖောက်သည်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('観光地', ['観','光','地'], 'かんこうち', 'ခရီးသွားနေရာ')">
+                    <div class="kanji-double"><span class="char">観</span><span class="char">光</span><span class="char">地</span></div>
+                    <div class="hiragana-tag">かんこうち</div>
+                    <div class="myanmar-mean">ခရီးသွားနေရာ/အပန်းဖြေစခန်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('意味', ['意','味'], 'いみ', 'အဓိပ္ပါယ်')">
+                    <div class="kanji-double"><span class="char">意</span><span class="char">味</span></div>
+                    <div class="hiragana-tag">いみ</div>
+                    <div class="myanmar-mean">အဓိပ္ပါယ်/အနက်အဓိပ္ပါယ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('経験', ['経','験'], 'けいけん', 'အတွေ့အကြုံ')">
+                    <div class="kanji-double"><span class="char">経</span><span class="char">験</span></div>
+                    <div class="hiragana-tag">けいけん</div>
+                    <div class="myanmar-mean">အတွေ့အကြုံ/အစမ်းသဘော</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 2 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 2</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('写真', ['写','真'], 'しゃしん', 'ဓာတ်ပုံ')">
+                    <div class="kanji-double"><span class="char">写</span><span class="char">真</span></div>
+                    <div class="hiragana-tag">しゃしん</div>
+                    <div class="myanmar-mean">ဓာတ်ပုံ/ရုပ်ပုံ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('歌', 'うた', 'သီချင်း')">
+                    <div class="kanji-char">歌</div>
+                    <div class="hiragana-tag">うた</div>
+                    <div class="myanmar-mean">သီချင်း/ဂီတ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('歌手', ['歌','手'], 'かしゅ', 'အဆိုတော်')">
+                    <div class="kanji-double"><span class="char">歌</span><span class="char">手</span></div>
+                    <div class="hiragana-tag">かしゅ</div>
+                    <div class="myanmar-mean">အဆိုတော်/တေးသံရှင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('上手', ['上','手'], 'じょうず', 'ကျွမ်းကျင်သော')">
+                    <div class="kanji-double"><span class="char">上</span><span class="char">手</span></div>
+                    <div class="hiragana-tag">じょうず</div>
+                    <div class="myanmar-mean">ကျွမ်းကျင်သော/တော်သော</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('明るい', 'あかるい', 'တောက်ပသော')">
+                    <div class="kanji-char">明</div>
+                    <div class="hiragana-tag">あかるい</div>
+                    <div class="myanmar-mean">တောက်ပသော/ရွှင်လန်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('長い', 'ながい', 'ရှည်သော')">
+                    <div class="kanji-char">長</div>
+                    <div class="hiragana-tag">ながい</div>
+                    <div class="myanmar-mean">ရှည်သော/ရှည်လျား</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('短い', 'みじかい', 'တိုသော')">
+                    <div class="kanji-char">短</div>
+                    <div class="hiragana-tag">みじかい</div>
+                    <div class="myanmar-mean">တိုသော/ခေတ္တ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('着る', 'きる', 'ဝတ်သည်')">
+                    <div class="kanji-char">着</div>
+                    <div class="hiragana-tag">きる</div>
+                    <div class="myanmar-mean">ဝတ်ဆင်သည်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('立つ', 'たつ', 'ရပ်သည်')">
+                    <div class="kanji-char">立</div>
+                    <div class="hiragana-tag">たつ</div>
+                    <div class="myanmar-mean">ရပ်တည်သည်/ထရပ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('泣く', 'なく', 'ငိုသည်')">
+                    <div class="kanji-char">泣</div>
+                    <div class="hiragana-tag">なく</div>
+                    <div class="myanmar-mean">ငိုကြွေးသည်</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 3 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 3</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('注文', ['注','文'], 'ちゅうもん', 'မှာယူခြင်း')">
+                    <div class="kanji-double"><span class="char">注</span><span class="char">文</span></div>
+                    <div class="hiragana-tag">ちゅうもん</div>
+                    <div class="myanmar-mean">မှာယူခြင်း/အော်ဒါ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('会計', ['会','計'], 'かいけい', 'ငွေရှင်းခြင်း')">
+                    <div class="kanji-double"><span class="char">会</span><span class="char">計</span></div>
+                    <div class="hiragana-tag">かいけい</div>
+                    <div class="myanmar-mean">ငွေရှင်းခြင်း/စာရင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('予約', ['予','約'], 'よやく', 'ကြိုတင်မှာယူ')">
+                    <div class="kanji-double"><span class="char">予</span><span class="char">約</span></div>
+                    <div class="hiragana-tag">よやく</div>
+                    <div class="myanmar-mean">ကြိုတင်မှာယူ/ရက်ချိန်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('電話番号', ['電','話','番','号'], 'でんわばんごう', 'တယ်လီဖုန်းနံပါတ်')">
+                    <div class="kanji-double"><span class="char">電</span><span class="char">話</span><span class="char">番</span><span class="char">号</span></div>
+                    <div class="hiragana-tag">でんわばんごう</div>
+                    <div class="myanmar-mean">တယ်လီဖုန်းနံပါတ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('～様', 'さま', 'ဦး/မစ္စတာ')">
+                    <div class="kanji-char">様</div>
+                    <div class="hiragana-tag">さま</div>
+                    <div class="myanmar-mean">အရှင်သူ/ဦး(လေးစားမှု)</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('ご飯', ['ご','飯'], 'ごはん', 'ထမင်း')">
+                    <div class="kanji-double"><span class="char">飯</span></div>
+                    <div class="hiragana-tag">ごはん</div>
+                    <div class="myanmar-mean">ထမင်း/အစားအစာ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('牛乳', ['牛','乳'], 'ぎゅうにゅう', 'နွားနို့')">
+                    <div class="kanji-double"><span class="char">牛</span><span class="char">乳</span></div>
+                    <div class="hiragana-tag">ぎゅうにゅう</div>
+                    <div class="myanmar-mean">နွားနို့</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('生', 'なま', 'အစိမ်း')">
+                    <div class="kanji-char">生</div>
+                    <div class="hiragana-tag">なま</div>
+                    <div class="myanmar-mean">အစိမ်း/မကျက်သေး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('禁煙', ['禁','煙'], 'きんえん', 'ဆေးလိပ်မသောက်ရ')">
+                    <div class="kanji-double"><span class="char">禁</span><span class="char">煙</span></div>
+                    <div class="hiragana-tag">きんえん</div>
+                    <div class="myanmar-mean">ဆေးလိပ်မသောက်ရ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('自由', ['自','由'], 'じゆう', 'လွတ်လပ်ခြင်း')">
+                    <div class="kanji-double"><span class="char">自</span><span class="char">由</span></div>
+                    <div class="hiragana-tag">じゆう</div>
+                    <div class="myanmar-mean">လွတ်လပ်ခြင်း/အလိုအလျောက်</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 4 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 4</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('塩', 'しお', 'ဆား')">
+                    <div class="kanji-char">塩</div>
+                    <div class="hiragana-tag">しお</div>
+                    <div class="myanmar-mean">ဆား/အငန်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('油', 'あぶら', 'ဆီ')">
+                    <div class="kanji-char">油</div>
+                    <div class="hiragana-tag">あぶら</div>
+                    <div class="myanmar-mean">ဆီ/အဆီ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('量', 'りょう', 'ပမာဏ')">
+                    <div class="kanji-char">量</div>
+                    <div class="hiragana-tag">りょう</div>
+                    <div class="myanmar-mean">ပမာဏ/အရေအတွက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('～方', 'かた', 'နည်းလမ်း')">
+                    <div class="kanji-char">方</div>
+                    <div class="hiragana-tag">かた</div>
+                    <div class="myanmar-mean">နည်းလမ်း/ဘက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('～屋', 'や', 'ဆိုင်')">
+                    <div class="kanji-char">屋</div>
+                    <div class="hiragana-tag">や</div>
+                    <div class="myanmar-mean">ဆိုင်/အရောင်းဆိုင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('満足', ['満','足'], 'まんぞく', 'ကျေနပ်ခြင်း')">
+                    <div class="kanji-double"><span class="char">満</span><span class="char">足</span></div>
+                    <div class="hiragana-tag">まんぞく</div>
+                    <div class="myanmar-mean">ကျေနပ်ခြင်း/ရောင့်ရဲ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('切る', 'きる', 'ဖြတ်သည်')">
+                    <div class="kanji-char">切</div>
+                    <div class="hiragana-tag">きる</div>
+                    <div class="myanmar-mean">ဖြတ်သည်/ပိုင်းသည်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('焼く', 'やく', 'ကင်သည်')">
+                    <div class="kanji-char">焼</div>
+                    <div class="hiragana-tag">やく</div>
+                    <div class="myanmar-mean">ကင်သည်/မီးပူသည်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('入れる', 'いれる', 'ထည့်သည်')">
+                    <div class="kanji-char">入</div>
+                    <div class="hiragana-tag">いれる</div>
+                    <div class="myanmar-mean">ထည့်သွင်းသည်/သွင်းသည်</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 5 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 5</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('自然', ['自','然'], 'しぜん', 'သဘာဝ')">
+                    <div class="kanji-double"><span class="char">自</span><span class="char">然</span></div>
+                    <div class="hiragana-tag">しぜん</div>
+                    <div class="myanmar-mean">သဘာဝ/အလိုအလျောက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('交通', ['交','通'], 'こうつう', 'လမ်းပန်းဆက်သွယ်ရေး')">
+                    <div class="kanji-double"><span class="char">交</span><span class="char">通</span></div>
+                    <div class="hiragana-tag">こうつう</div>
+                    <div class="myanmar-mean">လမ်းပန်းဆက်သွယ်ရေး/ယာဉ်ကြော</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('船', 'ふね', 'သင်္ဘော')">
+                    <div class="kanji-char">船</div>
+                    <div class="hiragana-tag">ふね</div>
+                    <div class="myanmar-mean">သင်္ဘော/လှေ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('自転車', ['自','転','車'], 'じてんしゃ', 'စက်ဘီး')">
+                    <div class="kanji-double"><span class="char">自</span><span class="char">転</span><span class="char">車</span></div>
+                    <div class="hiragana-tag">じてんしゃ</div>
+                    <div class="myanmar-mean">စက်ဘီး/ဆိုင်ကယ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('旅館', ['旅','館'], 'りょかん', 'ဂျပန်ရိုးရာဟိုတယ်')">
+                    <div class="kanji-double"><span class="char">旅</span><span class="char">館</span></div>
+                    <div class="hiragana-tag">りょかん</div>
+                    <div class="myanmar-mean">ဂျပန်ရိုးရာဟိုတယ်/တည်းခိုခန်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('東京', ['東','京'], 'とうきょう', 'တိုကျိုမြို့တော်')">
+                    <div class="kanji-double"><span class="char">東</span><span class="char">京</span></div>
+                    <div class="hiragana-tag">とうきょう</div>
+                    <div class="myanmar-mean">တိုကျိုမြို့တော်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('計画', ['計','画'], 'けいかく', 'အစီအစဉ်')">
+                    <div class="kanji-double"><span class="char">計</span><span class="char">画</span></div>
+                    <div class="hiragana-tag">けいかく</div>
+                    <div class="myanmar-mean">အစီအစဉ်/စီမံကိန်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('遊ぶ', 'あそぶ', 'ကစားသည်')">
+                    <div class="kanji-char">遊</div>
+                    <div class="hiragana-tag">あそぶ</div>
+                    <div class="myanmar-mean">ကစားသည်/အပန်းဖြေ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('調べる', 'しらべる', 'စစ်ဆေးသည်')">
+                    <div class="kanji-char">調</div>
+                    <div class="hiragana-tag">しらべる</div>
+                    <div class="myanmar-mean">စစ်ဆေးသည်/ရှာဖွေ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('出発する', ['出','発'], 'しゅっぱつ', 'ထွက်ခွာသည်')">
+                    <div class="kanji-double"><span class="char">出</span><span class="char">発</span></div>
+                    <div class="hiragana-tag">しゅっぱつ</div>
+                    <div class="myanmar-mean">ထွက်ခွာသည်/စတင်သည်</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 6 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 6</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('運転', ['運','転'], 'うんてん', 'မောင်းနှင်ခြင်း')">
+                    <div class="kanji-double"><span class="char">運</span><span class="char">転</span></div>
+                    <div class="hiragana-tag">うんてん</div>
+                    <div class="myanmar-mean">မောင်းနှင်ခြင်း/ယာဉ်မောင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('事故', ['事','故'], 'じこ', 'မတော်တဆမှု')">
+                    <div class="kanji-double"><span class="char">事</span><span class="char">故</span></div>
+                    <div class="hiragana-tag">じこ</div>
+                    <div class="myanmar-mean">မတော်တဆမှု/ယာဉ်မှု</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('故障', ['故','障'], 'こしょう', 'ပျက်စီးခြင်း')">
+                    <div class="kanji-double"><span class="char">故</span><span class="char">障</span></div>
+                    <div class="hiragana-tag">こしょう</div>
+                    <div class="myanmar-mean">ပျက်စီးခြင်း/ချို့ယွင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('指定席', ['指','定','席'], 'していせき', 'သတ်မှတ်နေရာ')">
+                    <div class="kanji-double"><span class="char">指</span><span class="char">定</span><span class="char">席</span></div>
+                    <div class="hiragana-tag">していせき</div>
+                    <div class="myanmar-mean">သတ်မှတ်နေရာ/ချိန်းထားသောနေရာ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('週末', ['週','末'], 'しゅうまつ', 'သီတင်းပတ်ကုန်')">
+                    <div class="kanji-double"><span class="char">週</span><span class="char">末</span></div>
+                    <div class="hiragana-tag">しゅうまつ</div>
+                    <div class="myanmar-mean">သီတင်းပတ်ကုန်/စနေ-တနင်္ဂနွေ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('絵', 'え', 'ရုပ်ပုံ')">
+                    <div class="kanji-char">絵</div>
+                    <div class="hiragana-tag">え</div>
+                    <div class="myanmar-mean">ရုပ်ပုံ/ပန်းချီ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('空', 'そら', 'ကောင်းကင်')">
+                    <div class="kanji-char">空</div>
+                    <div class="hiragana-tag">そら</div>
+                    <div class="myanmar-mean">ကောင်းကင်/မိုးကောင်းကင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('泳ぐ', 'およぐ', 'ရေကူးသည်')">
+                    <div class="kanji-char">泳</div>
+                    <div class="hiragana-tag">およぐ</div>
+                    <div class="myanmar-mean">ရေကူးသည်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('光る', 'ひかる', 'ထွန်းလင်းသည်')">
+                    <div class="kanji-char">光</div>
+                    <div class="hiragana-tag">ひかる</div>
+                    <div class="myanmar-mean">ထွန်းလင်းသည်/ရောင်ခြည်ဖြာ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('到着する', ['到','着'], 'とうちゃく', 'ဆိုက်ရောက်သည်')">
+                    <div class="kanji-double"><span class="char">到</span><span class="char">着</span></div>
+                    <div class="hiragana-tag">とうちゃく</div>
+                    <div class="myanmar-mean">ဆိုက်ရောက်သည်/ရောက်ရှိ</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 7 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 7</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('お知らせ', ['知'], 'おしらせ', 'အသိပေးချက်')">
+                    <div class="kanji-double"><span class="char">知</span></div>
+                    <div class="hiragana-tag">おしらせ</div>
+                    <div class="myanmar-mean">အသိပေးချက်/ကြော်ငြာ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('今月', ['今','月'], 'こんげつ', 'ယခုလ')">
+                    <div class="kanji-double"><span class="char">今</span><span class="char">月</span></div>
+                    <div class="hiragana-tag">こんげつ</div>
+                    <div class="myanmar-mean">ယခုလ/ဒီလ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('水道', ['水','道'], 'すいどう', 'ရေပိုက်လိုင်း')">
+                    <div class="kanji-double"><span class="char">水</span><span class="char">道</span></div>
+                    <div class="hiragana-tag">すいどう</div>
+                    <div class="myanmar-mean">ရေပိုက်လိုင်း/ရေပေးဝေရေး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('工事', ['工','事'], 'こうじ', 'ဆောက်လုပ်ရေး')">
+                    <div class="kanji-double"><span class="char">工</span><span class="char">事</span></div>
+                    <div class="hiragana-tag">こうじ</div>
+                    <div class="myanmar-mean">ဆောက်လုပ်ရေး/ပြုပြင်ရေး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('広場', ['広','場'], 'ひろば', 'လူထုရင်ပြင်')">
+                    <div class="kanji-double"><span class="char">広</span><span class="char">場</span></div>
+                    <div class="hiragana-tag">ひろば</div>
+                    <div class="myanmar-mean">လူထုရင်ပြင်/ကွင်းပြင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('場合', ['場','合'], 'ばあい', 'အခြေအနေ')">
+                    <div class="kanji-double"><span class="char">場</span><span class="char">合</span></div>
+                    <div class="hiragana-tag">ばあい</div>
+                    <div class="myanmar-mean">အခြေအနေ/အကြောင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('中止', ['中','止'], 'ちゅうし', 'ရပ်ဆိုင်းခြင်း')">
+                    <div class="kanji-double"><span class="char">中</span><span class="char">止</span></div>
+                    <div class="hiragana-tag">ちゅうし</div>
+                    <div class="myanmar-mean">ရပ်ဆိုင်းခြင်း/ဖျက်သိမ်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('条件', ['条','件'], 'じょうけん', 'အခြေအနေ')">
+                    <div class="kanji-double"><span class="char">条</span><span class="char">件</span></div>
+                    <div class="hiragana-tag">じょうけん</div>
+                    <div class="myanmar-mean">အခြေအနေ/သတ်မှတ်ချက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('～以上', ['以','上'], 'いじょう', 'အထက်')">
+                    <div class="kanji-double"><span class="char">以</span><span class="char">上</span></div>
+                    <div class="hiragana-tag">いじょう</div>
+                    <div class="myanmar-mean">အထက်/ထိုထက်ပို</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('開く', 'ひらく', 'ဖွင့်သည်')">
+                    <div class="kanji-char">開</div>
+                    <div class="hiragana-tag">ひらく</div>
+                    <div class="myanmar-mean">ဖွင့်သည်/စတင်သည်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('生産する', ['生','産'], 'せいさん', 'ထုတ်လုပ်သည်')">
+                    <div class="kanji-double"><span class="char">生</span><span class="char">産</span></div>
+                    <div class="hiragana-tag">せいさん</div>
+                    <div class="myanmar-mean">ထုတ်လုပ်သည်/ဖြစ်ထွန်း</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 8 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 8</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('来年', ['来','年'], 'らいねん', 'လာမည့်နှစ်')">
+                    <div class="kanji-double"><span class="char">来</span><span class="char">年</span></div>
+                    <div class="hiragana-tag">らいねん</div>
+                    <div class="myanmar-mean">လာမည့်နှစ်/နောက်နှစ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('会場', ['会','場'], 'かいじょう', 'ပွဲကျင်းပရာနေရာ')">
+                    <div class="kanji-double"><span class="char">会</span><span class="char">場</span></div>
+                    <div class="hiragana-tag">かいじょう</div>
+                    <div class="myanmar-mean">ပွဲကျင်းပရာနေရာ/ခန်းမ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('世界', ['世','界'], 'せかい', 'ကမ္ဘာ')">
+                    <div class="kanji-double"><span class="char">世</span><span class="char">界</span></div>
+                    <div class="hiragana-tag">せかい</div>
+                    <div class="myanmar-mean">ကမ္ဘာ/လောက</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('体験', ['体','験'], 'たいけん', 'ကိုယ်တိုင်တွေ့ကြုံ')">
+                    <div class="kanji-double"><span class="char">体</span><span class="char">験</span></div>
+                    <div class="hiragana-tag">たいけん</div>
+                    <div class="myanmar-mean">ကိုယ်တိုင်တွေ့ကြုံ/စမ်းသပ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('国際交流', ['国','際','交','流'], 'こくさいこうりゅう', 'နိုင်ငံတကာဖလှယ်ရေး')">
+                    <div class="kanji-double"><span class="char">国</span><span class="char">際</span><span class="char">交</span><span class="char">流</span></div>
+                    <div class="hiragana-tag">こくさいこうりゅう</div>
+                    <div class="myanmar-mean">နိုင်ငံတကာဖလှယ်ရေး/အပြန်အလှန်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('禁止', ['禁','止'], 'きんし', 'တားမြစ်ချက်')">
+                    <div class="kanji-double"><span class="char">禁</span><span class="char">止</span></div>
+                    <div class="hiragana-tag">きんし</div>
+                    <div class="myanmar-mean">တားမြစ်ချက်/မပြုရ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('紙', 'かみ', 'စက္ကူ')">
+                    <div class="kanji-char">紙</div>
+                    <div class="hiragana-tag">かみ</div>
+                    <div class="myanmar-mean">စက္ကူ/အရွက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('始まる', 'はじまる', 'စတင်သည်')">
+                    <div class="kanji-char">始</div>
+                    <div class="hiragana-tag">はじまる</div>
+                    <div class="myanmar-mean">စတင်သည်/အစပြု</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('申し込む', ['申','込'], 'もうしこむ', 'လျှောက်ထားသည်')">
+                    <div class="kanji-double"><span class="char">申</span><span class="char">込</span></div>
+                    <div class="hiragana-tag">もうしこむ</div>
+                    <div class="myanmar-mean">လျှောက်ထားသည်/စာရင်းသွင်း</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 9 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 9</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('今年', ['今','年'], 'ことし', 'ယခုနှစ်')">
+                    <div class="kanji-double"><span class="char">今</span><span class="char">年</span></div>
+                    <div class="hiragana-tag">ことし</div>
+                    <div class="myanmar-mean">ယခုနှစ်/ဒီနှစ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('昨年', ['昨','年'], 'さくねん', 'မနှစ်က')">
+                    <div class="kanji-double"><span class="char">昨</span><span class="char">年</span></div>
+                    <div class="hiragana-tag">さくねん</div>
+                    <div class="myanmar-mean">မနှစ်က/လွန်ခဲ့သောနှစ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('毎年', ['毎','年'], 'まいとし', 'နှစ်စဉ်')">
+                    <div class="kanji-double"><span class="char">毎</span><span class="char">年</span></div>
+                    <div class="hiragana-tag">まいとし</div>
+                    <div class="myanmar-mean">နှစ်စဉ်/နှစ်တိုင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('文化', ['文','化'], 'ぶんか', 'ယဉ်ကျေးမှု')">
+                    <div class="kanji-double"><span class="char">文</span><span class="char">化</span></div>
+                    <div class="hiragana-tag">ぶんか</div>
+                    <div class="myanmar-mean">ယဉ်ကျေးမှု/ဓလေ့ထုံးစံ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('祭り', 'まつり', 'ပွဲတော်')">
+                    <div class="kanji-char">祭</div>
+                    <div class="hiragana-tag">まつり</div>
+                    <div class="myanmar-mean">ပွဲတော်/အခမ်းအနား</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('正月', ['正','月'], 'しょうがつ', 'နှစ်သစ်ကူး')">
+                    <div class="kanji-double"><span class="char">正</span><span class="char">月</span></div>
+                    <div class="hiragana-tag">しょうがつ</div>
+                    <div class="myanmar-mean">နှစ်သစ်ကူး/ဇန်နဝါရီ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('～式', 'しき', 'အခမ်းအနား')">
+                    <div class="kanji-char">式</div>
+                    <div class="hiragana-tag">しき</div>
+                    <div class="myanmar-mean">အခမ်းအနား/ပွဲ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('大人', ['大','人'], 'おとな', 'လူကြီး')">
+                    <div class="kanji-double"><span class="char">大</span><span class="char">人</span></div>
+                    <div class="hiragana-tag">おとな</div>
+                    <div class="myanmar-mean">လူကြီး/အရွယ်ရောက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('米', 'こめ', 'ဆန်')">
+                    <div class="kanji-char">米</div>
+                    <div class="hiragana-tag">こめ</div>
+                    <div class="myanmar-mean">ဆန်/စပါး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('特別', ['特','別'], 'とくべつ', 'အထူး')">
+                    <div class="kanji-double"><span class="char">特</span><span class="char">別</span></div>
+                    <div class="hiragana-tag">とくべつ</div>
+                    <div class="myanmar-mean">အထူး/ထူးခြား</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 10 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 10</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('服', 'ふく', 'အဝတ်အစား')">
+                    <div class="kanji-char">服</div>
+                    <div class="hiragana-tag">ふく</div>
+                    <div class="myanmar-mean">အဝတ်အစား/ဝတ်စုံ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('袋', 'ふくろ', 'အိတ်')">
+                    <div class="kanji-char">袋</div>
+                    <div class="hiragana-tag">ふくろ</div>
+                    <div class="myanmar-mean">အိတ်/ထုပ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('自分', ['自','分'], 'じぶん', 'ကိုယ့်ကိုယ်ကို')">
+                    <div class="kanji-double"><span class="char">自</span><span class="char">分</span></div>
+                    <div class="hiragana-tag">じぶん</div>
+                    <div class="myanmar-mean">ကိုယ့်ကိုယ်ကို/မိမိကိုယ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('店長', ['店','長'], 'てんちょう', 'ဆိုင်မန်နေဂျာ')">
+                    <div class="kanji-double"><span class="char">店</span><span class="char">長</span></div>
+                    <div class="hiragana-tag">てんちょう</div>
+                    <div class="myanmar-mean">ဆိုင်မန်နေဂျာ/ဆိုင်အကြီးအကဲ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('全員', ['全','員'], 'ぜんいん', 'အဖွဲ့ဝင်အားလုံး')">
+                    <div class="kanji-double"><span class="char">全</span><span class="char">員</span></div>
+                    <div class="hiragana-tag">ぜんいん</div>
+                    <div class="myanmar-mean">အဖွဲ့ဝင်အားလုံး/လူအားလုံး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('習慣', ['習','慣'], 'しゅうかん', 'အလေ့အထ')">
+                    <div class="kanji-double"><span class="char">習</span><span class="char">慣</span></div>
+                    <div class="hiragana-tag">しゅうかん</div>
+                    <div class="myanmar-mean">အလေ့အထ/ဓလေ့</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('普通', ['普','通'], 'ふつう', 'သာမာန်')">
+                    <div class="kanji-double"><span class="char">普</span><span class="char">通</span></div>
+                    <div class="hiragana-tag">ふつう</div>
+                    <div class="myanmar-mean">သာမာန်/ပုံမှန်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('暗い', 'くらい', 'မှောင်သော')">
+                    <div class="kanji-char">暗</div>
+                    <div class="hiragana-tag">くらい</div>
+                    <div class="myanmar-mean">မှောင်သော/အမှောင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('怒る', 'おこる', 'ဒေါသထွက်သည်')">
+                    <div class="kanji-char">怒</div>
+                    <div class="hiragana-tag">おこる</div>
+                    <div class="myanmar-mean">ဒေါသထွက်သည်/စိတ်ဆိုး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('入院する', ['入','院'], 'にゅういん', 'ဆေးရုံတက်သည်')">
+                    <div class="kanji-double"><span class="char">入</span><span class="char">院</span></div>
+                    <div class="hiragana-tag">にゅういん</div>
+                    <div class="myanmar-mean">ဆေးရုံတက်သည်/ဆေးရုံဆင်း</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 11 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 11</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('色', 'いろ', 'အရောင်')">
+                    <div class="kanji-char">色</div>
+                    <div class="hiragana-tag">いろ</div>
+                    <div class="myanmar-mean">အရောင်/ဆေး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('赤', 'あか', 'အနီရောင်')">
+                    <div class="kanji-char">赤</div>
+                    <div class="hiragana-tag">あか</div>
+                    <div class="myanmar-mean">အနီရောင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('青', 'あお', 'အပြာရောင်')">
+                    <div class="kanji-char">青</div>
+                    <div class="hiragana-tag">あお</div>
+                    <div class="myanmar-mean">အပြာရောင်/စိမ်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('黒', 'くろ', 'အမဲရောင်')">
+                    <div class="kanji-char">黒</div>
+                    <div class="hiragana-tag">くろ</div>
+                    <div class="myanmar-mean">အမဲရောင်/အနက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('白', 'しろ', 'အဖြူရောင်')">
+                    <div class="kanji-char">白</div>
+                    <div class="hiragana-tag">しろ</div>
+                    <div class="myanmar-mean">အဖြူရောင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('女性', ['女','性'], 'じょせい', 'အမျိုးသမီး')">
+                    <div class="kanji-double"><span class="char">女</span><span class="char">性</span></div>
+                    <div class="hiragana-tag">じょせい</div>
+                    <div class="myanmar-mean">အမျိုးသမီး/မိန်းမသား</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('男性', ['男','性'], 'だんせい', 'အမျိုးသား')">
+                    <div class="kanji-double"><span class="char">男</span><span class="char">性</span></div>
+                    <div class="hiragana-tag">だんせい</div>
+                    <div class="myanmar-mean">အမျိုးသား/ယောကျာ်းသား</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('急に', 'きゅうに', 'ရုတ်တရက်')">
+                    <div class="kanji-char">急</div>
+                    <div class="hiragana-tag">きゅうに</div>
+                    <div class="myanmar-mean">ရုတ်တရက်/အလျင်အမြန်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('営業する', ['営','業'], 'えいぎょう', 'စီးပွားရေးလုပ်သည်')">
+                    <div class="kanji-double"><span class="char">営</span><span class="char">業</span></div>
+                    <div class="hiragana-tag">えいぎょう</div>
+                    <div class="myanmar-mean">စီးပွားရေးလုပ်သည်/ရောင်းဝယ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('案内する', ['案','内'], 'あんない', 'လမ်းပြသည်')">
+                    <div class="kanji-double"><span class="char">案</span><span class="char">内</span></div>
+                    <div class="hiragana-tag">あんない</div>
+                    <div class="myanmar-mean">လမ်းပြသည်/ညွှန်ကြား</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 12 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 12</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('商品', ['商','品'], 'しょうひん', 'ကုန်ပစ္စည်း')">
+                    <div class="kanji-double"><span class="char">商</span><span class="char">品</span></div>
+                    <div class="hiragana-tag">しょうひん</div>
+                    <div class="myanmar-mean">ကုန်ပစ္စည်း/အရောင်းပစ္စည်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('値段', ['値','段'], 'ねだん', 'ဈေးနှုန်း')">
+                    <div class="kanji-double"><span class="char">値</span><span class="char">段</span></div>
+                    <div class="hiragana-tag">ねだん</div>
+                    <div class="myanmar-mean">ဈေးနှုန်း/တန်ဖိုး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('価格', ['価','格'], 'かかく', 'ဈေးနှုန်း')">
+                    <div class="kanji-double"><span class="char">価</span><span class="char">格</span></div>
+                    <div class="hiragana-tag">かかく</div>
+                    <div class="myanmar-mean">ဈေးနှုန်း/တန်ဖိုး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('消費税', ['消','費','税'], 'しょうひぜい', 'အခွန်အခများ')">
+                    <div class="kanji-double"><span class="char">消</span><span class="char">費</span><span class="char">税</span></div>
+                    <div class="hiragana-tag">しょうひぜい</div>
+                    <div class="myanmar-mean">အခွန်အခများ/အကောက်ခွန်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('税別', ['税','別'], 'ぜいべつ', 'အခွန်မပါ')">
+                    <div class="kanji-double"><span class="char">税</span><span class="char">別</span></div>
+                    <div class="hiragana-tag">ぜいべつ</div>
+                    <div class="myanmar-mean">အခွန်မပါ/အခွန်သီးသန့်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('店員', ['店','員'], 'てんいん', 'ဆိုင်ဝန်ထမ်း')">
+                    <div class="kanji-double"><span class="char">店</span><span class="char">員</span></div>
+                    <div class="hiragana-tag">てんいん</div>
+                    <div class="myanmar-mean">ဆိုင်ဝန်ထမ်း/အရောင်းစာရေး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('親切', ['親','切'], 'しんせつ', 'ကြင်နာသော')">
+                    <div class="kanji-double"><span class="char">親</span><span class="char">切</span></div>
+                    <div class="hiragana-tag">しんせつ</div>
+                    <div class="myanmar-mean">ကြင်နာသော/ချစ်ခင်ရွေ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('重い', 'おもい', 'လေးသော')">
+                    <div class="kanji-char">重</div>
+                    <div class="hiragana-tag">おもい</div>
+                    <div class="myanmar-mean">လေးသော/လေးလံ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('軽い', 'かるい', 'ပေါ့သော')">
+                    <div class="kanji-char">軽</div>
+                    <div class="hiragana-tag">かるい</div>
+                    <div class="myanmar-mean">ပေါ့သော/ပေါ့ပါး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('変わる', 'かわる', 'ပြောင်းလဲသည်')">
+                    <div class="kanji-char">変</div>
+                    <div class="hiragana-tag">かわる</div>
+                    <div class="myanmar-mean">ပြောင်းလဲသည်/အပြောင်းအလဲ</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 13 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 13</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('市', 'し', 'မြို့')">
+                    <div class="kanji-char">市</div>
+                    <div class="hiragana-tag">し</div>
+                    <div class="myanmar-mean">မြို့/မြို့နယ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('料金', ['料','金'], 'りょうきん', 'အခကြေးငွေ')">
+                    <div class="kanji-double"><span class="char">料</span><span class="char">金</span></div>
+                    <div class="hiragana-tag">りょうきん</div>
+                    <div class="myanmar-mean">အခကြေးငွေ/ခ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('図書館', ['図','書','館'], 'としょかん', 'စာကြည့်တိုက်')">
+                    <div class="kanji-double"><span class="char">図</span><span class="char">書</span><span class="char">館</span></div>
+                    <div class="hiragana-tag">としょかん</div>
+                    <div class="myanmar-mean">စာကြည့်တိုက်/အများပြည်သူစာကြည့်တိုက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('道具', ['道','具'], 'どうぐ', 'ကိရိယာ')">
+                    <div class="kanji-double"><span class="char">道</span><span class="char">具</span></div>
+                    <div class="hiragana-tag">どうぐ</div>
+                    <div class="myanmar-mean">ကိရိယာ/အသုံးအဆောင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('～点', 'てん', 'အမှတ်')">
+                    <div class="kanji-char">点</div>
+                    <div class="hiragana-tag">てん</div>
+                    <div class="myanmar-mean">အမှတ်/အချက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('必要', ['必','要'], 'ひつよう', 'လိုအပ်သော')">
+                    <div class="kanji-double"><span class="char">必</span><span class="char">要</span></div>
+                    <div class="hiragana-tag">ひつよう</div>
+                    <div class="myanmar-mean">လိုအပ်သော/မရှိမဖြစ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('借りる', 'かりる', 'ငှားသည်')">
+                    <div class="kanji-char">借</div>
+                    <div class="hiragana-tag">かりる</div>
+                    <div class="myanmar-mean">ငှားသည်/ချေးသည်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('返す', 'かえす', 'ပြန်ပေးသည်')">
+                    <div class="kanji-char">返</div>
+                    <div class="hiragana-tag">かえす</div>
+                    <div class="myanmar-mean">ပြန်ပေးသည်/အပ်နှံ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('開く', 'あく', 'ဖွင့်သည်')">
+                    <div class="kanji-char">開</div>
+                    <div class="hiragana-tag">あく</div>
+                    <div class="myanmar-mean">ဖွင့်သည်/ပွင့်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('閉まる', 'しまる', 'ပိတ်သည်')">
+                    <div class="kanji-char">閉</div>
+                    <div class="hiragana-tag">しまる</div>
+                    <div class="myanmar-mean">ပိတ်သည်/ပိတ်ဆို့</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('利用する', ['利','用'], 'りよう', 'အသုံးပြုသည်')">
+                    <div class="kanji-double"><span class="char">利</span><span class="char">用</span></div>
+                    <div class="hiragana-tag">りよう</div>
+                    <div class="myanmar-mean">အသုံးပြုသည်/အခွင့်ကောင်းယူ</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 14 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 14</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('外国', ['外','国'], 'がいこく', 'နိုင်ငံခြား')">
+                    <div class="kanji-double"><span class="char">外</span><span class="char">国</span></div>
+                    <div class="hiragana-tag">がいこく</div>
+                    <div class="myanmar-mean">နိုင်ငံခြား/ပြည်ပ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('情報', ['情','報'], 'じょうほう', 'သတင်းအချက်အလက်')">
+                    <div class="kanji-double"><span class="char">情</span><span class="char">報</span></div>
+                    <div class="hiragana-tag">じょうほう</div>
+                    <div class="myanmar-mean">သတင်းအချက်အလက်/အချက်အလက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('相談', ['相','談'], 'そうだん', 'တိုင်ပင်ဆွေးနွေး')">
+                    <div class="kanji-double"><span class="char">相</span><span class="char">談</span></div>
+                    <div class="hiragana-tag">そうだん</div>
+                    <div class="myanmar-mean">တိုင်ပင်ဆွေးနွေး/ညှိနှိုင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('質問', ['質','問'], 'しつもん', 'မေးခွန်း')">
+                    <div class="kanji-double"><span class="char">質</span><span class="char">問</span></div>
+                    <div class="hiragana-tag">しつもん</div>
+                    <div class="myanmar-mean">မေးခွန်း/စစ်ဆေးမေးမြန်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('窓口', ['窓','口'], 'まどぐち', 'ပြတင်းပေါက်')">
+                    <div class="kanji-double"><span class="char">窓</span><span class="char">口</span></div>
+                    <div class="hiragana-tag">まどぐち</div>
+                    <div class="myanmar-mean">ပြတင်းပေါက်/ကောင်တာ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('郵便局', ['郵','便','局'], 'ゆうびんきょく', 'စာတိုက်')">
+                    <div class="kanji-double"><span class="char">郵</span><span class="char">便</span><span class="char">局</span></div>
+                    <div class="hiragana-tag">ゆうびんきょく</div>
+                    <div class="myanmar-mean">စာတိုက်/စာပို့ရုံး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('近所', ['近','所'], 'きんじょ', 'အနီးအနား')">
+                    <div class="kanji-double"><span class="char">近</span><span class="char">所</span></div>
+                    <div class="hiragana-tag">きんじょ</div>
+                    <div class="myanmar-mean">အနီးအနား/အိမ်နီးချင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('自動', ['自','動'], 'じどう', 'အလိုအလျောက်')">
+                    <div class="kanji-double"><span class="char">自</span><span class="char">動</span></div>
+                    <div class="hiragana-tag">じどう</div>
+                    <div class="myanmar-mean">အလိုအလျောက်/အော်တို</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('洗う', 'あらう', 'ဆေးကြောသည်')">
+                    <div class="kanji-char">洗</div>
+                    <div class="hiragana-tag">あらう</div>
+                    <div class="myanmar-mean">ဆေးကြောသည်/လျှော်သည်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('入力する', ['入','力'], 'にゅうりょく', 'ထည့်သွင်းသည်')">
+                    <div class="kanji-double"><span class="char">入</span><span class="char">力</span></div>
+                    <div class="hiragana-tag">にゅうりょく</div>
+                    <div class="myanmar-mean">ထည့်သွင်းသည်/ရိုက်ထည့်</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 15 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 15</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('温度', ['温','度'], 'おんど', 'အပူချိန်')">
+                    <div class="kanji-double"><span class="char">温</span><span class="char">度</span></div>
+                    <div class="hiragana-tag">おんど</div>
+                    <div class="myanmar-mean">အပူချိန်/ဒီဂရီ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('危険', ['危','険'], 'きけん', 'အန္တရာယ်')">
+                    <div class="kanji-double"><span class="char">危</span><span class="char">険</span></div>
+                    <div class="hiragana-tag">きけん</div>
+                    <div class="myanmar-mean">အန္တရာယ်/စိုးရိမ်ဖွယ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('～種類', ['種','類'], 'しゅるい', 'အမျိုးအစား')">
+                    <div class="kanji-double"><span class="char">種</span><span class="char">類</span></div>
+                    <div class="hiragana-tag">しゅるい</div>
+                    <div class="myanmar-mean">အမျိုးအစား/အစုံ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('消す', 'けす', 'ဖျက်သည်')">
+                    <div class="kanji-char">消</div>
+                    <div class="hiragana-tag">けす</div>
+                    <div class="myanmar-mean">ဖျက်သည်/ငြိမ်းသတ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('捨てる', 'すてる', 'လွှင့်ပစ်သည်')">
+                    <div class="kanji-char">捨</div>
+                    <div class="hiragana-tag">すてる</div>
+                    <div class="myanmar-mean">လွှင့်ပစ်သည်/စွန့်ပစ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('出す', 'だす', 'ထုတ်သည်')">
+                    <div class="kanji-char">出</div>
+                    <div class="hiragana-tag">だす</div>
+                    <div class="myanmar-mean">ထုတ်သည်/ထုတ်ယူ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('分ける', 'わける', 'ခွဲသည်')">
+                    <div class="kanji-char">分</div>
+                    <div class="hiragana-tag">わける</div>
+                    <div class="myanmar-mean">ခွဲသည်/အပိုင်းပိုင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('燃える', 'もえる', 'လောင်ကျွမ်းသည်')">
+                    <div class="kanji-char">燃</div>
+                    <div class="hiragana-tag">もえる</div>
+                    <div class="myanmar-mean">လောင်ကျွမ်းသည်/မီးလောင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('決める', 'きめる', 'ဆုံးဖြတ်သည်')">
+                    <div class="kanji-char">決</div>
+                    <div class="hiragana-tag">きめる</div>
+                    <div class="myanmar-mean">ဆုံးဖြတ်သည်/သတ်မှတ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('設定する', ['設','定'], 'せってい', 'သတ်မှတ်သည်')">
+                    <div class="kanji-double"><span class="char">設</span><span class="char">定</span></div>
+                    <div class="hiragana-tag">せってい</div>
+                    <div class="myanmar-mean">သတ်မှတ်သည်/ချိန်ညှိ</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 16 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 16</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('地震', ['地','震'], 'じしん', 'ငလျင်')">
+                    <div class="kanji-double"><span class="char">地</span><span class="char">震</span></div>
+                    <div class="hiragana-tag">じしん</div>
+                    <div class="myanmar-mean">ငလျင်/မြေငလျင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('台風', ['台','風'], 'たいふう', 'မုန်တိုင်း')">
+                    <div class="kanji-double"><span class="char">台</span><span class="char">風</span></div>
+                    <div class="hiragana-tag">たいふう</div>
+                    <div class="myanmar-mean">မုန်တိုင်း/လေပြင်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('外', 'そと', 'အပြင်')">
+                    <div class="kanji-char">外</div>
+                    <div class="hiragana-tag">そと</div>
+                    <div class="myanmar-mean">အပြင်/ပြင်ပ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('声', 'こえ', 'အသံ')">
+                    <div class="kanji-char">声</div>
+                    <div class="hiragana-tag">こえ</div>
+                    <div class="myanmar-mean">အသံ/အသံလွှင့်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('危ない', 'あぶない', 'အန္တရာယ်များ')">
+                    <div class="kanji-char">危</div>
+                    <div class="hiragana-tag">あぶない</div>
+                    <div class="myanmar-mean">အန္တရာယ်များ/စိုးရိမ်ဖွယ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('大切', ['大','切'], 'たいせつ', 'အရေးကြီး')">
+                    <div class="kanji-double"><span class="char">大</span><span class="char">切</span></div>
+                    <div class="hiragana-tag">たいせつ</div>
+                    <div class="myanmar-mean">အရေးကြီး/တန်ဖိုးထား</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('心配', ['心','配'], 'しんぱい', 'စိုးရိမ်')">
+                    <div class="kanji-double"><span class="char">心</span><span class="char">配</span></div>
+                    <div class="hiragana-tag">しんぱい</div>
+                    <div class="myanmar-mean">စိုးရိမ်/ပူပန်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('集まる', 'あつまる', 'စုဝေးသည်')">
+                    <div class="kanji-char">集</div>
+                    <div class="hiragana-tag">あつまる</div>
+                    <div class="myanmar-mean">စုဝေးသည်/စုရုံး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('進む', 'すすむ', 'တိုးတက်သည်')">
+                    <div class="kanji-char">進</div>
+                    <div class="hiragana-tag">すすむ</div>
+                    <div class="myanmar-mean">တိုးတက်သည်/ရှေ့သို့</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 17 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 17</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('最近', ['最','近'], 'さいきん', 'မကြာသေးမီက')">
+                    <div class="kanji-double"><span class="char">最</span><span class="char">近</span></div>
+                    <div class="hiragana-tag">さいきん</div>
+                    <div class="myanmar-mean">မကြာသေးမီက/လတ်တလော</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('授業', ['授','業'], 'じゅぎょう', 'သင်ခန်းစာ')">
+                    <div class="kanji-double"><span class="char">授</span><span class="char">業</span></div>
+                    <div class="hiragana-tag">じゅぎょう</div>
+                    <div class="myanmar-mean">သင်ခန်းစာ/အတန်း</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('問題', ['問','題'], 'もんだい', 'မေးခွန်း')">
+                    <div class="kanji-double"><span class="char">問</span><span class="char">題</span></div>
+                    <div class="hiragana-tag">もんだい</div>
+                    <div class="myanmar-mean">မေးခွန်း/ပြဿနာ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('大変', ['大','変'], 'たいへん', 'ခက်ခဲ')">
+                    <div class="kanji-double"><span class="char">大</span><span class="char">変</span></div>
+                    <div class="hiragana-tag">たいへん</div>
+                    <div class="myanmar-mean">ခက်ခဲ/အလွန်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('困る', 'こまる', 'ဒုက္ခရောက်')">
+                    <div class="kanji-char">困</div>
+                    <div class="hiragana-tag">こまる</div>
+                    <div class="myanmar-mean">ဒုက္ခရောက်/အခက်တွေ့</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('違う', 'ちがう', 'မတူ')">
+                    <div class="kanji-char">違</div>
+                    <div class="hiragana-tag">ちがう</div>
+                    <div class="myanmar-mean">မတူ/ကွဲပြား</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('慣れる', 'なれる', 'ကျင့်သားရ')">
+                    <div class="kanji-char">慣</div>
+                    <div class="hiragana-tag">なれる</div>
+                    <div class="myanmar-mean">ကျင့်သားရ/အကျင့်ပါ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('増える', 'ふえる', 'တိုးသည်')">
+                    <div class="kanji-char">増</div>
+                    <div class="hiragana-tag">ふえる</div>
+                    <div class="myanmar-mean">တိုးသည်/များလာ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('笑う', 'わらう', 'ရယ်သည်')">
+                    <div class="kanji-char">笑</div>
+                    <div class="hiragana-tag">わらう</div>
+                    <div class="myanmar-mean">ရယ်သည်/ပြုံး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('苦労する', ['苦','労'], 'くろう', 'ပင်ပန်း')">
+                    <div class="kanji-double"><span class="char">苦</span><span class="char">労</span></div>
+                    <div class="hiragana-tag">くろう</div>
+                    <div class="myanmar-mean">ပင်ပန်း/ဒုက္ခ</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============ LESSON 18 ============ -->
+        <div class="chapter-block">
+            <div class="chapter-title"><h2>Lesson 18</h2></div>
+            <div class="kanji-grid">
+                <div class="kanji-card" onclick="openTracing('希望', ['希','望'], 'きぼう', 'မျှော်လင့်ချက်')">
+                    <div class="kanji-double"><span class="char">希</span><span class="char">望</span></div>
+                    <div class="hiragana-tag">きぼう</div>
+                    <div class="myanmar-mean">မျှော်လင့်ချက်/ဆန္ဒ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('募集', ['募','集'], 'ぼしゅう', 'စုဆောင်း')">
+                    <div class="kanji-double"><span class="char">募</span><span class="char">集</span></div>
+                    <div class="hiragana-tag">ぼしゅう</div>
+                    <div class="myanmar-mean">စုဆောင်း/လက်ခံ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('特に', 'とくに', 'အထူးသဖြင့်')">
+                    <div class="kanji-char">特</div>
+                    <div class="hiragana-tag">とくに</div>
+                    <div class="myanmar-mean">အထူးသဖြင့်/အထူး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('住む', 'すむ', 'နေထိုင်')">
+                    <div class="kanji-char">住</div>
+                    <div class="hiragana-tag">すむ</div>
+                    <div class="myanmar-mean">နေထိုင်/နေရာ</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('建てる', 'たてる', 'ဆောက်သည်')">
+                    <div class="kanji-char">建</div>
+                    <div class="hiragana-tag">たてる</div>
+                    <div class="myanmar-mean">ဆောက်သည်/တည်ဆောက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('続ける', 'つづける', 'ဆက်လက်')">
+                    <div class="kanji-char">続</div>
+                    <div class="hiragana-tag">つづける</div>
+                    <div class="myanmar-mean">ဆက်လက်/ဆက်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('考える', 'かんがえる', 'စဉ်းစား')">
+                    <div class="kanji-char">考</div>
+                    <div class="hiragana-tag">かんがえる</div>
+                    <div class="myanmar-mean">စဉ်းစား/တွေးခေါ်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('役に立つ', ['役','立'], 'やくにたつ', 'အကျိုးရှိ')">
+                    <div class="kanji-double"><span class="char">役</span><span class="char">立</span></div>
+                    <div class="hiragana-tag">やくにたつ</div>
+                    <div class="myanmar-mean">အကျိုးရှိ/အသုံးဝင်</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('卒業する', ['卒','業'], 'そつぎょう', 'ဘွဲ့ရ')">
+                    <div class="kanji-double"><span class="char">卒</span><span class="char">業</span></div>
+                    <div class="hiragana-tag">そつぎょう</div>
+                    <div class="myanmar-mean">ဘွဲ့ရ/ကျောင်းပြီး</div>
+                </div>
+                <div class="kanji-card" onclick="openTracing('留学する', ['留','学'], 'りゅうがく', 'ပြည်ပသို့သွား')">
+                    <div class="kanji-double"><span class="char">留</span><span class="char">学</span></div>
+                    <div class="hiragana-tag">りゅうがく</div>
+                    <div class="myanmar-mean">ပြည်ပသို့သွား/နိုင်ငံခြားသွား</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== BACK LINK ===== -->
+        <a href="javascript:history.back()" class="back-link">← Back</a>
+    </div>
+
+    <!-- ===== MODAL - TRACING PRACTICE ===== -->
+    <div id="tracingModal" class="modal" onclick="closeModalOutside(event)">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeTracing()">&times;</span>
+            
+            <div id="practiceKanjiContainer">
+                <!-- Single or Double/Triple Kanji will be inserted here -->
+            </div>
+            
+            <div class="tracing-container">
+                <div id="tracingBackground" class="tracing-background"></div>
+                <canvas id="traceCanvas" width="400" height="400"></canvas>
+            </div>
+            
+            <div class="canvas-controls">
+                <button class="btn btn-clear" onclick="clearCanvas()">🗑️ ဖျက်ရန်</button>
+                <button class="btn" onclick="setPenBlack()">⚫ ခဲနက်</button>
+                <button class="btn" onclick="setPenRed()">🔴 အနီရောင်</button>
+                <button class="btn btn-exit" onclick="closeTracing()">🚪 ပိတ်ရန်</button>
+            </div>
+            
+            <div id="practiceHiragana" class="practice-hiragana"></div>
+            <div id="practiceMeaning" class="practice-meaning"></div>
+            <p style="margin-top: 12px; color: #6f5b48; font-size: 0.9rem; font-style: italic;">
+                ✍️ အပေါ်ယံမှိန်ပြထားသော ပုံစံအတိုင်း လက်နှင့်အကဲချက်ဆွဲပါ။
+            </p>
+        </div>
+    </div>
+
+    <script>
+        let canvas = null;
+        let ctx = null;
+        let isDrawing = false;
+        let currentColor = '#2c4c57';
+
+        // Overloaded function to handle both single and multiple kanji
+        function openTracing(kanji, hiraganaOrChars, meaningOrHiragana, optionalMeaning) {
+            document.getElementById('tracingModal').style.display = 'flex';
+            
+            const bgContainer = document.getElementById('tracingBackground');
+            
+            // Check if it's double/multiple kanji (second parameter is array)
+            if (Array.isArray(hiraganaOrChars)) {
+                // Multiple kanji case: openTracing(kanjiString, charArray, hiragana, meaning)
+                let kanjiStr = arguments[0];
+                let charArray = arguments[1];
+                let hiragana = arguments[2];
+                let meaning = arguments[3];
+                
+                // Display multiple kanji
+                let html = '<div class="practice-double">';
+                charArray.forEach(c => {
+                    html += `<span class="char">${c}</span>`;
+                });
+                html += '</div>';
+                document.getElementById('practiceKanjiContainer').innerHTML = html;
+                
+                // SVGs for tracing background
+                let svgHtml = '<div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">';
+                charArray.forEach(c => {
+                    if (c.length === 1 && c.match(/[一-龥]/)) {
+                        let code = c.codePointAt(0).toString(16);
+                        while (code.length < 5) code = '0' + code;
+                        svgHtml += `<svg width="120" height="120" viewBox="0 0 109 109">
+                            <image href="https://kanjivg.tagaini.net/kanjivg/kanji/${code}.svg" width="109" height="109"/>
+                        </svg>`;
+                    }
+                });
+                svgHtml += '</div>';
+                bgContainer.innerHTML = svgHtml;
+                
+                document.getElementById('practiceHiragana').textContent = hiragana;
+                document.getElementById('practiceMeaning').textContent = meaning;
+                
+            } else {
+                // Single kanji case: openTracing(kanji, hiragana, meaning)
+                let kanjiChar = arguments[0];
+                let hiragana = arguments[1];
+                let meaning = arguments[2];
+                
+                document.getElementById('practiceKanjiContainer').innerHTML = `<div class="practice-kanji">${kanjiChar}</div>`;
+                
+                let codePoint = kanjiChar.codePointAt(0).toString(16);
+                while (codePoint.length < 5) codePoint = '0' + codePoint;
+                const svgUrl = `https://kanjivg.tagaini.net/kanjivg/kanji/${codePoint}.svg`;
+                bgContainer.innerHTML = `<svg width="200" height="200" viewBox="0 0 109 109">
+                    <image href="${svgUrl}" width="109" height="109"/>
+                </svg>`;
+                
+                document.getElementById('practiceHiragana').textContent = hiragana;
+                document.getElementById('practiceMeaning').textContent = meaning;
+            }
+            
+            setupCanvas();
+        }
+
+        function setupCanvas() {
+            canvas = document.getElementById('traceCanvas');
+            ctx = canvas.getContext('2d');
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.strokeStyle = 'rgba(200, 190, 180, 0.25)';
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i <= 8; i++) {
+                let pos = i * 50;
+                ctx.beginPath();
+                ctx.moveTo(pos, 0);
+                ctx.lineTo(pos, canvas.height);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, pos);
+                ctx.lineTo(canvas.width, pos);
+                ctx.stroke();
+            }
+            
+            canvas.addEventListener('mousedown', startDrawing);
+            canvas.addEventListener('mousemove', draw);
+            canvas.addEventListener('mouseup', stopDrawing);
+            canvas.addEventListener('mouseleave', stopDrawing);
+            canvas.addEventListener('touchstart', startDrawingTouch);
+            canvas.addEventListener('touchmove', drawTouch);
+            canvas.addEventListener('touchend', stopDrawing);
+        }
+
+        function startDrawing(e) {
+            isDrawing = true;
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
+            e.preventDefault();
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = 5;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.offsetX, e.offsetY);
+            e.preventDefault();
+        }
+
+        function startDrawingTouch(e) {
+            isDrawing = true;
+            e.preventDefault();
+            let touch = e.touches[0];
+            let rect = canvas.getBoundingClientRect();
+            let scaleX = canvas.width / rect.width;
+            let scaleY = canvas.height / rect.height;
+            let x = (touch.clientX - rect.left) * scaleX;
+            let y = (touch.clientY - rect.top) * scaleY;
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        function drawTouch(e) {
+            if (!isDrawing) return;
+            e.preventDefault();
+            let touch = e.touches[0];
+            let rect = canvas.getBoundingClientRect();
+            let scaleX = canvas.width / rect.width;
+            let scaleY = canvas.height / rect.height;
+            let x = (touch.clientX - rect.left) * scaleX;
+            let y = (touch.clientY - rect.top) * scaleY;
+            ctx.lineTo(x, y);
+            ctx.strokeStyle = currentColor;
+            ctx.lineWidth = 5;
+            ctx.lineCap = 'round';
+            ctx.lineJoin = 'round';
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        function stopDrawing() {
+            isDrawing = false;
+        }
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = 'rgba(200, 190, 180, 0.25)';
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i <= 8; i++) {
+                let pos = i * 50;
+                ctx.beginPath();
+                ctx.moveTo(pos, 0);
+                ctx.lineTo(pos, canvas.height);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(0, pos);
+                ctx.lineTo(canvas.width, pos);
+                ctx.stroke();
+            }
+        }
+
+        function setPenBlack() { currentColor = '#2c4c57'; }
+        function setPenRed() { currentColor = '#c45a4a'; }
+        function closeTracing() { document.getElementById('tracingModal').style.display = 'none'; }
+        function closeModalOutside(e) { if (e.target === document.getElementById('tracingModal')) closeTracing(); }
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeTracing(); });
+    </script>
+</body>
+</html>
