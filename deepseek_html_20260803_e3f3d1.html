@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFT A2 Grammar Note</title>
+    <style>
+        /* ----- စာမျက်နှာ အခြေခံ ----- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            padding: 30px 15px;
+            font-family: 'Pyidaungsu', 'Myanmar Text', 'Noto Sans Myanmar', Arial, sans-serif;
+        }
+
+        /* ----- A4 စာရွက်ပုံစံ (ရိုးရိုး) ----- */
+        .page {
+            max-width: 210mm;
+            width: 100%;
+            background: white;
+            padding: 28px 30px 40px 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            line-height: 1.7;
+            font-size: 15px;
+            color: #111;
+        }
+
+        /* ခေါင်းစီး */
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        /* သင်ခန်းစာ ခေါင်းစဉ် */
+        .lesson {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 30px 0 6px 0;
+            padding-top: 10px;
+            border-top: 1px solid #aaa;
+        }
+        .lesson-sub {
+            font-size: 16px;
+            font-weight: 400;
+            color: #1a3c4f;
+            display: block;
+            margin-top: 2px;
+        }
+
+        /* သဒ္ဒါခေါင်းစဉ် (၁၊ ၂၊ ၃...) */
+        .grammar-title {
+            font-weight: 700;
+            font-size: 16px;
+            margin: 18px 0 3px 0;
+        }
+
+        /* ရှင်းလင်းချက် */
+        .exp {
+            margin: 4px 0 4px 18px;
+            padding-left: 10px;
+            border-left: 3px solid #777;
+        }
+
+        /* ဥပမာ (ဂျပန်လို) */
+        .ex {
+            margin: 4px 0 2px 30px;
+            font-style: italic;
+        }
+
+        /* ဥပမာ (မြန်မာလို) */
+        .ex-my {
+            margin: 2px 0 4px 40px;
+            color: #1e3a4a;
+        }
+
+        /* ဝေါဟာရမှတ်စု */
+        .kodoba {
+            margin: 6px 0 4px 40px;
+            padding: 4px 12px;
+            border-left: 3px solid #3a6b4a;
+            background: #f7faf7;
+            font-size: 14px;
+        }
+        .kodoba span {
+            display: inline-block;
+            margin-right: 16px;
+        }
+
+        /* အနားသတ် အကွာအဝေး */
+        .mb-1 { margin-bottom: 4px; }
+        .mt-1 { margin-top: 4px; }
+
+        hr {
+            margin: 25px 0 10px 0;
+            border: 0;
+            border-top: 1px dashed #bbb;
+        }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .page { box-shadow: none; padding: 20px 25px; max-width: 100%; }
+        }
+        @media (max-width: 500px) {
+            .page { padding: 15px; }
+            h1 { font-size: 20px; }
+            .lesson { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page">
+
+    <h1>JFT A2 文法ノート (Grammar Note)</h1>
+    <p style="text-align:center; margin-bottom:20px; color:#2a4d5e;">
+        အခန်းအလိုက် ရှင်းလင်းချက် + ဥပမာ + ဝေါဟာရမှတ်စု
+    </p>
+
+    <!-- ========================================================= -->
+    <!--                      第1課                                 -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第1課 先週、日本に来たばかりです
+        <span class="lesson-sub">(လွန်ခဲ့တဲ့အပတ်ကမှ ဂျပန်ကို ရောက်ခါစဖြစ်ပါတယ်)</span>
+    </div>
+
+    <div class="grammar-title">❶ N1 という N2</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> N2 လို့ခေါ်သော N1 (အမည် သို့မဟုတ် အမျိုးအစားကို ဖော်ပြရာတွင် သုံးသည်)။</div>
+    <div class="ex">例: ホアは「花」という意味です။</div>
+    <div class="ex-my">(ဟိုအာ ဆိုတာ "ပန်း" လို့ခေါ်တဲ့ အဓိပ္ပာယ်ဖြစ်ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 花 (はな - ဟာန) = ပန်း</span>
+        <span>• 意味 (いみ - အိမိ) = အဓိပ္ပာယ်</span>
+    </div>
+
+    <div class="grammar-title">❷ V-たばかりです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ကြိယာ၏ Verb-た (Past Form) + ばかりです။ ကိစ္စတစ်ခုကို ပြုလုပ်ပြီးခါစ၊ ပြီးစီးခဲ့သည်မှာ မကြာသေးမီကမှ ဖြစ်ကြောင်း ဖော်ပြသည်။</div>
+    <div class="ex">例: 先週、日本に来たばかりです။</div>
+    <div class="ex-my">(လွန်ခဲ့တဲ့အပတ်ကမှ ဂျပန်ကို ရောက်ခါစဖြစ်ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 先週 (せんしゅう - ဆဲန်ရှူး) = လွန်ခဲ့သောအပတ်</span>
+        <span>• 日本 (にほん - နိဟွန်း) = ဂျပန်</span>
+        <span>• 来た (きた - ခိတ) = လာခဲ့သည် (来る ရဲ့ Past Form)</span>
+    </div>
+
+    <div class="grammar-title">❸ V-ていました</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Verb-て Form + いました။ အတိတ်က အချိန်အတိုင်းအတာတစ်ခုအထိ အလေ့အထအနေဖြင့် ပြုလုပ်ခဲ့ဖူးသည်/လုပ်ကိုင်နေခဲ့သည်ကို ဖော်ပြသည်။</div>
+    <div class="ex">例: ベトナムでは、ホテルで働いていました။</div>
+    <div class="ex-my">(ဗီယက်နမ်မှာတော့ ဟိုတယ်မှာ အလုပ်လုပ်ခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• ベトナム (ဗီယက်နမ်) = ဗီယက်နမ်</span>
+        <span>• ホテル (ဟိုထဲရု) = ဟိုတယ်</span>
+        <span>• 働く (はたらく - ဟာတာရာခူ) = အလုပ်လုပ်သည်</span>
+    </div>
+
+    <div class="grammar-title">❹ それ / そこ ＜文脈指示＞</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> စကားပြောဆိုမှု သို့မဟုတ် စာကြောင်းအဆက်အစပ်အတွင်း ရှေ့ကပြောခဲ့ပြီးသော အကြောင်းအရာ/နေရာကို ပြန်ညွှန်းခြင်း။</div>
+    <div class="ex">例: ジャワ島に、ジョグジャカルタという大きい町があります。ウォノソボは、そこから、バスで４時間ぐらいです။</div>
+    <div class="ex-my">(ဂျားဗားကျွန်းမှာ ဂျော့ဂျာကားတာဆိုတဲ့ မြို့ကြီးရှိပါတယ်။ ဝိုနိုဆိုဘိုကတော့ အဲဒီကနေ ဘတ်စ်ကားနဲ့ ၄ နာရီလောက် ကြာပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 大きい (おおきい - အိုးခီး) = ကြီးသော</span>
+        <span>• 町 (まち - မာချိ) = မြို့</span>
+        <span>• バス (ဘာဆု) = ဘတ်စ်ကား</span>
+        <span>• 時間 (じかん - ဂျိခန်) = နာရီ</span>
+    </div>
+
+    <div class="grammar-title">❺ 〜て、〜 / 〜から、〜 / 〜けど、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong><br>
+        • 〜て: အကြောင်းအရာများကို ဆက်စပ်ဖော်ပြခြင်း<br>
+        • 〜から: အကြောင်းပြချက် ဖော်ပြခြင်း (〜ကြောင့်)<br>
+        • 〜けど: ဆန့်ကျင်ဘက် အကြောင်းအရာကို ဆက်စပ်ခြင်း (〜သော်လည်း / ပေမဲ့)
+    </div>
+    <div class="ex">例①: お茶の畑がたくさんあって、のんびりしています။</div>
+    <div class="ex-my">(လက်ဖက်စိုက်ခင်းတွေ အများကြီးရှိပြီး အေးအေးဆေးဆေး ရှိလှပါတယ်။)</div>
+    <div class="ex">例②: ウランバートルは首都だから、都会ですよ။</div>
+    <div class="ex-my">(ဥလန်ဘာတာက မြို့တော်ဖြစ်လို့ စည်ကားတဲ့မြို့ကြီးပါပဲ။)</div>
+    <div class="ex">例③: 首都ではないけど、とてもにぎやかです။</div>
+    <div class="ex-my">(မြို့တော်တော့ မဟုတ်ပေမဲ့ သိပ်ကို စည်ကားပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• お茶 (おちゃ - အိုချာ) = လက်ဖက်ရည်/ရေနွေးကြမ်း</span>
+        <span>• 畑 (はたけ - ဟာတာခဲ) = စိုက်ခင်း</span>
+        <span>• 首都 (しゅと - ရှုတို) = မြို့တော်</span>
+        <span>• 都会 (とかい - တိုခိုအိ) = မြို့ကြီးပြကြီး</span>
+        <span>• にぎやか (နိဂိယာခ) = စည်ကားသော</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第2課                                 -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第2課 まじめそうな人ですね
+        <span class="lesson-sub">(ကြိုးစားအားထုတ်ပုံရတဲ့ လူနော်)</span>
+    </div>
+
+    <div class="grammar-title">❶ N1 は N2 が ナA-です / イA-いです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> N1 ၏ လက္ခဏာ သို့မဟုတ် စိတ်ကြိုက်ဖြစ်မှုကို N2 အကူအညီဖြင့် ဖော်ပြခြင်း (ဥပမာ- ဆံပင်ရှည်သည်၊ ရုပ်ချောသည်)။</div>
+    <div class="ex">例: 江口さんは、髪が短いです။</div>
+    <div class="ex-my">(အဲဂုချိစံက ဆံပင်တိုပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 髪 (かみ - ခါမိ) = ဆံပင်</span>
+        <span>• 短い (みじかい - မိဂျိခါအိ) = တိုသော</span>
+    </div>
+
+    <div class="grammar-title">❷ V-ている ＋ 人</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ကြိယာ Verb-ている Form ဖြင့် လူ သို့မဟုတ် အရာဝတ္ထုကို ဝိသေသနပြု ညွှန်းဆိုခြင်း (ဥပမာ- ဦးထုပ်ဆောင်းထားသောလူ)။</div>
+    <div class="ex">例①: ナインさんは、帽子をかぶっている人です။</div>
+    <div class="ex-my">(နိုင်းစံက ဦးထုပ်ဆောင်းထားတဲ့ လူဖြစ်ပါတယ်။)</div>
+    <div class="ex">例②: 加藤さんは、あそこで、コピーをしている人です။</div>
+    <div class="ex-my">(ခါတိုးစံက ဟိုမှာ မိတ္တူကူးနေတဲ့ လူဖြစ်ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 帽子 (ぼうし - ဗိုးရှိ) = ဦးထုပ်</span>
+        <span>• かぶる (ခါဗုရု) = (ဦးထုပ်) ဆောင်းသည်</span>
+        <span>• コピー (ခိုပီး) = မိတ္တူ</span>
+    </div>
+
+    <div class="grammar-title">❸ Sよ</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> စာကြောင်းအဆုံးတွင် よ ထည့်၍ နားထောင်သူ မသိသေးသော အချက်အလက်ကို သတင်းပေးပြောဆိုခြင်း။</div>
+    <div class="ex">例: 原さんは、座って、本を読んでいる人ですよ။</div>
+    <div class="ex-my">(ဟာရာစံက ထိုင်ပြီး စာအုပ်ဖတ်နေတဲ့ လူပါနော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 座る (すわる - ဆုဝါရု) = ထိုင်သည်</span>
+        <span>• 本 (ほん - ဟွန်း) = စာအုပ်</span>
+        <span>• 読む (よむ - ယောမု) = ဖတ်သည်</span>
+    </div>
+
+    <div class="grammar-title">❹ Sし、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အကြောင်းပြချက် သို့မဟုတ် လက္ခဏာတစ်ခုထက်မက အစဉ်လိုက် ဖော်ပြဆက်စပ်ခြင်း (〜လည်းဖြစ်ပြ၊ 〜လည်းဖြစ်သည်)။</div>
+    <div class="ex">例: 三船敏郎は、演技が上手いし、本当にかっこいいです။</div>
+    <div class="ex-my">(မိဖုနဲ တိုရှိရောက သရုပ်ဆောင်လည်း တော်သလို တကယ်ကို စမတ်ကျကျ ကြည့်ကောင်းပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 演技 (えんぎ - အဲန်ဂိ) = သရုပ်ဆောင်မှု</span>
+        <span>• 上手い (うまい - ဥမိုင်း) = တော်သော/ကျွမ်းကျင်သော</span>
+        <span>• 本当に (ほんとうに - ဟွန်းတိုးနိ) = တကယ်ကို</span>
+        <span>• かっこいい (ခါခိုးအီး) = စမတ်ကျသော/ကြည့်ကောင်းသော</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第3課                                 -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第3課 アレルギーがあるので、食べられないんです
+        <span class="lesson-sub">(ဓာတ်မတည့်တာရှိလို့ မစားနိုင်လို့ပါ)</span>
+    </div>
+
+    <div class="grammar-title">❶ S1 ので、S2</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ので ဖြင့် အကြောင်းပြချက်ကို ယဉ်ကျေးစွာ ဖော်ပြခြင်း (〜သောကြောင့် / မို့လို့)။</div>
+    <div class="ex">例: 今日は自転車で来たので、飲めないんです။</div>
+    <div class="ex-my">(ဒီနေ့ စက်ဘီးနဲ့လာတာမို့လို့ မသောက်နိုင်တာပါ/မသောက်တော့ပါဘူး။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 今日 (きょう - ခယိုး) = ဒီနေ့</span>
+        <span>• 自転車 (じてんしゃ - ဂျိတဲန်ရှာ) = စက်ဘီး</span>
+        <span>• 飲む (のむ - နောမု) → 飲める (မသောက်နိုင်သည်)</span>
+    </div>
+
+    <div class="grammar-title">❷ Sよね</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> နားထောင်သူ၏ သဘောတူညီချက်ကို တောင်းခံခြင်း သို့မဟုတ် အတည်ပြုမေးမြန်းခြင်း (〜နော် / မဟုတ်ဖူးလား)။</div>
+    <div class="ex">例: おすし、わさび、入ってますよね။</div>
+    <div class="ex-my">(အိုဆူရှီထဲမှာ ဝါဆာဗီ ပါတယ်နော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• すし (ဆုရှိ) = ဆူရှီ</span>
+        <span>• わさび (ဝါဆာဗီ) = ဝါဆာဗီ</span>
+        <span>• 入る (はいる - ဟာအိရု) = ပါဝင်သည်/ဝင်သည်</span>
+    </div>
+
+    <div class="grammar-title">❸ Nで〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အခြေအနေ၊ နေရာ သို့မဟုတ် ရွေးချယ်မှုအဖြစ် で ကို အသုံးပြုခြင်း။</div>
+    <div class="ex">A: テーブルと座敷がございますが…။</div>
+    <div class="ex-my">(စားပွဲခုံနဲ့ ဂျပန်စတိုင် ထိုင်ခုံနေရာ ရှိပါတယ်ခင်ဗျာ...)</div>
+    <div class="ex">B: テーブルでお願いします။</div>
+    <div class="ex-my">(စားပွဲခုံနဲ့ပဲ မေတ္တာရပ်ခံပါရစေ/ပေးပါ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• テーブル (ထေဗုရု) = စားပွဲခုံ</span>
+        <span>• 座敷 (ざしき - ဇာရှိခိ) = ဂျပန်စတိုင် ဖျာခင်းထားသော ထိုင်ခုံခန်း</span>
+        <span>• お願いします (おねがいします - အိုနဲဂါအိရှိမဆု) = ကျေးဇူးပြု၍ မေတ္တာရပ်ခံပါသည်</span>
+    </div>
+
+    <div class="grammar-title">❹ ナA-な / イA-い / V-る のは、Nです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> のは ကိုသုံးပြီး ကြိယာ သို့မဟုတ် ဝိသေသနကို နာမ်ပြောင်း၍ ဗဟိုပြုပြောဆိုခြင်း (〜တာကတော့ N ဖြစ်ပါတယ်)။</div>
+    <div class="ex">例: 人気があるのは、お刺身定食です။</div>
+    <div class="ex-my">(လူကြိုက်များတာကတော့ အဆာရှိမိ ထမင်းချိုင့်/စုံတွဲပွဲ ဖြစ်ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 人気 (にんき - နင်းခိ) = လူကြိုက်များခြင်း/ရေပန်းစားခြင်း</span>
+        <span>• 刺身 (さしみ - ဆာရှိမိ) = အစိမ်းလတ်လတ်ဆတ်ဆတ် ငါးပါးပါးလှီး</span>
+        <span>• 定食 (ていしょく - တေးရှော့ခု) = Set Menu / ထမင်းစုံတွဲပွဲ</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第4課                                 -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第4課 しょうゆをつけないで食べてください
+        <span class="lesson-sub">(ပဲငံပြာရည် မဆို့ဘဲ စားပါ)</span>
+    </div>
+
+    <div class="grammar-title">❶ Nなら、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> တစ်ဖက်လူပြောလိုက်သော နာမ် (N) ကို အခြေခံ၍ အကြံပြုခြင်း သို့မဟုတ် စကားလမ်းကြောင်း စကားစဆက်ခြင်း (N ဆိုရင်တော့〜)။</div>
+    <div class="ex">A: この近くに、おすすめの店がありますか？</div>
+    <div class="ex-my">(ဒီအနီးအနားမှာ အကြံပြုချင်တဲ့ ဆိုင်ရှိပါသလား။)</div>
+    <div class="ex">B: この近くなら、「平兵衛」がお勧めです။</div>
+    <div class="ex-my">(ဒီအနီးအနားမှာဆိုရင်တော့ "ဟဲအိဗေ" ကို အကြံပြုချင်ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 近く (ちかく - ချိခါခု) = အနီးအနား</span>
+        <span>• おすすめ (အိုဆုဆုမဲ) = အကြံပြုချက်/ညွှန်းဆိုချက်</span>
+        <span>• 店 (みせ - မိဆဲ) = ဆိုင်</span>
+    </div>
+
+    <div class="grammar-title">❷ V-て、〜 ＜方法＞ / V-ないで、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ပြုလုပ်ဆောင်ရွက်သည့် နည်းလမ်း/ပုံစံ ကို ဖော်ပြခြင်း။<br>
+        • V-て: လုပ်ဆောင်မှုတစ်ခုကို ပြုလုပ်လျက်...<br>
+        • V-ないで: လုပ်ဆောင်မှုတစ်ခုကို မပြုလုပ်ဘဲ...
+    </div>
+    <div class="ex">例①: こちらの野菜の天ぷらは、つゆにつけて食べてください။</div>
+    <div class="ex-my">(ဒီဘက်က အသီးအရွက် တန်ပူရာကို အရည်စိမ်ဆော့စ်နဲ့ ဆို့ပြီး စားပါ။)</div>
+    <div class="ex">例②: エビはつゆにつけないで、塩をかけて食べてください။</div>
+    <div class="ex-my">(ပုစွန်ကိုတော့ အရည်စိမ်ဆော့စ် မဆို့ဘဲ ဆားဖြူးပြီး စားပါ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 野菜 (やさい - ယာဆိုင်း) = အသီးအရွက်</span>
+        <span>• 天ぷらは (てんぷら - တဲန်ပူရာ) = တန်ပူရာ (ကြော်)</span>
+        <span>• 塩 (しお - ရှီအို) = ဆား</span>
+    </div>
+
+    <div class="grammar-title">❸ V-ちゃだめです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Verb-てはいけません ၏ စကားပြောစတိုင်ဖြစ်ပြီး မပြုလုပ်ရန် တားမြစ်ခြင်း (လုပ်လို့ မရဘူး/မလုပ်ရဘူး)။</div>
+    <div class="ex">例: 一度に、そんなにたくさんお肉を入れちゃだめですよ။</div>
+    <div class="ex-my">(တစ်ခါတည်းနဲ့ အဲဒီလောက် အသားအများကြီး ထည့်လို့မရဘူးနော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 一度に (いちどに - အိချိဒိုနိ) = တစ်ခါတည်းနဲ့</span>
+        <span>• 肉 (にく - နိခု) = အသား</span>
+        <span>• 入れる (いれる - အိရဲရု) = ထည့်သည်</span>
+    </div>
+
+    <div class="grammar-title">❹ V-てから、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Verb-て Form + から ။ ပြုလုပ်ဆောင်ရွက်မှုတစ်ခု ပြီးစီးသွားပြီးမှ နောက်တစ်ခုကို ပြုလုပ်ခြင်း (လုပ်ပြီးမှ〜)။</div>
+    <div class="ex">例: うどんは、お肉と野菜を食べてから、入れましょう။</div>
+    <div class="ex-my">(ဥဒေါင်းခေါက်ဆွဲကိုတော့ အသားနဲ့ အသီးအရွက်တွေကို စားပြီးမှ ထည့်ကြရအောင်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• うどん (ဥဒေါင်း) = ဂျပန်ဥဒေါင်းခေါက်ဆွဲ</span>
+        <span>• 食べる (たべる - တာဗဲရု) = စားသည်</span>
+    </div>
+
+    <div class="grammar-title">❺ S1 が、S2</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> စာကြောင်းနှစ်ခုကို が (သို့သော်/ ပေမဲ့) ဖြင့် ဆန့်ကျင်ဘက် ဆက်စပ်ပေးခြင်း။</div>
+    <div class="ex">例: お店は新しくてきれいですが、お昼は混んでいます။</div>
+    <div class="ex-my">(ဆိုင်က သစ်ပြီး သန့်ရှင်းပေမဲ့ နေ့လယ်ဘက်ဆို လူကြပ်/စည်ကားပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 新しい (あたらしい - အာတာရာရှီး) = သစ်သော</span>
+        <span>• きれい (ခိရဲအိ) = လှပသော/သန့်ရှင်းသော</span>
+        <span>• お昼 (おひる - အိုဟိရု) = နေ့လယ်ဘက်</span>
+        <span>• 混む (こむ - ခိုမု) = လူကြပ်သည်</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第5課                                 -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第5課 早く予約したほうがいいですよ
+        <span class="lesson-sub">(စောစောကြိုတင်ဘိုကင်လုပ်ထားတာ ပိုကောင်းပါလိမ့်မယ်)</span>
+    </div>
+
+    <div class="grammar-title">❶ V-(られ)ます ＜可能形①＞</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Potential Form (စွမ်းဆောင်နိုင်ရည်/ပြုလုပ်နိုင်စွမ်း) ကို ဖော်ပြခြင်း (လုပ်နိုင်သည်)။</div>
+    <div class="ex">例: 新鮮なカニとかウニとか食べられますよ။</div>
+    <div class="ex-my">(လတ်ဆတ်တဲ့ ဂဏန်းတို့ ကင်းမွန်တို့ စားနိုင်ပါတယ်နော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 新鮮 (しんせん - ရှိန်ဆဲန်) = လတ်ဆတ်သော</span>
+        <span>• カニ (ခါနိ) = ဂဏန်း</span>
+        <span>• ウニ (ဥနိ) = ပင်လယ်ဖြူကောင်/အူနီ</span>
+    </div>
+
+    <div class="grammar-title">❷ 〜ところ</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> နေရာ သို့မဟုတ် အကြောင်းအရာကို ညွှန်းဆိုခြင်း (နေရာ/အချက်)။</div>
+    <div class="ex">例: 遊べるところはありますか？</div>
+    <div class="ex-my">(လည်ပတ်ဆော့ကစားလို့ရတဲ့ နေရာ ရှိပါသလား။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 遊ぶ (あそぶ - အာဆိုဗု) = ကစားသည်/လည်ပတ်သည်</span>
+    </div>
+
+    <div class="grammar-title">❸ S(普通形) って聞きました / S(普通形) って言っていました</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> စကားပြောစတိုင်ဖြစ်ပြီး သတင်းအချက်အလက်ကို ပုဂ္ဂိုလ်တစ်ယောက်ထံမှ ကြားသိခဲ့ကြောင်း သို့မဟုတ် ပြောခဲ့ကြောင်း ပြန်လည်ပြောပြခြင်း။</div>
+    <div class="ex">例①: うどんがおいしいって聞きました။</div>
+    <div class="ex-my">(ဥဒေါင်းခေါက်ဆွဲ အရသာရှိတယ်လို့ ကြားသိခဲ့ရပါတယ်။)</div>
+    <div class="ex">例②: バスが安くて便利だって先輩が言っていました။</div>
+    <div class="ex-my">(ဘတ်စ်ကားက ဈေးသက်သာပြီး အဆင်ပြေတယ်လို့ စီနီယာက ပြောခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 安い (やすい - ယိုဆုအိ) = ဈေးသက်သာသော</span>
+        <span>• 便利 (べんり - ဗဲန်ရိ) = အဆင်ပြေသော</span>
+        <span>• 先輩 (せんぱい - ဆဲန်ပိုးအိ) = စီနီယာ/အကြီးတန်း</span>
+    </div>
+
+    <div class="grammar-title">❹ 【疑問詞】V-たらいいですか？</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အမေးစကားလုံး + V-たらいいですか ဖြင့် အကြံဉာဏ်တောင်းခံခြင်း (ဘယ်လို/ဘယ်သွား... လုပ်ရင် ကောင်းမလဲ)။</div>
+    <div class="ex">例: 日光に行くんですけど、何で行ったらいいですか？</div>
+    <div class="ex-my">(နိခိုးကို သွားမလို့ပါ၊ ဘာနဲ့သွားရင် ကောင်းမလဲခင်ဗျာ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 日光 (にっこう - နိခိုး) = နိခိုး (ဂျပန်ရှိ ခေတ်ဟောင်းမြို့)</span>
+        <span>• 行く (いく - အိခု) = သွားသည်</span>
+    </div>
+
+    <div class="grammar-title">❺ V-たほうがいいです / V-ないほうがいいです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> တစ်ဖက်လူကို အကြံဉာဏ် ပေးသည့်အခါ သုံးသည် (လုပ်တာ ပိုကောင်းတယ် / မလုပ်တာ ပိုကောင်းတယ်)။</div>
+    <div class="ex">例①: 厚い上着を持っていったほうがいいですよ။</div>
+    <div class="ex-my">(အထူ အပေါ်အင်္ကျီ ယူသွားတာ ပိုကောင်းပါလိမ့်မယ်။)</div>
+    <div class="ex">例②: できれば、日曜日は行かないほうがいいですよ။</div>
+    <div class="ex-my">(ဖြစ်နိုင်ရင်တော့ တနင်္ဂနွေနေ့မှာ မသွားတာ ပိုကောင်းပါလိမ့်မယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 厚い (あつい - အာဆုအိ) = ထူသော</span>
+        <span>• 上着 (うわぎ - ဥဝါဂိ) = အပေါ်အင်္ကျီ</span>
+        <span>• 日曜日 (にちようび - နိချိယိုးဗိ) = တနင်္ဂနွေနေ့</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第6課                                 -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第6課 いろいろなところに行けて、よかったです
+        <span class="lesson-sub">(နေရာအမျိုးမျိုးကို သွားနိုင်ခဲ့လို့ ဝမ်းသာပါတယ်)</span>
+    </div>
+
+    <div class="grammar-title">❶ V-るつもりです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အနာဂတ်တွင် ပြုလုပ်ရန် ရည်ရွယ်ချက်/အစီအစဉ် ရှိကြောင်း ဖော်ပြခြင်း (ပြုလုပ်ရန် ရည်ရွယ်ထားသည်)။</div>
+    <div class="ex">例: 明日は、中禅寺湖に行くつもりです။</div>
+    <div class="ex-my">(မနက်ဖြန်တော့ ချူးဇဲန်ဂျိ ရေကန်ကို သွားဖို့ ရည်ရွယ်ထားပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 明日 (あした - အာရှိတာ) = မနက်ဖြန်</span>
+        <span>• 湖 (みずうみ / こ - မိဇုဥမိ / ခို) = ရေကန်</span>
+    </div>
+
+    <div class="grammar-title">❷ V-(られ)て、〜 / V-(られ)なくて、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Potential Form ၏ て Form ဖြင့် အကြောင်းပြချက်ကို ဆက်စပ်ပြီး ခံစားချက်ကို ဖော်ပြခြင်း (လုပ်နိုင်ခဲ့လို့/မလုပ်နိုင်ခဲ့လို့...)။</div>
+    <div class="ex">例①: いろいろなところに行けて、よかったです။</div>
+    <div class="ex-my">(နေရာအမျိုးမျိုးကို သွားနိုင်ခဲ့လို့ ဝမ်းသာရပါတယ်။)</div>
+    <div class="ex">例②: ショーが見られなくて、残念でした။</div>
+    <div class="ex-my">(ရှိုးပွဲ မကြည့်နိုင်ခဲ့လို့ နှမြောစရာပါပဲ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• よかった (ယောခတ်တ) = ကောင်းခဲ့သည်/ဝမ်းသာသည်</span>
+        <span>• 残念 (ざんねん - ဇန်းနဲန်) = နှမြောစရာကောင်းသော/စိတ်မကောင်းသော</span>
+    </div>
+
+    <div class="grammar-title">❸ S1 し、S2 し、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အကြောင်းပြချက် သို့မဟုတ် အချက်အလက်များစွာကို အစဉ်လိုက် ဆက်တိုက်ဖော်ပြခြင်း (〜လည်းဖြစ်ပြ၊ 〜လည်းဖြစ်လို့)။</div>
+    <div class="ex">例: 海で泳げたし、船に乗れたし、楽しかったです။</div>
+    <div class="ex-my">(ပင်လယ်မှာ ရေကူးနိုင်ခဲ့သလို၊ သင်္ဘောလည်း စီးနိုင်ခဲ့လို့ ပျော်စရာကောင်းခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 海 (うみ - ဥမိ) = ပင်လယ်</span>
+        <span>• 泳ぐ (およぐ - အိုယိုးဂု) = ရေကူးသည်</span>
+        <span>• 船 (ふね - ဖုနဲ) = သင်္ဘော</span>
+        <span>• 乗る (のる - နောရု) = စီးသည်</span>
+    </div>
+
+    <div class="grammar-title">❹ V-る / V-ている / V-た とき、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> とき (အချိန်/တုန်းက) ဖြင့် လုပ်ဆောင်ချက်ဖြစ်ပွားသည့် အချိန်ကာလကို ညွှန်းဆိုခြင်း။</div>
+    <div class="ex">例: 道を歩いているとき、リスを見ました။</div>
+    <div class="ex-my">(လမ်းမှာ လမ်းလျှောက်နေတုန်း လှေကားထိုးရှဉ့်ကို တွေ့ခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 道 (みち - မိချိ) = လမ်း</span>
+        <span>• 歩く (あるく - အာရုခု) = လမ်းလျှောက်သည်</span>
+        <span>• リス (ရိဆု) = ရှဉ့်</span>
+    </div>
+
+    <div class="grammar-title">❺ 【人】と【人数】で</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> မည်သူနှင့် မည်မျှအရေအတွက်ဖြင့် အတူတကွ သွားရောက်/ပြုလုပ်ခဲ့သည်ကို ဖော်ပြခြင်း။</div>
+    <div class="ex">例: 友だちと２人でハウステンボスに行って来ました။</div>
+    <div class="ex-my">(သူငယ်ချင်းနဲ့ ၂ ယောက်တည်း ဟောင်းစတဲန်ဘော့စ်ကို သွားခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 友だち (ともだち - တိုမိုဒါချိ) = သူငယ်ချင်း</span>
+        <span>• ２人 (ふたり - ဖုတာရိ) = ၂ ယောက်</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第7課                                 -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第7課 雨が降ったら、ホールでやりませす
+        <span class="lesson-sub">(မိုးရွာရင် ခန်းမမှာ လုပ်ပါမယ်)</span>
+    </div>
+
+    <div class="grammar-title">❶ 〜たら、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အခြေအနေတစ်ရပ် ဖြစ်ပေါ်လာပါက (အကယ်၍ 〜 ဖြစ်လျှင်/ပြီးလျှင်) နောက်ဆက်တွဲ ပြုလုပ်မည်ကို ဖော်ပြခြင်း။</div>
+    <div class="ex">例: 雨が降ったら、盆踊りは日曜日にやるよ။</div>
+    <div class="ex-my">(မိုးရွာရင်တော့ ဘွန်းကပွဲကို တနင်္ဂနွေနေ့မှာ လုပ်မယ်နော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 雨 (あめ - အာမဲ) = မိုး</span>
+        <span>• 降る (ふる - ဖုရု) = (မိုး/နှင်း) ရွာသည်</span>
+        <span>• 盆踊り (ぼんおどり - ဘွန်းအိုဒိုရိ) = ဘွန်းပွဲတော် ကပွဲ</span>
+    </div>
+
+    <div class="grammar-title">❷ V-(られ)ます ＜受身①＞</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Passive Voice (ခံလိုပြ ကြိယာ) ကို သုံးစွဲ၍ အဖြစ်အပျက်/ပွဲလမ်းသဘင် ကျင်းပခြင်းကို ဖော်ပြခြင်း (ပြုလုပ်ခြင်းခံရသည်/ကျင်းပသည်)။</div>
+    <div class="ex">例: ７月14日、「ひかりホール」において、コンサートが開催されます။</div>
+    <div class="ex-my">(ဇူလိုင်လ ၁၄ ရက်နေ့မှာ "ဟိခါရီခန်းမ" မှာ ကွန်ဆာတ်ပွဲ ကျင်းပပြုလုပ်သွားပါမယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• ７月 (しちがつ - ရှိချိဂဆု) = ဇူလိုင်လ</span>
+        <span>• 開催する (かいさいする - ခါအိဆာအိဆုရု) = ကျင်းပသည်</span>
+    </div>
+
+    <div class="grammar-title">❸ V-(られ)ます ＜可能形②＞</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Potential Form ဖြင့် မည်သူမဆို ပြုလုပ်နိုင်စွမ်းရှိကြောင်း ဖော်ပြခြင်း (ကနိုင်သည်/လုပ်နိုင်သည်)။</div>
+    <div class="ex">例: 盆踊りは簡単だから、誰でも踊れますよ။</div>
+    <div class="ex-my">(ဘွန်းကပွဲက လွယ်တာမို့ ဘယ်သူမဆို ကလို့ရပါတယ်နော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 簡単 (かんたん - ခန်းတန်း) = လွယ်ကူသော</span>
+        <span>• 誰でも (だれでも - ဒါရဲဒဲမို) = မည်သူမဆို</span>
+        <span>• 踊る (おどる - အိုဒိုရု) = ကနွဲ့သည်/ကသည်</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第8課                                 -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第8課 屋台はどこかわかりますか？
+        <span class="lesson-sub">(ဈေးဆိုင်တန်းက ဘယ်မှာလဲဆိုတာ သိပါသလား)</span>
+    </div>
+
+    <div class="grammar-title">❶ もう V-ました / まだ V-て(い)ません</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong><br>
+        • もう V-ました: ပြီးစီးသွားခဲ့ပြီလား<br>
+        • まだ V-ていません: မပြီးသေးပါ/မလုပ်ရသေးပါ
+    </div>
+    <div class="ex">A: スピーチコンテストは、もう始まりましたか？</div>
+    <div class="ex-my">(စကားပြောပြိုင်ပွဲက စနေပြီလား။)</div>
+    <div class="ex">B: まだ始まってません။</div>
+    <div class="ex-my">(မစရသေးပါဘူး။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• スピーチコンテスト (ဆုပီးချိ ခွန်းထဲဆုတို) = စကားပြောပြိုင်ပွဲ</span>
+        <span>• 始まる (はじまる - ဟာဂျိမာရု) = စသည်</span>
+    </div>
+
+    <div class="grammar-title">❷ まだ V-ます</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ပြုလုပ်ဆောင်ရွက်မှု သို့မဟုတ် အခြေအနေတစ်ခုသည် လက်ရှိအထိ ဆက်လက်ဖြစ်ပေါ်နေဆဲဖြစ်ကြောင်း ဖော်ပြခြင်း (လုပ်နေဆဲဖြစ်သည်)။</div>
+    <div class="ex">例: イベント、まだやってますか？</div>
+    <div class="ex-my">(ပွဲတော်/အစီအစဉ်ကို အခုထိ လုပ်နေတုန်းပဲလား။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• イベント (အိဗဲန်တို) = Event / ပွဲတော်</span>
+        <span>• やる (ယာရု) = ပြုလုပ်သည်</span>
+    </div>
+
+    <div class="grammar-title">❸ 【疑問詞】＋ S(普通形) か、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> စာကြောင်းတစ်ခုအတွင်း အမေးစကားလုံးပါသော မေးခွန်းကို မြှုပ်နှံ၍ ပြောဆိုခြင်း (ဘယ်အချိန်လဲ ဆိုတာကို...)။</div>
+    <div class="ex">例: 明日のフリーマーケットは、何時からか、わかりますか？</div>
+    <div class="ex-my">(မနက်ဖြန် စျေးရောင်းပွဲတော်က ဘယ်နှနာရီကစလဲ ဆိုတာ သိပါသလား။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• フリーマーケット (ဖုရီး မာခဲတ်တို) = Flea Market / လွတ်လပ်သောစျေးရောင်းပွဲ</span>
+        <span>• 何時 (なんじ - နန်းဂျိ) = ဘယ်နှနာရီ</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第9課                                 -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第9課 成人の日は、何をするんですか？
+        <span class="lesson-sub">(လူပျို/အပျိုဖော်ဝင်ပွဲနေ့မှာ ဘာလုပ်ကြတာလဲ)</span>
+    </div>
+
+    <div class="grammar-title">❶ 〜んですか？</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အကြောင်းအရင်း သို့မဟုတ် အသေးစိတ် အချက်အလက်ကို စိတ်ဝင်တစား စူးစမ်းမေးမြန်းသည့်အခါ သုံးသည်။</div>
+    <div class="ex">例: 成人の日は、何をするんですか？</div>
+    <div class="ex-my">(လူပျို/အပျိုဖော်ဝင်ပွဲနေ့မှာ ဘာလုပ်ကြတာပါလဲ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 成人の日 (せいじんのひ - ဆေးဂျင်းနိုဟိ) = အသက် ၂၀ ပြည့်/လူကြီးဖြစ်ခြင်း အထိမ်းအမှတ်နေ့</span>
+    </div>
+
+    <div class="grammar-title">❷ Nしか ＋ 否定文</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> しか + အငြင်းစကားလုံး။ (N မှအပ/ N သာလျှင် ရှိသည်၊ ဒါပဲ ရသည်)။</div>
+    <div class="ex">例: 乗り物に３つしか乗れませんでした။</div>
+    <div class="ex-my">(ကစားစရာ စီးတော်ယာဉ် ၃ ခုပဲ စီးနိုင်ခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 乗り物 (のりもの - နောရိမိုနို) = စီးတော်ယာဉ်/ကစားစရာ</span>
+    </div>
+
+    <div class="grammar-title">❸ Nだけ</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အကန့်အသတ်ကို ဖော်ပြခြင်း (N သာလျှင်/ပဲ)။</div>
+    <div class="ex">例: 今年は、１日だけ実家に帰りました။</div>
+    <div class="ex-my">(ဒီနှစ်တော့ ၁ ရက်ပဲ မိဘအိမ် ပြန်ဖြစ်ခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 今年 (ことし - ခိုတိုရှိ) = ဒီနှစ်</span>
+        <span>• 実家 (じっか - ဂျိခ်ခါ) = မိဘအိမ်/ဇာတိအိမ်</span>
+    </div>
+
+    <div class="grammar-title">❹ V-たりして、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ပြုလုပ်ခဲ့သော အကြောင်းအရာများကို ဥပမာအဖြစ် မြှုပ်နှံဖော်ပြခြင်း (ပြုလုပ်လိုက်၊ 〜လုပ်လိုက်နဲ့)။</div>
+    <div class="ex">例: 友だちといっしょに買い物をしたりして、楽しかったです။</div>
+    <div class="ex-my">(သူငယ်ချင်းနဲ့အတူ စျေးဝယ်လိုက်နဲ့ ပျော်စရာကောင်းခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 買い物 (かいもの - ခါအိမိုနို) = စျေးဝယ်ခြင်း</span>
+    </div>
+
+    <div class="grammar-title">❺ V-なくちゃならない</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Verb-なければならない ၏ စကားပြောစတိုင်ဖြစ်ပြီး မပြုလုပ်လျှင် မဖြစ်သောအရာကို ဖော်ပြခြင်း (မလုပ်လို့ မရဘူး/လုပ်ရမယ်)။</div>
+    <div class="ex">例: 甥や姪にお年玉をあげなくちゃならないし、大変でした။</div>
+    <div class="ex-my">(တူတွေ တူမတွေကို မုန့်ဖိုး ပေးရဦးမှာမို့လို့ အလုပ်ရှုပ်/ပင်ပန်းခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 甥 (おい - အိုအိ) = တူ</span>
+        <span>• 姪 (めい - မေး) = တူမ</span>
+        <span>• お年玉 (おとしだま - အိုတိုရှိဒါမ) = နှစ်သစ်ကူး မုန့်ဖိုး</span>
+    </div>
+
+    <div class="grammar-title">❻ V-れます ＜可能形③＞</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Potential Form ဖြင့် ပြုလုပ်နိုင်ခဲ့ကြောင်းကို ဖော်ပြခြင်း။</div>
+    <div class="ex">例: DVDもたくさん見られました။</div>
+    <div class="ex-my">(DVD တွေလည်း အများကြီး ကြည့်နိုင်ခဲ့ပါတယ်။)</div>
+
+    <div class="grammar-title">❼ S(普通形)＋人が〜 / S(普通形)＋人も〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> စာကြောင်းဖြင့် နာမ် (လူ) ကို ဝိသေသနပြုခြင်း (လုပ်တဲ့လူက/ လုပ်တဲ့လူလည်း...)။</div>
+    <div class="ex">例: 春節は、田舎に帰る人が多いです။</div>
+    <div class="ex-my">(နဂါးနှစ်သစ်ကူးမှာ ရွာပြန်တဲ့လူ များပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 春節 (しゅんせつ - ရှုန်းဆဲဆု) = တရုတ်/နဂါးနှစ်သစ်ကူး</span>
+        <span>• 田舎 (いなか - အိနာကာ) = ရွာ/နယ်မြို့</span>
+    </div>
+
+    <div class="grammar-title">❽ V-ながら、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ပြုလုပ်ဆောင်ရွက်မှု နှစ်ခုကို တစ်ချိန်တည်း ပြိုင်တူ ပြုလုပ်ခြင်း (ပြုလုပ်ရင်းနဲ့)။</div>
+    <div class="ex">例: ソンクラーンは、街を歩きながら、みんなで水をかけ合います။</div>
+    <div class="ex-my">(သင်္ကန်းပွဲတော်မှာ လမ်းလျှောက်ရင်းနဲ့ အားလုံး ရေပက်ကြပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 街 (まち - မာချိ) = မြို့/လမ်းမ</span>
+        <span>• 水 (みず - မိဇု) = ရေ</span>
+    </div>
+
+    <div class="grammar-title">❾ Nによって</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> N အပေါ် မူတည်၍ ကွဲပြားခြားနားကြောင်း ဖော်ပြခြင်း (N အပေါ် မူတည်ပြီး)။</div>
+    <div class="ex">例: レバランは、年によって違います။</div>
+    <div class="ex-my">(ရမ်ဇာန်ပွဲတော်/ အီးဒ်ပွဲတော်က နှစ်အပေါ် မူတည်ပြီး ကွဲပြားပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 年 (とし - တိုရှိ) = နှစ်</span>
+        <span>• 違う (ちがう - ချိဂါဥ) = ကွဲပြားသည်/မတူညီပါ</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第10課                                -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第10課 どんな服を着て行けばいいですか？
+        <span class="lesson-sub">(ဘာအင်္ကျီဝတ်သွားရင် ကောင်းမလဲ)</span>
+    </div>
+
+    <div class="grammar-title">❶ 【疑問詞】V-ばいいですか？</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အကြံဉာဏ် တောင်းခံသည့် ပုံစံ (ဘယ်လို/ဘာကို လုပ်ရင် ကောင်းမလဲ)။</div>
+    <div class="ex">例: お葬式には、何を持って行けばいいですか？</div>
+    <div class="ex-my">(နာရေးပွဲကို ဘာယူသွားရင် ကောင်းမလဲခင်ဗျာ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• お葬式 (おそうしき - အိုဆိုရှိခိ) = နာရေး မင်္ဂလာပွဲ</span>
+        <span>• 持つ (もつ - မော့ဆု) = ကိုင်ဆောင်သည်/ယူဆောင်သည်</span>
+    </div>
+
+    <div class="grammar-title">❷ V-てはいけません / だめです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> တားမြစ်မိန့် (မပြုလုပ်ရ / ပြုလုပ်လို့ မရပါ)။</div>
+    <div class="ex">例: 信号が赤のときは、横断歩道を渡ってはいけませんよ။</div>
+    <div class="ex-my">(မီးပွိုင့် နီနေချိန်မှာ လမ်းကူးမျဉ်းကျားကို ဖြတ်မကူးရဘူးနော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 信号 (しんごう - ရှိန်းဂိုး) = မီးပွိုင့်</span>
+        <span>• 横断歩道 (おうだんほどう - အိုးဒန်းဟိုဒိုး) = လမ်းကူးမျဉ်းကျား</span>
+        <span>• 渡る (わたる - ဝါတာရု) = ကူးဖြတ်သည်</span>
+    </div>
+
+    <div class="grammar-title">❸ V-なくちゃ</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> V-なくちゃいけない ၏ အတိုကောက် စကားပြောစတိုင် (လုပ်ရမယ်/ မလုပ်လို့မရဘူး)။</div>
+    <div class="ex">例: 食器は自分で片付けなくちゃ။</div>
+    <div class="ex-my">(ပန်းကန်ခွက်ယောက်တွေကို ကိုယ်တိုင် သိမ်းဆည်းရမယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 食器 (しょっき - ရှော့ခိ) = ပန်းကန်ခွက်ယောက်</span>
+        <span>• 片付ける (かたづける - ခါတာဇုခဲရု) = သိမ်းဆည်းသည်</span>
+    </div>
+
+    <div class="grammar-title">❹ V-るように、〜 / V-ないように、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ရည်ရွယ်ချက်ကို ဖော်ပြခြင်း (ဖြစ်စေရန်အတွက် / မဖြစ်စေရန်အတွက်)။</div>
+    <div class="ex">例①: 次の人がすぐに席に座れるように、食器を片付けます။</div>
+    <div class="ex-my">(နောက်လူ ချက်ချင်း ထိုင်နိုင်စေဖို့ ပန်းကန်တွေကို သိမ်းဆည်းပါတယ်။)</div>
+    <div class="ex">例②: トイレがつまらないように、紙はごみ箱に捨てます။</div>
+    <div class="ex-my">(အိမ်သာ မပိတ်ဆို့စေဖို့ စက္ကူကို အမှိုက်ပုံးထဲ စွန့်ပစ်ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 席 (せき - ဆဲခိ) = ထိုင်ခုံ</span>
+        <span>• つまる (ဆုမာရု) = ပိတ်ဆို့သည်</span>
+        <span>• ごみ箱 (ごみばこ - ဂေါမိဗာခို) = အမှိုက်ပုံး</span>
+    </div>
+
+    <div class="grammar-title">❺ V-(られ)ます ＜受身②＞</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Passive Voice (ခံလိုပြ ကြိယာ) (ပြုလုပ်ခြင်း ခံရသည်/သတိပေးခံရသည်)။</div>
+    <div class="ex">例: お店の店長さんに、「今度から気をつけて」と注意されました။</div>
+    <div class="ex-my">(ဆိုင်မန်နေဂျာက "နောက်တစ်ခါ သတိထားပါ" လို့ သတိပေးခြင်း ခံခဲ့ရပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 店長 (てんちょう - တဲန်ချိုး) = ဆိုင်မန်နေဂျာ/ဆိုင်ရှင်</span>
+        <span>• 注意する (ちゅういする - ချူးအိဆုရု) = သတိပေးသည်</span>
+    </div>
+
+    <div class="grammar-title">❻ S(普通形)の？</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> စကားပြောစတိုင် မေးခွန်း (ဟုတ်လား/လား)။</div>
+    <div class="ex">例: お金を払わないで、ジュース飲んだの？</div>
+    <div class="ex-my">(ပိုက်ဆံ မပေးဘဲ အအေး သောက်လိုက်တာလား။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 払う (はらう - ဟာရာဥ) = ပိုက်ဆံပေးသည်</span>
+        <span>• ジュース (ဂျူးဆု) = အအေး/ဖျော်ရည်</span>
+    </div>
+
+    <div class="grammar-title">❼ V-なきゃ</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> V-なければならない ၏ အတိုကောက် စကားပြောစတိုင် (လုပ်ရမယ်)။</div>
+    <div class="ex">例: ちゃんとお金を払ってから飲まなきゃ။</div>
+    <div class="ex-my">(သေချာ ပိုက်ဆံပေးပြီးမှ သောက်ရမယ်။)</div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第11課                                -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第11課 ポイントカードを忘れてしまいました
+        <span class="lesson-sub">(ပွိုင့်ကတ် မေ့ကျန်ခဲ့ပါပြီ)</span>
+    </div>
+
+    <div class="grammar-title">❶ V-てみてもいいですか？</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> စမ်းသပ်ပြုလုပ်ကြည့်ရန် ခွင့်တောင်းခြင်း (ပြုလုပ်ကြည့်လို့ ရမလား)။</div>
+    <div class="ex">例: このセーター、着てみてもいいですか？</div>
+    <div class="ex-my">(ဒီဆဝတာအင်္ကျီ ဝတ်ကြည့်လို့ ရမလားခင်ဗျာ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• セーター (ဆဲတာ) = ဆဝတာအင်္ကျီ</span>
+        <span>• 着る (きる - ခိရု) = ဝတ်ဆင်သည်</span>
+    </div>
+
+    <div class="grammar-title">❷ ナA- / イA- すぎます</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> လွန်ကဲစွာ ဖြစ်ပေါ်နေခြင်း (လွန်းသည်/ပိုလွန်သည်)။</div>
+    <div class="ex">例: この色はちょっと派手すぎます။</div>
+    <div class="ex-my">(ဒီအရောင်က နည်းနည်း တောက်လွန်းပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 色 (いろ - အိရို) = အရောင်</span>
+        <span>• 派手 (はで - ဟာဒဲ) = အရောင်တောက်သော/စူးရှသော</span>
+    </div>
+
+    <div class="grammar-title">❸ ナA-な / イA-いの</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ဝိသေသနနောက်တွင် の ထည့်၍ နာမ်ပြောင်းခြင်း (အကောင်/အရာ)။</div>
+    <div class="ex">例: もうちょっと大きいの、ありますか？</div>
+    <div class="ex-my">(နည်းနည်း ပိုကြီးတာမျိုး ရှိပါသလား။)</div>
+
+    <div class="grammar-title">❹ Nを V-(られ)ます ＜受身③＞</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> မိမိ၏ ပစ္စည်းတစ်ခုခု အနှစ်နာခံလိုက်ရသည့် Passive Voice ပုံစံ။</div>
+    <div class="ex">例: (私は)自転車を盗まれました။</div>
+    <div class="ex-my">(ကျွန်တော့် စက်ဘီး ခိုးယူခြင်း ခံလိုက်ရပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 盗む (ぬすむ - နုဆုမု) = ခိုးယူသည်</span>
+    </div>
+
+    <div class="grammar-title">❺ S(普通形) かもしれません</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ဖြစ်နိုင်ခြေရှိကြောင်း ခန့်မှန်းခြင်း (ဖြစ်နိုင်သည်/ဖြစ်ချင်ဖြစ်မည်)။</div>
+    <div class="ex">例: もしかしたら、バッグをとられたかもしれません။</div>
+    <div class="ex-my">(ဖြစ်နိုင်ရင် အိတ် အခိုးခံလိုက်ရတာ ဖြစ်နိုင်ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• バッグ (ဗာဂု) = အိတ်</span>
+    </div>
+
+    <div class="grammar-title">❻ V-てしまいました</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> မတော်တဆဖြစ်သွားခြင်း သို့မဟုတ် နောင်တရဖွယ် ဖြစ်ပျက်သွားခြင်း။</div>
+    <div class="ex">例: ポイントカード、忘れてしまいました။</div>
+    <div class="ex-my">(ပွိုင့်ကတ် မေ့ကျန်ခဲ့ပါပြီ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 忘れる (わすれる - ဝါဆုရဲရု) = မေ့လျော့သည်</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第12課                                -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第12課 この掃除機は軽くて動かしやすいですよ
+        <span class="lesson-sub">(ဒီဖုန်စုတ်စက်က ပေါ့ပါးပြီး ရွှေ့ရလွယ်ပါတယ်)</span>
+    </div>
+
+    <div class="grammar-title">❶ V-るまで、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ပြုလုပ်ဆောင်ရွက်မှု သို့မဟုတ် အချိန်အတိုင်းအတာတစ်ခု ရောက်သည်အထိ (အထိ)။</div>
+    <div class="ex">例: 手元に届くまで、２日しかかりませんでした။</div>
+    <div class="ex-my">(လက်ဝယ်သို့ ရောက်ရှိသည်အထိ ၂ ရက်ပဲ ကြာခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 手元 (てもと - တဲမိုတို) = လက်ဝယ်</span>
+        <span>• 届く (とどく - တိုဒိုးခု) = ရောက်ရှိသည်</span>
+    </div>
+
+    <div class="grammar-title">❷ V-やすいです / V-にくいです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong><br>
+        • V-やすい: ပြုလုပ်ရ လွယ်ကူသည်<br>
+        • V-にくい: ပြုလုပ်ရ ခက်ခဲသည်
+    </div>
+    <div class="ex">例①: どちらが使いやすいですか？</div>
+    <div class="ex-my">(ဘယ်တစ်ခုက သုံးရတာ ပိုလွယ်ပါသလဲ။)</div>
+    <div class="ex">例②: この掃除機は、重くて、使いにくいですね။</div>
+    <div class="ex-my">(ဒီဖုန်စုတ်စက်က လေးပြီး သုံးရတာ ခက်တာပဲနော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 掃除機 (そうじき - ဆိုဂျိခိ) = ဖုန်စုတ်စက်</span>
+        <span>• 使う (つかう - ဆုခါဥ) = သုံးစွဲသည်</span>
+        <span>• 重い (おもい - အိုမိုးအိ) = လေးလံသော</span>
+    </div>
+
+    <div class="grammar-title">❸ N1 と N2(と)、どちら / どっちが〜か？</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> နှိုင်းယှဉ်ချက် မေးခွန်းနှင့် ဖြေဆိုခြင်း ပုံစံ။</div>
+    <div class="ex">A: どっちが使いやすいですか？</div>
+    <div class="ex-my">(ဘယ်တစ်ခုက ပိုသုံးရတာ လွယ်သလဲ။)</div>
+    <div class="ex">B: シーバの掃除機のほうがスギタより軽くて、動かしやすいですよ။</div>
+    <div class="ex-my">(ရှီးဗား ဖုန်စုတ်စက်က စူဂိတာထက် ပိုပေါ့ပြီး ရွှေ့ရတာ လွယ်ပါတယ်နော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 軽い (かるい - ခါရုအိ) = ပေါ့ပါးသော</span>
+        <span>• 動かす (うごかす - ဥဂိုးခါဆု) = ရွှေ့လျားသည်</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第13課                                -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第13課 いろいろな資料を展示してあります
+        <span class="lesson-sub">(စာရွက်စာတမ်း အချက်အလက်မျိုးစုံကို ပြသထားပါတယ်)</span>
+    </div>
+
+    <div class="grammar-title">❶ V-(られ)ます ＜受身④＞</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ဖြစ်ပျက်ခဲ့သော သမိုင်းဝင်/အဆောက်အဦးဆိုင်ရာ ဖြစ်စဉ်ကို Passive Voice ဖြင့် ဖော်ပြခြင်း။</div>
+    <div class="ex">例: この建物は、２年前に建てられました။</div>
+    <div class="ex-my">(ဒီအဆောက်အဦးကို လွန်ခဲ့တဲ့ ၂ နှစ်က ဆောက်လုပ်ခဲ့တာ ဖြစ်ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 建物 (たてもの - တာတဲမိုနို) = အဆောက်အဦး</span>
+        <span>• 建てられる (တါတဲရာရဲရု) = ဆောက်လုပ်ခြင်းခံရသည်</span>
+    </div>
+
+    <div class="grammar-title">❷ V-てあります</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ရည်ရွယ်ချက်ရှိရှိဖြင့် ပြုလုပ်ပြင်ဆင်ထားသော အခြေအနေ တည်ရှိနေခြင်း (ပြုလုပ်ထားရှိသည်)။</div>
+    <div class="ex">例: 昔、使われた道具とか、いろいろな資料を展示してあります။</div>
+    <div class="ex-my">(ရှေးက သုံးခဲ့တဲ့ ကိရိယာတွေနဲ့ စာရွက်စာတမ်းမျိုးစုံကို ပြသထားရှိပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 昔 (むかし - မုခါရှိ) = ရှေးယခင်က</span>
+        <span>• 道具 (どうぐ - ဒိုးဂု) = ကိရိယာ/တန်ဆာပလာ</span>
+        <span>• 展示する (てんじする - တဲန်ဂျိဆုရု) = ပြသသည်</span>
+    </div>
+
+    <div class="grammar-title">❸ N1 だけじゃなくて、N2 も〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> N1 သာမက N2 လည်းပဲ အကျုံးဝင်ကြောင်း ဖော်ပြခြင်း။</div>
+    <div class="ex">例: 本だけじゃなくて、CDとか、DVDもただで借りられます။</div>
+    <div class="ex-my">(စာအုပ်တင်မကဘဲ CD တို့ DVD တို့လည်း အခမဲ့ ငှားရမ်းနိုင်ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 本 (ほん - ဟွန်း) = စာအုပ်</span>
+        <span>• ただ (တာဒါ) = အခမဲ့</span>
+        <span>• 借りる (かりる - ခါရိရု) = ငှားရမ်းသည်</span>
+    </div>
+
+    <div class="grammar-title">❹ Nなら、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အခြေအနေ သို့မဟုတ် နေရာအလိုက် ကန့်သတ်အကြံပြုခြင်း (N ဆိုရင်တော့)။</div>
+    <div class="ex">例: 返却は、市内の図書館なら、どこに返してもいいです။</div>
+    <div class="ex-my">(စာအုပ်ပြန်အပ်တာကတော့ မြို့နယ်အတွင်းမှာရှိတဲ့ စာကြည့်တိုက်ဆိုရင် ဘယ်မှာပဲ ပြန်အပ်အပ် ရပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 返却 (へんきゃく - ဟဲန်ခယားခု) = ပြန်လည်အပ်နှံခြင်း</span>
+        <span>• 図書館 (としょかん - တိုရှို့ခန်) = စာကြည့်တိုက်</span>
+    </div>
+
+    <div class="grammar-title">❺ 【疑問詞】V-ても、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ဘာပဲလုပ်လုပ်/ဘယ်သူပဲဖြစ်ဖြစ် အဆင်ပြေကြောင်း ဖော်ပြခြင်း (ဘယ်... မဆို)။</div>
+    <div class="ex">例: 返却は、市内の図書館なら、どこに返してもいいです။</div>
+    <div class="ex-my">(ပြန်အပ်တာက မြို့နယ်ထဲက စာကြည့်တိုက်ဆို ဘယ်မှာပဲ ပြန်အပ်အပ် ရပါတယ်။)</div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第14課                                -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第14課 前髪は、もう少し短く切ってもらえますか？
+        <span class="lesson-sub">(ရှေ့ဆံပင်ကို နည်းနည်းလောက် ပိုတိုတို လှီးပေးလို့ရမလား)</span>
+    </div>
+
+    <div class="grammar-title">❶ ナA-に / イA-く V</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ဝိသေသနကို ကြိယာဝိသေသန (Adverb) ပြောင်း၍ ပြုလုပ်ဆောင်ရွက်မှုကို ဖော်ပြခြင်း (〜အောင်/စွာ ပြုလုပ်သည်)။</div>
+    <div class="ex">例: 全体的に短く切ってください။</div>
+    <div class="ex-my">(တစ်ခေါင်းလုံးကို တိုတိုလေး ညှပ်ပေးပါ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 全体的 (ぜんたいてき - ဇဲန်တိုက်တဲခိ) = တစ်ခေါင်းလုံး/ခြုံငုံ၍</span>
+        <span>• 短い (みじかい - မိဂျိခါအိ) → 短く (တိုတို)</span>
+        <span>• 切る (きる - ခိရု) = ညှပ်သည်/လှီးသည်</span>
+    </div>
+
+    <div class="grammar-title">❷ Nのために、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ဦးတည်ရာ သို့မဟုတ် အကျိုးစီးပွားအတွက် (N အတွက်)။</div>
+    <div class="ex">例: 外国の方のために、いろいろなサービスがあります။</div>
+    <div class="ex-my">(နိုင်ငံခြားသားတွေအတွက် ဝန်ဆောင်မှုမျိုးစုံ ရှိပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 外国 (がいこく - ဂါအိခိုခု) = နိုင်ငံခြား</span>
+        <span>• サービス (ဆားဗိဆု) = ဝန်ဆောင်မှု</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第15課                                -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第15課 会議室の電気がついたままでした
+        <span class="lesson-sub">(အစည်းအဝေးခန်းရဲ့ မီးက လင်းထားလျက်တန်း ရှိနေခဲ့တယ်)</span>
+    </div>
+
+    <div class="grammar-title">❶ V-たままです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အခြေအနေတစ်ခု ဖြစ်ပေါ်နေသည့်အတိုင်း ဆက်လက်ရှိနေခြင်း (အတိုင်း/လျက်တန်း)။</div>
+    <div class="ex">例: 会議室の電気がついたままでしたよ။</div>
+    <div class="ex-my">(အစည်းအဝေးခန်းမီးက လင်းထားတဲ့အတိုင်း ရှိနေခဲ့တယ်နော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 会議室 (かいぎしつ - ခါအိဂိရှိဆု) = အစည်းအဝေးခန်း</span>
+        <span>• 電気 (でんき - ဒဲန်ခိ) = မီး/လျှပ်စစ်</span>
+        <span>• つく (ဆုခု) = (မီး) လင်းသည်</span>
+    </div>
+
+    <div class="grammar-title">❷ V-るのにおいいです</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ရည်ရွယ်ချက်အတွက် ကောင်းမွန်ကြောင်း ဖော်ပြခြင်း (လုပ်ဖို့အတွက် ကောင်းသည်)။</div>
+    <div class="ex">例: マイストローは、ごみを減らすのにいいんですよ။</div>
+    <div class="ex-my">(ကိုယ်ပိုင် ပိုက်သုံးတာက အမှိုက်လျှော့ချဖို့အတွက် ကောင်းပါတယ်နော်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• ストロー (ဆုတိုရိုး) = ပိုက်</span>
+        <span>• ごみ (ဂေါမိ) = အမှိုက်</span>
+        <span>• 減らす (へらす - ဟဲရာဆု) = လျှော့ချသည်</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第16課                                -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第16課 地震が来ても、あわてて動かないでください
+        <span class="lesson-sub">(ငလျင်လှုပ်ရင်တောင် ပျာပျာသယာ ရွှေ့လျားခြင်း မလုပ်ပါနဲ့)</span>
+    </div>
+
+    <div class="grammar-title">❶ V (命令形) / V-るな (禁止の命令形)</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> အမိန့်ပေးပုံစံနှင့် တားမြစ်မိန့် (လုပ်! / မလုပ်နဲ့!)။</div>
+    <div class="ex">例①: 急げ。こっちに集まれ။</div>
+    <div class="ex-my">(မြန်မြန်လုပ်။ ဒီဘက်ကို စုကြ။)</div>
+    <div class="ex">例②: 走るな။</div>
+    <div class="ex-my">(မပြေးနဲ့။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 急ぐ (いそぐ - အိဆိုဂု) = အလျင်လိုသည်</span>
+        <span>• 集まる (あつまる - အာဆုမာရု) = စုဝေးသည်</span>
+        <span>• 走る (はしる - ဟာရှိရု) = ပြေးသည်</span>
+    </div>
+
+    <div class="grammar-title">❷ V-ないようにしてください</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> မပြုလုပ်မိစေရန် သတိထား ဆောင်ရွက်ခိုင်းခြင်း (မဖြစ်အောင် လုပ်ပါ။)</div>
+    <div class="ex">例: できるだけ煙を吸わないようにしてください။</div>
+    <div class="ex-my">(နိုင်သလောက် မီးခိုး မရှူမိအောင် လုပ်ပါ။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 煙 (けむり - ခဲမူရိ) = မီးခိုး</span>
+        <span>• 吸う (すう - ဆူး) = ရှူသွင်းသည်</span>
+    </div>
+
+    <div class="grammar-title">❸ V-(られ)なくなります</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ပြုလုပ်နိုင်စွမ်း မရှိတော့သည့် အခြေအနေသို့ ပြောင်းလဲသွားခြင်း (မလုပ်နိုင်တော့ပါ)။</div>
+    <div class="ex">例: ドアが開かなくなると、外に逃げられなくなります။</div>
+    <div class="ex-my">(တံခါး ဖွင့်လို့မရတော့ရင် အပြင်ကို မပြေးနိုင်တော့ပါဘူး။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• ドア (ဒိုးအာ) = တံခါး</span>
+        <span>• 開く (あく - အာခု) = ပွင့်သည်</span>
+        <span>• 逃げる (にげる - နိဂဲရု) = ထွက်ပြေးသည်</span>
+    </div>
+
+    <div class="grammar-title">❹ Sても、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> သော်လည်း/ ဖြစ်လင့်ကစား (အကယ်၍ ဖြစ်ခဲ့ရင်တောင်)။</div>
+    <div class="ex">例: 大きな地震が来ても、あわてて動かないでください။</div>
+    <div class="ex-my">(ငလျင်ကြီး လှုပ်ခဲ့ရင်တောင် ပျာပျာသယာ ရွှေ့လျားခြင်း မလုပ်ပါနဲ့။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 地震 (じしん - ဂျိရှိန်) = ငလျင်</span>
+        <span>• あわてる (အာဝါတဲရု) = ပျာပျာသယာဖြစ်သည်</span>
+    </div>
+
+    <div class="grammar-title">❺ V(普通形) かどうか、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ဟုတ်မဟုတ်/ ဖြစ်မဖြစ်ကို ဖော်ပြခြင်း။</div>
+    <div class="ex">例: 店が開いているかどうか、わからないけど…။</div>
+    <div class="ex-my">(ဆိုင် ဖွင့်ထားလား မဖွင့်ထားဘူးလား မသိပေမဲ့...)</div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第17課                                -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第17課 日本語が前より話せるようになりました
+        <span class="lesson-sub">(ဂျပန်ဘာသာစကားကို အရင်ကထက် ပိုပြောနိုင်လာခဲ့ပါတယ်)</span>
+    </div>
+
+    <div class="grammar-title">❶ V-(られ)るようになりました</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> မပြုလုပ်နိုင်ခဲ့ရာမှ လေ့ကျင့်မှုကြောင့် ပြုလုပ်နိုင်သည့် အခြေအနေသို့ ပြောင်းလဲလာခြင်း (တတ်မြောက်လာခဲ့သည်/ပြုလုပ်နိုင်လာခဲ့သည်)။</div>
+    <div class="ex">例: 最近は、ほかの人にお店の情報を教えられるようになりました။</div>
+    <div class="ex-my">(မကြာသေးမီကတော့ အခြားလူတွေကို ဆိုင်ရဲ့ သတင်းအချက်အလက်တွေ သင်ပြပေးနိုင်လာခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 最近 (さいきん - ဆာအိခိန်း) = မကြာသေးမီက</span>
+        <span>• 情報 (じょうほう - ဂျိုးဟိုး) = သတင်းအချက်အလက်</span>
+        <span>• 教える (おしえる - အိုရှိအဲရု) = သင်ကြား/ပြောပြသည်</span>
+    </div>
+
+    <hr>
+
+    <!-- ========================================================= -->
+    <!--                      第18課                                -->
+    <!-- ========================================================= -->
+    <div class="lesson">
+        第18課 将来、自分の会社を作ろうと思います
+        <span class="lesson-sub">(အနာဂတ်မှာ ကိုယ်ပိုင်ကုမ္ပဏီ ထောင်မယ်လို့ တွေးထားပါတယ်)</span>
+    </div>
+
+    <div class="grammar-title">❶ V-(よ)うと思います / 思っています</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> Volitional Form ကိုသုံး၍ အနာဂတ် ရည်မှန်းချက်ကို ဖော်ပြခြင်း (ပြုလုပ်မည်ဟု စိတ်ကူး/တွေးထားသည်)။</div>
+    <div class="ex">例: 将来は、タイで、自分の会社を作ろうと思います။</div>
+    <div class="ex-my">(အနာဂတ်မှာ ထိုင်းမှာ ကိုယ်ပိုင်ကုမ္ပဏီ ထောင်မယ်လို့ တွေးထားပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 将来 (しょうらい - ရှိုးရိုးအိ) = အနာဂတ်</span>
+        <span>• 会社 (かいしゃ - ခါအိရှာ) = ကုမ္ပဏီ</span>
+        <span>• 作る (つくる - ဆုခုရု) = ပြုလုပ်/ထောင်သည်</span>
+    </div>
+
+    <div class="grammar-title">❷ V-るために、〜</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ရည်ရွယ်ချက်အတွက် (ပြုလုပ်ရန်အတွက်)။</div>
+    <div class="ex">例: 日本に住むために、もっと日本語をがんばろうと思います။</div>
+    <div class="ex-my">(ဂျပန်မှာ နေထိုင်ဖို့အတွက် ဂျပန်စာကို ပိုပြီး ကြိုးစားမယ်လို့ တွေးထားပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 住む (すむ - ဆုမု) = နေထိုင်သည်</span>
+    </div>
+
+    <div class="grammar-title">❸ V-てあげる / V-てもらう / V-てくれる</div>
+    <div class="exp"><strong>ရှင်းလင်းချက်:</strong> ကူညီပေးကမ်းမှု အပြန်အလှန် ပြုလုပ်ပေးခြင်း ပုံစံများ။<br>
+        • V-てあげる: ပြုလုပ်ပေးသည်<br>
+        • V-てもらう: ပြုလုပ်ပေးခြင်း ခံရသည်/အကူအညီ ရယူသည်<br>
+        • V-てくれる: မိမိအား ပြုလုပ်ပေးသည်
+    </div>
+    <div class="ex">例①: 両親に、家を建ててあげるつもりです။</div>
+    <div class="ex-my">(မိဘတွေကို အိမ် ဆောက်ပေးဖို့ ရည်ရွယ်ထားပါတယ်။)</div>
+    <div class="ex">例②: JF工業のみなさんには、とても親切にしてもらいました။</div>
+    <div class="ex-my">(JF စက်မှုဇုန်က လူတွေဆီက စေတနာထား ကူညီပေးတာကို ခံခဲ့ရပါတယ်။)</div>
+    <div class="ex">例③: 山内さんは、私にたくさん、日本語を教えてくれました။</div>
+    <div class="ex-my">(ယားမားအုချိစံက ကျွန်တော့်ကို ဂျပန်စာ အများကြီး သင်ပေးခဲ့ပါတယ်။)</div>
+    <div class="kodoba">
+        <strong>📝 Kodoba Note:</strong><br>
+        <span>• 両親 (りょうしん - ရိုးရှိန်) = မိဘနှစ်ပါး</span>
+        <span>• 家 (いえ - အိအဲ) = အိမ်</span>
+        <span>• 親切 (しんせつ - ရှိန်းဆဲဆု) = ကြင်နာသော/စေတနာရှိသော</span>
+    </div>
+
+    <hr>
+
+    <p style="text-align:center; margin-top:25px; font-size:13px; color:#4a5f6f;">
+        JFT A2 文法ノート — မြန်မာလို ရှင်းလင်းချက် + ဥပမာ + ဝေါဟာရမှတ်စု
+    </p>
+
+</div>
+<!-- end .page -->
+
+</body>
+</html>
