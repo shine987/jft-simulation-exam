@@ -3,8 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Content Security Policy -->
-<meta http-equiv="Content-Security-Policy" content="sandbox allow-scripts allow-same-origin allow-forms allow-popups;>
+    <!-- CSP Meta Tag (အရင်အတိုင်း ထားရန်) -->
+<meta http-equiv="Content-Security-Policy" content="sandbox allow-scripts allow-same-origin allow-forms allow-popups;">
+
+<!-- Auto-Redirect ကာကွယ်သည့် JS Code (အောက်မှာ ထပ်တိုးထည့်ရန်) -->
+<script>
+  window.onbeforeunload = function() {
+    return "Are you sure you want to leave?";
+  };
+</script>
     <!-- Google Search Console Verification -->
     <meta name="google-site-verification" content="jG3aK4-jVaQoNkqZMuMSjybfxJMMiqsxxnVIdVzxuko" />
     <!-- Google tag (gtag.js) -->
