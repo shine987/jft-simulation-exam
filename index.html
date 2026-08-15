@@ -1551,79 +1551,82 @@
             <p>Prepare for your Japanese Language Proficiency Test with these practice exams. Select any exam below to begin your preparation.</p>
         </section>
 
-
-        <!-- Native Banner Code + Style တစ်ခါတည်းထည့်ရန် -->
-<div class="native-ad-wrapper">
+<!-- ============================================ -->
+<!-- ADSTERRA NATIVE AD (Responsive Fix) -->
+<!-- ============================================ -->
+<div class="adsterra-native-cleaner">
   <script async="async" data-cfasync="false" src="https://pl30856747.effectivecpmnetwork.com/7de5beb2fcf81f87853a824adfde498a/invoke.js"></script>
   <div id="container-7de5beb2fcf81f87853a824adfde498a"></div>
 </div>
 
 <style>
-  .native-ad-wrapper {
-    max-width: 1000px;
-    margin: 20px auto;
-    padding: 10px;
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  /* Main Container */
+  .adsterra-native-cleaner {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 20px 0 !important;
+    padding: 10px !important;
+    overflow: hidden !important; /* ဘေးကို လှိမ့်မထွက်စေရန် */
+    background: #ffffff !important;
   }
 
+  /* Force Horizontal Flex Layout */
   #container-7de5beb2fcf81f87853a824adfde498a {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
-    gap: 15px !important;
+    display: flex !important;
+    flex-wrap: wrap !important; /* ဖုန်းမှာ နေရာမဆန့်ရင် အောက်ဆင်းရန် */
     justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    margin: 0 auto !important;
   }
 
+  /* Ad Cards Fix */
   #container-7de5beb2fcf81f87853a824adfde498a > div,
   #container-7de5beb2fcf81f87853a824adfde498a a {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    background: #f8f9fa !important;
-    border-radius: 8px !important;
-    padding: 10px !important;
-    text-decoration: none !important;
-    border: 1px solid #e9ecef !important;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.03) !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    flex: 1 1 calc(50% - 12px) !important; /* Mobile မှာ ဘေးချင်းယှဉ် ၂ ကွက်ပြရန် */
+    max-width: calc(50% - 12px) !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 10px !important;
+    padding: 8px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
   }
 
-  #container-7de5beb2fcf81f87853a824adfde498a > div:hover,
-  #container-7de5beb2fcf81f87853a824adfde498a a:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
-  }
-
+  /* Ad Image Control */
   #container-7de5beb2fcf81f87853a824adfde498a img {
     width: 100% !important;
-    height: 140px !important;
+    height: 110px !important;
     object-fit: cover !important;
     border-radius: 6px !important;
-    margin-bottom: 8px !important;
+    display: block !important;
   }
 
+  /* Ad Text Control */
   #container-7de5beb2fcf81f87853a824adfde498a span,
-  #container-7de5beb2fcf81f87853a824adfde498a div {
-    font-size: 0.85rem !important;
-    color: #212529 !important;
-    text-align: center !important;
+  #container-7de5beb2fcf81f87853a824adfde498a div,
+  #container-7de5beb2fcf81f87853a824adfde498a p {
+    font-size: 13px !important;
     line-height: 1.3 !important;
-    font-weight: 600 !important;
+    color: #333333 !important;
+    word-break: break-word !important;
+    margin-top: 6px !important;
   }
 
-  @media (max-width: 600px) {
-    #container-7de5beb2fcf81f87853a824adfde498a {
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 10px !important;
+  /* Mobile Screen Fine-Tuning */
+  @media (max-width: 480px) {
+    #container-7de5beb2fcf81f87853a824adfde498a > div,
+    #container-7de5beb2fcf81f87853a824adfde498a a {
+      flex: 1 1 calc(50% - 8px) !important;
+      max-width: calc(50% - 8px) !important;
     }
     #container-7de5beb2fcf81f87853a824adfde498a img {
-      height: 100px !important;
+      height: 95px !important;
     }
   }
 </style>
-
-
+    
         <!-- ============================================ -->
         <!-- BLOG: JFT Exam Preparation Guide -->
         <!-- ============================================ -->
