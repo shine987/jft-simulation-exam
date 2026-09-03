@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JFT Practice Exam Premium</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-radius: 32px;
+            padding: 35px 30px 45px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 34px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .logo-text {
+            font-size: 26px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text span {
+            font-weight: 300;
+            -webkit-text-fill-color: rgba(255,255,255,0.4);
+        }
+
+        .auth-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .user-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: #1a1a2e;
+            font-size: 16px;
+        }
+
+        .user-avatar.show { display: flex; }
+        .user-email { color: rgba(255,255,255,0.7); font-size: 14px; display: none; }
+        .user-email.show { display: block; }
+
+        .premium-badge-header {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            color: #1a1a2e;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 700;
+            display: none;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .premium-badge-header.show { display: inline-block; }
+
+        .auth-btn {
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            border: none;
+            padding: 11px 26px;
+            border-radius: 50px;
+            color: #1a1a2e;
+            font-weight: 700;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .auth-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(247, 151, 30, 0.4);
+        }
+
+        .auth-btn.logout {
+            background: rgba(255,255,255,0.08);
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .auth-btn.logout:hover {
+            background: rgba(255,255,255,0.15);
+            box-shadow: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 13px;
+            padding: 6px 14px;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+        }
+
+        .nav-links a.admin-link {
+            color: #ffd700;
+            border: 1px solid rgba(255,215,0,0.2);
+            display: none;
+        }
+
+        .nav-links a.admin-link:hover {
+            background: rgba(255,215,0,0.1);
+        }
+
+        .status-bar {
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 16px;
+            padding: 14px 24px;
+            margin-bottom: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .status-message {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-message .icon { font-size: 18px; }
+        .status-message.premium { color: #ffd700; }
+        .status-message.free { color: #ff6b6b; }
+
+        .status-expiry {
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+        }
+        .status-expiry strong { color: #ffd700; }
+
+        .grid-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .grid-title {
+            color: rgba(255,255,255,0.4);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .grid-count {
+            color: rgba(255,255,255,0.2);
+            font-size: 13px;
+        }
+
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 16px;
+        }
+
+        .exam-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 22px 14px 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            position: relative;
+            overflow: hidden;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            user-select: none;
+        }
+
+        .exam-card:hover:not(.locked) {
+            transform: translateY(-5px);
+            border-color: rgba(247, 151, 30, 0.3);
+            box-shadow: 0 12px 40px rgba(247, 151, 30, 0.12);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .exam-card:active:not(.locked) { transform: scale(0.95); }
+
+        .exam-card.locked {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .exam-card .lock-icon {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-size: 15px;
+            opacity: 0.5;
+        }
+
+        .exam-card.locked .lock-icon { opacity: 0.8; }
+
+        .exam-card .lock-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.25);
+            backdrop-filter: blur(2px);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            opacity: 0;
+            transition: all 0.4s;
+            pointer-events: none;
+        }
+
+        .exam-card.locked .lock-overlay { opacity: 1; }
+
+        .exam-card.premium {
+            background: linear-gradient(135deg, rgba(247, 151, 30, 0.12), rgba(255, 210, 0, 0.04));
+            border-color: rgba(247, 151, 30, 0.2);
+        }
+
+        .exam-card.premium::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(135deg, #f7971e, #ffd200, #f7971e);
+            background-size: 300% 300%;
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s;
+            animation: shimmerBorder 3s ease-in-out infinite;
+        }
+
+        .exam-card.premium:hover::before { opacity: 1; }
+
+        @keyframes shimmerBorder {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .exam-card .exam-icon { font-size: 30px; margin-bottom: 6px; }
+        .exam-card.premium .exam-icon { animation: floatIcon 3s ease-in-out infinite; }
+
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
+
+        .exam-card .exam-number {
+            font-size: 26px;
+            font-weight: 700;
+            color: rgba(255,255,255,0.8);
+            line-height: 1;
+        }
+
+        .exam-card .exam-label {
+            font-size: 11px;
+            color: rgba(255,255,255,0.35);
+            margin-top: 4px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
+        .exam-card .premium-badge {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            background: linear-gradient(135deg, #f7971e, #ffd200);
+            color: #1a1a2e;
+            font-size: 8px;
+            padding: 2px 10px;
+            border-radius: 50px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .exam-card.locked .premium-badge {
+            background: rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.25);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 35px;
+            color: rgba(255,255,255,0.15);
+            font-size: 13px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            padding-top: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .main-container { padding: 20px 16px 30px; }
+            .header { flex-direction: column; align-items: stretch; gap: 12px; }
+            .logo-area { justify-content: center; }
+            .auth-section { justify-content: center; flex-wrap: wrap; }
+            .status-bar { flex-direction: column; text-align: center; padding: 12px 16px; }
+            .exam-grid { grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px; }
+            .exam-card { padding: 16px 10px 14px; min-height: 100px; }
+            .exam-card .exam-number { font-size: 20px; }
+            .exam-card .exam-icon { font-size: 24px; }
+        }
+
+        @media (max-width: 480px) {
+            .exam-grid { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); gap: 10px; }
+            .exam-card { padding: 12px 6px 10px; min-height: 85px; border-radius: 14px; }
+            .exam-card .exam-number { font-size: 16px; }
+            .exam-card .exam-icon { font-size: 20px; margin-bottom: 4px; }
+            .exam-card .exam-label { font-size: 9px; }
+            .exam-card .premium-badge { font-size: 7px; padding: 1px 7px; top: 5px; right: 6px; }
+            .exam-card .lock-icon { font-size: 12px; top: 6px; right: 8px; }
+            .exam-card .lock-overlay { font-size: 24px; }
+        }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: rgba(255,255,255,0.03); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #f7971e, #ffd200); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="main-container">
+    
+    <div class="header">
+        <div class="logo-area">
+            <span class="logo-icon">📚</span>
+            <span class="logo-text">JFT <span>Premium</span></span>
+        </div>
+        <div class="auth-section">
+            <div class="nav-links">
+                <a href="#" class="admin-link" id="navAdmin">⚙️ Admin Panel</a>
+            </div>
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar"></div>
+                <span class="user-email" id="userEmail"></span>
+                <span class="premium-badge-header" id="premiumBadgeHeader">⭐ Premium</span>
+            </div>
+            <button class="auth-btn" id="authButton">🔑 Google Login</button>
+        </div>
+    </div>
+
+    <div class="status-bar">
+        <div class="status-message" id="statusMessage">
+            <span class="icon">🔐</span>
+            <span>ကျေးဇူးပြု၍ အကောင့်ဝင်ပါ</span>
+        </div>
+        <div class="status-expiry" id="expiryDate"></div>
+    </div>
+
+    <div class="grid-header">
+        <div class="grid-title">📝 Premium Exams</div>
+        <div class="grid-count" id="examCount">20 Exams</div>
+    </div>
+    <div class="exam-grid" id="examGrid"></div>
+
+    <div class="footer">© 2026 JFT Practice Exam Premium. All rights reserved.</div>
+
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+
+<script>
+// =============================================
+// 🔥 FIREBASE CONFIG
+// =============================================
+const firebaseConfig = {
+    apiKey: "AIzaSyCWiTxC_B_H9GZYhvQc3jdTR_LLsE0gdvA",
+    authDomain: "real-jft-premium.firebaseapp.com",
+    projectId: "real-jft-premium",
+    storageBucket: "real-jft-premium.firebasestorage.app",
+    messagingSenderId: "439056027697",
+    appId: "1:439056027697:web:b37a75ccf5da922714c510"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+const provider = new firebase.auth.GoogleAuthProvider();
+
+// =============================================
+// 📌 STATE
+// =============================================
+let currentUser = null;
+let isPremium = false;
+let expiryDate = null;
+const TOTAL_EXAMS = 20;
+
+// =============================================
+// 🔐 ADMIN EMAIL (မှန်ကန်တဲ့ Email)
+// =============================================
+const ADMIN_EMAIL = 'ooooshine1@gmail.com';
+
+// =============================================
+// 🔐 AUTH STATE
+// =============================================
+auth.onAuthStateChanged(async (user) => {
+    if (user) {
+        currentUser = user;
+        
+        // ✅ User ကို Firestore မှာ သိမ်းထားမယ်
+        try {
+            await db.collection('users').doc(user.uid).set({
+                email: user.email,
+                uid: user.uid,
+                lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
+                displayName: user.displayName || '',
+                photoURL: user.photoURL || ''
+            }, { merge: true });
+        } catch (error) {
+            console.error('User save error:', error);
+        }
+        
+        // ✅ Admin Panel ပြမလား စစ်ဆေးမယ် (Case-insensitive)
+        const navAdmin = document.getElementById('navAdmin');
+        if (user.email.toLowerCase() === ADMIN_EMAIL.toLowerCase()) {
+            navAdmin.style.display = 'inline-block';
+            console.log('✅ Admin logged in:', user.email);
+        } else {
+            navAdmin.style.display = 'none';
+            console.log('👤 User logged in:', user.email);
+        }
+        
+        await checkPremiumStatus(user.uid);
+        updateUI(user);
+    } else {
+        currentUser = null;
+        isPremium = false;
+        expiryDate = null;
+        document.getElementById('navAdmin').style.display = 'none';
+        updateUI(null);
+    }
+    renderExamGrid();
+});
+
+// =============================================
+// ✅ PREMIUM STATUS CHECK
+// =============================================
+async function checkPremiumStatus(uid) {
+    try {
+        const doc = await db.collection('premiumUsers').doc(uid).get();
+        if (doc.exists) {
+            const data = doc.data();
+            const expiry = data.expiryDate?.toDate?.() || new Date(data.expiryDate);
+            if (expiry > new Date()) {
+                isPremium = true;
+                expiryDate = expiry;
+                return;
+            }
+        }
+        isPremium = false;
+        expiryDate = null;
+    } catch (error) {
+        console.error('Premium check error:', error);
+        isPremium = false;
+        expiryDate = null;
+    }
+}
+
+// =============================================
+// 🎨 UI UPDATE
+// =============================================
+function updateUI(user) {
+    const authBtn = document.getElementById('authButton');
+    const emailEl = document.getElementById('userEmail');
+    const avatarEl = document.getElementById('userAvatar');
+    const badgeEl = document.getElementById('premiumBadgeHeader');
+    const statusMsg = document.getElementById('statusMessage');
+    const expiryEl = document.getElementById('expiryDate');
+
+    if (user) {
+        authBtn.innerHTML = '🚪 Logout';
+        authBtn.className = 'auth-btn logout';
+        emailEl.textContent = user.email;
+        emailEl.className = 'user-email show';
+        avatarEl.textContent = user.email.charAt(0).toUpperCase();
+        avatarEl.className = 'user-avatar show';
+
+        if (isPremium && expiryDate) {
+            badgeEl.className = 'premium-badge-header show';
+            statusMsg.className = 'status-message premium';
+            statusMsg.innerHTML = `<span class="icon">⭐</span><span>Premium အသုံးပြုခွင့် ရရှိထားပါသည်</span>`;
+            expiryEl.innerHTML = `⏳ သက်တမ်းကုန်: <strong>${expiryDate.toLocaleDateString('my-MM')}</strong>`;
+        } else {
+            badgeEl.className = 'premium-badge-header';
+            statusMsg.className = 'status-message free';
+            statusMsg.innerHTML = `<span class="icon">🔒</span><span>Premium မဟုတ်သေးပါ</span>`;
+            expiryEl.innerHTML = '';
+        }
+    } else {
+        authBtn.innerHTML = '🔑 Google Login';
+        authBtn.className = 'auth-btn';
+        emailEl.className = 'user-email';
+        avatarEl.className = 'user-avatar';
+        badgeEl.className = 'premium-badge-header';
+        statusMsg.className = 'status-message';
+        statusMsg.innerHTML = `<span class="icon">🔐</span><span>ကျေးဇူးပြု၍ အကောင့်ဝင်ပါ</span>`;
+        expiryEl.innerHTML = '';
+    }
+}
+
+// =============================================
+// 🎯 EXAM GRID RENDER
+// =============================================
+function renderExamGrid() {
+    const grid = document.getElementById('examGrid');
+    grid.innerHTML = '';
+
+    for (let i = 1; i <= TOTAL_EXAMS; i++) {
+        const card = document.createElement('div');
+        card.className = 'exam-card';
+
+        if (!isPremium) {
+            card.classList.add('locked');
+            card.innerHTML = `
+                <div class="lock-overlay">🔒</div>
+                <div class="lock-icon">🔒</div>
+                <div class="exam-icon">📄</div>
+                <div class="exam-number">${String(i).padStart(2, '0')}</div>
+                <div class="exam-label">Premium Exam</div>
+                <span class="premium-badge">LOCKED</span>
+            `;
+        } else {
+            card.classList.add('premium');
+            card.innerHTML = `
+                <div class="lock-icon">🔓</div>
+                <div class="exam-icon">📝</div>
+                <div class="exam-number">${String(i).padStart(2, '0')}</div>
+                <div class="exam-label">Premium Exam</div>
+                <span class="premium-badge">⭐ PREMIUM</span>
+            `;
+        }
+
+        card.addEventListener('click', () => {
+            if (!currentUser) {
+                alert('⚠️ ကျေးဇူးပြု၍ အကောင့်ဝင်ပါ။');
+                return;
+            }
+            if (!isPremium) {
+                alert('⛔ ဤစာမေးပွဲကို ဝင်ရောက်ဖြေဆိုရန် Premium အသုံးပြုခွင့် လိုအပ်ပါသည်။');
+                return;
+            }
+            window.location.href = `premium-jft${i}.html`;
+        });
+
+        grid.appendChild(card);
+    }
+}
+
+// =============================================
+// 🔄 AUTH BUTTON
+// =============================================
+document.getElementById('authButton').addEventListener('click', () => {
+    if (currentUser) {
+        auth.signOut();
+    } else {
+        auth.signInWithPopup(provider).catch(error => alert('Login failed: ' + error.message));
+    }
+});
+
+// =============================================
+// 🔗 ADMIN PANEL LINK
+// =============================================
+document.getElementById('navAdmin').addEventListener('click', (e) => {
+    e.preventDefault();
+    if (currentUser) {
+        if (currentUser.email.toLowerCase() === ADMIN_EMAIL.toLowerCase()) {
+            window.location.href = 'admin.html';
+        } else {
+            alert('⛔ သင်သည် Admin မဟုတ်ပါ။');
+        }
+    } else {
+        alert('⚠️ ကျေးဇူးပြု၍ အကောင့်ဝင်ပါ။');
+    }
+});
+
+// =============================================
+// ⏱️ AUTO REFRESH (every 60s)
+// =============================================
+setInterval(async () => {
+    if (currentUser) {
+        await checkPremiumStatus(currentUser.uid);
+        updateUI(currentUser);
+        renderExamGrid();
+    }
+}, 60000);
+
+// =============================================
+// 🚀 INIT
+// =============================================
+renderExamGrid();
+</script>
+
+</body>
+</html>
