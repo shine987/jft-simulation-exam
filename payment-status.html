@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JFT Premium - Status Check</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: 'Pyidaungsu', 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); min-height: 100vh; }
+  .glass { background: rgba(255,255,255,0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.08); }
+  .fade { animation: fadeIn 0.4s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  input { color-scheme: dark; }
+  input:focus { border-color: rgba(247,151,30,0.5) !important; outline: none; }
+</style>
+</head>
+<body class="py-8 px-4">
+
+<div class="max-w-2xl mx-auto glass rounded-3xl shadow-2xl overflow-hidden">
+
+  <div class="bg-gradient-to-r from-orange-500 to-yellow-500 p-6 text-center">
+    <h1 class="text-2xl font-bold text-gray-900">📊 Status Check</h1>
+    <p class="text-sm text-gray-800 mt-1">Order အခြေအနေ စစ်ဆေးပါ</p>
+  </div>
+
+  <div class="p-6 space-y-5">
+
+    <!-- Search -->
+    <div>
+      <label class="block text-sm font-semibold text-white/80 mb-2">📧 သင့် Email ထည့်ပါ</label>
+      <div class="flex gap-2">
+        <input id="emailInput" type="email" placeholder="your@email.com"
+          class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-white/30 text-sm">
+        <button id="searchBtn"
+          class="px-6 py-3 bg-gradient-to-r from-orange-500 to-yellow-500 text-gray-900 font-bold rounded-xl hover:from-orange-600 hover:to-yellow-600 transition">
+          🔍 ရှာမည်
+        </button>
+      </div>
+    </div>
+
+    <!-- Status Message -->
+    <p id="msg" class="text-center text-sm hidden"></p>
+
+    <!-- Premium Status -->
+    <div id="premiumBox" class="hidden fade glass rounded-2xl p-5 border border-white/10">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-xs text-white/40">Premium Status</p>
+          <p id="premiumStatus" class="text-lg font-bold"></p>
+        </div>
+        <div id="premiumIcon" class="text-4xl"></div>
+      </div>
+      <p id="premiumExpiry" class="text-xs text-white/50 mt-3"></p>
+    </div>
+
+    <!-- Orders -->
+    <div id="ordersBox" class="hidden fade">
+      <h3 class="text-white font-semibold mb-3">📦 Order စာရင်း</h3>
+      <div id="ordersList" class="space-y-3"></div>
+    </div>
+
+    <!-- Empty -->
+    <div id="emptyBox" class="hidden text-center py-8 text-white/30">
+      <div class="text-5xl mb-2">📭</div>
+      <p>Order မရှိပါ</p>
+    </div>
+
+  </div>
+
+  <div class="px-6 pb-6">
+    <a href="payment.html" class="block text-center py-3 bg-white/5 hover:bg-white/10 rounded-xl text-white/70 text-sm transition">← Payment Form သို့</a>
+  </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+
+<script>
+// =============================================
+// 🔥 FIREBASE
+// =============================================
+const firebaseConfig = {
+  apiKey: "AIzaSyCWiTxC_B_H9GZYhvQc3jdTR_LLsE0gdvA",
+  authDomain: "real-jft-premium.firebaseapp.com",
+  projectId: "real-jft-premium",
+  storageBucket: "real-jft-premium.firebasestorage.app",
+  messagingSenderId: "439056027697",
+  appId: "1:439056027697:web:b37a75ccf5da922714c510"
+};
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+// ============ DOM ============
+const emailInput   = document.getElementById("emailInput");
+const searchBtn    = document.getElementById("searchBtn");
+const msg          = document.getElementById("msg");
+const premiumBox   = document.getElementById("premiumBox");
+const premiumIcon  = document.getElementById("premiumIcon");
+const premiumStatus= document.getElementById("premiumStatus");
+const premiumExpiry= document.getElementById("premiumExpiry");
+const ordersBox    = document.getElementById("ordersBox");
+const ordersList   = document.getElementById("ordersList");
+const emptyBox     = document.getElementById("emptyBox");
+
+// ============ Search ============
+searchBtn.addEventListener("click", search);
+emailInput.addEventListener("keypress", e => { if (e.key === "Enter") search(); });
+
+async function search() {
+  const email = emailInput.value.trim().toLowerCase();
+  if (!email) {
+    msg.textContent = "⚠️ Email ထည့်ပါ";
+    msg.className = "text-center text-sm text-red-400";
+    msg.classList.remove("hidden");
+    return;
+  }
+
+  // Reset
+  premiumBox.classList.add("hidden");
+  ordersBox.classList.add("hidden");
+  emptyBox.classList.add("hidden");
+  msg.textContent = "🔍 ရှာနေသည်...";
+  msg.className = "text-center text-sm text-white/60";
+  msg.classList.remove("hidden");
+  searchBtn.disabled = true;
+
+  try {
+    // 1. Premium Status
+    const premiumDoc = await db.collection("premiumUsers").doc(email).get();
+    if (premiumDoc.exists) {
+      const p = premiumDoc.data();
+      const expiry = p.expiryDate?.toDate?.() || new Date(p.expiryDate);
+      const isActive = expiry > new Date();
+
+      premiumStatus.textContent = isActive ? "🟢 Active" : "🔴 Expired";
+      premiumStatus.className = "text-lg font-bold " + (isActive ? "text-green-400" : "text-red-400");
+      premiumIcon.textContent = isActive ? "👑" : "⛔";
+      premiumExpiry.textContent = "📅 သက်တမ်းကုန်ရက်: " + expiry.toLocaleDateString("en-GB");
+      premiumBox.classList.remove("hidden");
+    }
+
+    // 2. Orders
+    const ordersSnap = await db.collection("paymentOrders")
+      .where("email", "==", email)
+      .get();
+
+    if (ordersSnap.empty) {
+      emptyBox.classList.remove("hidden");
+      msg.classList.add("hidden");
+    } else {
+      const orders = [];
+      ordersSnap.forEach(doc => orders.push({ id: doc.id, ...doc.data() }));
+      orders.sort((a, b) => {
+        const ta = a.createdAt?.toDate?.()?.getTime() || 0;
+        const tb = b.createdAt?.toDate?.()?.getTime() || 0;
+        return tb - ta;
+      });
+
+      ordersList.innerHTML = orders.map(o => renderOrder(o)).join("");
+      ordersBox.classList.remove("hidden");
+      msg.classList.add("hidden");
+    }
+  } catch (err) {
+    console.error(err);
+    msg.textContent = "❌ Error: " + err.message;
+    msg.className = "text-center text-sm text-red-400";
+  } finally {
+    searchBtn.disabled = false;
+  }
+}
+
+// ============ Render Order ============
+function renderOrder(o) {
+  const s = o.status || "pending";
+  const cfg = {
+    pending: { icon: "🟡", label: "Pending", cls: "text-yellow-400 border-yellow-500/30" },
+    success: { icon: "🟢", label: "Success", cls: "text-green-400 border-green-500/30" },
+    failed:  { icon: "🔴", label: "Failed",  cls: "text-red-400 border-red-500/30" }
+  }[s] || { icon: "⚪", label: s, cls: "text-white/60 border-white/10" };
+
+  const created = o.createdAt?.toDate?.()?.toLocaleString("en-GB") || "—";
+
+  return `
+    <div class="glass rounded-xl p-4 border ${cfg.cls}">
+      <div class="flex items-center justify-between mb-2">
+        <code class="text-xs text-white/50">${o.id}</code>
+        <span class="text-sm font-bold ${cfg.cls.split(' ')[0]}">${cfg.icon} ${cfg.label}</span>
+      </div>
+      <div class="grid grid-cols-2 gap-2 text-xs text-white/60">
+        <div>💳 ${o.method || "—"}</div>
+        <div>🔑 ****${o.transId || "—"}</div>
+        <div class="col-span-2 text-white/40">📅 ${created}</div>
+      </div>
+    </div>
+  `;
+}
+</script>
+</body>
+</html>
