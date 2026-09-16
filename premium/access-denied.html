@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Access Denied - JFT Premium</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', 'Poppins', system-ui, sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(247, 151, 30, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(255, 210, 0, 0.1) 0%, transparent 50%);
+    animation: bgPulse 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes bgPulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+  }
+
+  .card {
+    position: relative;
+    z-index: 2;
+    max-width: 480px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 50px 35px 40px;
+    text-align: center;
+    box-shadow:
+      0 25px 60px rgba(0, 0, 0, 0.6),
+      inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    animation: cardIn 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .lock-wrap {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 24px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lock-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.25) 0%, transparent 70%);
+    animation: glowPulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.15); opacity: 1; }
+  }
+
+  .lock-icon {
+    position: relative;
+    z-index: 2;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    box-shadow:
+      0 8px 30px rgba(239, 68, 68, 0.5),
+      inset 0 2px 0 rgba(255, 255, 255, 0.2);
+    animation: lockShake 3s ease-in-out infinite;
+  }
+
+  @keyframes lockShake {
+    0%, 90%, 100% { transform: rotate(0deg); }
+    93% { transform: rotate(-8deg); }
+    96% { transform: rotate(8deg); }
+  }
+
+  .title {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #fff 0%, #ffd700 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.7;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .subtitle strong {
+    color: #ff6b6b;
+    font-weight: 700;
+  }
+
+  .info-box {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin-bottom: 26px;
+    text-align: left;
+  }
+
+  .info-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .info-row .icon {
+    font-size: 16px;
+    width: 22px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .info-row .label { color: rgba(255, 255, 255, 0.35); }
+
+  .info-row .value {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+    margin-left: auto;
+    font-size: 12px;
+    word-break: break-all;
+    max-width: 200px;
+    text-align: right;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #f7971e, #ffd200);
+    color: #1a1a2e;
+    box-shadow: 0 8px 24px rgba(247, 151, 30, 0.35);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(247, 151, 30, 0.5);
+    background: linear-gradient(135deg, #ffd200, #f7971e);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  .footer-text {
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.3px;
+  }
+
+  .sparkle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffd700;
+    border-radius: 50%;
+    animation: sparkleFloat 4s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes sparkleFloat {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    20% { opacity: 1; }
+    100% { transform: translateY(-120px) scale(0); opacity: 0; }
+  }
+
+  @media (max-width: 480px) {
+    .card { padding: 40px 22px 32px; border-radius: 24px; }
+    .title { font-size: 24px; }
+    .subtitle { font-size: 14px; }
+    .lock-wrap { width: 90px; height: 90px; }
+    .lock-icon { width: 60px; height: 60px; font-size: 30px; }
+    .btn { padding: 13px 20px; font-size: 14px; }
+    .info-row .value { max-width: 150px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="lock-wrap">
+    <div class="lock-icon">🔒</div>
+  </div>
+
+  <h1 class="title">Access Denied</h1>
+  <p class="subtitle">
+    ဤစာမေးပွဲကို ဝင်ရောက်ရန် <strong>Premium အသုံးပြုခွင့်</strong> လိုအပ်ပါသည်။
+  </p>
+
+  <div class="info-box">
+    <div class="info-row">
+      <span class="icon">👤</span>
+      <span class="label">Account</span>
+      <span class="value" id="userEmail">—</span>
+    </div>
+    <div class="info-row">
+      <span class="icon">💳</span>
+      <span class="label">Status</span>
+      <span class="value" id="userStatus" style="color:#ff6b6b;">Not Premium</span>
+    </div>
+    <div class="info-row">
+      <span class="icon">📅</span>
+      <span class="label">Checked</span>
+      <span class="value" id="checkTime">—</span>
+    </div>
+  </div>
+
+  <div class="btn-group">
+    <a href="../payment.html" class="btn btn-primary">💳 Premium ဝယ်ယူရန်</a>
+    <a href="../payment-status.html" class="btn btn-secondary">📊 Status စစ်ဆေးရန်</a>
+    <a href="../cindex.html" class="btn btn-secondary">🏠 ပင်မစာမျက်နှာ</a>
+  </div>
+
+  <p class="footer-text">© 2026 JFT Premium — All rights reserved.</p>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.21.0/firebase-firestore-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyCWiTxC_B_H9GZYhvQc3jdTR_LLsE0gdvA",
+  authDomain: "real-jft-premium.firebaseapp.com",
+  projectId: "real-jft-premium",
+  storageBucket: "real-jft-premium.firebasestorage.app",
+  messagingSenderId: "439056027697",
+  appId: "1:439056027697:web:b37a75ccf5da922714c510"
+};
+
+if (!firebase.apps.length) firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+
+auth.onAuthStateChanged(async (user) => {
+  if (user) {
+    document.getElementById('userEmail').textContent = user.email;
+
+    try {
+      const emailKey = user.email.toLowerCase();
+      const doc = await db.collection('premiumUsers').doc(emailKey).get();
+      
+      if (doc.exists) {
+        const data = doc.data();
+        const expiry = data.expiryDate?.toDate?.() || new Date(data.expiryDate);
+        if (expiry > new Date()) {
+          document.getElementById('userStatus').textContent = 'Active';
+          document.getElementById('userStatus').style.color = '#4ade80';
+        } else {
+          document.getElementById('userStatus').textContent = 'Expired';
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  } else {
+    document.getElementById('userEmail').textContent = 'Not logged in';
+  }
+  
+  document.getElementById('checkTime').textContent = new Date().toLocaleString('en-GB');
+});
+
+function createSparkle() {
+  const s = document.createElement('div');
+  s.className = 'sparkle';
+  s.style.left = Math.random() * 100 + '%';
+  s.style.top = Math.random() * 100 + '%';
+  s.style.animationDelay = Math.random() * 4 + 's';
+  document.body.appendChild(s);
+  setTimeout(() => s.remove(), 5000);
+}
+setInterval(createSparkle, 800);
+</script>
+</body>
+</html>
